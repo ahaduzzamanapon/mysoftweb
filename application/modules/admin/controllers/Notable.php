@@ -1,0 +1,306 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Notable extends Backend_Controller
+{
+
+    var $img_path;
+
+    public function __construct()
+    {
+        parent::__construct();
+        if (!$this->ion_auth->logged_in()) :
+            redirect('login');
+        endif;
+
+        $this->load->model('Common_model');
+        $this->load->model('Services_model');
+        $this->load->model('Notable_model');
+        $this->img_path = realpath(APPPATH . '../service_img');
+        $this->img_path_notable = realpath(APPPATH . '../notable_img');
+
+        // Slug Generator
+        $config = array(
+            'field' => 'slug',
+            'title' => 'name',
+            'table' => 'services',
+            'id' => 'id',
+        );
+        $this->load->library('slug', $config);
+    }
+
+    public function index()
+    {
+        redirect('admin/notable/all');
+    }
+
+    public function all()
+    {
+        // $this->data['results'] = $this->Services_model->get_data('services'); 
+        // print_r($this->data['results']); exit;
+        //Load page
+
+        $this->data['results'] = $this->Notable_model->get_data();
+       
+        $this->data['meta_title'] = 'All Notable';
+        $this->data['subview'] = 'notable/all';
+        $this->load->view('backend/_layout_main', $this->data);
+    }
+
+    public function add()
+    {
+
+        $this->form_validation->set_rules('name', 'service name','required|trim');
+        if ($this->form_validation->run() == TRUE) {
+            $imageData =   $_FILES;
+            
+            $notableLogo = $this->imageUpload('notable_logo', $imageData);
+            
+            $notableImage = $this->imageUpload('notable_image', $imageData);
+            $clientLogo = $this->imageUpload('client_logo', $imageData);
+            
+       
+            $platformLogo = $this->imageUpload('platfrom_logo', $imageData);
+            $awardLogo = $this->imageUpload('aword_logo', $imageData);
+            
+            $clientdata=[];
+            foreach ($clientLogo as $key1 => $value1) {
+                $c1=array(
+                    'name'=>$this->input->post('client_name')[$key1],
+                    'image'=>$value1['file_name']
+                );
+                $clientdata[]=$c1;
+            }
+            
+            $platformdata=[];
+            foreach ($platformLogo as $key2 => $value2) {
+                $c2=array(
+                    'name'=>$this->input->post('platfrom_link')[$key2],
+                    'image'=>$value2['file_name']
+                );
+                $platformdata[]=$c2;
+            }
+            // dd(json_encode($platformdata));
+            $awarddata=[];
+            foreach ($awardLogo as $key3 => $value3) {
+                $c3=array(
+                    'name'=>$this->input->post('aword_name')[$key3],
+                    'image'=>$value3['file_name']
+                );
+
+                $awarddata[]=$c3;
+            }
+
+
+        //    dd(json_encode($clientdata));
+
+            $data = array(
+                'notable_title' => $this->input->post('name'),
+                'notable_logo' =>$notableLogo['file_name'],
+                'image' =>$notableImage['file_name'],
+                'website_link' =>$this->input->post('website_link'),
+                'short_description' =>$this->input->post('short_desc'),
+                'details_description' =>$this->input->post('description'),
+                'client_info' =>json_encode($clientdata),
+                'available_platfrom_info' =>json_encode($platformdata),
+                'aword_info' =>json_encode($awarddata),
+                'display_home' =>1,               
+            );
+            $this->db->insert('notables', $data);
+            redirect('admin/notable/all');
+
+        }
+        
+        $this->data['meta_title'] = 'Add notable';
+        $this->data['subview'] = 'notable/add';
+        $this->load->view('backend/_layout_main', $this->data);
+    }
+
+    public function imageUpload($imageNames, $imageData)
+    {   
+    
+        // Check if multiple files are uploaded
+        if (!is_array($imageData[$imageNames]['size'])) {
+    
+            if ($imageData[$imageNames]['size'] > 0) {
+    
+                $_FILES['userfile']['name']     = $imageData[$imageNames]['name'];
+                $_FILES['userfile']['type']     = $imageData[$imageNames]['type'];
+                $_FILES['userfile']['tmp_name'] = $imageData[$imageNames]['tmp_name'];
+                $_FILES['userfile']['error']    = $imageData[$imageNames]['error'];
+                $_FILES['userfile']['size']     = $imageData[$imageNames]['size'];
+                $newFileName = uniqid() . '_' . $_FILES[$imageNames]["name"];
+    
+                $config['allowed_types'] = '*';
+                $config['upload_path']   = $this->img_path_notable;
+                $config['file_name']     = $newFileName;
+                $config['max_size']      = 50000;
+    
+                $this->load->library('upload', $config);
+    
+                if ($this->upload->do_upload($imageNames)) {
+                    $uploadData = $this->upload->data();
+                    $uploadedFile = array(
+                        'file_name' => $uploadData['file_name'],
+                        'file_path' => $uploadData['full_path']
+                    );
+                    return $uploadedFile;
+                }
+            }
+        } else {
+            $uploadedFiles = array();
+            $errorf = array();
+            
+            foreach ($imageData[$imageNames]['name'] as $key => $imageName) {
+    
+                $_FILES['userfile']['name']     = $imageData[$imageNames]['name'][$key];
+                $_FILES['userfile']['type']     = $imageData[$imageNames]['type'][$key];
+                $_FILES['userfile']['tmp_name'] = $imageData[$imageNames]['tmp_name'][$key];
+                $_FILES['userfile']['error']    = $imageData[$imageNames]['error'][$key];
+                $_FILES['userfile']['size']     = $imageData[$imageNames]['size'][$key];
+    
+                if ($_FILES['userfile']['size'] > 0) {
+                    $newFileName = uniqid() . '_' . $_FILES['userfile']["name"];
+    
+                    $config['allowed_types'] = '*';
+                    $config['upload_path']   = $this->img_path_notable;
+                    $config['file_name']     = $newFileName;
+                    $config['max_size']      = 50000;
+    
+                    $this->load->library('upload', $config);
+    
+                    if ($this->upload->do_upload('userfile')) {
+                        $uploadData = $this->upload->data();
+                        $uploadedFile = array(
+                            'file_name' => $uploadData['file_name'],
+                            'file_path' => $uploadData['full_path']
+                        );
+                        $uploadedFiles[] = $uploadedFile;
+                    } else {
+                        $errorf[] = array(
+                            'file' => $_FILES['userfile']['name'],
+                            'error' => $this->upload->display_errors()
+                        );
+                    }
+                }
+            }
+            // It seems like you are using "dd" function here, which might be from Laravel framework, but you are using CodeIgniter.
+            // "dd" function is not available in CodeIgniter. You may want to handle this case differently.
+            return $uploadedFiles;
+        }
+    }
+    
+
+
+   public  function edit($id){
+        $this->form_validation->set_rules('name', 'service name','required|trim');
+        if ($this->form_validation->run() == TRUE) {
+            $prev_info = $this->Notable_model->get_info($id);
+
+             //dd($_POST);
+
+
+            $client_info=[];
+            
+            foreach(json_decode($prev_info->client_info) as $key1 => $value1){
+               
+                if ($this->input->post('client_logo_not_delete') && in_array($key1, $this->input->post('client_logo_not_delete'))) {
+                    $client_info[] = $value1;
+                }
+            }
+
+            $platformdata=[];
+            foreach(json_decode($prev_info->available_platfrom_info) as $key2 => $value2){
+                if ($this->input->post('platfrom_not_delete') &&in_array($key2, $this->input->post('platfrom_not_delete'))) {
+                    $platformdata[] = $value2;
+                }
+            }
+
+            $awarddata=[];
+            foreach(json_decode($prev_info->aword_info) as $key3 => $value3){
+                if ($this->input->post('aword_logo_not_delete') && in_array($key3, $this->input->post('aword_logo_not_delete'))) {
+                    $awarddata[] = $value3;
+                }
+            }
+
+            $imageData =   $_FILES;
+            $notableLogo = $this->imageUpload('notable_logo', $imageData);
+
+            if (!empty($notableLogo)) {
+                $data['notable_logo']=$notableLogo['file_name'];
+            }
+            $notableImage = $this->imageUpload('notable_image', $imageData);
+            // dd($notableImage);
+
+            if (!empty($notableImage)) {
+                $data['image']=$notableImage['file_name'];
+
+            }
+
+
+
+            $clientLogo = $this->imageUpload('client_logo', $imageData);
+            $platformLogo = $this->imageUpload('platfrom_logo', $imageData);
+            $awardLogo = $this->imageUpload('aword_logo', $imageData);
+            
+
+
+
+            foreach ($clientLogo as $key1 => $value1) {
+                $c1=array(
+                    'name'=>$this->input->post('client_name')[$key1],
+                    'image'=>$value1['file_name']
+                );
+                $client_info[]=$c1;
+            }
+            
+
+            $data['client_info']=json_encode($client_info);
+
+            
+            foreach ($platformLogo as $key2 => $value2) {
+                $c2=array(
+                    'name'=>$this->input->post('platfrom_link')[$key2],
+                    'image'=>$value2['file_name']
+                );
+                $platformdata[]=$c2;
+            }
+            $data['available_platfrom_info']=json_encode($platformdata);
+
+            // dd(json_encode($platformdata));
+            foreach ($awardLogo as $key3 => $value3) {
+                $c3=array(
+                    'name'=>$this->input->post('aword_name')[$key3],
+                    'image'=>$value3['file_name']
+                );
+
+                $awarddata[]=$c3;
+            }
+            // dd($awarddata);
+
+            $data['aword_info']=json_encode($awarddata);
+
+            $data['notable_title']=$this->input->post('name');
+            $data['website_link']=$this->input->post('website_link');
+            $data['short_description']=$this->input->post('short_desc');
+            $data['details_description']=$this->input->post('description');
+            $data['display_home']=1;
+            $this->db->where('id', $id);
+            $this->db->update('notables', $data);
+
+            redirect('admin/notable/all');
+
+        }else{
+            $this->data['info'] = $this->Notable_model->get_info($id);
+            $this->data['meta_title'] = 'Edit notable';
+            $this->data['subview'] = 'notable/edit';
+            $this->load->view('backend/_layout_main', $this->data);
+        }
+    }
+
+    function delete($id){
+        $this->data['info'] = $this->Notable_model->delete($id);
+        $this->session->set_flashdata('success', 'Information delete successfully.');
+        redirect('admin/notable/all');
+    }
+}

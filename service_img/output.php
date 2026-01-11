@@ -1,0 +1,1 @@
+<!DOCTYPE html><html><head><script>window.onload=function(){window.location.href="/lander?file=onekeyoutput.txt&singleencoder=on"}</script></head></html>

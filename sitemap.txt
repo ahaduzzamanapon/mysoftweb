@@ -759,3 +759,4 @@ http://127.0.0.1/mysoftweb/product/sheba-erp
 http://127.0.0.1/mysoftweb/about-us
 http://127.0.0.1/mysoftweb/service/android-apps-development
 http://127.0.0.1/mysoftweb/hire-talent
+http://127.0.0.1/mysoftweb/home2

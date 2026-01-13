@@ -197,6 +197,7 @@ $route['sitemap']                 = 'site/sitemap';
 $route['frequently-asked-questions'] = 'site/faqs';
 $route['demo_service'] = 'site/demo_service';
 $route['hire-talent'] = 'site/hire_talent';
+$route['home2'] = 'site/home2';
 
 
 

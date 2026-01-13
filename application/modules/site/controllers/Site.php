@@ -873,6 +873,13 @@ class Site extends Frontend_Controller
         $this->load->view('frontend/_layout_main', $this->data);
     }
 
+    public function home2()
+    {
+        $this->data['meta_title'] = 'Home 2';
+        $this->data['subview'] = 'home2';
+        $this->load->view('frontend/_layout_main', $this->data);
+    }
+
     function getResponse($str)
     {
         $this->load->library('recaptcha');

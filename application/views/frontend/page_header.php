@@ -476,6 +476,7 @@ update_sitemap_txt($current_url);
                             href="<?= base_url('contact-us') ?>"><i class="fa fa-map-marker menuicon"></i>
                             Contact</a> </li>
                             <li class="<?= activate_menu_method('hire_talent') ?>"> <a href="<?= base_url('hire-talent') ?>" style="border: 1px solid #1e92d6;border-radius: 20px;padding: 5px 20px;font-family: Nourd-Bold;font-weight: 500;font-size: 13px;"></i> Hire Talent</a> </li>
+<li class="<?= activate_menu_method('home2') ?>"> <a href="<?= base_url('home2') ?>" style="border: 1px solid #1e92d6;border-radius: 20px;padding: 5px 20px;font-family: Nourd-Bold;font-weight: 500;font-size: 13px;"></i> Home 2</a> </li>
                         </ul>
                     </nav>
                 </div>

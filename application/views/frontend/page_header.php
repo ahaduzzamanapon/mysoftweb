@@ -472,10 +472,10 @@ update_sitemap_txt($current_url);
                             </li> -->
                             <li> <a href="<?= base_url('events') ?>"><i class="fa fa-file-text menuicon"></i> Events</a>
                             </li>
-                            <li class="<?= activate_menu_method('hire_talent') ?>"> <a href="<?= base_url('hire-talent') ?>"><i class="fa fa-user-plus menuicon"></i> Hire Talent</a> </li>
                             <li class="<?= activate_menu_method('contact_us') ?>"> <a
-                                    href="<?= base_url('contact-us') ?>"><i class="fa fa-map-marker menuicon"></i>
-                                    Contact</a> </li>
+                            href="<?= base_url('contact-us') ?>"><i class="fa fa-map-marker menuicon"></i>
+                            Contact</a> </li>
+                            <li class="<?= activate_menu_method('hire_talent') ?>"> <a href="<?= base_url('hire-talent') ?>" style="border: 1px solid #1e92d6;border-radius: 20px;padding: 5px 20px;font-family: Nourd-Bold;font-weight: 500;font-size: 13px;"></i> Hire Talent</a> </li>
                         </ul>
                     </nav>
                 </div>

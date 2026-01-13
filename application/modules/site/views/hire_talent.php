@@ -9,7 +9,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <!-- Owl Carousel CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <!-- AOS Animation CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
@@ -22,28 +23,29 @@
     }
 
     .hero-title {
-    margin-bottom: 20px;
-    font-family: 'Nourd-Bold', 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 41px;
-    line-height: 120%;
-    min-height: 100px;
-}
+        margin-bottom: 20px;
+        font-family: 'Nourd-Bold', 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 41px;
+        line-height: 120%;
+        min-height: 100px;
+    }
 
     /* Global Styles */
     .ht-main-wrapper {
         font-family: 'Poppins', sans-serif;
         color: #333;
-        overflow-x: hidden; /* Prevent horizontal scroll */
+        overflow-x: hidden;
+        /* Prevent horizontal scroll */
         width: 100%;
         position: relative;
     }
 
-.ht-section {
-    height: 492px;
-    opacity: 1;
-    padding-top: 43px;
-}
+    .ht-section {
+        height: auto;
+        opacity: 1;
+        padding-top: 43px;
+    }
 
     .bg-light {
         background-color: #f9fbfd;
@@ -100,14 +102,14 @@
     }
 
     /* Hero */
-.hero-desc {
-    color: #666;
-    margin: 52px 22px 59px 1px;
-    font-family: Arial;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 182%;
-}
+    .hero-desc {
+        color: #666;
+        margin: 52px 22px 59px 1px;
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 182%;
+    }
 
     .btn-custom {
         padding: 5px 22px;
@@ -188,72 +190,72 @@
     }
 
     .bubble-1 {
-    top: 8%;
-    right: 42%;
-    animation: float 6s infinite;
-    position: absolute;
-    height: 170px;
-    width: 170px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 2px dashed #0172b9;
-}
+        top: 8%;
+        right: 42%;
+        animation: float 6s infinite;
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 2px dashed #0172b9;
+    }
 
     .bubble-2 {
-    top: 1px;
-    right: -14%;
-    animation: float 6s infinite 1s;
-    position: absolute;
-    height: 170px;
-    width: 170px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 2px dashed #0172b9;
-}
+        top: 1px;
+        right: -14%;
+        animation: float 6s infinite 1s;
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 2px dashed #0172b9;
+    }
 
     .bubble-3 {
-    top: 64%;
-    right: 52%;
-    animation: float 6s infinite;
-    position: absolute;
-    height: 170px;
-    width: 170px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 2px dashed #0172b9;
-}
+        top: 64%;
+        right: 52%;
+        animation: float 6s infinite;
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 2px dashed #0172b9;
+    }
 
     .bubble-4 {
-    top: 54%;
-    right: -2%;
-    animation: float 6s infinite 1s;
-    position: absolute;
-    height: 170px;
-    width: 170px;
-    background: #fff;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 2px dashed #0172b9;
-}
+        top: 54%;
+        right: -2%;
+        animation: float 6s infinite 1s;
+        position: absolute;
+        height: 170px;
+        width: 170px;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 2px dashed #0172b9;
+    }
 
     @keyframes float {
 
@@ -326,7 +328,8 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         position: relative;
-        padding-top: 80px; /* Increased space for higher arcs */
+        padding-top: 80px;
+        /* Increased space for higher arcs */
     }
 
     .process-card {
@@ -336,6 +339,10 @@
         position: relative;
         z-index: 1;
     }
+    .flexible_teams_section{
+        margin-right: 13px;
+        margin-left: 98px;
+    }
 
     /* Dashed Connecting Lines (Desktop) */
     /* Dashed Connecting Lines (Grid aligned) */
@@ -343,16 +350,19 @@
         .process-card:not(:last-child)::after {
             content: '';
             position: absolute;
-            top: -80px; /* Higher peak */
-            left: 50%; 
-            width: calc(100% + 20px); 
-            height: 90px; /* Taller height for rounder arc */
+            top: -80px;
+            /* Higher peak */
+            left: 50%;
+            width: calc(100% + 20px);
+            height: 90px;
+            /* Taller height for rounder arc */
             border: 3px dashed #B3E5FC;
             border-bottom: none;
             border-left: 3px dashed #B3E5FC;
             border-right: 3px dashed #B3E5FC;
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0; /* Elliptical radius for steeper arch */
-            z-index: -1; 
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            /* Elliptical radius for steeper arch */
+            z-index: -1;
             pointer-events: none;
         }
 
@@ -360,37 +370,68 @@
         .process-card:not(:last-child)::before {
             content: '';
             position: absolute;
-            top: 2px; /* Landing on top of next card */
-            left: calc(150% + 20px); /* Center of next card */
+            top: 2px;
+            /* Landing on top of next card */
+            left: calc(150% + 20px);
+            /* Center of next card */
             width: 0;
             height: 0;
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
-            border-top: 12px solid #B3E5FC; /* Points Down */
-            transform: translateX(-50%); /* Center the arrow */
+            border-top: 12px solid #B3E5FC;
+            /* Points Down */
+            transform: translateX(-50%);
+            /* Center the arrow */
             z-index: 0;
         }
-        
+
         /* Adjust arc shapes */
         /* To simulate the "jump" correctly, we need the arc to look like it lands. 
            With border-left/right/top and radius, it creates a semi-circle.
            This works perfectly for center-to-center. */
 
         /* Specific Colors */
-        .process-card:nth-child(1)::after { border-color: #bbdefb; }
-        .process-card:nth-child(2)::after { border-color: #e1bee7; }
-        .process-card:nth-child(3)::after { border-color: #b2dfdb; }
+        .process-card:nth-child(1)::after {
+            border-color: #bbdefb;
+        }
 
-        .process-card:nth-child(1)::before { border-top-color: #bbdefb; }
-        .process-card:nth-child(2)::before { border-top-color: #e1bee7; }
-        .process-card:nth-child(3)::before { border-top-color: #b2dfdb; }
+        .process-card:nth-child(2)::after {
+            border-color: #e1bee7;
+        }
+
+        .process-card:nth-child(3)::after {
+            border-color: #b2dfdb;
+        }
+
+        .process-card:nth-child(1)::before {
+            border-top-color: #bbdefb;
+        }
+
+        .process-card:nth-child(2)::before {
+            border-top-color: #e1bee7;
+        }
+
+        .process-card:nth-child(3)::before {
+            border-top-color: #b2dfdb;
+        }
 
         /* Stacking Order: Ensure previous cards constitute layers ABOVE next cards 
            so the arrow (child of previous) shows on top of next. */
-        .process-card:nth-child(1) { z-index: 4; }
-        .process-card:nth-child(2) { z-index: 3; }
-        .process-card:nth-child(3) { z-index: 2; }
-        .process-card:nth-child(4) { z-index: 1; }
+        .process-card:nth-child(1) {
+            z-index: 4;
+        }
+
+        .process-card:nth-child(2) {
+            z-index: 3;
+        }
+
+        .process-card:nth-child(3) {
+            z-index: 2;
+        }
+
+        .process-card:nth-child(4) {
+            z-index: 1;
+        }
     }
 
     .card-blue-light {
@@ -411,7 +452,8 @@
 
     .process-card {
         transition: all 0.3s ease;
-        border: 2px solid transparent; /* Prepare for border transition */
+        border: 2px solid transparent;
+        /* Prepare for border transition */
     }
 
     .p-icon {
@@ -423,7 +465,8 @@
         line-height: 40px;
         font-weight: bold;
         margin-bottom: 15px;
-        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* Bouncy transition */
     }
 
     /* Enhanced Hover Effects */
@@ -432,34 +475,57 @@
     }
 
     /* Specific Card Hover Colors */
-    .card-blue-light:hover { 
-        border-color: #2196f3; 
+    .card-blue-light:hover {
+        border-color: #2196f3;
         background: #fff;
     }
-    .card-blue-light:hover h4 { color: #2196f3 !important; }
 
-    .card-purple-light:hover { 
-        border-color: #9c27b0; 
+    .card-blue-light:hover h4 {
+        color: #2196f3 !important;
+    }
+
+    .card-purple-light:hover {
+        border-color: #9c27b0;
         background: #fff;
     }
-    .card-purple-light:hover h4 { color: #9c27b0 !important; }
 
-    .card-green-light:hover { 
-        border-color: #4caf50; 
+    .card-purple-light:hover h4 {
+        color: #9c27b0 !important;
+    }
+
+    .card-green-light:hover {
+        border-color: #4caf50;
         background: #fff;
     }
-    .card-green-light:hover h4 { color: #4caf50 !important; }
 
-    .card-orange-light:hover { 
-        border-color: #ff9800; 
+    .card-green-light:hover h4 {
+        color: #4caf50 !important;
+    }
+
+    .card-orange-light:hover {
+        border-color: #ff9800;
         background: #fff;
     }
-    .card-orange-light:hover h4 { color: #ff9800 !important; }
 
-    .bg-blue { background: #039BE5; }
-    .bg-purple { background: #E91E63; }
-    .bg-green { background: #00897B; }
-    .bg-orange { background: #FF7043; }
+    .card-orange-light:hover h4 {
+        color: #ff9800 !important;
+    }
+
+    .bg-blue {
+        background: #039BE5;
+    }
+
+    .bg-purple {
+        background: #E91E63;
+    }
+
+    .bg-green {
+        background: #00897B;
+    }
+
+    .bg-orange {
+        background: #FF7043;
+    }
 
     .process-card h4 {
         font-size: 18px;
@@ -482,10 +548,21 @@
         transition: width 0.3s ease, background-color 0.3s ease;
     }
 
-    .card-blue-light h4::after { background-color: #2196f3; }
-    .card-purple-light h4::after { background-color: #9c27b0; }
-    .card-green-light h4::after { background-color: #4caf50; }
-    .card-orange-light h4::after { background-color: #ff9800; }
+    .card-blue-light h4::after {
+        background-color: #2196f3;
+    }
+
+    .card-purple-light h4::after {
+        background-color: #9c27b0;
+    }
+
+    .card-green-light h4::after {
+        background-color: #4caf50;
+    }
+
+    .card-orange-light h4::after {
+        background-color: #ff9800;
+    }
 
     .process-card p {
         font-size: 13px;
@@ -547,14 +624,14 @@
         background: #fff;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease;
         text-align: left;
     }
 
     .role-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .role-img-wrapper {
@@ -583,11 +660,13 @@
         font-weight: 700;
         margin-bottom: 10px;
         color: #000 !important;
-        border-bottom: none; /* Reset existing style */
+        border-bottom: none;
+        /* Reset existing style */
     }
-    
+
     .role-card h4::after {
-        display: none; /* Remove the underline from previous generic card styles */
+        display: none;
+        /* Remove the underline from previous generic card styles */
     }
 
     .role-card p {
@@ -600,7 +679,8 @@
     /* Mobile Responsive */
     @media (max-width: 768px) {
         .roles-grid {
-            grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+            grid-template-columns: repeat(1, 1fr);
+            /* 1 column on mobile */
         }
     }
 
@@ -623,20 +703,47 @@
     }
 
     .tech-row i {
-        font-size: 100px; /* Base size */
+        font-size: 100px;
+        /* Base size */
         transition: transform 0.3s ease;
     }
 
     /* Specific sizing adjustments to match visual balance from image */
-    .devicon-nodejs-plain-wordmark { font-size: 70px !important; }
-    .devicon-mysql-plain-wordmark { font-size: 70px !important; }
-    .devicon-microsoftsqlserver-plain-wordmark { font-size: 70px !important; }
-    .devicon-kubernetes-plain-wordmark { font-size: 70px !important; }
-    .devicon-docker-plain-wordmark { font-size: 70px !important; }
-    .devicon-amazonwebservices-plain-wordmark { font-size: 70px !important; }
-    .devicon-laravel-plain-wordmark { font-size: 70px !important; }
-    .devicon-mongodb-plain-wordmark { font-size: 70px !important; }
-    .devicon-apachekafka-original-wordmark { font-size: 70px !important; }
+    .devicon-nodejs-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-mysql-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-microsoftsqlserver-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-kubernetes-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-docker-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-amazonwebservices-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-laravel-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-mongodb-plain-wordmark {
+        font-size: 70px !important;
+    }
+
+    .devicon-apachekafka-original-wordmark {
+        font-size: 70px !important;
+    }
 
     /* Clients Section */
     .clients-section {
@@ -650,6 +757,7 @@
         flex-direction: column;
         gap: 6px;
     }
+
     /* AOS Animation CSS - Moved to Head */
 
     <style>
@@ -658,12 +766,15 @@
     /* Hover Lift Effect */
     .hover-lift {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        will-change: transform; /* Performance optimization */
+        will-change: transform;
+        /* Performance optimization */
     }
-    
+
     .hover-lift:hover {
-        transform: translateY(-10px) scale(1.02); /* Lift and Zoom */
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Strong shadow */
+        transform: translateY(-10px) scale(1.02);
+        /* Lift and Zoom */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        /* Strong shadow */
     }
 
     /* Tech Stack Marquee Specifics */
@@ -674,16 +785,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 80px; 
+        height: 80px;
     }
 
     #tech-marquee-1 i,
     #tech-marquee-2 i,
     #tech-marquee-3 i {
-        font-size: 60px; /* Default size for all tech icons */
+        font-size: 60px;
+        /* Default size for all tech icons */
         display: inline-block;
     }
-    
+
     .client-box {
         display: flex;
         justify-content: center;
@@ -700,10 +812,13 @@
         justify-content: center;
         align-items: center;
         height: 100px;
-        background: #fff; /* White background */
-        border: 1px solid #eee; /* Light border used in original design */
+        background: #fff;
+        /* White background */
+        border: 1px solid #eee;
+        /* Light border used in original design */
         padding: 10px;
-        margin-right: 1px; /* Slight separation if needed, or rely on Owl carousel margin */
+        margin-right: 1px;
+        /* Slight separation if needed, or rely on Owl carousel margin */
     }
 
     .client-box-marquee img {
@@ -722,7 +837,7 @@
         margin-top: 20px;
         text-align: center;
     }
-    
+
     .clients-section .owl-dot span {
         background: #004d80 !important;
     }
@@ -735,7 +850,8 @@
     .clients-grid-removed {
         display: none;
     }
-        background: #002b49;
+
+    background: #002b49;
     }
 
     .client-box {
@@ -771,13 +887,13 @@
         border-radius: 12px;
         padding: 30px 20px;
         text-align: center;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease;
     }
 
     .award-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     .award-icon-box {
@@ -822,10 +938,12 @@
         .clients-grid {
             grid-template-columns: repeat(3, 1fr);
         }
+
         .awards-grid {
             grid-template-columns: repeat(1, 1fr);
         }
     }
+
     /* Testimonials Section */
     .testimonials-section {
         background-color: #002b49;
@@ -847,7 +965,8 @@
     }
 
     .test-header {
-        background: #bae6fd; /* Light blue header */
+        background: #bae6fd;
+        /* Light blue header */
         padding: 20px;
         display: flex;
         align-items: center;
@@ -865,7 +984,7 @@
         justify-content: center;
         overflow: hidden;
     }
-    
+
     .test-avatar img {
         width: 100%;
         height: 100%;
@@ -901,7 +1020,7 @@
         border-radius: 4px;
         font-size: 11px;
         font-weight: 600;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         color: #333;
     }
 
@@ -971,36 +1090,37 @@
             grid-template-columns: repeat(1, 1fr);
         }
     }
-    
+
     /* Contact Section CSS */
     .contact-card {
         background: #fff;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         overflow: hidden;
-        margin-top: -80px; /* Stronger overlap */
+        margin-top: -80px;
+        /* Stronger overlap */
         position: relative;
         z-index: 10;
         border: none;
     }
-    
+
     .contact-info-side {
         background: #002b49;
         padding: 60px 40px;
         color: #fff;
     }
-    
+
     .contact-form-side {
         background: #fff;
         padding: 60px 40px;
     }
-    
+
     .contact-item {
         display: flex;
         gap: 20px;
         align-items: flex-start;
     }
-    
+
     /* Updated Icon Style: White Circle, Blue Icon */
     .icon-circle {
         width: 40px;
@@ -1012,34 +1132,34 @@
         justify-content: center;
         flex-shrink: 0;
     }
-    
+
     .icon-circle i {
         color: #002b49;
         font-size: 16px;
     }
-    
+
     .contact-text {}
-    
+
     .contact-text strong {
         display: block;
         font-size: 15px;
         margin-bottom: 5px;
         font-weight: 600;
     }
-    
+
     .contact-text span {
         font-size: 14px;
         opacity: 0.9;
         display: block;
         line-height: 1.5;
     }
-    
+
     .social-links {
         display: flex;
         gap: 15px;
         margin-top: 60px;
     }
-    
+
     .social-btn {
         width: 40px;
         height: 40px;
@@ -1052,12 +1172,12 @@
         font-size: 18px;
         transition: 0.3s;
     }
-    
+
     .social-btn:hover {
         background: #0088cc;
         color: #fff;
     }
-    
+
     /* Form Styles */
     .form-group {
         margin-bottom: 20px;
@@ -1070,10 +1190,11 @@
         display: block;
         color: #333;
     }
-    
+
     .form-control-custom {
         height: 50px;
-        border-radius: 8px; /* Softer, more modern radius */
+        border-radius: 8px;
+        /* Softer, more modern radius */
         border: 1px solid #e1e1e1;
         font-size: 14px;
         background: #fff;
@@ -1082,18 +1203,18 @@
         display: block;
         transition: 0.3s;
     }
-    
+
     .form-control-custom:focus {
         border-color: #002b49;
         outline: none;
         box-shadow: 0 0 0 3px rgba(0, 43, 73, 0.1);
     }
-    
+
     textarea.form-control-custom {
         height: auto;
         padding: 15px;
     }
-    
+
     .btn-submit {
         background: #002b49;
         color: #fff;
@@ -1107,21 +1228,21 @@
         cursor: pointer;
         transition: 0.3s;
     }
-    
+
     .btn-submit:hover {
         background: #004d80;
     }
 
-    
 
-    
 
-    
 
-    
+
+
+
+
     /* Form Styles */
 
-    
+
 
 
 
@@ -1129,9 +1250,11 @@
         .tech-row {
             gap: 25px;
         }
+
         .tech-row i {
             font-size: 40px;
         }
+
         /* scale down specific icons on mobile too */
         .devicon-nodejs-plain-wordmark,
         .devicon-mysql-plain-wordmark,
@@ -1141,8 +1264,8 @@
         .devicon-amazonwebservices-plain-wordmark,
         .devicon-laravel-plain-wordmark,
         .devicon-mongodb-plain-wordmark,
-        .devicon-apachekafka-original-wordmark { 
-            font-size: 55px !important; 
+        .devicon-apachekafka-original-wordmark {
+            font-size: 55px !important;
         }
     }
 
@@ -1212,10 +1335,11 @@
             margin-top: 40px;
         }
 
+        /* 
         .bubble {
             width: 80px;
             height: 80px;
-        }
+        } */
 
         .hero-title {
             font-family: Nourd-Bold;
@@ -1418,26 +1542,28 @@
     } */
 
     .why-img-top {
-    height: 345px;
-}
-.why-img-bottom_left {
-    height: 294px;
-    top: 52%;
-    position: absolute;
-}
+        height: 345px;
+    }
 
-.why-img-bottom_right {
-    height: 294px;
-    top: 63%;
-    right: 10%;
-    position: absolute;
-}
+    .why-img-bottom_left {
+        height: 294px;
+        top: 52%;
+        position: absolute;
+    }
+
+    .why-img-bottom_right {
+        height: 294px;
+        top: 63%;
+        right: 10%;
+        position: absolute;
+    }
 
     /* Mobile responsive */
     @media (max-width: 768px) {
         .why-mysoftheaven-section {
             padding: 40px 0;
         }
+
         .why-mysoftheaven-title {
             font-size: 28px;
         }
@@ -1476,7 +1602,7 @@
         padding: 80px 0;
         background: #fff;
     }
-    
+
     .text-black {
         color: #000;
         font-weight: 700;
@@ -1492,8 +1618,10 @@
 
     .eng-img {
         width: 100%;
-        height: auto; /* Allow auto height to maintain aspect ratio */
-        max-width: 100%; /* Ensure it doesn't overflow */
+        height: auto;
+        /* Allow auto height to maintain aspect ratio */
+        max-width: 100%;
+        /* Ensure it doesn't overflow */
     }
 
     .engagement-list-new {
@@ -1526,17 +1654,37 @@
     }
 
     /* Icon Colors */
-    .bg-green-light { background-color: #E8F5E9; }
-    .text-green-dark { color: #2E7D32; }
+    .bg-green-light {
+        background-color: #E8F5E9;
+    }
 
-    .bg-blue-light { background-color: #E3F2FD; }
-    .text-blue-dark { color: #1565C0; }
+    .text-green-dark {
+        color: #2E7D32;
+    }
 
-    .bg-purple-light { background-color: #F3E5F5; }
-    .text-purple-dark { color: #7B1FA2; }
+    .bg-blue-light {
+        background-color: #E3F2FD;
+    }
 
-    .bg-orange-light { background-color: #FBE9E7; }
-    .text-orange-dark { color: #D84315; }
+    .text-blue-dark {
+        color: #1565C0;
+    }
+
+    .bg-purple-light {
+        background-color: #F3E5F5;
+    }
+
+    .text-purple-dark {
+        color: #7B1FA2;
+    }
+
+    .bg-orange-light {
+        background-color: #FBE9E7;
+    }
+
+    .text-orange-dark {
+        color: #D84315;
+    }
 
     /* Mobile Responsive */
     @media (max-width: 768px) {
@@ -1544,24 +1692,28 @@
             height: 300px;
             margin-bottom: 40px;
         }
+
         .blob-mask {
             width: 250px;
             height: 250px;
         }
+
         .engagement-list-new li {
             margin-bottom: 20px;
         }
+
         .eng-text {
             font-size: 14px;
             flex-direction: column;
             text-align: center;
         }
+
         .icon-box {
             margin-right: 0;
             margin-bottom: 10px;
         }
     }
-    
+
 
 
     /* =========================================
@@ -1570,13 +1722,14 @@
 
     /* Tablet & Smaller (Max Width: 991px) */
     @media (max-width: 991px) {
+
         /* Process: Hide Arrows & Stack */
         .process-card:not(:last-child)::after,
         .process-card:not(:last-child)::before {
             display: none !important;
         }
-        
-        .process-grid, 
+
+        .process-grid,
         .awards-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             gap: 20px;
@@ -1585,10 +1738,36 @@
         .roles-grid {
             grid-template-columns: repeat(2, 1fr) !important;
         }
+
+        /* Why Mysoftheaven Responsive */
+        .why-mysoftheaven-section .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .why-images-wrapper {
+            height: auto !important;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-right: 0 !important;
+        }
+
+        .why-img-top,
+        .why-img-bottom_left,
+        .why-img-bottom_right {
+            position: static !important;
+            width: 100%;
+            height: auto !important;
+            max-width: 100%;
+            object-fit: cover;
+        }
     }
 
     /* Mobile (Max Width: 768px) */
     @media (max-width: 768px) {
+
         /* Global Section Padding */
         .ht-section {
             padding-top: 40px !important;
@@ -1602,16 +1781,18 @@
             font-size: 32px !important;
             text-align: center;
         }
+
         .hero-desc {
             text-align: center;
         }
+
         .hero-btns {
             justify-content: center;
         }
-        
+
         /* Grids to 1 Column */
-        .process-grid, 
-        .awards-grid, 
+        .process-grid,
+        .awards-grid,
         .roles-grid,
         .ft-grid,
         .testimonials-grid {
@@ -1628,18 +1809,20 @@
         .certifications-section {
             padding-bottom: 50px !important;
         }
+
         .contact-card {
             margin-top: 0 !important;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border-radius: 0;
             border: 1px solid #eee;
         }
+
         .contact-section-wrapper {
             padding-top: 0 !important;
-            background: #f9fbfd !important; 
+            background: #f9fbfd !important;
         }
 
-        .contact-info-side, 
+        .contact-info-side,
         .contact-form-side {
             padding: 30px 20px !important;
         }
@@ -1649,25 +1832,142 @@
             font-size: 26px !important;
             line-height: 1.3;
         }
+
         p {
             font-size: 14px !important;
         }
-        
+
         /* Engagement */
         .blob-container {
             height: 250px;
             margin-top: 0;
         }
+
         .engagement-list-new li {
             flex-direction: column;
             text-align: center;
         }
+
         .icon-box {
             margin-right: 0;
             margin-bottom: 10px;
         }
     }
 
+    .ht-hero-section{
+        height: 475px !important;
+    }
+
+
+
+
+    /* Responsiveness */
+    @media (max-width: 992px) {
+        .ht-hero-section {
+            height: 940px !important;
+        }
+
+        .bubble-1 {
+            right: 57%;
+        }
+
+        .bubble-2 {
+            right: 17%;
+        }
+
+        .bubble-3 {
+            right: 21%;
+        }
+
+        .bubble-4 {
+            right: 59%;
+            top: 76%;
+        }
+    }
+
+    @media (max-width: 477px) {
+        .section-text,
+        .section-title {
+            text-align: -webkit-center;
+            padding: 16px !important;
+            margin: 0;
+        }
+        .bubble-1 {
+            right: 57%;
+        }
+
+        .bubble-2 {
+            right: 10%;
+        }
+
+        .bubble-3 {
+            right: 15%;
+        }
+
+        .bubble-4 {
+            right: 59%;
+            top: 76%;
+        }
+        .flexible_teams_section{
+            padding: 18px;
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .ht-hero-section {
+            height: 933px !important;
+        }
+
+    }
+
+    @media (max-width: 1199px) {
+        .why-img-top {
+            height: 350px;
+            position: absolute;
+            right: 2%;
+        }
+
+        .why-img-bottom_left {
+            top: 41%;
+            right: 58%;
+        }
+
+        .why-img-bottom_right {
+            top: 50%;
+            right: 16%;
+        }
+    }
+
+    @media (max-width: 1127px) {
+        .why-img-top {
+            height: 320px;
+            position: absolute;
+            right: 2%;
+        }
+
+
+    }
+
+    @media (max-width: 1114px) {
+        .why-img-top {
+            height: 284px;
+            position: absolute;
+            right: 2%;
+        }
+
+        .why-img-bottom_left {
+            top: 33%;
+            right: 38%;
+        }
+
+        .why-img-bottom_right {
+            top: 42%;
+            right: -4%;
+        }
+
+
+    }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -1683,16 +1983,22 @@
                     <h1 class="hero-title">Scale faster. <span style="color: #FC6000;">Build smarter.</span><br><span
                             class="text-blue" id="hero-typewriter"></span></h1>
                     <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-                        When speed, quality, and control matter you cannot wait for traditional hiring cycles. MySoft  Heaven delivers vetted global IT professionals who join your team and begin contributing  from day one. You run the roadmap. We deliver the talent.
+                        When speed, quality, and control matter you cannot wait for traditional hiring cycles. MySoft
+                        Heaven delivers vetted global IT professionals who join your team and begin contributing from
+                        day one. You run the roadmap. We deliver the talent.
                     </p>
                     <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
-                        <a href="<?= base_url('contact-us') ?>" class="btn-custom btn-none" style="font-family: 'Nourd-Bold';font-weight: 500;font-size: 18px;line-height: 150%;">Explore Roles</a>
-                        <a href="<?= base_url('request-quotation') ?>" class="btn-custom btn-blue" style="font-family: 'Nourd-Bold';font-weight: 500;font-size: 18px;line-height: 150%;">Get in Touch <i class="fa fa-arrow-right"></i> </a>
+                        <a href="<?= base_url('contact-us') ?>" class="btn-custom btn-none"
+                            style="font-family: 'Nourd-Bold';font-weight: 500;font-size: 18px;line-height: 150%;">Explore
+                            Roles</a>
+                        <a href="<?= base_url('request-quotation') ?>" class="btn-custom btn-blue"
+                            style="font-family: 'Nourd-Bold';font-weight: 500;font-size: 18px;line-height: 150%;">Get in
+                            Touch <i class="fa fa-arrow-right"></i> </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 relative" data-aos="fade-left">
                     <div class="bubble-container">
-                        <div class="bubble-1" >
+                        <div class="bubble-1">
                             <div class="bubble hover-lift">
                                 <strong class="hero_bobble_number"><svg width="66" height="43" viewBox="0 0 66 43"
                                         fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1749,15 +2055,26 @@
 
     <!-- Flexible Teams Section -->
     <section class="ht-section" style="background-color: #E6F1FE;padding-top: 71px;min-height: 640px;">
-        <div style="margin-right: 13px;margin-left: 98px;">
+        <div class="flexible_teams_section" >
             <div class="row">
-                <div class="col-md-7 col-sm-12" style="padding-right: 0;" data-aos="fade-right">
+                <div class="col-md-7 col-sm-12"  data-aos="fade-right">
                     <h2 class="section-title"><span class="text-blue">Flexible Teams</span> for Rapid Delivery</h2>
-                    <p class="section-text" style="font-family: Arial;font-weight: 400;font-size: 18px;line-height: 33px;padding-right: 77px;">
-                        Businesses today are moving faster than ever, and traditional hiring can’t always keep up. Teams need a flexible way to fill skill gaps, tackle urgent projects, and scale quickly without slowing down delivery. With the right talent on-demand, you can maintain momentum and meet deadlines without compromise. This approach helps organizations respond quickly to changing priorities and evolving technical demands
+                    <p class="section-text"
+                        style="font-family: Arial;font-weight: 400;font-size: 18px;line-height: 33px;padding-right: 77px;">
+                        Businesses today are moving faster than ever, and traditional hiring can’t always keep up. Teams
+                        need a flexible way to fill skill gaps, tackle urgent projects, and scale quickly without
+                        slowing down delivery. With the right talent on-demand, you can maintain momentum and meet
+                        deadlines without compromise. This approach helps organizations respond quickly to changing
+                        priorities and evolving technical demands
                     </p>
-                    <p class="section-text" style="font-family: Arial;font-weight: 400;font-size: 18px;line-height: 33px;padding-right: 77px;">
-                        IT Staff Augmentation gives you immediate access to skilled professionals who integrate directly into your workflows. They follow your standards, contribute from day one, and let you retain full control over architecture, product direction, and delivery decisions—ensuring continuity, quality, and faster results. This model allows your team to stay agile while scaling efficiently as project needs evolve. It also reduces long hiring cycles while keeping delivery predictable and aligned with business goals.
+                    <p class="section-text"
+                        style="font-family: Arial;font-weight: 400;font-size: 18px;line-height: 33px;padding-right: 77px;">
+                        IT Staff Augmentation gives you immediate access to skilled professionals who integrate directly
+                        into your workflows. They follow your standards, contribute from day one, and let you retain
+                        full control over architecture, product direction, and delivery decisions—ensuring continuity,
+                        quality, and faster results. This model allows your team to stay agile while scaling efficiently
+                        as project needs evolve. It also reduces long hiring cycles while keeping delivery predictable
+                        and aligned with business goals.
                     </p>
                 </div>
                 <div class="col-md-5 col-sm-12" style="padding-left: 0;margin-top: 44px;">
@@ -1808,19 +2125,30 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="why-images-wrapper">
-                        <img src="<?= base_url('hire_talent_media/rectangle_6729.png') ?>" alt="Team Meeting" class="why-img-top" data-aos="fade-down">
-                        <img src="<?= base_url('hire_talent_media/rectangle_6730.png') ?>" alt="Office Space" class="why-img-bottom_left" data-aos="fade-right" data-aos-delay="100">
-                        <img src="<?= base_url('hire_talent_media/rectangle_6731.png') ?>" alt="Office Space" class="why-img-bottom_right" data-aos="fade-left" data-aos-delay="200">
+                        <img src="<?= base_url('hire_talent_media/rectangle_6729.png') ?>" alt="Team Meeting"
+                            class="why-img-top" data-aos="fade-down">
+                        <img src="<?= base_url('hire_talent_media/rectangle_6730.png') ?>" alt="Office Space"
+                            class="why-img-bottom_left" data-aos="fade-right" data-aos-delay="100">
+                        <img src="<?= base_url('hire_talent_media/rectangle_6731.png') ?>" alt="Office Space"
+                            class="why-img-bottom_right" data-aos="fade-left" data-aos-delay="200">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" data-aos="fade-left">
                     <h2 class="why-mysoftheaven-title">Why <span class="text-blue">Mysoftheaven</span></h2>
                     <p class="why-mysoftheaven-subtitle">Trusted. Experienced. Ready to deliver.</p>
                     <p class="why-description">
-                        For 15+ years, MySoftheaven has built mission-critical systems for governments, enterprises, and fast-growing businesses—handling millions of records and high transaction  volumes without missing a beat. With 1,000+ clients and 2,500+ successful projects across finance, retail, manufacturing, NGOs, and e-governance, we know how to deliver complex, always-on software that organizations rely on every day.
+                        For 15+ years, MySoftheaven has built mission-critical systems for governments, enterprises, and
+                        fast-growing businesses—handling millions of records and high transaction volumes without
+                        missing a beat. With 1,000+ clients and 2,500+ successful projects across finance, retail,
+                        manufacturing, NGOs, and e-governance, we know how to deliver complex, always-on software that
+                        organizations rely on every day.
                     </p>
                     <p class="why-description">
-                        Through our proven IT staff augmentation model, we connect you with top global talent who  seamlessly integrate into your team. Whether you need a senior developer, AI specialist, or  full remote squad, your augmented team works under your guidance, backed by  MySoftheaven's QA culture, delivery discipline, and unmatched experience in building  secure, scalable, and reliable software.
+                        Through our proven IT staff augmentation model, we connect you with top global talent who
+                        seamlessly integrate into your team. Whether you need a senior developer, AI specialist, or full
+                        remote squad, your augmented team works under your guidance, backed by MySoftheaven's QA
+                        culture, delivery discipline, and unmatched experience in building secure, scalable, and
+                        reliable software.
                     </p>
                 </div>
             </div>
@@ -1835,22 +2163,27 @@
                 <div class="process-card card-blue-light hover-lift" data-aos="zoom-in" data-aos-delay="0">
                     <div class="p-icon bg-blue">1</div>
                     <h4>Requirement Discovery</h4>
-                    <p>We align on required skills, experience level, budget expectations, delivery timeline, time zone overlap, and target start date to ensure complete clarity from day one.</p>
+                    <p>We align on required skills, experience level, budget expectations, delivery timeline, time zone
+                        overlap, and target start date to ensure complete clarity from day one.</p>
                 </div>
                 <div class="process-card card-purple-light hover-lift" data-aos="zoom-in" data-aos-delay="100">
                     <div class="p-icon bg-purple">2</div>
                     <h4>Candidate Matching</h4>
-                    <p>We present a curated shortlist of pre-vetted engineers, including technical summaries, relevant experience, and real work samples aligned to your needs.</p>
+                    <p>We present a curated shortlist of pre-vetted engineers, including technical summaries, relevant
+                        experience, and real work samples aligned to your needs.</p>
                 </div>
                 <div class="process-card card-green-light hover-lift" data-aos="zoom-in" data-aos-delay="200">
                     <div class="p-icon bg-green">3</div>
                     <h4>Client Interviews And Selection</h4>
-                    <p>You interview the candidates directly and choose the engineer who best fits your team, culture, and technical expectations.</p>
+                    <p>You interview the candidates directly and choose the engineer who best fits your team, culture,
+                        and technical expectations.</p>
                 </div>
                 <div class="process-card card-orange-light hover-lift" data-aos="zoom-in" data-aos-delay="300">
                     <div class="p-icon bg-orange">4</div>
                     <h4>Onboarding And Continuous Support</h4>
-                    <p>The selected professional integrates into your tools and workflows immediately. We handle contracts, payroll, compliance, and fast replacement if required, while you manage daily tasks and priorities.</p>
+                    <p>The selected professional integrates into your tools and workflows immediately. We handle
+                        contracts, payroll, compliance, and fast replacement if required, while you manage daily tasks
+                        and priorities.</p>
                 </div>
             </div>
         </div>
@@ -1860,7 +2193,8 @@
     <section class="ht-section engagement-section" style="min-height:653px;">
         <div class="container">
             <h2 class="section-title center-text mb-20">Engagement <span class="text-black">Models</span></h2>
-            <p class="center-text mb-50" style="color: #000;">Choose the engagement that fits your project and budget.</p>
+            <p class="center-text mb-50" style="color: #000;">Choose the engagement that fits your project and budget.
+            </p>
             <div class="row items-center">
                 <div class="col-md-6 col-sm-12" data-aos="fade-right">
                     <div class="blob-container">
@@ -1873,25 +2207,29 @@
                             <div class="icon-box bg-green-light">
                                 <i class="fa fa-clock-o text-green-dark"></i>
                             </div>
-                            <span class="eng-text">Full time resource contracted monthly for sustained product work</span>
+                            <span class="eng-text">Full time resource contracted monthly for sustained product
+                                work</span>
                         </li>
                         <li class="hover-lift">
                             <div class="icon-box bg-blue-light">
                                 <i class="fa fa-hourglass-half text-blue-dark"></i>
                             </div>
-                            <span class="eng-text">Part time or hourly for advisory tasks and short lived features</span>
+                            <span class="eng-text">Part time or hourly for advisory tasks and short lived
+                                features</span>
                         </li>
                         <li class="hover-lift">
                             <div class="icon-box bg-purple-light">
                                 <i class="fa fa-users text-purple-dark"></i>
                             </div>
-                            <span class="eng-text">Fixed team for a group of resources working continuously with your squads</span>
+                            <span class="eng-text">Fixed team for a group of resources working continuously with your
+                                squads</span>
                         </li>
                         <li class="hover-lift">
                             <div class="icon-box bg-orange-light">
                                 <i class="fa fa-file-text-o text-orange-dark"></i>
                             </div>
-                            <span class="eng-text">Contract to hire when you want to convert a contributor to full time employment</span>
+                            <span class="eng-text">Contract to hire when you want to convert a contributor to full time
+                                employment</span>
                         </li>
                     </ul>
                 </div>
@@ -1904,67 +2242,85 @@
         <div class="container">
             <h2 class="section-title center-text mb-20">Roles <span class="text-blue">We Provide</span></h2>
             <p class="center-text mb-50 roles-subtitle">
-                Mysoftheaven (BD) Ltd. connects you with top IT professionals across software, cloud, data, security, and niche engineering domains. Each role integrates seamlessly into your team to accelerate delivery and maintain quality.
+                Mysoftheaven (BD) Ltd. connects you with top IT professionals across software, cloud, data, security,
+                and niche engineering domains. Each role integrates seamlessly into your team to accelerate delivery and
+                maintain quality.
             </p>
 
             <div class="roles-grid">
                 <!-- Row 1 -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Software Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Web Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Application Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>DevOps Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
 
                 <!-- Row 2 -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Software Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Web Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Application Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>" class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
                     <div class="role-content">
                         <h4>DevOps Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
+                            solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
             </div>
@@ -2026,14 +2382,17 @@
     </section>
 
     <!-- Clients Section -->
-    <section class="ht-section clients-section" style="height: auto; min-height: 500px; padding: 60px 0; overflow: hidden;">
+    <section class="ht-section clients-section"
+        style="height: auto; min-height: 500px; padding: 60px 0; overflow: hidden;">
         <div class="container">
             <div class="row items-center">
                 <!-- Left Column: Text -->
                 <div class="col-md-4 col-sm-12" data-aos="fade-right">
                     <h2 class="section-title mb-20 text-white">Clients</h2>
                     <p class="text-white mb-30" style="line-height: 1.8; opacity: 0.9;">
-                        We partner with businesses, corporations, service providers, and government agencies that rely on our technology every day. Trusted by leading organizations, we deliver reliable, scalable, and secure solutions.
+                        We partner with businesses, corporations, service providers, and government agencies that rely
+                        on our technology every day. Trusted by leading organizations, we deliver reliable, scalable,
+                        and secure solutions.
                     </p>
                 </div>
 
@@ -2041,35 +2400,56 @@
                 <div class="col-md-8 col-sm-12" data-aos="fade-left">
                     <!-- Marquee Row 1 (Left to Right / RTL: true) -->
                     <div id="clients-marquee-1" class="owl-carousel owl-theme" style="margin-bottom: 5px;" dir="rtl">
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-3.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-4.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-5.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-6.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-3.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-4.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-5.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-6.png') ?>"></div>
                     </div>
 
                     <!-- Marquee Row 2 (Right to Left / Default) -->
                     <div id="clients-marquee-2" class="owl-carousel owl-theme" style="margin-bottom: 5px;">
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-7.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-8.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-9.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-10.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-11.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group-12.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Rectangle.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-7.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-8.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-9.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-10.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-11.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group-12.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Rectangle.png') ?>"></div>
                     </div>
 
                     <!-- Marquee Row 3 (Left to Right / RTL: true) -->
                     <div id="clients-marquee-3" class="owl-carousel owl-theme" style="margin-bottom: 5px;" dir="rtl">
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/XMLID_79_.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/XMLID_117_.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/XMLID_120_.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/XMLID_197_.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/XMLID_198_.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/XMLID_199_.png') ?>"></div>
-                        <div class="client-box-marquee"><img src="<?= base_url('hire_talent_media/clients/Group.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/XMLID_79_.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/XMLID_117_.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/XMLID_120_.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/XMLID_197_.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/XMLID_198_.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/XMLID_199_.png') ?>"></div>
+                        <div class="client-box-marquee"><img
+                                src="<?= base_url('hire_talent_media/clients/Group.png') ?>"></div>
                     </div>
                 </div>
             </div>
@@ -2081,45 +2461,58 @@
         <div class="container">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
             <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
-                Recognized nationally and globally, Mysoftheaven (BD) Ltd. has earned top awards from the Bangladesh government, international partners, and NGOs. Our work has been instrumental in advancing Bangladesh's digital transformation in the public sector.
+                Recognized nationally and globally, Mysoftheaven (BD) Ltd. has earned top awards from the Bangladesh
+                government, international partners, and NGOs. Our work has been instrumental in advancing Bangladesh's
+                digital transformation in the public sector.
             </p>
 
             <div class="awards-grid">
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
-                        <img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>" alt="Award Logo"> <!-- Placeholder -->
+                        <img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>" alt="Award Logo">
+                        <!-- Placeholder -->
                     </div>
                     <h4>World Summit Information Society (WSIS) Prize</h4>
-                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying their LD Tax through the system and every day a good amount of revenue automatically received by Bangladesh bank.</p>
+                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying
+                        their LD Tax through the system and every day a good amount of revenue automatically received by
+                        Bangladesh bank.</p>
                 </div>
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
-                         <img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>" alt="Award Logo"> <!-- Placeholder -->
+                        <img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>" alt="Award Logo">
+                        <!-- Placeholder -->
                     </div>
                     <h4>Digital Bangladesh Award 2022 For LD Tax</h4>
-                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying their LD Tax through the system and every day a good amount of revenue automatically received by Bangladesh bank.</p>
+                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying
+                        their LD Tax through the system and every day a good amount of revenue automatically received by
+                        Bangladesh bank.</p>
                 </div>
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
-                         <img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>" alt="Award Logo"> <!-- Placeholder -->
+                        <img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>" alt="Award Logo">
+                        <!-- Placeholder -->
                     </div>
                     <h4>Digital Bangladesh Award 2022 For Vumi Seba</h4>
-                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying their LD Tax through the system and every day a good amount of revenue automatically received by Bangladesh bank.</p>
+                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying
+                        their LD Tax through the system and every day a good amount of revenue automatically received by
+                        Bangladesh bank.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Client Testimonials -->
-    <section class="ht-section testimonials-section" style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
+    <section class="ht-section testimonials-section"
+        style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
         <div class="container">
             <h2 class="section-title text-white center-text mb-40">Client Testimonials</h2>
-            
+
             <div class="testimonials-carousel owl-carousel owl-theme">
                 <!-- Card 1 -->
                 <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>"></div>
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>">
+                        </div>
                         <div class="test-info">
                             <h5>A2i</h5>
                             <span>CEO<br>TheWebagency</span>
@@ -2127,14 +2520,16 @@
                     </div>
                     <div class="test-body">
                         <div class="project-tag">E-court Project</div>
-                        <p>Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel against.</p>
+                        <p>Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel
+                            against.</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="100">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-5.png') ?>"></div>
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-5.png') ?>">
+                        </div>
                         <div class="test-info">
                             <h5>BD Scouts</h5>
                             <span>Manager<br>TheWebtech</span>
@@ -2142,14 +2537,16 @@
                     </div>
                     <div class="test-body">
                         <div class="project-tag">ERP Project</div>
-                        <p>Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me mr what.</p>
+                        <p>Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me
+                            mr what.</p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="200">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>"></div>
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>">
+                        </div>
                         <div class="test-info">
                             <h5>A2i</h5>
                             <span>Developer<br>12c Company</span>
@@ -2157,14 +2554,16 @@
                     </div>
                     <div class="test-body">
                         <div class="project-tag">DBID Project</div>
-                        <p>park next busy ever. Elinor her his secure far twenty eat object. Any for saw size want man. Which way you wrong.</p>
+                        <p>park next busy ever. Elinor her his secure far twenty eat object. Any for saw size want man.
+                            Which way you wrong.</p>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
                 <div class="testimonial-card">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>"></div>
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>">
+                        </div>
                         <div class="test-info">
                             <h5>A2i</h5>
                             <span>Accountant<br>TheContruction</span>
@@ -2172,7 +2571,8 @@
                     </div>
                     <div class="test-body">
                         <div class="project-tag">ERP Project</div>
-                        <p>Concerns greatest margaret him absolute entrance nay. Door neat week do find past he. Be no surprise he honoured.</p>
+                        <p>Concerns greatest margaret him absolute entrance nay. Door neat week do find past he. Be no
+                            surprise he honoured.</p>
                     </div>
                 </div>
             </div>
@@ -2183,22 +2583,25 @@
 
 
     <!-- Membership & Certification -->
-    <section class="ht-section certifications-section" style="height: auto; min-height: 400px; padding-top: 50px; padding-bottom: 250px; background-color: #eef8ff;">
+    <section class="ht-section certifications-section"
+        style="height: auto; min-height: 400px; padding-top: 50px; padding-bottom: 250px; background-color: #eef8ff;">
         <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
-            
+
             <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;" data-aos="fade-up">
-               <img src="<?= base_url('hire_talent_media/clients/Group.png') ?>" class="cert-logo">
-               <img src="<?= base_url('hire_talent_media/clients/Group-3.png') ?>" class="cert-logo"> 
-               <img src="<?= base_url('hire_talent_media/clients/Group-4.png') ?>" class="cert-logo">
-               <img src="<?= base_url('hire_talent_media/clients/Rectangle.png') ?>" class="cert-logo" style="height:50px;">
-               <img src="<?= base_url('hire_talent_media/clients/XMLID_117_.png') ?>" class="cert-logo">
+                <img src="<?= base_url('hire_talent_media/clients/Group.png') ?>" class="cert-logo">
+                <img src="<?= base_url('hire_talent_media/clients/Group-3.png') ?>" class="cert-logo">
+                <img src="<?= base_url('hire_talent_media/clients/Group-4.png') ?>" class="cert-logo">
+                <img src="<?= base_url('hire_talent_media/clients/Rectangle.png') ?>" class="cert-logo"
+                    style="height:50px;">
+                <img src="<?= base_url('hire_talent_media/clients/XMLID_117_.png') ?>" class="cert-logo">
             </div>
         </div>
     </section>
 
     <!-- Get in Touch Section -->
-    <section class="ht-section contact-section-wrapper" style="height: auto; padding: 60px 0 100px 0; background: #fff;">
+    <section class="ht-section contact-section-wrapper"
+        style="height: auto; padding: 60px 0 100px 0; background: #fff;">
         <div class="container">
             <div class="contact-card hover-lift" data-aos="fade-up">
                 <div class="row no-gutters">
@@ -2206,7 +2609,8 @@
                     <div class="col-md-5 col-sm-12 contact-info-side">
                         <h3 class="text-white mb-20 " style="font-weight: 700;">Ready to Transform Your Team?</h3>
                         <p class="text-white mb-40" style="opacity: 0.9; font-size: 14px; line-height: 1.6;">
-                            Schedule a discovery call with our experts to explore how we can help you build high-performing remote teams.
+                            Schedule a discovery call with our experts to explore how we can help you build
+                            high-performing remote teams.
                         </p>
 
                         <div class="contact-item mb-30">
@@ -2229,11 +2633,12 @@
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
                                 <strong>Visit Us Head Office</strong>
-                                <span>P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara, Mirpur, Dhaka-1216.</span>
+                                <span>P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara, Mirpur,
+                                    Dhaka-1216.</span>
                             </div>
                         </div>
-                        
-                         <div class="contact-item mb-40">
+
+                        <div class="contact-item mb-40">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
                                 <strong>Visit Us Corporate Office</strong>
@@ -2252,7 +2657,9 @@
                     <div class="col-md-7 col-sm-12 contact-form-side">
                         <h3 class="mb-20" style="font-weight: 700; color: #000;">Get in Touch</h3>
                         <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
-                            About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying their LD Tax through the system and every day a good amount of revenue automatically received by Bangladesh bank.
+                            About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen
+                            paying their LD Tax through the system and every day a good amount of revenue automatically
+                            received by Bangladesh bank.
                         </p>
 
                         <form action="#" method="post">
@@ -2298,10 +2705,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Project details <span class="text-danger">*</span></label>
-                                <textarea class="form-control form-control-custom" rows="4" placeholder="Tell us about your project or talent needs..."></textarea>
+                                <textarea class="form-control form-control-custom" rows="4"
+                                    placeholder="Tell us about your project or talent needs..."></textarea>
                             </div>
-                            
-                            <button type="submit" class="btn btn-block btn-submit">Send Inquiry <i class="fa fa-paper-plane"></i></button>
+
+                            <button type="submit" class="btn btn-block btn-submit">Send Inquiry <i
+                                    class="fa fa-paper-plane"></i></button>
                         </form>
                     </div>
                 </div>
@@ -2309,7 +2718,7 @@
         </div>
     </section>
 
-    
+
 
 </div>
 
@@ -2342,7 +2751,7 @@
         });
     });
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         // Marquee Row 1 (RTL: True -> Moves Left to Right? actually RTL usually moves Right to Left content-wise, 
         // but let's stick to standard behavior: RTL makes items flow from right.
         // User requested: "first row dandike (right), 2nd row badike (left), 3rd row dandike (right)"
@@ -2449,7 +2858,7 @@
             autoplaySpeed: 3000,
             smartSpeed: 3000,
             autoplayHoverPause: false,
-            rtl: true, 
+            rtl: true,
             responsive: {
                 0: { items: 4 },
                 600: { items: 6 },

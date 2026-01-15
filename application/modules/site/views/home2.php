@@ -1264,6 +1264,61 @@
     a {
         text-decoration: none !important;
     }
+
+    
+    /* Marquee Fade Wrapper */
+    .marquee-fader {
+        position: relative;
+        overflow: hidden;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .marquee-fader::before,
+    .marquee-fader::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 80px;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .marquee-fader::before {
+        left: 0;
+    }
+
+    .marquee-fader::after {
+        right: 0;
+    }
+
+    /* White Fade (for white backgrounds) */
+    .marquee-fader-white::before {
+        background: linear-gradient(to right, #ffffff, transparent);
+    }
+
+    .marquee-fader-white::after {
+        background: linear-gradient(to left, #ffffff, transparent);
+    }
+
+    /* Light Fade (for light gray backgrounds e.g. bg-light) */
+    .marquee-fader-light::before {
+        background: linear-gradient(to right, #f8f9fa, transparent);
+    }
+
+    .marquee-fader-light::after {
+        background: linear-gradient(to left, #f8f9fa, transparent);
+    }
+
+    /* Blue Light Fade (for #eef8ff backgrounds) */
+    .marquee-fader-blue-light::before {
+        background: linear-gradient(to right, #eef8ff, transparent);
+    }
+
+    .marquee-fader-blue-light::after {
+        background: linear-gradient(to left, #eef8ff, transparent);
+    }
 </style>
 
 <div class="ht-main-wrapper">

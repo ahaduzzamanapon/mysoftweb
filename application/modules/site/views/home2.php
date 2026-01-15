@@ -1265,7 +1265,7 @@
         text-decoration: none !important;
     }
 
-    
+
     /* Marquee Fade Wrapper */
     .marquee-fader {
         position: relative;
@@ -1435,7 +1435,8 @@
                                         Roles</a>
                                     <a data-aos="fade-left" href="<?= base_url('contact_us') ?>"
                                         class="btn-custom btn-blue"
-                                        style="padding: 6px 5px 1px 5px !important;border-radius: 30px;font-weight: 600;color: white;">Schedule a
+                                        style="padding: 6px 5px 1px 5px !important;border-radius: 30px;font-weight: 600;color: white;">Schedule
+                                        a
                                         Consultation <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
@@ -1513,7 +1514,8 @@
                                         Products</a>
                                     <a data-aos="fade-left" href="<?= base_url('client_details') ?>"
                                         class="btn-custom btn-blue"
-                                        style="padding: 6px 5px 1px 5px !important;border-radius: 30px;font-weight: 600;color: white;">See Our
+                                        style="padding: 6px 5px 1px 5px !important;border-radius: 30px;font-weight: 600;color: white;">See
+                                        Our
                                         Clients <i class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
@@ -1644,7 +1646,7 @@
                                     style="color: #666; font-size: 18px; white-space: nowrap; margin-bottom: 0;">
                                     Certified
                                 </h5>
-                                <div style="flex: 1; min-width: 0; overflow: hidden;">
+                                <div class="marquee-fader marquee-fader-white">
                                     <div class="owl-carousel owl-theme" id="certified_marquee" style="width: 100%;">
                                         <div class="item"><img src="<?= base_url('home2media/clients/Group.png') ?>"
                                                 style="height: 30px; width: 70px;" alt="ISO"></div>
@@ -1661,7 +1663,7 @@
                                 <h5
                                     style="font-weight: 700; color: #555; margin: 0; font-size: 18px; white-space: nowrap;">
                                     Clients</h5>
-                                <div style="flex: 1; min-width: 0; overflow: hidden;">
+                                <div class="marquee-fader marquee-fader-white">
                                     <div class="owl-carousel owl-theme" id="clients_marquee" style="width: 100%;">
                                         <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
                                                 style="height: 35px; width: auto;"></div>
@@ -1975,45 +1977,51 @@
             <h2 class="section-title center-text mb-40">Our <span class="text-blue">Tech Stack</span></h2>
             <div class="tech-logos-grid" data-aos="fade-left">
                 <!-- Row 1 (LTR) -->
-                <div id="tech-marquee-1" class="owl-carousel owl-theme" style="margin-bottom: 20px;" dir="rtl">
-                    <i class="devicon-angularjs-plain colored" title="Angular"></i>
-                    <i class="devicon-react-original colored" title="React"></i>
-                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
-                    <i class="devicon-vuejs-plain colored" title="Vue.js"></i>
-                    <i class="devicon-nodejs-plain-wordmark colored" title="Node.js"></i>
-                    <i class="devicon-nextjs-plain colored" title="Next.js"></i>
-                    <i class="devicon-typescript-plain colored" title="TypeScript"></i>
-                    <i class="devicon-html5-plain-wordmark colored" title="HTML5"></i>
-                    <i class="devicon-css3-plain-wordmark colored" title="CSS3"></i>
-                    <i class="devicon-sass-original colored" title="SASS"></i>
+                <div class="marquee-fader marquee-fader-light" style="width: 100%;">
+                    <div id="tech-marquee-1" class="owl-carousel owl-theme" style="margin-bottom: 20px;" dir="rtl">
+                        <i class="devicon-angularjs-plain colored" title="Angular"></i>
+                        <i class="devicon-react-original colored" title="React"></i>
+                        <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                        <i class="devicon-vuejs-plain colored" title="Vue.js"></i>
+                        <i class="devicon-nodejs-plain-wordmark colored" title="Node.js"></i>
+                        <i class="devicon-nextjs-plain colored" title="Next.js"></i>
+                        <i class="devicon-typescript-plain colored" title="TypeScript"></i>
+                        <i class="devicon-html5-plain-wordmark colored" title="HTML5"></i>
+                        <i class="devicon-css3-plain-wordmark colored" title="CSS3"></i>
+                        <i class="devicon-sass-original colored" title="SASS"></i>
+                    </div>
                 </div>
 
                 <!-- Row 2 (RTL) -->
-                <div id="tech-marquee-2" class="owl-carousel owl-theme" style="margin-bottom: 20px;">
-                    <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
-                    <i class="devicon-dotnetcore-plain colored" title=".NET"></i>
-                    <i class="devicon-microsoftsqlserver-plain-wordmark colored" title="SQL Server"></i>
-                    <i class="devicon-kubernetes-plain-wordmark colored" title="Kubernetes"></i>
-                    <i class="devicon-docker-plain-wordmark colored" title="Docker"></i>
-                    <i class="devicon-python-plain colored" title="Python"></i>
-                    <i class="devicon-java-plain colored" title="Java"></i>
-                    <i class="devicon-php-plain colored" title="PHP"></i>
-                    <i class="devicon-laravel-plain-wordmark colored" title="Laravel"></i>
-                    <i class="devicon-codeigniter-plain-wordmark colored" title="CodeIgniter"></i>
+                <div class="marquee-fader marquee-fader-light" style="width: 100%;">
+                    <div id="tech-marquee-2" class="owl-carousel owl-theme" style="margin-bottom: 20px;">
+                        <i class="devicon-mysql-plain-wordmark colored" title="MySQL"></i>
+                        <i class="devicon-dotnetcore-plain colored" title=".NET"></i>
+                        <i class="devicon-microsoftsqlserver-plain-wordmark colored" title="SQL Server"></i>
+                        <i class="devicon-kubernetes-plain-wordmark colored" title="Kubernetes"></i>
+                        <i class="devicon-docker-plain-wordmark colored" title="Docker"></i>
+                        <i class="devicon-python-plain colored" title="Python"></i>
+                        <i class="devicon-java-plain colored" title="Java"></i>
+                        <i class="devicon-php-plain colored" title="PHP"></i>
+                        <i class="devicon-laravel-plain-wordmark colored" title="Laravel"></i>
+                        <i class="devicon-codeigniter-plain-wordmark colored" title="CodeIgniter"></i>
+                    </div>
                 </div>
 
                 <!-- Row 3 (LTR) -->
-                <div id="tech-marquee-3" class="owl-carousel owl-theme" style="margin-bottom: 20px;" dir="rtl">
-                    <i class="devicon-amazonwebservices-plain-wordmark colored" title="AWS"></i>
-                    <i class="devicon-jenkins-plain colored" title="Jenkins"></i>
-                    <i class="devicon-apachekafka-original-wordmark colored" title="Apache Kafka"></i>
-                    <i class="devicon-mongodb-plain-wordmark colored" title="MongoDB"></i>
-                    <i class="devicon-nginx-original colored" title="Nginx"></i>
-                    <i class="devicon-git-plain colored" title="Git"></i>
-                    <i class="devicon-linux-plain colored" title="Linux"></i>
-                    <i class="devicon-redis-plain colored" title="Redis"></i>
-                    <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
-                    <i class="devicon-firebase-plain colored" title="Firebase"></i>
+                <div class="marquee-fader marquee-fader-light" style="width: 100%;">
+                    <div id="tech-marquee-3" class="owl-carousel owl-theme" style="margin-bottom: 20px;" dir="rtl">
+                        <i class="devicon-amazonwebservices-plain-wordmark colored" title="AWS"></i>
+                        <i class="devicon-jenkins-plain colored" title="Jenkins"></i>
+                        <i class="devicon-apachekafka-original-wordmark colored" title="Apache Kafka"></i>
+                        <i class="devicon-mongodb-plain-wordmark colored" title="MongoDB"></i>
+                        <i class="devicon-nginx-original colored" title="Nginx"></i>
+                        <i class="devicon-git-plain colored" title="Git"></i>
+                        <i class="devicon-linux-plain colored" title="Linux"></i>
+                        <i class="devicon-redis-plain colored" title="Redis"></i>
+                        <i class="devicon-postgresql-plain colored" title="PostgreSQL"></i>
+                        <i class="devicon-firebase-plain colored" title="Firebase"></i>
+                    </div>
                 </div>
             </div>
         </div>

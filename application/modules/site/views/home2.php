@@ -1319,6 +1319,15 @@
     .marquee-fader-blue-light::after {
         background: linear-gradient(to left, #eef8ff, transparent);
     }
+
+    /* Dark Blue Fade (for #002b49 backgrounds) */
+    .marquee-fader-dark-blue::before {
+        background: linear-gradient(to right, #002b49, transparent);
+    }
+
+    .marquee-fader-dark-blue::after {
+        background: linear-gradient(to left, #002b49, transparent);
+    }
 </style>
 
 <div class="ht-main-wrapper">
@@ -1975,6 +1984,8 @@
     <section class="ht-section bg-light" style="padding-bottom: 80px;">
         <div class="container">
             <h2 class="section-title center-text mb-40">Our <span class="text-blue">Tech Stack</span></h2>
+        </div>
+        <div class="container-fluid p-0">
             <div class="tech-logos-grid" data-aos="fade-left">
                 <!-- Row 1 (LTR) -->
                 <div class="marquee-fader marquee-fader-light" style="width: 100%;">
@@ -2092,56 +2103,82 @@
                 <!-- Right Column: Marquees -->
                 <div class="col-md-8 col-sm-12" data-aos="fade-left">
                     <!-- Marquee Row 1 (RTL) -->
-                    <div id="clients-marquee-1" class="owl-carousel owl-theme" style="margin-bottom: 5px;" dir="rtl">
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-1.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-2.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-3.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-4.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-5.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-6.png') ?>">
+                    <div class="marquee-fader marquee-fader-dark-blue" style="width: 100%;">
+                        <div id="clients-marquee-1" class="owl-carousel owl-theme" style="margin-bottom: 5px;"
+                            dir="rtl">
+                            <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-1.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-2.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-3.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-4.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-5.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-6.png') ?>">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Marquee Row 2 (LTR) -->
-                    <div id="clients-marquee-2" class="owl-carousel owl-theme" style="margin-bottom: 5px;">
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-7.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-8.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-9.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group.png') ?>">
-                        </div> <!-- Repeating for fullness -->
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-1.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-2.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-3.png') ?>">
+                    <div class="marquee-fader marquee-fader-dark-blue" style="width: 100%;">
+                        <div id="clients-marquee-2" class="owl-carousel owl-theme" style="margin-bottom: 5px;">
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-7.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-8.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-9.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group.png') ?>">
+                            </div> <!-- Repeating for fullness -->
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-1.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-2.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-3.png') ?>">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Marquee Row 3 (RTL) -->
-                    <div id="clients-marquee-3" class="owl-carousel owl-theme" style="margin-bottom: 5px;" dir="rtl">
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-4.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-5.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-6.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-7.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-8.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group-9.png') ?>">
-                        </div>
-                        <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group.png') ?>">
+                    <div class="marquee-fader marquee-fader-dark-blue" style="width: 100%;">
+                        <div id="clients-marquee-3" class="owl-carousel owl-theme" style="margin-bottom: 5px;"
+                            dir="rtl">
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-4.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-5.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-6.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-7.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-8.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img
+                                    src="<?= base_url('home2media/clients/Group-9.png') ?>">
+                            </div>
+                            <div class="client-box-marquee"><img src="<?= base_url('home2media/clients/Group.png') ?>">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2531,7 +2568,7 @@
 
 
         // Industries Carousel (Removed - now Hexagon Grid)
-        // If we want to re-enable carousel for something else:
+        // If we want to re          -e        nable carousel for something else:
         /*
         $('#industries-carousel').owlCarousel({ ... });
         */

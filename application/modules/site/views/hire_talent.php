@@ -1720,8 +1720,8 @@
     }
 
     .container-fluid {
-        padding-right: 50px;
-        padding-left: 50px;
+        padding-right: 90px;
+        padding-left: 90px;
         margin-right: auto;
         margin-left: auto;
     }

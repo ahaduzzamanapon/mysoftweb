@@ -76,6 +76,15 @@
             }
 
         }
+
+         /* Fonts */
+    @font-face {
+        font-family: 'Nourd-Bold';
+        src: url('<?= base_url("home2media/nourd_bold.ttf") ?>') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">

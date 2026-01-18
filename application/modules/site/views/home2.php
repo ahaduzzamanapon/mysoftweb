@@ -980,7 +980,7 @@
         transition: 0.3s;
     }
 
-  
+
 
     /* Contact / Get in Touch Section */
     .contact-card {
@@ -996,7 +996,7 @@
 
     .contact-info-side {
         background: #002b49;
-        padding: 60px 40px;
+        padding: 60px 40px !important;
         color: #fff;
     }
 
@@ -1438,6 +1438,15 @@
 
     .service-card-modern:hover::before {
         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.08));
+    }
+
+
+
+
+
+
+    .ht-hero-section {
+        height: 475px !important;
     }
 
     .service-icon-floating {
@@ -2392,7 +2401,7 @@
         </div>
     </section>
 
- 
+
 
     <!-- Awards & Recognitions -->
     <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;">
@@ -2490,7 +2499,7 @@
         </div>
     </section>
 
-       <!-- Client Testimonials -->
+    <!-- Client Testimonials -->
     <section class="ht-section testimonials-section"
         style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
         <div class="container">
@@ -2574,16 +2583,26 @@
         <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
 
-            <div class="certifications-carousel owl-carousel owl-theme d-flex" style="margin-bottom: 30px;" data-aos="fade-up">
-                <div><img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo"/></div>
-                <div><img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo"/></div>
-                <div><img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo"/></div>
-                <div><img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo"/></div>
+            <style>
+                .cert-logo {
+                    width: 100%;
+                    max-width: 100%;
+                    height: 80px;
+                    object-fit: contain;
+                    display: block;
+                    margin: 0 auto;
+                }
+            </style>
+            <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;" data-aos="fade-up">
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo" /></div>
             </div>
         </div>
     </section>
 
-    <!-- Get in Touch Section (Synced) -->
+    <!-- Get in Touch Section -->
     <section class="ht-section contact-section-wrapper"
         style="height: auto; padding: 60px 0 100px 0; background: #fff;">
         <div class="container">

@@ -2324,7 +2324,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" data-aos="fade-left">
-                    <h2 class="why-mysoftheaven-title">Why <span class="text-blue">Mysoftheaven</span></h2>
+                    <h2 class="why-mysoftheaven-title">Why <span class="text-blue">Mysoft heaven</span></h2>
                     <p class="why-mysoftheaven-subtitle">Trusted. Experienced. Ready to deliver.</p>
                     <p class="why-description">
                         For 15+ years, MySoftheaven has built mission-critical systems for governments, enterprises, and
@@ -2785,7 +2785,6 @@
         </div>
     </section>
 
-    <!-- Get in Touch Section -->
 
 
     <!-- Membership & Certification -->

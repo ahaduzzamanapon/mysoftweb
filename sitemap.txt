@@ -764,3 +764,4 @@ http://127.0.0.1/mysoftweb/notable_products
 http://127.0.0.1/mysoftweb/portfolio
 http://127.0.0.1/mysoftweb/services
 http://127.0.0.1/mysoftweb/service/integrated-office-management-system
+http://127.0.0.1/mysoftweb/contact-us

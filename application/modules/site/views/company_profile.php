@@ -77,7 +77,7 @@
 					<tr>
 						<td class="tg-5fsu">Office Address</td>
 						<td class="tg-031e">
-							<strong>Head Office:</strong>Raisa & Shikder Tower, Level-3 & 5, North Pirerbag 60 Fit Road, Mirpur, Dhaka-1216.  <br>
+							<strong>Head Office:</strong>P.R.Tower , 924/1 , Level 8, Begum Rokeya Sarani, Shewrapara , Mirpur, Dhaka-1216.<br>
 							<strong>Corporate Office:</strong> 8813 NW 23 Street. Miami, FL 33172, USA.
 						</td>
 					</tr>

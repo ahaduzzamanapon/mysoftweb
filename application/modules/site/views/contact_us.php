@@ -159,8 +159,7 @@
                 <h4>The <strong>Office</strong></h4>
                 <ul class="list-unstyled">
                     <li><i class="fa fa-map-marker"></i> <strong>Head Office:</strong>
-                        Shapla House 363/H/2, North Pirerbag, Raisa & Shikdhar Tower, Level-5, 3/8, Kamal Soroni Rd,
-                        Dhaka-1207.
+                        P.R.Tower , 924/1 , Level 8, Begum Rokeya Sarani, Shewrapara , Mirpur, Dhaka-1216.
                     </li>
                     <li><i class="fa fa-map-marker"></i> <strong>Corporate Office:</strong>
                         8813 NW 23 Street. Miami, FL 33172, USA.

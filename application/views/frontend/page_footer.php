@@ -1,16 +1,14 @@
-
-
 <!-- dynamic script start -->
 
 <?php
 $current_url = base_url(uri_string());
-$Specific= $this->db->where('page_link', $current_url)->where('type', 2)->get('script')->result();
-$all= $this->db->where('type', 1)->get('script')->result();
+$Specific = $this->db->where('page_link', $current_url)->where('type', 2)->get('script')->result();
+$all = $this->db->where('type', 1)->get('script')->result();
 
-foreach($all as $key => $value) {
+foreach ($all as $key => $value) {
   echo $value->script;
 }
-foreach($Specific as $key => $value) {
+foreach ($Specific as $key => $value) {
   echo $value->script;
 }
 
@@ -39,70 +37,261 @@ foreach($Specific as $key => $value) {
 
 
 
-<style type="text/css">
-  .iso_box {
-    position: fixed;
-    width: 120px;
-    bottom: 0;
-    right: 0%;
-    /*border: 3px solid #a1a1a1;*/
-    background: none;
-    padding: 0 15px 15px 10px;
-    /*padding:15px;*/
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    z-index: 999;
+<style>
+  /* New Footer Styles */
+  #new-footer {
+    background-color: #eaf6ff;
+    padding-top: 60px;
+    padding-bottom: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    font-size: 14px;
+  }
+
+  #new-footer h4 {
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-family: 'Nourd-Bold', sans-serif;
+  }
+
+  #new-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #new-footer ul li {
+    margin-bottom: 12px;
+  }
+
+  #new-footer ul li a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px;
+  }
+
+  #new-footer ul li a:hover {
+    color: #0088cc;
+  }
+
+  .footer-logo-section {
+    margin-bottom: 30px;
+  }
+
+  .footer-logo {
+    max-width: 220px;
+    margin-bottom: 20px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: #555;
+  }
+
+  .contact-info-item i {
+    margin-right: 10px;
+    font-size: 16px;
+    margin-top: 3px;
+    color: #666;
+    width: 20px;
+    text-align: center;
+  }
+
+  .contact-info-item img {
+    margin-right: 10px;
+    margin-top: 3px;
+    width: 20px;
+  }
+
+  .membership-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .membership-icons img {
+    height: 35px;
+    object-fit: contain;
+  }
+
+  .footer-bottom-bar {
+    border-top: 1px solid #d1e6f5;
+    margin-top: 40px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .download-btn {
+    background-color: #0077b5;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .download-btn:hover {
+    background-color: #005fa3;
+    text-decoration: none;
+  }
+
+  .footer-social-icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer-social-icons a {
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0088cc;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  .footer-social-icons a:hover {
+    background-color: #0088cc;
+    color: #fff;
+  }
+
+  .copyright-text {
+    color: #777;
+    margin-top: 5px;
+  }
+
+  @media (max-width: 767px) {
+    .footer-bottom-bar {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+
+    .footer-col {
+      margin-bottom: 30px;
+    }
   }
 </style>
-<div class="iso_box"><img loading="lazy" src="<?= base_url('fwedget/img/iso-logo-2015.png') ?>" width="75px;">
-  <div style="margin:10px 0 0 5px" class="fb-like" data-href="https://www.facebook.com/mysoftheavenltd/" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-</div>
 
-
-<!-- WhatsHelp.io widget -->
-<!--<script type="text/javascript">
-    (function () {
-        var options = {
-            facebook: "410036575718217", // Facebook page ID
-            company_logo_url: "//storage.whatshelp.io/widget/2e/2ebb/2ebb501a400e8176992cde7aabb542b9/285084_410036792384862_1200684801_n.jpg", // URL of company logo (png, jpg, gif)
-            greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
-            call_to_action: "", // Call to action
-            position: "right", // Position may be 'right' or 'left'
-        };
-        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
-        var s = document.createElement('script'); s.type = 'text/javascript'; s. = true; s.src = url + '/widget-send-button/js/init.js';
-        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-    })();
-</script>-->
-<!-- /WhatsHelp.io widget -->
-
-<section class="call-to-action featured footer" style="background-color: white; padding: 15px 0;">
+<footer id="new-footer">
   <div class="container">
     <div class="row">
-      <div class="center">
-        <h3>To build <strong>your business</strong> with <strong>Mysoftheaven (BD) Ltd.</strong> <a href="<?= base_url(); ?>request-quotation" class="btn btn-lg btn-primary request-btn">Request for Quotation</a></h3>
-        <h3 style="color:black; font-family: 'Roboto', sans-serif;line-height: 37px;">A Parent Company of <a href="https://rokomariit.com/" style="color: #318af8;">Rokomari IT Ltd</a></h3>
+      <!-- Column 1: Logo & Contact -->
+      <div class="col-md-4 footer-col">
+        <div class="footer-logo-section">
+          <img src="<?= base_url('fwedget/img/mysoft-logo.png') ?>" alt="Mysoftheaven (BD) Ltd." class="footer-logo">
+          <div style="font-weight: 600; margin-bottom: 20px; display:none;">Mysoftheaven (BD) Ltd.<br><small>A Complete
+              IT Solution</small></div>
+        </div>
 
+        <div class="contact-info-item">
+          <i class="fa fa-phone"></i>
+          <span>+880 1958-633202</span>
+        </div>
+        <div class="contact-info-item">
+          <i class="fa fa-envelope"></i>
+          <span>info@mysoftheaven.com</span>
+        </div>
+        <div class="contact-info-item">
+          <!-- BD Flag Placeholder -->
+          <img src="https://flagcdn.com/w40/bd.png" alt="BD">
+          <span>P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara , Mirpur, Dhaka-1216.</span>
+        </div>
+        <div class="contact-info-item">
+          <!-- US Flag Placeholder -->
+          <img src="https://flagcdn.com/w40/us.png" alt="USA">
+          <span>8813 NW 23 Street. Miami, FL 33172, USA.</span>
+        </div>
+
+        <div class="membership-icons">
+          <!-- Using text/placeholders for icons as specific images might not be in the exact path -->
+          <img src="<?= base_url('fwedget/img/basis_logo.png') ?>" alt="BASIS" onerror="this.style.display='none'">
+          <img src="<?= base_url('fwedget/img/bacco_logo.png') ?>" alt="BACCO" onerror="this.style.display='none'">
+          <!-- Add more icons here if available -->
+        </div>
+      </div>
+
+      <!-- Column 2: Company -->
+      <div class="col-md-2 footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="<?= base_url('about-us') ?>">About Us</a></li>
+          <li><a href="<?= base_url('portfolio') ?>">Portfolio</a></li>
+          <li><a href="<?= base_url('all-services') ?>">Our Services</a></li>
+          <li><a href="#">Staff Augmentation</a></li>
+          <li><a href="<?= base_url('company-profile') ?>">Company Profile</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Quick Links -->
+      <div class="col-md-2 footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Affiliates</a></li>
+          <li><a href="<?= base_url('privacy-policy') ?>">Privacy Policy</a></li>
+          <li><a href="<?= base_url('terms') ?>">Terms & Condition</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Affiliate Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Our Products -->
+      <div class="col-md-2 footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="#">HR Sheba</a></li>
+          <li><a href="#">Sheba ERP</a></li>
+          <li><a href="#">Remit Sheba</a></li>
+          <li><a href="#">Gym Master</a></li>
+          <li><a href="#">Point of Sales</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5: Resources -->
+      <div class="col-md-2 footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Page</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="<?= base_url('contact-us') ?>">Contact</a></li>
+          <li><a href="<?= base_url('about-us') ?>">About</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<footer id="footer" class="color">
-  <div class="footer-copyright">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2 pull-left">
-          <a href="index.html" class="logo" style="margin-top:7px">
-            <img alt="Porto Website Template" class="img-responsive" src="<?= base_url(); ?>fwedget/img/membership.png">
-          </a>
-
-        </div>
-        <div class="col-md-10 pull-right">
-          <p>© Copyright <?= date('Y') ?> | Mysoftheaven (BD) Ltd. | All Rights Reserved | <a href="<?= base_url('our-team-member') ?>">Our team member</a> | <a href="<?= base_url() ?>privacy-policy" target="_blank"> Privacy Policy </a> |<a href="<?= base_url() ?>terms" target="_blank"> Terms & Conditions </a> | <a href="<?= base_url('blog') ?>">Blogs</a> | <a href="<?= base_url() ?>pages" target="_blank"> Pages </a> </p>
-        </div>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar">
+      <div>
+        <a href="<?= base_url('company-profile') ?>" class="download-btn">
+          <i class="fa fa-download"></i> Download Company Profile
+        </a>
+      </div>
+      <div class="copyright-text">
+        Copyright © 2026 Mysoftheaven (BD) Ltd.
+      </div>
+      <div class="footer-social-icons">
+        <a href="https://www.facebook.com/mysoftheavenltd/" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/mysoftheaven/mycompany/" target="_blank"><i
+            class="fa fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/c/mysoftheaven" target="_blank"><i class="fa fa-youtube-play"></i></a>
       </div>
     </div>
   </div>
@@ -200,13 +389,14 @@ foreach($Specific as $key => $value) {
 
 <!-- Specific Page Vendor and Views -->
 <!-- <script type="text/javascript" src="https://mysoftheaven.com/fwedget/js/views/view.contact.js" async></script> -->
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDMxJ92oBkSnVNHFX3R8XhtYQPEgk1_IiI"></script>
+<script type="text/javascript"
+  src="https://maps.google.com/maps/api/js?key=AIzaSyDMxJ92oBkSnVNHFX3R8XhtYQPEgk1_IiI"></script>
 <!-- end new link  -->
 
 
 
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
 
     var counters = $(".counter_value");
     var countersQuantity = counters.length;
@@ -229,10 +419,10 @@ foreach($Specific as $key => $value) {
       minimunValue = 20;
     }
 
-    var count = function(start, value, id) {
+    var count = function (start, value, id) {
       var localStart = value - start;
 
-      setInterval(function() {
+      setInterval(function () {
         if (localStart < value) {
           localStart++;
           counters[id].innerHTML = localStart + "+";
@@ -254,7 +444,8 @@ foreach($Specific as $key => $value) {
 <?php if ($this->router->fetch_method('contact-us')) { ?>
   <!-- Specific Page Vendor and Views -->
   <!-- <script type="text/javascript" src="<?= base_url(); ?>fwedget/js/views/view.contact.js"></script> -->
-  <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDMxJ92oBkSnVNHFX3R8XhtYQPEgk1_IiI"></script>
+  <script type="text/javascript"
+    src="https://maps.google.com/maps/api/js?key=AIzaSyDMxJ92oBkSnVNHFX3R8XhtYQPEgk1_IiI"></script>
 
   <!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 
@@ -306,7 +497,7 @@ foreach($Specific as $key => $value) {
     var map = $("#googlemaps").gMap(mapSettings);
 
     // Map Center At
-    var mapCenterAt = function(options, e) {
+    var mapCenterAt = function (options, e) {
       e.preventDefault();
       $("#googlemaps").gMap("centerAt", options);
     }

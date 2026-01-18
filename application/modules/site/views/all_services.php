@@ -214,35 +214,40 @@
     }
 
     .service-card-title {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        margin-top: 29px;
-        color: #000;
-        line-height: 1.4;
-        position: relative;
-        z-index: 1;
-        letter-spacing: -0.5px;
-    }
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 29px;
+    color: #000;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.5px;
+    justify-content: center;
+    align-content: center;
+    text-align: -webkit-center;
+}
 
-    .btn-service-view {
-        background: #fff;
-        color: #1a73e8;
-        border: 1px solid #eef6fc;
-        border-radius: 50px;
-        padding: 8px 24px;
-        font-size: 14px;
-        font-weight: 600;
-        display: inline-block;
-        transition: all 0.3s;
-        text-align: center;
-        width: auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        align-self: flex-start;
-        position: relative;
-        z-index: 1;
-        text-decoration: none !important;
-    }
+   .btn-service-view {
+    background: #fff;
+    color: #1a73e8;
+    border: 1px solid #eef6fc;
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s;
+    text-align: center;
+    width: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+    text-decoration: none !important;
+    place-self: anchor-center;
+}
 
     .btn-service-view:hover {
         background: #1a73e8;

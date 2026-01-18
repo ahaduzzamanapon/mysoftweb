@@ -92,6 +92,21 @@
         font-style: normal;
         font-display: swap;
     }
+
+
+    #header {
+    background: #F6F6F6;
+    background: -webkit-linear-gradient( #f6f6f6, white);
+    background: linear-gradient( #f6f6f6, white);
+    clear: both;
+    border-bottom: 5px solid #EDEDED;
+    min-height: 100px;
+    /* padding: 8px 0; */
+    /* margin-bottom: 25px; */
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css">

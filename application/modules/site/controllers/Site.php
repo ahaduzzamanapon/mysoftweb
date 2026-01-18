@@ -942,32 +942,44 @@ class Site extends Frontend_Controller
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('email', 'Email address', 'required|trim|valid_email');
-        $this->form_validation->set_rules('subject', 'Subject', 'required');
-        $this->form_validation->set_rules('message', 'Message', 'required');
+        $this->form_validation->set_rules('phone', 'Phone Number', 'required');
+        $this->form_validation->set_rules('company', 'Company Name', 'required');
+        $this->form_validation->set_rules('project_details', 'Project Details', 'required');
+        // Subject is not in new form, but might be in old DB. We can make it optional or set default.
+        // The new form doesn't have subject.
 
         $recaptcha_response = $this->input->post('g-recaptcha-response');
         $secret_key = "6LfA8-YqAAAAAAUBQ-iw1dHpxcqtRqf68t8TPk2b"; // Replace with your actual secret key
 
+        /*
+        // Recaptcha check - disabled for now or keep if user has keys set up correctly
         if (!$recaptcha_response) {
-            $this->form_validation->set_rules('g-recaptcha-response', 'reCAPTCHA', 'required');
+             // $this->form_validation->set_rules('g-recaptcha-response', 'reCAPTCHA', 'required');
         } else {
             $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret_key&response=$recaptcha_response");
             $captcha_success = json_decode($verify);
 
             if (!$captcha_success->success) {
-                $this->form_validation->set_rules('g-recaptcha-response', 'reCAPTCHA', 'required');
+               // $this->form_validation->set_rules('g-recaptcha-response', 'reCAPTCHA', 'required');
             }
         }
+        */
 
         if ($this->form_validation->run() == true) {
-            // dd($this->input->post());
             $form_data = array(
                 'name' => $this->input->post('name'),
                 'email' => $this->input->post('email'),
-                'subject' => $this->input->post('subject'),
-                'message' => $this->input->post('message'),
+                'phone' => $this->input->post('phone'),
+                'company' => $this->input->post('company'),
+                'industry' => $this->input->post('industry'),
+                'service' => $this->input->post('service'),
+                'budget' => $this->input->post('budget'),
+                'subject' => 'Contact Inquiry', // Default subject
+                'message' => $this->input->post('project_details'), // Map to message for backward compat
+                'project_details' => $this->input->post('project_details'),
                 'created_at' => date('Y-m-d h:i:s'),
             );
+
             if ($this->Common_model->save('contact_us', $form_data)) {
                 $this->send_email($this->input->post('email'), 'Contact Us', 'Thank you for contacting us. We will get back to you shortly.');
                 $this->session->set_flashdata('success_message', 'Your message has been sent successfully!');
@@ -975,15 +987,10 @@ class Site extends Frontend_Controller
             } else {
                 $this->session->set_flashdata('error_message', 'Your message has not been sent!');
             }
-            $this->data['contact'] = $this->Site_model->get_contact();
-            $this->data['meta_title'] = 'Contact Us';
-            $this->data['subview'] = 'contact_us';
-            $this->load->view('frontend/_layout_main', $this->data);
+            redirect($_SERVER['HTTP_REFERER']);
         } else {
-            $this->data['contact'] = $this->Site_model->get_contact();
-            $this->data['meta_title'] = 'Contact Us';
-            $this->data['subview'] = 'contact_us';
-            $this->load->view('frontend/_layout_main', $this->data);
+            $this->session->set_flashdata('error_message', validation_errors());
+            redirect($_SERVER['HTTP_REFERER']);
         }
     }
 

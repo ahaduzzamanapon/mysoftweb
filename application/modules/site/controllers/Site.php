@@ -1,7 +1,9 @@
-<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
 
 class Site extends Frontend_Controller
 {
+    public $data = array();
 
     function __construct()
     {
@@ -12,19 +14,21 @@ class Site extends Frontend_Controller
         $this->load->library('email');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger"> <i class="fa fa-warning"></i> ', '</div>');
     }
-       function demo_service(){
+    function demo_service()
+    {
         $this->data['meta_title'] = 'demo';
         $this->data['meta_keywords'] = 'demo';
         $this->data['meta_description'] = 'demo';
         $this->data['meta_tag'] = 'demo';
         $this->data['subview'] = 'demo_service';
         $this->load->view('frontend/_layout_main', $this->data);
-       }
+    }
 
 
 
-    public function best_hr_software_in_bangladesh(){
-          //view
+    public function best_hr_software_in_bangladesh()
+    {
+        //view
         $this->data['meta_title'] = 'Best HR Software in Bangladesh | HRM, Payroll & Attendance | HR Sheba';
         $this->data['meta_keywords'] = 'Best HR Software in Bangladesh, HRM Software Bangladesh, Payroll Software Bangladesh, HR Software with Attendance, Employee Management Software, HR Software for Small Business, HR and Payroll System BD, Online HR Software Bangladesh';
         $this->data['meta_description'] = 'HR Sheba is the best HR software in Bangladesh offering a complete solution for HRM, payroll, attendance, and employee management. Trusted by businesses and factories for automating HR operations, ensuring compliance, and increasing efficiency.';
@@ -131,7 +135,7 @@ class Site extends Frontend_Controller
         $offset = ($page - 1) * $per_page;
 
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
 
         $this->db->from('blog_article');
         $this->db->where('status', 1);
@@ -212,7 +216,7 @@ class Site extends Frontend_Controller
         $offset = ($page - 1) * $per_page;
 
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
 
         $this->db->from('blog');
         $this->db->where('status', 1);
@@ -280,7 +284,7 @@ class Site extends Frontend_Controller
             $i = $offset + 3;
         }
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
         $this->db->from('client');
         $this->db->where('status', 1);
         $this->db->where('client_type', 'government-sector');
@@ -324,7 +328,7 @@ class Site extends Frontend_Controller
 
 
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
 
         $this->db->from('client');
         $this->db->where('status', 1);
@@ -384,7 +388,7 @@ class Site extends Frontend_Controller
 
 
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
 
         $this->db->from('client');
         $this->db->where('status', 1);
@@ -434,7 +438,7 @@ class Site extends Frontend_Controller
 
 
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
         $this->db->from('client');
         $this->db->where('status', 1);
         $this->db->where('client_type', 'offshore-client');
@@ -476,7 +480,7 @@ class Site extends Frontend_Controller
 
 
         // Sanitize $page to prevent SQL injection
-        $page = (int)$page;
+        $page = (int) $page;
         $this->db->from('client');
         $this->db->where('status', 1);
         $this->db->where('client_type', 'rmg-sector');
@@ -586,10 +590,10 @@ class Site extends Frontend_Controller
     public function product_details($slug)
     {
         $slug = urldecode($slug);
-        
+
         // Use the new model function to get all product data
         $product_data = $this->Site_model->get_product_details_by_slug_new($slug);
-        
+
         // If no product is found, redirect to the products list or a 404 page
         if (empty($product_data)) {
             redirect('site/products');
@@ -609,22 +613,22 @@ class Site extends Frontend_Controller
     }
     public function pages($slug)
     {
-       
+
         $this->db->where('page_link', $slug);
         $this->data['info'] = $this->db->get('pages')->row();
-       //dd($this->data['info']);
+        //dd($this->data['info']);
         if (empty($this->data['info'])) {
             redirect('/');
         }
-        $pageLink = 'pages/'.$this->data['info']->page_link;
+        $pageLink = 'pages/' . $this->data['info']->page_link;
         $tags = $this->db->where('url', $pageLink)->get('tags')->result();
         $tag = '';
         foreach ($tags as $value) {
-           $exploadTag = explode('-', $value->tag);
-           $exploadTag = implode(' ', $exploadTag);
-            $tag .= $exploadTag.',';
+            $exploadTag = explode('-', $value->tag);
+            $exploadTag = implode(' ', $exploadTag);
+            $tag .= $exploadTag . ',';
         }
-        
+
         $this->data['meta_keywords'] = $this->data['info']->meta_keys;
         $this->data['meta_description'] = $this->data['info']->meta_description;
         $this->data['meta_tag'] = $tag;
@@ -657,6 +661,14 @@ class Site extends Frontend_Controller
         // dd($this->data['info']); 
         $this->data['meta_title'] = 'Portfolio Details';
         $this->data['subview'] = 'portfolio_details';
+        $this->load->view('frontend/_layout_main', $this->data);
+    }
+
+    public function all_services()
+    {
+        $this->data['services'] = $this->Site_model->get_all_services(false);
+        $this->data['meta_title'] = 'Our Services';
+        $this->data['subview'] = 'all_services';
         $this->load->view('frontend/_layout_main', $this->data);
     }
 
@@ -876,6 +888,7 @@ class Site extends Frontend_Controller
     public function home2()
     {
         $this->data['meta_title'] = 'Home 2';
+        $this->data['services'] = $this->Site_model->get_all_services(true, 8);
         $this->data['subview'] = 'home2';
         $this->load->view('frontend/_layout_main', $this->data);
     }
@@ -1213,17 +1226,17 @@ class Site extends Frontend_Controller
         }
 
         $config = array(
-            'protocol'    => 'smtp',
-            'smtp_host'   => 'smtp.gmail.com',
-            'smtp_user'   => 'contact.mysoftheaven@gmail.com',
-            'smtp_pass'   => 'dzqhjzslkjhdhiis', // Use App Password
-            'smtp_port'   => 587,
+            'protocol' => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_user' => 'contact.mysoftheaven@gmail.com',
+            'smtp_pass' => 'dzqhjzslkjhdhiis', // Use App Password
+            'smtp_port' => 587,
             'smtp_crypto' => 'tls', // Use 'ssl' for port 465
-            'mailtype'    => 'html',
-            'charset'     => 'utf-8',
-            'wordwrap'    => true,
-            'newline'     => "\r\n",
-            'crlf'        => "\r\n"
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'wordwrap' => true,
+            'newline' => "\r\n",
+            'crlf' => "\r\n"
         );
 
         $this->load->library('email');
@@ -1248,23 +1261,23 @@ class Site extends Frontend_Controller
 
         if (!empty($query)) {
             $slug = explode('/', $query->url);
-            if(count($slug) > 1){
+            if (count($slug) > 1) {
                 $slug = $slug[1];
-            }else{
+            } else {
                 redirect('/');
 
             }
-            
-            
+
+
             $this->db->like('page_link', $slug);
             $this->data['info'] = $this->db->get('pages')->row();
             if (empty($this->data['info'])) {
                 redirect('/');
             }
-    
+
             $this->data['meta_keywords'] = $this->data['info']->meta_keys;
             $this->data['meta_description'] = $this->data['info']->meta_description;
-    
+
             $this->data['meta_title'] = $this->data['info']->title;
             $this->data['subview'] = 'pages_details';
             $this->load->view('frontend/_layout_main', $this->data);

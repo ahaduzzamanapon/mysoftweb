@@ -134,65 +134,66 @@ $route['translate_uri_dashes'] = FALSE;
 
 // $route['course'] 				= 'site/course';
 
-$route['service/(:any)']         = 'site/service/$1';
-$route['best-hr-software-in-bangladesh']         = 'site/best_hr_software_in_bangladesh';
-$route['client/(:any)']         = 'site/client/$1';
+$route['services'] = 'site/all_services';
+$route['service/(:any)'] = 'site/service/$1';
+$route['best-hr-software-in-bangladesh'] = 'site/best_hr_software_in_bangladesh';
+$route['client/(:any)'] = 'site/client/$1';
 
-$route['product/(:any)']         = 'site/product_details/$1';
+$route['product/(:any)'] = 'site/product_details/$1';
 
-$route['tag/(:any)']         = 'site/tag/$1';
+$route['tag/(:any)'] = 'site/tag/$1';
 
-$route['pages/(:any)']         = 'site/pages/$1';
+$route['pages/(:any)'] = 'site/pages/$1';
 
-$route['pages']                = 'site/allPages';
+$route['pages'] = 'site/allPages';
 
-$route['blog']                     = 'site/blog_article';
+$route['blog'] = 'site/blog_article';
 
 $route['blog-article-details/(:any)'] = 'site/blog_article_details/$1';
 
-$route['events']                     = 'site/events';
+$route['events'] = 'site/events';
 
 $route['event-details/(:any)'] = 'site/event_details/$1';
 
-$route['training']                     = 'site/training';
+$route['training'] = 'site/training';
 
-$route['all-course']             = 'site/all_course';
+$route['all-course'] = 'site/all_course';
 
-$route['our-team-member']         = 'site/employee_list';
+$route['our-team-member'] = 'site/employee_list';
 
-$route['registration-now']         = 'site/registration_now';
+$route['registration-now'] = 'site/registration_now';
 
 $route['registration-now/(:any)'] = 'site/registration_now/$1';
 
-$route['registration-success']     = 'site/registration_success';
+$route['registration-success'] = 'site/registration_success';
 
-$route['training-facilities']     = 'site/training_facilities';
+$route['training-facilities'] = 'site/training_facilities';
 
-$route['about-us']                 = 'site/about_us';
+$route['about-us'] = 'site/about_us';
 
-$route['ceo-message']             = 'site/ceo_message';
+$route['ceo-message'] = 'site/ceo_message';
 
-$route['management-team']         = 'site/management_team';
+$route['management-team'] = 'site/management_team';
 
-$route['company-profile']         = 'site/company_profile';
+$route['company-profile'] = 'site/company_profile';
 
-$route['portfolio']             = 'site/portfolio';
+$route['portfolio'] = 'site/portfolio';
 
-$route['request-quotation']     = 'site/request_quotation';
+$route['request-quotation'] = 'site/request_quotation';
 
-$route['products']                 = 'site/products';
+$route['products'] = 'site/products';
 
-$route['notable_products']         = 'site/notable_products';
+$route['notable_products'] = 'site/notable_products';
 
-$route['notable_details/(:any)']         = 'site/notable_details/$1';
+$route['notable_details/(:any)'] = 'site/notable_details/$1';
 
-$route['contact-us']             = 'site/contact_us';
+$route['contact-us'] = 'site/contact_us';
 
-$route['privacy-policy']         = 'site/privacy_policy';
+$route['privacy-policy'] = 'site/privacy_policy';
 
-$route['terms']                 = 'site/terms';
+$route['terms'] = 'site/terms';
 
-$route['sitemap']                 = 'site/sitemap';
+$route['sitemap'] = 'site/sitemap';
 
 $route['frequently-asked-questions'] = 'site/faqs';
 $route['demo_service'] = 'site/demo_service';

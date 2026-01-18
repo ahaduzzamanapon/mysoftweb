@@ -761,3 +761,6 @@ http://127.0.0.1/mysoftweb/service/android-apps-development
 http://127.0.0.1/mysoftweb/hire-talent
 http://127.0.0.1/mysoftweb/home2
 http://127.0.0.1/mysoftweb/notable_products
+http://127.0.0.1/mysoftweb/portfolio
+http://127.0.0.1/mysoftweb/services
+http://127.0.0.1/mysoftweb/service/integrated-office-management-system

@@ -18,11 +18,11 @@ class Product_new extends Backend_Controller {
         $this->load->helper('file');
         $this->load->helper('form');
 
-        $this->img_path = realpath(APPPATH . '../product_img');
-        if(!is_dir($this->img_path)) mkdir($this->img_path, 0777, TRUE);
+        // $this->img_path = realpath(APPPATH . '../product_img');
+        // if(!is_dir($this->img_path)) mkdir($this->img_path, 0777, TRUE);
         
-        $this->child_img_path = realpath(APPPATH . '../assets/img/child_data');
-        if(!is_dir($this->child_img_path)) mkdir($this->child_img_path, 0777, TRUE);
+        // $this->child_img_path = realpath(APPPATH . '../assets/img/child_data');
+        // if(!is_dir($this->child_img_path)) mkdir($this->child_img_path, 0777, TRUE);
 
         $config = array('field' => 'slug', 'title' => 'name', 'table' => 'products_new', 'id' => 'id');
         $this->load->library('slug', $config);

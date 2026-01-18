@@ -2183,7 +2183,7 @@
 
     <!-- Hero Section -->
     <section class="ht-section ht-hero-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row items-center">
                 <div class="col-md-8 col-sm-12" data-aos="fade-right">
                     <h1 class="hero-title">Scale faster. <span style="color: #FC6000;">Build smarter.</span><br><span
@@ -2311,7 +2311,7 @@
     </section>
     <!-- Why Mysoftheaven -->
     <section class="ht-section why-mysoftheaven-section" style="min-height: 713px;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="why-images-wrapper">
@@ -2347,7 +2347,7 @@
 
     <!-- Process Section -->
     <section class="ht-section text-center" style="min-height: 571px;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title center-text">Our Talent Delivery Process</h2>
             <div class="process-grid">
                 <div class="process-card card-blue-light hover-lift" data-aos="zoom-in" data-aos-delay="0">
@@ -2381,7 +2381,7 @@
 
     <!-- Engagement Models -->
     <section class="ht-section engagement-section" style="min-height:653px;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Engagement <span class="text-black">Models</span></h2>
             <p class="center-text mb-50" style="color: #000;">Choose the engagement that fits your project and budget.
             </p>
@@ -2429,7 +2429,7 @@
 
     <!-- Roles We Provide -->
     <section class="ht-section roles-section-bg" style="min-height:1040px;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Roles <span class="text-blue">We Provide</span></h2>
             <p class="center-text mb-50 roles-subtitle">
                 Mysoftheaven (BD) Ltd. connects you with top IT professionals across software, cloud, data, security,
@@ -2522,7 +2522,7 @@
 
     <!-- Tech Stack -->
     <section class="ht-section bg-light" style="height: auto; padding-bottom: 80px;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-40">Our <span class="text-blue">Tech Stack</span></h2>
         </div>
         <div class="container-fluid p-0">
@@ -2582,7 +2582,7 @@
     <!-- Clients Section -->
     <section class="ht-section clients-section"
         style="height: auto; min-height: 500px; padding: 60px 0; overflow: hidden;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row items-center">
                 <!-- Left Column: Text -->
                 <div class="col-md-4 col-sm-12" data-aos="fade-right">
@@ -2664,7 +2664,7 @@
 
     <!-- Awards & Recognitions -->
     <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
             <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
                 Recognized nationally and globally, Mysoftheaven (BD) Ltd. has earned top awards from the Bangladesh
@@ -2710,7 +2710,7 @@
     <!-- Client Testimonials -->
     <section class="ht-section testimonials-section"
         style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title text-white center-text mb-40">Client Testimonials</h2>
 
             <div class="testimonials-carousel owl-carousel owl-theme">
@@ -2790,7 +2790,7 @@
     <!-- Membership & Certification -->
     <section class="ht-section certifications-section"
         style="height: auto; min-height: 400px; padding-top: 50px; padding-bottom: 250px; background-color: #eef8ff;">
-        <div class="container">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
 
             <div class="marquee-fader marquee-fader-blue-light">
@@ -2810,7 +2810,7 @@
     <!-- Get in Touch Section -->
     <section class="ht-section contact-section-wrapper"
         style="height: auto; padding: 60px 0 100px 0; background: #fff;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="contact-card hover-lift" data-aos="fade-up">
                 <div class="row no-gutters">
                     <!-- Left Info Column -->

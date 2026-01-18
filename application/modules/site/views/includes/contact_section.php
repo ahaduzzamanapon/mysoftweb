@@ -153,7 +153,7 @@
     }
 </style>
 <section class="ht-section contact-section-wrapper" style="height: auto; padding: 60px 0 100px 0; background: #fff;">
-    <div class="container">
+    <div class="container-fluid">
         <div class="contact-card hover-lift" data-aos="fade-up">
             <div class="row no-gutters">
                 <!-- Left Info Column -->

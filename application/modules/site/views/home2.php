@@ -59,6 +59,7 @@
         text-decoration: none;
         display: inline-block;
         transition: 0.3s;
+        font-family: 'Nourd-Medium', sans-serif !important;
     }
 
     .counter {
@@ -185,7 +186,7 @@
         border: 1px solid #0088cc;
         border-radius: 12px;
         overflow: hidden;
-        padding: 25px 20px;
+        padding: 25px 80px;
         text-align: center;
         background: #fff;
         height: 100%;
@@ -1326,7 +1327,7 @@
 
     /* Services Section Redesign */
     .services-bg-gradient {
-        background: linear-gradient(180deg, #f3f5f8 0%, #e8ecf1 100%);
+        background: linear-gradient(180deg, #E8E9EB 0%, #E8E9EB 100%);
         padding: 80px 0;
         position: relative;
         overflow: hidden;
@@ -1340,7 +1341,7 @@
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(59, 130, 246, 0) 60%);
+        background: radial-gradient(circle, rgb(59 130 246 / 30%) 0%, rgb(59 130 246 / 0%) 60%);
         z-index: 0;
         pointer-events: none;
     }
@@ -1553,6 +1554,12 @@
         transform: translateY(-2px);
         color: #fff;
     }
+    .container-fluid {
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
 </style>
 
 <div class="ht-main-wrapper">
@@ -1561,10 +1568,10 @@
     <!-- Hero Section -->
     <!-- Hero Section -->
     <section class="hero-section" style="padding-bottom: 0px; position: relative; overflow: visible;">
-        <div class="container">
+        <div class="container-fluid">
             <div id="hero-carousel" class="owl-carousel owl-theme">
                 <div class="item">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row" style="margin-right: 32px;">
                             <!-- Left Content -->
                             <div class="col-lg-7">
@@ -1645,7 +1652,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row" style="margin-right: 32px;">
                             <!-- Left Content -->
                             <div class="col-lg-7">
@@ -1725,7 +1732,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row" style="margin-right: 32px;">
                             <!-- Left Content -->
                             <div class="col-lg-7">
@@ -1809,7 +1816,7 @@
         </div>
     </section>
     <section class="hero-section" style="padding-bottom: 0px; position: relative; overflow: visible;">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Bottom Info Strip -->
             <div class="row mt-5" style="position: relative; z-index: 10;">
                 <div class="col-12">
@@ -1921,7 +1928,7 @@
 
     <!-- Our Services -->
     <section class="ht-section services-bg-gradient" id="services">
-        <div class="container">
+        <div class="container-fluid">
             <div class="service-header-modern" data-aos="fade-right">
                 <div class="service-title-block">
                     <h2 class="service-title-modern">Our <span class="text-blue">Services</span></h2>
@@ -1941,25 +1948,25 @@
                 ?>
                 <?php if (!empty($services)): ?>
                     <?php foreach ($services as $service): ?>
-                        <?php
-                        $color_class = $colors[$i % $color_count];
-                        $delay = $i * 100;
-                        $i++;
-                        ?>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
-                                <div class="service-icon-floating <?= $color_class ?>">
-                                    <?php if (!empty($service->fa_icon)): ?>
-                                        <i class="fa <?= $service->fa_icon ?>"></i>
-                                    <?php else: ?>
-                                        <i class="fa fa-cogs"></i>
-                                    <?php endif; ?>
-                                </div>
-                                <h4 class="service-card-title"><?= $service->name ?></h4>
-                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                                        <?php
+                                        $color_class = $colors[$i % $color_count];
+                                        $delay = $i * 100;
+                                        $i++;
+                                        ?>
+                                        <div class="col-lg-3 col-md-6">
+                                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                                                <div class="service-icon-floating <?= $color_class ?>">
+                                                    <?php if (!empty($service->fa_icon)): ?>
+                                                                <i class="fa <?= $service->fa_icon ?>"></i>
+                                                    <?php else: ?>
+                                                                <i class="fa fa-cogs"></i>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <h4 class="service-card-title"><?= $service->name ?></h4>
+                                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
+                                            </div>
+                                        </div>
+                            <?php endforeach; ?>
                 <?php endif; ?>
             </div>
 
@@ -1971,38 +1978,38 @@
     </section>
 
     <!-- Our Products -->
-    <section class="ht-section" style="background: #ebf5fa;">
-        <div class="container">
+    <section class="ht-section" style="background-color: #E6F1FE!important;">
+        <div class="container-fluid">
             <h2 class="section-title" data-aos="fade-down">Our <span class="text-blue">Products</span></h2>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $product): ?>
-                        <div class="item">
-                            <div class="product-card">
-                                <div>
-                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                    <div class="mb-2"><span class="product-logo-text"><i class="fa fa-cube"></i>
-                                            <?= $product->name ?></span></div>
-                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
-                                    <div class="product-frame">
-                                        <?php
-                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                        if (!empty($product->hero_image)) {
-                                            $img_src = base_url('product_img/' . $product->hero_image);
-                                        }
-                                        ?>
-                                        <img src="<?= $img_src ?>" class="product-img">
-                                    </div>
-                                </div>
-                                <div class="product-actions">
-                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                        Now</a>
-                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
-                                            class="fa fa-search"></i> Try Free Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                            <?php foreach ($products as $product): ?>
+                                        <div class="item">
+                                            <div class="product-card">
+                                                <div>
+                                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                                    <div class="mb-2"><span class="product-logo-text"><i class="fa fa-cube"></i>
+                                                            <?= $product->name ?></span></div>
+                                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                                    <div class="product-frame">
+                                                        <?php
+                                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                                        if (!empty($product->hero_image)) {
+                                                            $img_src = base_url('product_img/' . $product->hero_image);
+                                                        }
+                                                        ?>
+                                                        <img src="<?= $img_src ?>" class="product-img">
+                                                    </div>
+                                                </div>
+                                                <div class="product-actions">
+                                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                                        Now</a>
+                                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                                            class="fa fa-search"></i> Try Free Demo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                            <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -2010,7 +2017,7 @@
 
     <!-- Industries We Serve -->
     <section class="ht-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="ht-left-title-block" data-aos="fade-right">
                 <h2>Industries <span class="text-blue">we serve</span></h2>
                 <p>We are the best custom software development company for custom software development outsourcing. And
@@ -2167,8 +2174,8 @@
 
     <!-- Tech Stack -->
     <!-- Tech Stack -->
-    <section class="ht-section bg-light" style="padding-bottom: 80px;">
-        <div class="container">
+    <section class="ht-section bg-light" style="padding-bottom: 80px;background-color: #E6F1FE!important;">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-40">Our <span class="text-blue">Tech Stack</span></h2>
         </div>
         <div class="container-fluid p-0">
@@ -2226,7 +2233,7 @@
 
     <!-- Crafting Long Term Relationships -->
     <section class="ht-section" id="roles">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Split Header -->
             <div class="row relationship-header align-items-center">
                 <div class="col-md-6" data-aos="fade-right">
@@ -2273,7 +2280,7 @@
     <!-- Clients -->
     <section class="ht-section clients-section"
         style="height: auto; min-height: 500px; padding: 60px 0; overflow: hidden;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row items-center">
                 <!-- Left Column: Text -->
                 <div class="col-md-4 col-sm-12" data-aos="fade-right">
@@ -2373,11 +2380,87 @@
         </div>
     </section>
 
+    <!-- Client Testimonials -->
+    <section class="ht-section testimonials-section"
+        style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
+        <div class="container-fluid">
+            <h2 class="section-title text-white center-text mb-40">Client Testimonials</h2>
 
+            <div class="testimonials-carousel owl-carousel owl-theme">
+                <!-- Card 1 -->
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="test-header">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
+                        </div>
+                        <div class="test-info">
+                            <h5>A2i</h5>
+                            <span>CEO<br>TheWebagency</span>
+                        </div>
+                    </div>
+                    <div class="test-body">
+                        <div class="project-tag">E-court Project</div>
+                        <p>Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel
+                            against.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="test-header">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-5.png') ?>">
+                        </div>
+                        <div class="test-info">
+                            <h5>BD Scouts</h5>
+                            <span>Manager<br>TheWebtech</span>
+                        </div>
+                    </div>
+                    <div class="test-body">
+                        <div class="project-tag">ERP Project</div>
+                        <p>Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me
+                            mr what.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="test-header">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
+                        </div>
+                        <div class="test-info">
+                            <h5>A2i</h5>
+                            <span>Developer<br>12c Company</span>
+                        </div>
+                    </div>
+                    <div class="test-body">
+                        <div class="project-tag">DBID Project</div>
+                        <p>park next busy ever. Elinor her his secure far twenty eat object. Any for saw size want man.
+                            Which way you wrong.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="testimonial-card">
+                    <div class="test-header">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
+                        </div>
+                        <div class="test-info">
+                            <h5>A2i</h5>
+                            <span>Accountant<br>TheContruction</span>
+                        </div>
+                    </div>
+                    <div class="test-body">
+                        <div class="project-tag">ERP Project</div>
+                        <p>Concerns greatest margaret him absolute entrance nay. Door neat week do find past he. Be no
+                            surprise he honoured.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Awards & Recognitions -->
-    <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;">
-        <div class="container">
+    <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;background-color: #E6F1FE!important;">
+        <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
             <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
                 Recognized nationally and globally, Mysoftheaven (BD) Ltd. has earned top awards from the Bangladesh
@@ -2471,87 +2554,11 @@
         </div>
     </section>
 
-    <!-- Client Testimonials -->
-    <section class="ht-section testimonials-section"
-        style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
-        <div class="container">
-            <h2 class="section-title text-white center-text mb-40">Client Testimonials</h2>
 
-            <div class="testimonials-carousel owl-carousel owl-theme">
-                <!-- Card 1 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
-                    <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
-                        </div>
-                        <div class="test-info">
-                            <h5>A2i</h5>
-                            <span>CEO<br>TheWebagency</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <div class="project-tag">E-court Project</div>
-                        <p>Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel
-                            against.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="100">
-                    <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-5.png') ?>">
-                        </div>
-                        <div class="test-info">
-                            <h5>BD Scouts</h5>
-                            <span>Manager<br>TheWebtech</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <div class="project-tag">ERP Project</div>
-                        <p>Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me
-                            mr what.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="200">
-                    <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
-                        </div>
-                        <div class="test-info">
-                            <h5>A2i</h5>
-                            <span>Developer<br>12c Company</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <div class="project-tag">DBID Project</div>
-                        <p>park next busy ever. Elinor her his secure far twenty eat object. Any for saw size want man.
-                            Which way you wrong.</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="testimonial-card">
-                    <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
-                        </div>
-                        <div class="test-info">
-                            <h5>A2i</h5>
-                            <span>Accountant<br>TheContruction</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <div class="project-tag">ERP Project</div>
-                        <p>Concerns greatest margaret him absolute entrance nay. Door neat week do find past he. Be no
-                            surprise he honoured.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Membership & Certification -->
     <section class="ht-section certifications-section"
-        style="height: auto;padding-top: 50px;background-color: #eef8ff;">
+        style="height: auto;padding-top: 50px;background-color: #fff;">
         <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
 

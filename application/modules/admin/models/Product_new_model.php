@@ -57,7 +57,7 @@ class Product_new_model extends CI_Model
     {
         $this->db->select('id, name, slug, hero_heading, hero_image');
         $this->db->from('products_new');
-        // $this->db->where('status', 'active'); // Temporarily allow all for debugging
+        $this->db->where('status', 'active'); // Temporarily allow all for debugging
         $this->db->order_by('id', 'ASC');
         $query = $this->db->get();
         return $query->result();

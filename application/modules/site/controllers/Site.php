@@ -887,6 +887,9 @@ class Site extends Frontend_Controller
 
     public function home2()
     {
+         $this->load->model('admin/Product_new_model');
+        $this->data['products'] = $this->Product_new_model->get_products_for_home();
+
         $this->data['meta_title'] = 'Home 2';
         $this->data['services'] = $this->Site_model->get_all_services(true, 8);
         $this->data['subview'] = 'home2';

@@ -1975,63 +1975,40 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-down">Our <span class="text-blue">Products</span></h2>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
-                <div class="item">
-                    <div class="product-card">
-                        <div>
-                            <!-- Placeholder for Logo -->
-                            <div class="mb-2"><span class="product-logo-text"><i class="fa fa-user-circle"></i>
-                                    HRSheba</span></div>
-                            <h5 class="product-tagline">Best HR Software In Bangladesh</h5>
-                            <div class="product-frame">
-                                <img src="<?= base_url('home2media/HR Sheba_page-0001 1.png') ?>" class="product-img">
+                <?php if (!empty($products)): ?>
+                    <?php foreach ($products as $product): ?>
+                        <div class="item">
+                            <div class="product-card">
+                                <div>
+                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                    <div class="mb-2"><span class="product-logo-text"><i class="fa fa-cube"></i>
+                                            <?= $product->name ?></span></div>
+                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                    <div class="product-frame">
+                                        <?php
+                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                        if (!empty($product->hero_image)) {
+                                            $img_src = base_url('product_img/' . $product->hero_image);
+                                        }
+                                        ?>
+                                        <img src="<?= $img_src ?>" class="product-img">
+                                    </div>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                        Now</a>
+                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                            class="fa fa-search"></i> Try Free Demo</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="product-actions">
-                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                Now</a>
-                            <a href="<?= base_url('product/hr-sheba') ?>" class="btn-product btn-demo"><i
-                                    class="fa fa-search"></i> Try Free Demo</a>
-                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div style="text-align:center; padding: 20px;">
+                        <h3 style="color:red;">Debug: No Products Found in Database</h3>
+                        <p>Table: products_new</p>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="product-card">
-                        <div>
-                            <div class="mb-2"><span class="product-logo-text" style="color:#004a80;"><i
-                                        class="fa fa-shield"></i> ShebaERP</span></div>
-                            <h5 class="product-tagline">Best ERP Software In Bangladesh</h5>
-                            <div class="product-frame">
-                                <img src="<?= base_url('home2media/HR Sheba_page-0001 1 (1).png') ?>"
-                                    class="product-img">
-                            </div>
-                        </div>
-                        <div class="product-actions">
-                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                Now</a>
-                            <a href="<?= base_url('product/school-management') ?>" class="btn-product btn-demo"><i
-                                    class="fa fa-search"></i> Try Free Demo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-card">
-                        <div>
-                            <div class="mb-2"><span class="product-logo-text" style="color:#f47920;"><i
-                                        class="fa fa-paper-plane"></i> RemitSeba</span></div>
-                            <h5 class="product-tagline">Best Remittance Management Software</h5>
-                            <div class="product-frame">
-                                <img src="<?= base_url('home2media/HR Sheba_page-0001 1 (2).png') ?>"
-                                    class="product-img">
-                            </div>
-                        </div>
-                        <div class="product-actions">
-                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                Now</a>
-                            <a href="<?= base_url('product/inventory') ?>" class="btn-product btn-demo"><i
-                                    class="fa fa-search"></i> Try Free Demo</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -2845,7 +2822,7 @@
 
 
         // Industries Carousel (Removed - now Hexagon Grid)
-        // If                         we wa                   nt to re          -e        nable carousel for something else:
+        // If                         we wa                   nt to re          -e        nable carousel for something e                        lse:
         /*
         $('#industries-carousel').owlCarousel({ ... });
         */

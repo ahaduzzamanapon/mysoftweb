@@ -2574,11 +2574,11 @@
         <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
 
-            <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;" data-aos="fade-up">
-                <img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo">
-                <img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo">
-                <img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo">
-                <img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo">
+            <div class="certifications-carousel owl-carousel owl-theme d-flex" style="margin-bottom: 30px;" data-aos="fade-up">
+                <div><img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo"/></div>
+                <div><img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo"/></div>
+                <div><img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo"/></div>
+                <div><img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo"/></div>
             </div>
         </div>
     </section>

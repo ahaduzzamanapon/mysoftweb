@@ -79,6 +79,13 @@
 
          /* Fonts */
     @font-face {
+        font-family: 'Nourd-Medium';
+        src: url('<?= base_url("home2media/nourd_medium.ttf") ?>') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
         font-family: 'Nourd-Bold';
         src: url('<?= base_url("home2media/nourd_bold.ttf") ?>') format('truetype');
         font-weight: bold;

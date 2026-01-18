@@ -2003,11 +2003,6 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                <?php else: ?>
-                    <div style="text-align:center; padding: 20px;">
-                        <h3 style="color:red;">Debug: No Products Found in Database</h3>
-                        <p>Table: products_new</p>
-                    </div>
                 <?php endif; ?>
             </div>
         </div>

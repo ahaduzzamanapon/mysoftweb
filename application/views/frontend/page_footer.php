@@ -40,7 +40,7 @@ foreach ($Specific as $key => $value) {
 <style>
   /* New Footer Styles */
   #new-footer {
-    background-color: #eaf6ff;
+    background-color: #E6F1FE;
     padding-top: 60px;
     padding-bottom: 0;
     font-family: 'Open Sans', sans-serif;
@@ -222,8 +222,10 @@ foreach ($Specific as $key => $value) {
 
         <div class="membership-icons">
           <!-- Using text/placeholders for icons as specific images might not be in the exact path -->
-          <img src="<?= base_url('fwedget/img/basis_logo.png') ?>" alt="BASIS" onerror="this.style.display='none'">
-          <img src="<?= base_url('fwedget/img/bacco_logo.png') ?>" alt="BACCO" onerror="this.style.display='none'">
+          <img src="<?= base_url('home2media/Rectangle-1.png') ?>" alt="BASIS" onerror="this.style.display='none'">
+          <img src="<?= base_url('home2media/Rectangle-2.png') ?>" alt="BACCO" onerror="this.style.display='none'">
+          <img src="<?= base_url('home2media/Rectangle-3.png') ?>" alt="BACCO" onerror="this.style.display='none'">
+          <img src="<?= base_url('home2media/Rectangle-4.png') ?>" alt="BACCO" onerror="this.style.display='none'">
           <!-- Add more icons here if available -->
         </div>
       </div>
@@ -256,11 +258,27 @@ foreach ($Specific as $key => $value) {
       <div class="col-md-2 footer-col">
         <h4>Our Products</h4>
         <ul>
-          <li><a href="#">HR Sheba</a></li>
-          <li><a href="#">Sheba ERP</a></li>
-          <li><a href="#">Remit Sheba</a></li>
-          <li><a href="#">Gym Master</a></li>
-          <li><a href="#">Point of Sales</a></li>
+          <?php
+          $ci =& get_instance();
+          $ci->load->model('site/site_model');
+          $footer_products = $ci->site_model->get_footer_products_new(5);
+
+          if (!empty($footer_products)) {
+            foreach ($footer_products as $product) {
+              ?>
+              <li><a href="<?= base_url('product/' . $product->slug) ?>">
+                  <?= $product->name ?>
+                </a></li>
+            <?php
+            }
+          } else {
+            ?>
+            <li><a href="#">HR Sheba</a></li>
+            <li><a href="#">Sheba ERP</a></li>
+            <li><a href="#">Remit Sheba</a></li>
+            <li><a href="#">Gym Master</a></li>
+            <li><a href="#">Point of Sales</a></li>
+          <?php } ?>
         </ul>
       </div>
 
@@ -280,7 +298,7 @@ foreach ($Specific as $key => $value) {
     <!-- Bottom Bar -->
     <div class="footer-bottom-bar">
       <div>
-        <a href="<?= base_url('company-profile') ?>" class="download-btn">
+        <a href="<?= base_url('Mysoftheaven-Profile.pdf') ?>" class="download-btn" download>
           <i class="fa fa-download"></i> Download Company Profile
         </a>
       </div>

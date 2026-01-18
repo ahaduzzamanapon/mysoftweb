@@ -590,5 +590,16 @@ class Site_model extends CI_Model
         return $query->result();
     }
 
+    public function get_footer_products_new($limit = 5)
+    {
+        $this->db->select('id, slug, name');
+        $this->db->from('products_new');
+        $this->db->where('status', 'active');
+        $this->db->order_by('id', 'DESC');
+        $this->db->limit($limit);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 
 }

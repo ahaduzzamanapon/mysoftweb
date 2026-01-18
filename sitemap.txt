@@ -767,3 +767,4 @@ http://127.0.0.1/mysoftweb/service/integrated-office-management-system
 http://127.0.0.1/mysoftweb/contact-us
 http://127.0.0.1/mysoftweb/site/portfolio_details/8
 http://127.0.0.1/mysoftweb/company-profile
+http://127.0.0.1/mysoftweb/product/crm

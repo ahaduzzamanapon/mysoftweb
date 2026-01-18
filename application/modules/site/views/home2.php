@@ -1563,13 +1563,13 @@
     }
 
     .cert-logo2 {
-    width: 100%;
-    max-width: 71%;
-    height: 103px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
+        width: 100%;
+        max-width: 71%;
+        height: 103px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
 </style>
 
 <div class="ht-main-wrapper">
@@ -2262,28 +2262,75 @@
                 </div>
             </div>
 
-            <!-- Image Row -->
-            <div class="rel-grid-scroll" data-aos="fade-up">
-                <div class="rel-img-item">
-                    <img src="<?= base_url('home2media/Rectangle 24042.png') ?>" class="rel-img">
+            <!-- Image Row - Converted to Marquee -->
+            <div class="owl-carousel owl-theme" id="relationship-marquee" data-aos="fade-up">
+                <div class="item">
+                    <div class="rel-img-item">
+                        <img src="<?= base_url('home2media/Rectangle 24042.png') ?>" class="rel-img">
+                    </div>
                 </div>
-                <div class="rel-img-item">
-                    <img src="<?= base_url('home2media/Rectangle 24043.png') ?>" class="rel-img">
+                <div class="item">
+                    <div class="rel-img-item">
+                        <img src="<?= base_url('home2media/Rectangle 24043.png') ?>" class="rel-img">
+                    </div>
                 </div>
-                <div class="rel-img-item">
-                    <img src="<?= base_url('home2media/Rectangle 24045.png') ?>" class="rel-img">
+                <div class="item">
+                    <div class="rel-img-item">
+                        <img src="<?= base_url('home2media/Rectangle 24045.png') ?>" class="rel-img">
+                    </div>
                 </div>
-                <div class="rel-img-item">
-                    <img src="<?= base_url('home2media/Rectangle 24047.png') ?>" class="rel-img">
+                <div class="item">
+                    <div class="rel-img-item">
+                        <img src="<?= base_url('home2media/Rectangle 24047.png') ?>" class="rel-img">
+                    </div>
                 </div>
-                <div class="rel-img-item">
-                    <img src="<?= base_url('home2media/Rectangle 24044.png') ?>" class="rel-img">
-                    <!-- Reusing existing image as placeholder if needed or existing ones -->
+                <div class="item">
+                    <div class="rel-img-item">
+                        <img src="<?= base_url('home2media/Rectangle 24044.png') ?>" class="rel-img">
+                    </div>
                 </div>
-                <div class="rel-img-item">
-                    <img src="<?= base_url('home2media/Rectangle 24046.png') ?>" class="rel-img">
+                <div class="item">
+                    <div class="rel-img-item">
+                        <img src="<?= base_url('home2media/Rectangle 24046.png') ?>" class="rel-img">
+                    </div>
                 </div>
             </div>
+
+            <style>
+                #relationship-marquee .owl-stage {
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 40px;
+                    padding-top: 40px;
+                }
+
+                #relationship-marquee .item {
+                    padding: 10px;
+                }
+
+                /* Staggered Effect */
+                #relationship-marquee .owl-item:nth-child(even) .rel-img-item {
+                    margin-top: 40px;
+                }
+
+                #relationship-marquee .owl-item:nth-child(odd) .rel-img-item {
+                    margin-top: -40px;
+                }
+
+                .rel-img-item {
+                    height: 350px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    width: 100%;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                }
+
+                .rel-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            </style>
         </div>
     </section>
 
@@ -3000,4 +3047,24 @@
         });
 
     });
+// Relationship Section Marquee
+        $('#relationship-marquee').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: false,
+            autoplay: true,
+            slideTransition: 'linear',
+            autoplayTimeout: 3000,
+            autoplaySpeed: 3000,
+            smartSpeed: 3000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 3 },
+                1000: { items: 5 },
+                1400: { items: 8 }
+            }
+        });
+
 </script>

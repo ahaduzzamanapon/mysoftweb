@@ -1719,6 +1719,14 @@
         color: #D84315;
     }
 
+    .container-fluid {
+        padding-right: 50px;
+        padding-left: 50px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
     /* Mobile Responsive */
     @media (max-width: 768px) {
         .blob-container {
@@ -2311,7 +2319,7 @@
     </section>
     <!-- Why Mysoftheaven -->
     <section class="ht-section why-mysoftheaven-section" style="min-height: 713px;">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="why-images-wrapper">
@@ -2788,21 +2796,26 @@
 
 
     <!-- Membership & Certification -->
-    <section class="ht-section certifications-section"
-        style="height: auto; min-height: 400px; padding-top: 50px; padding-bottom: 250px; background-color: #eef8ff;">
-        <div class="container-fluid">
+    <!-- Membership & Certification -->
+    <section class="ht-section certifications-section" style="height: auto;padding-top: 50px;background-color: #fff;">
+        <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
 
-            <div class="marquee-fader marquee-fader-blue-light">
-                <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;"
-                    data-aos="fade-up">
-                    <img src="<?= base_url('hire_talent_media/clients/Group.png') ?>" class="cert-logo">
-                    <img src="<?= base_url('hire_talent_media/clients/Group-3.png') ?>" class="cert-logo">
-                    <img src="<?= base_url('hire_talent_media/clients/Group-4.png') ?>" class="cert-logo">
-                    <img src="<?= base_url('hire_talent_media/clients/Rectangle.png') ?>" class="cert-logo"
-                        style="height:50px;">
-                    <img src="<?= base_url('hire_talent_media/clients/XMLID_117_.png') ?>" class="cert-logo">
-                </div>
+            <style>
+                .cert-logo {
+                    width: 100%;
+                    max-width: 100%;
+                    height: 80px;
+                    object-fit: contain;
+                    display: block;
+                    margin: 0 auto;
+                }
+            </style>
+            <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;" data-aos="fade-up">
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo" /></div>
             </div>
         </div>
     </section>

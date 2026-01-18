@@ -1554,11 +1554,21 @@
         transform: translateY(-2px);
         color: #fff;
     }
+
     .container-fluid {
-    padding-right: 50px;
-    padding-left: 50px;
-    margin-right: auto;
-    margin-left: auto;
+        padding-right: 50px;
+        padding-left: 50px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cert-logo2 {
+    width: 100%;
+    max-width: 71%;
+    height: 103px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 </style>
 
@@ -1889,14 +1899,14 @@
                                 </h5>
                                 <div class="marquee-fader marquee-fader-white">
                                     <div class="owl-carousel owl-theme" id="certified_marquee" style="width: 100%;">
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group.png') ?>"
-                                                style="height: 30px; width: 70px;" alt="ISO"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-1.png') ?>"
-                                                style="height: 40px; width: auto;" alt="ISO"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-5.png') ?>"
-                                                style="height: 40px; width: auto;" alt="ISO"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-6.png') ?>"
-                                                style="height: 35px; width: auto;" alt="BACCO"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-1.png') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-2.png') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-3.png') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-4.png') ?>"
+                                                class="cert-logo2" /></div>
                                     </div>
                                 </div>
                             </div>
@@ -1948,25 +1958,25 @@
                 ?>
                 <?php if (!empty($services)): ?>
                     <?php foreach ($services as $service): ?>
-                                        <?php
-                                        $color_class = $colors[$i % $color_count];
-                                        $delay = $i * 100;
-                                        $i++;
-                                        ?>
-                                        <div class="col-lg-3 col-md-6">
-                                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
-                                                <div class="service-icon-floating <?= $color_class ?>">
-                                                    <?php if (!empty($service->fa_icon)): ?>
-                                                                <i class="fa <?= $service->fa_icon ?>"></i>
-                                                    <?php else: ?>
-                                                                <i class="fa fa-cogs"></i>
-                                                    <?php endif; ?>
-                                                </div>
-                                                <h4 class="service-card-title"><?= $service->name ?></h4>
-                                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
-                                            </div>
-                                        </div>
-                            <?php endforeach; ?>
+                        <?php
+                        $color_class = $colors[$i % $color_count];
+                        $delay = $i * 100;
+                        $i++;
+                        ?>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                                <div class="service-icon-floating <?= $color_class ?>">
+                                    <?php if (!empty($service->fa_icon)): ?>
+                                        <i class="fa <?= $service->fa_icon ?>"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-cogs"></i>
+                                    <?php endif; ?>
+                                </div>
+                                <h4 class="service-card-title"><?= $service->name ?></h4>
+                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
 
@@ -1983,33 +1993,33 @@
             <h2 class="section-title" data-aos="fade-down">Our <span class="text-blue">Products</span></h2>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                            <?php foreach ($products as $product): ?>
-                                        <div class="item">
-                                            <div class="product-card">
-                                                <div>
-                                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                                    <div class="mb-2"><span class="product-logo-text"><i class="fa fa-cube"></i>
-                                                            <?= $product->name ?></span></div>
-                                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
-                                                    <div class="product-frame">
-                                                        <?php
-                                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                                        if (!empty($product->hero_image)) {
-                                                            $img_src = base_url('product_img/' . $product->hero_image);
-                                                        }
-                                                        ?>
-                                                        <img src="<?= $img_src ?>" class="product-img">
-                                                    </div>
-                                                </div>
-                                                <div class="product-actions">
-                                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                                        Now</a>
-                                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
-                                                            class="fa fa-search"></i> Try Free Demo</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                            <?php endforeach; ?>
+                    <?php foreach ($products as $product): ?>
+                        <div class="item">
+                            <div class="product-card">
+                                <div>
+                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                    <div class="mb-2"><span class="product-logo-text"><i class="fa fa-cube"></i>
+                                            <?= $product->name ?></span></div>
+                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                    <div class="product-frame">
+                                        <?php
+                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                        if (!empty($product->hero_image)) {
+                                            $img_src = base_url('product_img/' . $product->hero_image);
+                                        }
+                                        ?>
+                                        <img src="<?= $img_src ?>" class="product-img">
+                                    </div>
+                                </div>
+                                <div class="product-actions">
+                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                        Now</a>
+                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                            class="fa fa-search"></i> Try Free Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -2459,7 +2469,8 @@
     </section>
 
     <!-- Awards & Recognitions -->
-    <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;background-color: #E6F1FE!important;">
+    <section class="ht-section awards-section"
+        style="height: auto; padding-top: 80px; padding-bottom: 80px;background-color: #E6F1FE!important;">
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
             <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
@@ -2557,8 +2568,7 @@
 
 
     <!-- Membership & Certification -->
-    <section class="ht-section certifications-section"
-        style="height: auto;padding-top: 50px;background-color: #fff;">
+    <section class="ht-section certifications-section" style="height: auto;padding-top: 50px;background-color: #fff;">
         <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
 
@@ -2581,9 +2591,127 @@
         </div>
     </section>
 
+    <!-- Billing & Invoicing Section -->
+    <section class="ht-section billing-section">
+        <div class="container">
+            <div class="billing-wrapper">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <div class="billing-video-box">
+                            <img src="<?= base_url('home2media/billing_video_thumb.png') ?>" alt="Billing Control"
+                                class="billing-img">
+                            <div class="play-btn-overlay">
+                                <i class="fa fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="billing-content p-5">
+                            <h2 class="billing-title">Easily Control your Billing and Invoicing.</h2>
+                            <p class="billing-text">
+                                Offending belonging promotion provision an be oh consulted ourselves it. Blessing
+                                welcomed ladyship she met humoured sir breeding her.We see you as a partner, where your
+                                goals become our mission.
+                            </p>
+                            <p class="billing-text">
+                                Your success is the inspiration of our works, and your growth is the real measure of our
+                                achievements.We see you as a partner, where your goals become our mission. Your success
+                                is the inspiration of our works, and your growth is the real measure of our
+                                achievements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .billing-section {
+                background-color: #0088cc;
+            }
+
+            .billing-wrapper {
+                background: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .billing-video-box {
+                position: relative;
+                height: 100%;
+                min-height: 400px;
+            }
+
+            .billing-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .play-btn-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 70px;
+                height: 70px;
+                background: #fff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+
+            .play-btn-overlay i {
+                color: #0088cc;
+                font-size: 24px;
+                margin-left: 4px;
+            }
+
+            .play-btn-overlay:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+
+            .billing-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                padding: 50px !important;
+            }
+
+            .billing-title {
+                font-family: 'Nourd-Bold', sans-serif;
+                font-size: 32px;
+                color: #333;
+                margin-bottom: 25px;
+                line-height: 1.3;
+            }
+
+            .billing-text {
+                color: #666;
+                font-size: 15px;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            @media (max-width: 768px) {
+                .billing-content {
+                    padding: 30px !important;
+                }
+
+                .billing-title {
+                    font-size: 26px;
+                }
+            }
+        </style>
+    </section>
+
     <!-- Get in Touch Section -->
-    <section class="ht-section contact-section-wrapper"
-        style="height: auto; padding: 60px 0 100px 0; background: #fff;">
+    <section class="ht-section contact-section-wrapper" style="height: auto;padding: 96px 0 100px 0;background: #fff;">
         <div class="container">
             <div class="contact-card hover-lift" data-aos="fade-up">
                 <div class="row no-gutters">

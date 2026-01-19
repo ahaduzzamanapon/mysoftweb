@@ -31,7 +31,9 @@ foreach ($Specific as $key => $value) {
 
 
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Nabla:EDPT@109&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
 
 
@@ -50,12 +52,12 @@ foreach ($Specific as $key => $value) {
 
   #new-footer h4 {
     color: #000;
-    font-weight: 700;
-    font-size: 16px;
     margin-bottom: 25px;
-    font-family: 'Nourd-Bold', sans-serif;
-  }
-
+    font-family: 'Nourd-Medium';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
   #new-footer ul {
     list-style: none;
     padding: 0;
@@ -70,8 +72,11 @@ foreach ($Specific as $key => $value) {
     color: #555;
     text-decoration: none;
     transition: color 0.3s;
-    font-size: 14px;
-  }
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
 
   #new-footer ul li a:hover {
     color: #0088cc;
@@ -82,7 +87,7 @@ foreach ($Specific as $key => $value) {
   }
 
   .footer-logo {
-    max-width: 220px;
+    max-width: 267px;
     margin-bottom: 20px;
   }
 
@@ -91,7 +96,11 @@ foreach ($Specific as $key => $value) {
     align-items: flex-start;
     margin-bottom: 15px;
     color: #555;
-  }
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+}
 
   .contact-info-item i {
     margin-right: 10px;
@@ -116,7 +125,7 @@ foreach ($Specific as $key => $value) {
   }
 
   .membership-icons img {
-    height: 35px;
+    height: 55px;
     object-fit: contain;
   }
 
@@ -131,8 +140,7 @@ foreach ($Specific as $key => $value) {
   }
 
   .download-btn {
-    background-color: #0077b5;
-    color: #fff !important;
+    color: #000000 !important;
     padding: 10px 20px;
     border-radius: 25px;
     font-weight: 600;
@@ -141,12 +149,16 @@ foreach ($Specific as $key => $value) {
     gap: 10px;
     text-decoration: none;
     transition: background 0.3s;
-  }
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    font-family: 'Nourd-Medium';
+}
+  .download-btn {
+    text-decoration: none!important;
+}
 
-  .download-btn:hover {
-    background-color: #005fa3;
-    text-decoration: none;
-  }
+  
 
   .footer-social-icons {
     display: flex;
@@ -222,10 +234,13 @@ foreach ($Specific as $key => $value) {
 
         <div class="membership-icons">
           <!-- Using text/placeholders for icons as specific images might not be in the exact path -->
-          <img src="<?= base_url('home2media/Rectangle-1.png') ?>" alt="BASIS" onerror="this.style.display='none'">
-          <img src="<?= base_url('home2media/Rectangle-2.png') ?>" alt="BACCO" onerror="this.style.display='none'">
-          <img src="<?= base_url('home2media/Rectangle-3.png') ?>" alt="BACCO" onerror="this.style.display='none'">
-          <img src="<?= base_url('home2media/Rectangle-4.png') ?>" alt="BACCO" onerror="this.style.display='none'">
+          <img src="<?= base_url('membership/1.gif') ?>" alt="BASIS" onerror="this.style.display='none'">
+          
+          <img src="<?= base_url('membership/2.gif') ?>" alt="BASIS" onerror="this.style.display='none'">
+          <img src="<?= base_url('membership/3.gif') ?>" alt="BASIS" onerror="this.style.display='none'">
+          <img src="<?= base_url('membership/4.gif') ?>" alt="BASIS" onerror="this.style.display='none'">
+          <img src="<?= base_url('membership/5.gif') ?>" alt="BASIS" onerror="this.style.display='none'">
+          
           <!-- Add more icons here if available -->
         </div>
       </div>
@@ -299,7 +314,7 @@ foreach ($Specific as $key => $value) {
     <div class="footer-bottom-bar">
       <div>
         <a href="<?= base_url('Mysoftheaven-Profile.pdf') ?>" class="download-btn" download>
-          <i class="fa fa-download"></i> Download Company Profile
+          <i class="fa fa-download" style="padding: 12px;background: #0172B9;border-radius: 50%;color: white;"></i> Download Company Profile
         </a>
       </div>
       <div class="copyright-text">

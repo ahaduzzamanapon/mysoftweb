@@ -1143,7 +1143,7 @@
         height: 60px;
     }
 
-    
+
     @media (max-width: 992px) {
         .testimonials-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -1217,6 +1217,53 @@
         opacity: 0.9;
         display: block;
         line-height: 1.5;
+    }
+
+    /* Slider dots visual only */
+    .testimonials-carousel .owl-dots,
+    .certifications-carousel .owl-dots {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .testimonials-carousel .owl-dot,
+    .certifications-carousel .owl-dot {
+        display: inline-block;
+        zoom: 1;
+        background: transparent;
+    }
+
+    .testimonials-carousel .owl-dot span,
+    .certifications-carousel .owl-dot span {
+        width: 40px;
+        height: 6px;
+        margin: 5px 5px;
+        background: #002b4950;
+        /* Changed to dark for white background visibility if needed, or stick to white if bg is dark */
+        display: block;
+        -webkit-backface-visibility: visible;
+        transition: opacity 200ms ease;
+        border-radius: 3px;
+    }
+
+    /* Adjust specific background colors for visibility */
+    .testimonials-section .owl-dot span {
+        background: #ffffff50;
+    }
+
+    .certifications-section .owl-dot span {
+        background: #002b4930;
+        /* Darker color for white background */
+    }
+
+    .testimonials-carousel .owl-dot.active span,
+    .certifications-carousel .owl-dot.active span {
+        background: #007bff;
+    }
+
+    .testimonials-carousel .owl-dot:hover span,
+    .certifications-carousel .owl-dot:hover span {
+        background: #007bff;
     }
 
     .social-links {
@@ -3196,7 +3243,6 @@
 
 
     <!-- Membership & Certification -->
-    <!-- Membership & Certification -->
     <section class="ht-section certifications-section" style="height: auto;padding-top: 50px;background-color: #fff;">
         <div class="container">
             <h2 class="section-title center-text mb-40">Membership <span class="text-blue">& Certification</span></h2>
@@ -3212,10 +3258,11 @@
                 }
             </style>
             <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;" data-aos="fade-up">
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo" /></div>
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo" /></div>
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo" /></div>
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/1.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/2.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/3.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/4.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/5.gif') ?>" class="cert-logo" /></div>
             </div>
         </div>
     </section>
@@ -3307,20 +3354,39 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-12 form-group">
                                     <label>Select Industry <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom">
-                                        <option>Select an Industry</option>
+                                    <select class="form-control form-control-custom" name="industry">
+                                        <option value="">Select an Industry</option>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Healthcare">Healthcare</option>
+                                        <option value="Finance">Finance</option>
+                                        <option value="Retail">Retail</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Real Estate">Real Estate</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group">
                                     <label>Select Service <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom">
-                                        <option>Select a service</option>
+                                    <select class="form-control form-control-custom" name="service">
+                                        <option value="">Select a service</option>
+                                        <?php if (!empty($services)) {
+                                            foreach ($services as $service) { ?>
+                                                <option value="<?= $service->name ?>"><?= $service->name ?></option>
+                                            <?php }
+                                        } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group">
                                     <label>Select Budget Range <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom">
-                                        <option>Select a budget range</option>
+                                    <select class="form-control form-control-custom" name="budget">
+                                        <option value="">Select a budget range</option>
+                                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                                        <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                                        <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                                        <option value="$100,000+">$100,000+</option>
                                     </select>
                                 </div>
                             </div>
@@ -3456,7 +3522,7 @@
             loop: true,
             margin: 50,
             nav: false,
-            dots: false,
+            dots: true,
             autoplay: true,
             autoplayTimeout: 2500,
             autoWidth: true, // Allow logos to have natural width

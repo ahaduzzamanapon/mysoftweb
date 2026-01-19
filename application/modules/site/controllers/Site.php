@@ -824,6 +824,7 @@ class Site extends Frontend_Controller
 
     public function hire_talent()
     {
+        $this->data['services'] = $this->Site_model->get_all_services(false);
         $this->data['meta_title'] = 'Hire Talent';
         $this->data['subview'] = 'hire_talent';
         $this->load->view('frontend/_layout_main', $this->data);
@@ -887,7 +888,7 @@ class Site extends Frontend_Controller
 
     public function home2()
     {
-         $this->load->model('admin/Product_new_model');
+        $this->load->model('admin/Product_new_model');
         $this->data['products'] = $this->Product_new_model->get_products_for_home();
 
         $this->data['meta_title'] = 'Home 2';

@@ -976,7 +976,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        border: 2px solid #eee;
+        border: 2px solid #509ecf;
         padding: 15px;
     }
 
@@ -1019,7 +1019,6 @@
     /* Testimonials Section */
     .testimonials-section {
         background-color: #002b49;
-        padding: 80px 0;
         text-align: center;
     }
 
@@ -1047,8 +1046,8 @@
     }
 
     .test-avatar {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         border-radius: 50%;
         background: #fff;
         display: flex;
@@ -1080,7 +1079,7 @@
         background: #fff;
         padding: 30px 20px 20px 20px;
         position: relative;
-        height: 180px;
+        height: 210px;
     }
 
     .project-tag {
@@ -1101,6 +1100,7 @@
         line-height: 1.6;
         color: #333;
         margin: 0;
+        text-align: -webkit-center;
     }
 
     /* Slider dots visual only */
@@ -1141,16 +1141,9 @@
 
     .cert-logo {
         height: 60px;
-        filter: grayscale(100%);
-        opacity: 0.7;
-        transition: 0.3s;
     }
 
-    .cert-logo:hover {
-        filter: grayscale(0%);
-        opacity: 1;
-    }
-
+    
     @media (max-width: 992px) {
         .testimonials-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -2658,87 +2651,283 @@
             </p>
 
             <div class="roles-grid">
-                <!-- Row 1 -->
+                <!-- 1. Software Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Software Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
-                    </div>
-                </div>
-                <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
-                    <div class="role-content">
-                        <h4>Web Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
-                    </div>
-                </div>
-                <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
-                            class="role-img-new"></div>
-                    <div class="role-content">
-                        <h4>Application Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
-                    </div>
-                </div>
-                <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
-                    <div class="role-content">
-                        <h4>DevOps Engineers</h4>
                         <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
                             solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
                 </div>
 
-                <!-- Row 2 -->
-                <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
-                            class="role-img-new"></div>
-                    <div class="role-content">
-                        <h4>Software Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
-                    </div>
-                </div>
+                <!-- 2. Web Developers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Web Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Develop responsive, high-performance web applications. Ensure polished user interfaces and
+                            seamless front-end to back-end integration.</p>
                     </div>
                 </div>
+
+                <!-- 3. Application Developers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Application Developers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Create cross-platform mobile and desktop applications. Deliver apps with smooth performance
+                            and robust functionality.</p>
                     </div>
                 </div>
+
+                <!-- 4. DevOps Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>DevOps Engineers</h4>
-                        <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
-                            solutions that integrate smoothly into your workflows and drive business results.</p>
+                        <p>Automate deployment pipelines and manage infrastructure efficiently. Improve release speed
+                            and reliability across projects.</p>
+                    </div>
+                </div>
+
+                <!-- 5. QA Engineers -->
+                <div class="role-card hover-lift" data-aos="fade-up">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>QA Engineers</h4>
+                        <p>Design and implement testing strategies to catch issues early. Ensure your software meets
+                            high-quality standards before release.</p>
+                    </div>
+                </div>
+
+                <!-- 6. UI/UX Designers -->
+                <div class="role-card hover-lift" data-aos="fade-up">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>UI/UX Designers</h4>
+                        <p>Translate research into intuitive, user-friendly designs. Improve adoption and overall
+                            experience for your end users.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Cloud Support Engineers -->
+                <div class="role-card hover-lift" data-aos="fade-up">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Cloud Support Engineers</h4>
+                        <p>Manage cloud deployments and optimize costs across platforms. Ensure resilience and
+                            scalability for critical systems.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Data Scientists -->
+                <div class="role-card hover-lift" data-aos="fade-up">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Data Scientists</h4>
+                        <p>Analyze complex datasets to extract actionable insights. Build predictive models that drive
+                            smarter business decisions.</p>
+                    </div>
+                </div>
+
+                <!-- HIDDEN ROLES (Initially Hidden) -->
+
+                <!-- 9. AI & ML Developers -->
+                <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>AI & ML Developers</h4>
+                        <p>Develop machine learning and AI solutions for automation. Deliver intelligent features that
+                            enhance your products.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Security Engineers -->
+                <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Security Engineers</h4>
+                        <p>Protect applications, infrastructure, and data from threats. Implement best practices to
+                            maintain a secure environment.</p>
+                    </div>
+                </div>
+
+                <!-- 11. System Architects -->
+                <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>System Architects</h4>
+                        <p>Design high-level architectures for scalability and performance. Ensure systems are robust
+                            and ready for future growth.</p>
+                    </div>
+                </div>
+
+                <!-- 12. Database Administrators -->
+                <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Database Administrators</h4>
+                        <p>Manage, optimize, and secure databases for peak performance. Maintain data integrity and high
+                            availability.</p>
+                    </div>
+                </div>
+
+                <!-- 13. Network Engineers -->
+                <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Network Engineers</h4>
+                        <p>Design and maintain secure, reliable networks. Support hybrid and multi-cloud connectivity
+                            seamlessly.</p>
+                    </div>
+                </div>
+
+                <!-- 14. IoT Developers -->
+                <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>IoT Developers</h4>
+                        <p>Connect devices to cloud services and develop end-to-end solutions. Enable real-time data
+                            collection and smart automation.</p>
+                    </div>
+                </div>
+
+                <!-- 15. Blockchain Developers -->
+                <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Blockchain Developers</h4>
+                        <p>Build secure smart contracts and decentralized applications. Ensure correctness,
+                            transparency, and auditability.</p>
+                    </div>
+                </div>
+
+                <!-- 16. Game Developers -->
+                <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
+                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                            class="role-img-new"></div>
+                    <div class="role-content">
+                        <h4>Game Developers</h4>
+                        <p>Develop optimized, real-time gaming experiences. Deliver engaging gameplay on engines like
+                            Unity or Unreal.</p>
                     </div>
                 </div>
             </div>
+
             <div class="center-text mt-5">
-                <a  class="btn-custom btn-outline-blue">Explore More Roles</a>
+                <a href="javascript:void(0)" id="exploreMoreBtn" class="btn-custom btn-outline-blue">Explore More
+                    Roles</a>
+                <div id="roleLoader" class="role-loader"></div>
             </div>
         </div>
     </section>
+
+    <style>
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            25% {
+                opacity: 0.25;
+                transform: translateY(15px);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: translateY(10px);
+            }
+
+            75% {
+                opacity: 0.75;
+                transform: translateY(5px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Loader CSS */
+        .role-loader {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #007bff;
+            /* Blue */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var exploreBtn = document.getElementById('exploreMoreBtn');
+            var loader = document.getElementById('roleLoader');
+
+            if (exploreBtn) {
+                exploreBtn.addEventListener('click', function () {
+                    // Hide button, show loader
+                    exploreBtn.style.display = 'none';
+                    if (loader) loader.style.display = 'block';
+
+                    // Simulate loading delay
+                    setTimeout(function () {
+                        if (loader) loader.style.display = 'none';
+
+                        var hiddenRoles = document.querySelectorAll('.hidden-role');
+                        hiddenRoles.forEach(function (role, index) {
+                            role.style.display = 'block'; // Or 'flex' depending on layout
+                            // Add animation class
+                            role.classList.add('fade-in-up');
+                            // Stagger the animation
+                            role.style.animationDelay = (index * 0.1) + 's';
+                        });
+                        // this.parentElement.style.display = 'none'; // Hide the button container
+
+                        // Refresh AOS if used elsewhere to ensure layout recalculations map correctly
+                        if (typeof AOS !== 'undefined') {
+                            setTimeout(() => { AOS.refresh(); }, 100);
+                        }
+                    }, 800); // 800ms delay
+                });
+            }
+        });
+    </script>
 
     <!-- Tech Stack -->
     <section class="ht-section bg-light" style="height: auto; padding-bottom: 80px;">
@@ -2800,8 +2989,7 @@
     </section>
 
     <!-- Clients Section -->
-    <section class="ht-section clients-section"
-        style="height: auto; min-height: 500px; padding: 60px 0; overflow: hidden;">
+    <section class="ht-section clients-section" style="height: auto; padding: 60px 0; overflow: hidden;">
         <div class="container-fluid">
             <div class="row items-center">
                 <!-- Left Column: Text -->
@@ -2929,7 +3117,7 @@
 
     <!-- Client Testimonials -->
     <section class="ht-section testimonials-section"
-        style="height: auto; padding-top: 100px; padding-bottom: 50px; background-color: #002b49;">
+        style="height: auto;  padding-bottom: 50px; background-color: #002b49;">
         <div class="container-fluid">
             <h2 class="section-title text-white center-text mb-40">Client Testimonials</h2>
 
@@ -3065,7 +3253,7 @@
                         <div class="contact-item mb-30">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
-                                <strong>Visit Us Head Office</strong>
+                                <strong>Visit Head Office</strong>
                                 <span>P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara, Mirpur,
                                     Dhaka-1216.</span>
                             </div>
@@ -3074,7 +3262,7 @@
                         <div class="contact-item mb-40">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
-                                <strong>Visit Us Corporate Office</strong>
+                                <strong>Visit Corporate Office</strong>
                                 <span>8813 NW 23 Street, Miami, FL 33172, USA.</span>
                             </div>
                         </div>

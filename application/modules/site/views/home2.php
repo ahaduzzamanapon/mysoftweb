@@ -1419,8 +1419,8 @@
         width: 85px;
         height: 89px;
         background-color: #dbeafe;
-        mask-image: url("http://127.0.0.1/mysoftweb/home2media/vector.png");
-        -webkit-mask-image: url("http://127.0.0.1/mysoftweb/home2media/vector.png");
+        mask-image: url("<?= base_url('home2media/vector.png') ?>");
+        -webkit-mask-image: url("<?= base_url('home2media/vector.png') ?>");
         mask-size: contain;
         -webkit-mask-size: contain;
         mask-repeat: no-repeat;
@@ -1497,40 +1497,40 @@
     }
 
     .service-card-title {
-    display: flex;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    margin-top: 29px;
-    color: #000;
-    line-height: 1.4;
-    position: relative;
-    z-index: 1;
-    letter-spacing: -0.5px;
-    justify-content: center;
-    align-content: center;
-    text-align: -webkit-center;
-}
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 29px;
+        color: #000;
+        line-height: 1.4;
+        position: relative;
+        z-index: 1;
+        letter-spacing: -0.5px;
+        justify-content: center;
+        align-content: center;
+        text-align: -webkit-center;
+    }
 
     .btn-service-view {
-    background: #fff;
-    color: #1a73e8;
-    border: 1px solid #eef6fc;
-    border-radius: 50px;
-    padding: 8px 24px;
-    font-size: 14px;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s;
-    text-align: center;
-    width: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    align-self: flex-start;
-    position: relative;
-    z-index: 1;
-    text-decoration: none !important;
-    place-self: anchor-center;
-}
+        background: #fff;
+        color: #1a73e8;
+        border: 1px solid #eef6fc;
+        border-radius: 50px;
+        padding: 8px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        transition: all 0.3s;
+        text-align: center;
+        width: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        align-self: flex-start;
+        position: relative;
+        z-index: 1;
+        text-decoration: none !important;
+        place-self: anchor-center;
+    }
 
     .btn-service-view:hover {
         background: #1a73e8;
@@ -3049,24 +3049,24 @@
         });
 
     });
-// Relationship Section Marquee
-        $('#relationship-marquee').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: false,
-            dots: false,
-            autoplay: true,
-            slideTransition: 'linear',
-            autoplayTimeout: 3000,
-            autoplaySpeed: 3000,
-            smartSpeed: 3000,
-            autoplayHoverPause: false,
-            responsive: {
-                0: { items: 1 },
-                600: { items: 3 },
-                1000: { items: 5 },
-                1400: { items: 8 }
-            }
-        });
+    // Relationship Section Marquee
+    $('#relationship-marquee').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        slideTransition: 'linear',
+        autoplayTimeout: 3000,
+        autoplaySpeed: 3000,
+        smartSpeed: 3000,
+        autoplayHoverPause: false,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 3 },
+            1000: { items: 5 },
+            1400: { items: 8 }
+        }
+    });
 
 </script>

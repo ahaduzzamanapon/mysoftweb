@@ -155,8 +155,8 @@
         width: 85px;
         height: 89px;
         background-color: #dbeafe;
-        mask-image: url("http://127.0.0.1/mysoftweb/home2media/vector.png");
-        -webkit-mask-image: url("http://127.0.0.1/mysoftweb/home2media/vector.png");
+        mask-image: url("<?= base_url('home2media/vector.png') ?>");
+        -webkit-mask-image: url("<?= base_url('home2media/vector.png') ?>");
         mask-size: contain;
         -webkit-mask-size: contain;
         mask-repeat: no-repeat;

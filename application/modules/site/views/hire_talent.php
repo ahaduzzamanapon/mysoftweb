@@ -14,6 +14,18 @@
 <!-- AOS Animation CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
+    p {
+        color: #575757 !important;
+        font-family: Arial;
+        font-weight: 400 !important;
+        font-style: Regular;
+        font-size: 18px !important;
+        line-height: 182% !important;
+        letter-spacing: 0%;
+
+
+    }
+
     /* Custom Font */
     @font-face {
         font-family: 'Nourd-Bold';
@@ -52,6 +64,7 @@
         background-clip: text !important;
         color: transparent !important;
         font-size: 4rem !important;
+        line-height: 44px;
     }
 
 
@@ -131,13 +144,14 @@
         padding: 30px;
     }
 
+
     .rounded {
         border-radius: 10px;
     }
 
     /* Hero */
     .hero-desc {
-        color: #666;
+        color: #575757;
         margin: 52px 22px 59px 1px;
         font-family: Arial;
         font-weight: 400;
@@ -215,9 +229,27 @@
         width: 90%;
     }
 
+    .bubble:hover {
+        background: #0177BC;
+    }
+
+    .bubble:hover .hero_bobble_number {
+        background: #ffffff;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        color: transparent !important;
+        font-size: 4rem !important;
+        line-height: 44px;
+    }
+
+    .bubble:hover .hero_bobble_text {
+        color: #ffffff !important;
+
+    }
 
 
-    .bubble strong {
+
+    rgba(255, 255, 255, 1) .bubble strong {
         font-size: 18px;
         color: #333;
         line-height: 1;
@@ -520,7 +552,6 @@
     }
 
     .card-purple-light:hover {
-        border-color: #9c27b0;
         background: #fff;
     }
 
@@ -585,18 +616,26 @@
 
     .card-blue-light h4::after {
         background-color: #2196f3;
+        width: 63%;
+        padding: 3px;
     }
 
     .card-purple-light h4::after {
         background-color: #9c27b0;
+        width: 63%;
+        padding: 3px;
     }
 
     .card-green-light h4::after {
         background-color: #4caf50;
+        width: 63%;
+        padding: 3px;
     }
 
     .card-orange-light h4::after {
         background-color: #ff9800;
+        width: 63%;
+        padding: 3px;
     }
 
     .process-card p {
@@ -1553,7 +1592,7 @@
     .why-mysoftheaven-subtitle {
         font-size: 16px;
         font-weight: 500;
-        color: #666;
+        color: #000 !important;
         margin: 0 0 25px 0;
         display: block;
     }
@@ -1580,13 +1619,13 @@
 
     .why-img-bottom_left {
         height: 294px;
-        top: 52%;
+        top: 43%;
         position: absolute;
     }
 
     .why-img-bottom_right {
         height: 294px;
-        top: 63%;
+        top: 53%;
         right: 10%;
         position: absolute;
     }
@@ -1666,6 +1705,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+        padding: 15px;
+        border-radius: 10px;
+        transition: 0.5s;
+
     }
 
     .icon-box {
@@ -1823,8 +1866,10 @@
             text-align: center;
         }
 
+
         .hero-desc {
             text-align: center;
+            color: #575757;
         }
 
         .hero-btns {
@@ -2203,17 +2248,18 @@
                     </p>
                     <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
                         <a href="<?= base_url('contact-us') ?>" class="btn-custom btn-none"
-                            style="font-family: 'Nourd-Bold';font-weight: 500;font-size: 18px;line-height: 150%;">Explore
+                            style="font-family: 'Nourd-Medium';font-weight: 500;font-size: 19px;line-height: 150%;">Explore
                             Roles</a>
                         <a href="<?= base_url('request-quotation') ?>" class="btn-custom btn-blue"
-                            style="font-family: 'Nourd-Bold';font-weight: 500;font-size: 18px;line-height: 150%;">Get in
+                            style="font-family: 'Nourd-Medium';font-weight: 500;font-size: 19px;line-height: 150%;">Get
+                            in
                             Touch <i class="fa fa-arrow-right"></i> </a>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-12 relative" data-aos="fade-left">
                     <div class="bubble-container">
                         <div class="bubble-1">
-                            <div class="bubble hover-lift">
+                            <div class="bubble">
                                 <strong class="hero_bobble_number">
                                     2M+
                                 </strong>
@@ -2221,7 +2267,7 @@
                             </div>
                         </div>
                         <div class="bubble-2">
-                            <div class="bubble hover-lift">
+                            <div class="bubble">
                                 <strong class="hero_bobble_number">
                                     20+
                                 </strong>
@@ -2229,7 +2275,7 @@
                             </div>
                         </div>
                         <div class="bubble-3">
-                            <div class="bubble hover-lift">
+                            <div class="bubble">
                                 <strong class="hero_bobble_number">
                                     35k+
                                 </strong>
@@ -2237,7 +2283,7 @@
                             </div>
                         </div>
                         <div class="bubble-4">
-                            <div class="bubble hover-lift">
+                            <div class="bubble">
                                 <strong class="hero_bobble_number">
                                     15+
                                 </strong>
@@ -2390,7 +2436,9 @@
     <!-- Engagement Models -->
     <section class="ht-section engagement-section" style="min-height:653px;">
         <div class="container-fluid">
-            <h2 class="section-title center-text mb-20">Engagement <span class="text-black">Models</span></h2>
+            <h2 class="section-title center-text"
+                style="font-family: Nourd-Bold;font-weight: 700;font-size: 40px;line-height: 150%;margin: 0;"><strong
+                    style="color:#0172B9">Engagement</strong> Models</h2>
             <p class="center-text mb-50" style="color: #000;">Choose the engagement that fits your project and budget.
             </p>
             <div class="row items-center">
@@ -2403,28 +2451,192 @@
                     <ul class="engagement-list-new">
                         <li class="hover-lift">
                             <div class="icon-box bg-green-light">
-                                <i class="fa fa-clock-o text-green-dark"></i>
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_91_3313)">
+                                        <path
+                                            d="M14.3152 12.135C14.6087 12.135 14.8458 12.3728 14.8458 12.6656V17.488H19.6682C19.9611 17.488 20.1988 17.7258 20.1988 18.0186C20.1988 18.3115 19.9611 18.5492 19.6682 18.5492H14.3145C14.0217 18.5492 13.7839 18.3115 13.7839 18.0186V12.6649C13.7846 12.3728 14.0223 12.135 14.3152 12.135ZM31.7189 30.0521C30.2474 31.5237 28.2838 32.3338 26.1886 32.3338C24.3492 32.3338 22.6113 31.7089 21.2195 30.5608C19.1091 31.7222 16.7311 32.3351 14.3152 32.3351C6.42148 32.3345 0 25.913 0 18.0193C0 10.3035 6.13594 3.99361 13.7846 3.71338V2.196C13.7846 1.98151 13.9141 1.7876 14.112 1.70526C14.3099 1.62291 14.539 1.66873 14.6904 1.82014L18.8746 6.0044C18.9743 6.10401 19.03 6.23881 19.03 6.37959C19.03 6.52037 18.9743 6.65518 18.8746 6.75479L18.3925 7.2369C19.9179 7.81065 21.3144 8.70713 22.4699 9.8626C24.316 11.708 25.4721 14.1272 25.7616 16.7224C25.9031 16.7151 26.0452 16.7111 26.188 16.7111C28.2824 16.7111 30.2467 17.5212 31.7183 18.9928C34.7677 22.0422 34.7677 27.0034 31.7189 30.0521ZM17.5605 8.07029L14.6904 10.9404C14.5383 11.0924 14.3105 11.1376 14.112 11.0553C13.9134 10.9729 13.7846 10.7797 13.7846 10.5652V9.07303C9.08902 9.34862 5.35367 13.256 5.35367 18.0193C5.35367 22.9612 9.37391 26.9815 14.3159 26.9815C15.7801 26.9815 17.2191 26.6229 18.5034 25.9429C18.0559 23.4985 18.7744 20.8801 20.661 18.9941C21.7786 17.8758 23.1811 17.1401 24.7091 16.8512C24.4481 14.4918 23.3976 12.2924 21.7208 10.6156C20.5561 9.45088 19.1237 8.57565 17.5605 8.07029ZM14.3152 31.2733C16.4389 31.2733 18.5307 30.7606 20.4086 29.7885C19.6529 28.9597 19.1077 28.0061 18.773 26.9981C17.3945 27.6834 15.8671 28.0433 14.3152 28.0433C8.7882 28.0433 4.29184 23.5469 4.29184 18.0193C4.29184 12.4916 8.7882 7.99526 14.3152 7.99526C14.608 7.99526 14.8458 8.23299 14.8458 8.52584V9.28287L17.0146 7.11404C17.0279 7.09944 17.0412 7.08549 17.0558 7.07287L17.7491 6.37959L14.8458 3.47631V4.23334C14.8458 4.52686 14.608 4.76393 14.3152 4.76393C7.00719 4.76393 1.06117 10.7093 1.06117 18.018C1.06117 25.3266 7.00719 31.2733 14.3152 31.2733ZM30.9679 19.7445C29.6969 18.4735 27.9995 17.7736 26.1886 17.7736C24.3777 17.7736 22.6811 18.4735 21.4107 19.7439C19.7067 21.4478 19.1051 23.8431 19.6051 26.0352C19.6191 26.0744 19.6284 26.1142 19.633 26.154C19.9179 27.3082 20.5102 28.4012 21.4107 29.3017C21.4857 29.3767 21.5628 29.4498 21.6405 29.5208L21.6425 29.5228C22.8836 30.6537 24.4853 31.2726 26.1886 31.2726C27.9995 31.2726 29.6969 30.5727 30.9679 29.3017C33.6029 26.6667 33.6029 22.3788 30.9679 19.7445ZM28.6244 22.414L25.5345 25.5059L23.7529 23.7229C23.5457 23.5157 23.2097 23.5157 23.0025 23.7229C22.7953 23.9301 22.7946 24.2661 23.0025 24.474L25.1593 26.6328C25.2589 26.7324 25.3937 26.7882 25.5345 26.7882C25.6753 26.7882 25.8101 26.7324 25.9097 26.6328L29.3755 23.1658C29.5827 22.9586 29.5827 22.6226 29.3755 22.4147C29.1676 22.2069 28.8316 22.2069 28.6244 22.414Z"
+                                            fill="#286701" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_91_3313">
+                                            <rect width="34" height="34" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
                             </div>
                             <span class="eng-text">Full time resource contracted monthly for sustained product
                                 work</span>
                         </li>
                         <li class="hover-lift">
                             <div class="icon-box bg-blue-light">
-                                <i class="fa fa-hourglass-half text-blue-dark"></i>
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M24.8437 14.625C24.8437 15.7969 24.6563 16.875 24.3281 17.9063H24.2344C24.2344 17.9063 24.2812 17.7656 24.375 17.4844C24.4687 17.2031 24.5625 16.8281 24.6562 16.3125C24.75 15.7969 24.7969 15.1406 24.7969 14.3906C24.7969 13.6406 24.7031 12.7969 24.4688 11.9062C24.4219 11.7187 24.375 11.5313 24.3281 11.3438C24.3281 11.3438 24.3281 11.3438 24.3281 11.2969C24.6563 12.375 24.8437 13.5 24.8437 14.625Z"
+                                        fill="#2E79BE" />
+                                    <path
+                                        d="M23.6727 25.4143C24.7859 25.4098 25.6847 24.5038 25.6802 23.3906C25.6758 22.2774 24.7698 21.3786 23.6566 21.3831C22.5434 21.3875 21.6445 22.2935 21.649 23.4067C21.6534 24.5199 22.5595 25.4188 23.6727 25.4143Z"
+                                        fill="#2E79BE" />
+                                    <path
+                                        d="M19.564 27.8678C20.0448 27.0393 19.7629 25.9779 18.9345 25.4971C18.106 25.0163 17.0447 25.2982 16.5639 26.1266C16.0831 26.9551 16.3649 28.0165 17.1934 28.4973C18.0218 28.9781 19.0832 28.6962 19.564 27.8678Z"
+                                        fill="#2E79BE" />
+                                    <path
+                                        d="M12.1118 28.5444C12.8325 28.1368 13.0864 27.2221 12.6788 26.5014C12.2712 25.7806 11.3565 25.5268 10.6358 25.9344C9.91508 26.3419 9.66122 27.2566 10.0688 27.9774C10.4764 28.6981 11.3911 28.9519 12.1118 28.5444Z"
+                                        fill="#2E79BE" />
+                                    <path
+                                        d="M6.8529 24.4582C6.86067 23.9405 6.44728 23.5145 5.92957 23.5067C5.41186 23.4989 4.98588 23.9123 4.97811 24.43C4.97035 24.9477 5.38374 25.3737 5.90144 25.3815C6.41915 25.3893 6.84513 24.9759 6.8529 24.4582Z"
+                                        fill="#2E79BE" />
+                                    <path
+                                        d="M28.875 15.0938C28.875 16.5 28.6875 17.8125 28.2656 19.125L24.2812 17.9531C24.6094 16.9219 24.7969 15.7969 24.7969 14.6719C24.7969 13.5 24.6094 12.4219 24.2812 11.3906C23.625 9.32812 22.3125 7.54688 20.6719 6.23438C20.625 6.1875 20.5781 6.14062 20.5312 6.14062C19.7812 5.57812 18.9375 5.10938 18.0469 4.73438C17.4844 4.5 16.875 4.3125 16.2187 4.17187L15.9844 4.125L15.75 4.07812C15.6094 4.03125 15.4219 4.03125 15.2812 3.98438L15.0469 3.9375C14.9531 3.9375 14.9062 3.9375 14.8125 3.9375H14.5312H14.3906H14.3438H14.2969C13.0312 3.89062 11.7188 4.07812 10.5 4.45312C9.28125 4.82812 8.10937 5.4375 7.125 6.1875C6.14062 6.9375 5.29688 7.82812 4.64062 8.76562C4.45312 9 4.3125 9.23438 4.17187 9.46875C4.07812 9.60938 4.03125 9.70312 3.98438 9.84375C3.9375 9.98438 3.84375 10.0781 3.79688 10.2187C3.5625 10.6875 3.375 11.2031 3.1875 11.6719C3.09375 11.9062 3.04688 12.1406 2.95312 12.375C2.90625 12.4688 2.90625 12.6094 2.85937 12.7031C2.85937 12.7969 2.8125 12.9375 2.8125 13.0312C2.8125 13.0781 2.76562 13.125 2.76562 13.2188C2.76562 13.2656 2.76562 13.3125 2.71875 13.4062C2.71875 13.5 2.67187 13.6406 2.67187 13.7344C2.625 13.9687 2.625 14.1562 2.57812 14.3438C2.57812 14.5781 2.53125 14.7656 2.53125 15V15.0469V15.1406V15.2812V15.5625C2.53125 15.9375 2.53125 16.2656 2.57812 16.5469C2.625 17.1562 2.71875 17.625 2.8125 17.9063C2.85938 18.0469 2.85937 18.1875 2.90625 18.2812C2.90625 18.375 2.95312 18.4219 2.95312 18.4219L1.6875 18.75C1.6875 18.75 1.6875 18.7031 1.64062 18.6094C1.59375 18.5156 1.54687 18.375 1.5 18.2344C1.45312 18.0469 1.35937 17.8125 1.3125 17.5313C1.17187 16.7813 1.125 15.9844 1.125 15.1406C1.125 7.45312 7.35938 1.21875 15 1.21875C18.4688 1.21875 21.6094 2.48437 24.0469 4.54688C25.125 5.48438 26.0625 6.51562 26.7656 7.73438C28.0781 9.89062 28.875 12.4219 28.875 15.0938Z"
+                                        fill="#2E79BE" />
+                                    <path
+                                        d="M9.1875 14.7188C9 15.1875 9.14062 15.6563 9.46875 16.0313C10.5469 17.1094 11.25 17.8594 12.375 18.9375C12.5156 19.0781 12.7031 19.1719 12.8437 19.2188C13.3594 19.3594 13.7812 19.2656 14.1562 18.8906C15.0469 18 16.0781 17.0156 17.2969 15.7969C18.2812 14.8125 19.4531 13.7344 20.3906 12.7969L20.4844 12.7031C20.8594 12.3281 20.9062 11.6719 20.625 11.25C20.3906 10.875 20.0156 10.6875 19.5937 10.6875C19.2656 10.6875 18.9375 10.8281 18.7031 11.0625C17.9062 11.8594 16.875 12.8438 16.125 13.5938L15.9844 13.7344C15.1875 14.5313 14.25 15.4219 13.4531 16.2188L13.2656 16.4063L11.25 14.3438C11.0156 14.1094 10.6875 13.9688 10.3594 13.9688C10.3125 13.9688 10.3125 13.9688 10.2656 13.9688C9.75 13.9688 9.375 14.25 9.1875 14.7188Z"
+                                        fill="#2E79BE" />
+                                </svg>
                             </div>
                             <span class="eng-text">Part time or hourly for advisory tasks and short lived
                                 features</span>
                         </li>
                         <li class="hover-lift">
                             <div class="icon-box bg-purple-light">
-                                <i class="fa fa-users text-purple-dark"></i>
+                                <svg width="32" height="31" viewBox="0 0 32 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M27.684 17.0186C27.9816 18.0107 28.8745 18.9036 30.1146 19.3996C29.7178 21.0862 29.0729 22.6736 28.18 24.0626C26.6422 23.4673 25.1045 23.5665 24.162 24.509C23.2194 25.4515 23.1202 26.9893 23.7155 28.5271C22.3265 29.42 20.7392 30.0649 19.0526 30.4617C18.4077 28.9735 17.2171 27.9318 15.8778 27.9318C14.5384 27.9318 13.3975 28.9239 12.703 30.4617C11.0164 30.0649 9.47864 29.42 8.04008 28.5271C8.63535 26.9893 8.48653 25.4515 7.59362 24.509C6.65111 23.5665 5.11333 23.4673 3.57556 24.0626C2.68265 22.6736 2.03778 21.0862 1.64093 19.3996C2.88107 18.854 3.72437 18.0107 4.07161 17.0186"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M22.5746 9.32959C24.6084 9.77604 26.6422 9.77604 28.6265 9.32959C30.065 9.32959 31.206 10.4705 31.206 11.9091V15.8279C31.206 16.4728 30.6603 17.0185 30.0154 17.0185H21.1856C20.5407 17.0185 19.9951 16.4728 19.9951 15.8279V11.9091C19.9951 10.4705 21.136 9.32959 22.5746 9.32959Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" />
+                                    <path d="M29.2217 13.7451V17.0191" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M22.0289 13.7451V17.0191" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.6501 9.67725L24.5588 13.5961L25.6501 14.8859L26.6918 13.5961L25.6501 9.67725Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M25.6501 7.3953C26.9925 7.3953 28.0808 6.30705 28.0808 4.96462C28.0808 3.62219 26.9925 2.53394 25.6501 2.53394C24.3077 2.53394 23.2194 3.62219 23.2194 4.96462C23.2194 6.30705 24.3077 7.3953 25.6501 7.3953Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M10.7683 9.87564C10.7683 8.43708 11.9092 7.29614 13.3478 7.29614C15.3816 7.74259 17.4155 7.74259 19.3997 7.29614C20.6399 7.29614 21.6816 8.18905 21.9296 9.37959"
+                                        stroke="#AC25FF" stroke-miterlimit="10" />
+                                    <path
+                                        d="M16.3738 7.59375L15.3321 11.5622L16.3738 12.8024L17.4651 11.5622L16.3738 7.59375Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M16.4235 5.36137C17.7659 5.36137 18.8542 4.27311 18.8542 2.93068C18.8542 1.58825 17.7659 0.5 16.4235 0.5C15.0811 0.5 13.9928 1.58825 13.9928 2.93068C13.9928 4.27311 15.0811 5.36137 16.4235 5.36137Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M3.0795 9.28027C5.11334 9.72673 7.14717 9.72673 9.1314 9.28027C10.57 9.28027 11.7109 10.4212 11.7109 11.8598V15.7786C11.7109 16.4235 11.1652 16.9692 10.5204 16.9692H1.69054C1.04566 16.9692 0.5 16.4731 0.5 15.7786V11.8598C0.5 10.4212 1.64093 9.28027 3.0795 9.28027Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" />
+                                    <path d="M9.72662 13.6953V16.9693" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M2.53381 13.6953V16.9693" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M6.10544 9.62769L5.06372 13.5465L6.10544 14.7867L7.19677 13.5465L6.10544 9.62769Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M6.10537 7.3455C7.4478 7.3455 8.53605 6.25724 8.53605 4.91481C8.53605 3.57238 7.4478 2.48413 6.10537 2.48413C4.76294 2.48413 3.67468 3.57238 3.67468 4.91481C3.67468 6.25724 4.76294 7.3455 6.10537 7.3455Z"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M11.7604 14.6875H19.995" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.8485 16.9692C25.0052 21.7314 20.8383 25.3526 15.8777 25.3526C10.9172 25.3526 6.75028 21.7314 5.90698 17.0188"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M15.8778 17.8127V14.6875" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M15.8778 25.3526V21.5825" stroke="#AC25FF" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M15.8778 17.8126C16.0762 17.763 16.2747 17.7134 16.4731 17.7134C17.5644 17.7134 18.4573 18.6063 18.4573 19.6976C18.4573 20.7889 17.5644 21.6818 16.4731 21.6818C16.2747 21.6818 16.0762 21.6322 15.8778 21.5826"
+                                        stroke="#AC25FF" stroke-miterlimit="10" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
                             </div>
                             <span class="eng-text">Fixed team for a group of resources working continuously with your
                                 squads</span>
                         </li>
                         <li class="hover-lift">
                             <div class="icon-box bg-orange-light">
-                                <i class="fa fa-file-text-o text-orange-dark"></i>
+                                <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M27.586 31.3275L23.9149 29.1526" stroke="#FF4B23" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M25.3016 32.9759L22.5967 31.3734" stroke="#FF4B23" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M22.5332 34.3372L21.4732 33.7093" stroke="#FF4B23" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5354 10.5831H24.3935" stroke="#FF4B23" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5354 6.77766H15.4645" stroke="#FF4B23" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.5354 13.9547H24.3935" stroke="#FF4B23" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <mask id="mask0_91_3346" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                        x="0" y="0" width="38" height="38">
+                                        <path d="M0 0H37.2857V37.2857H0V0Z" fill="white" />
+                                    </mask>
+                                    <g mask="url(#mask0_91_3346)">
+                                        <path
+                                            d="M22.0588 0.699728V4.52785C22.0588 5.77044 23.0661 6.77766 24.3087 6.77766H28.1368"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M28.2902 16.8251V7.4834C28.2902 7.03138 28.1107 6.59786 27.7911 6.27824L22.558 1.04513C22.2383 0.725505 21.8048 0.545921 21.3528 0.545921H4.88835C3.64591 0.545921 2.63861 1.55315 2.63861 2.79574V31.7755C2.63861 33.018 3.64591 34.0252 4.88835 34.0252H10.6034"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M13.6714 19.7277L12.5409 19.0579C12.2298 18.8736 11.8283 18.9765 11.644 19.2874L6.99592 27.1332C6.81168 27.4443 6.91443 27.8458 7.22546 28.03L8.35605 28.6998C9.11436 29.1491 10.0933 28.8985 10.5426 28.1402L14.231 21.9142C14.6803 21.1559 14.4298 20.177 13.6714 19.7277Z"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M29.2801 25.2221L31.0088 28.1402C31.4581 28.8985 32.4371 29.1491 33.1954 28.6998L34.326 28.0301C34.637 27.8457 34.7398 27.4443 34.5555 27.1332L29.9074 19.2874C29.7231 18.9764 29.3216 18.8737 29.0106 19.0579L27.88 19.7277C27.1217 20.177 26.8711 21.1559 27.3204 21.9143L27.9725 23.0149"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M20.7191 22.3157L20.5326 22.2053C19.4602 21.5898 18.9587 21.4761 17.9911 21.85L16.9366 22.2578C16.2949 22.5058 15.5748 22.4459 14.9829 22.0953L14.3309 21.7108"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M10.291 28.4601L11.3837 29.1051" stroke="#FF4B23"
+                                            stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M19.4675 35.5226L21.2169 36.559C21.8305 36.9226 22.6225 36.7198 22.9859 36.1063C23.3495 35.4928 23.1467 34.7007 22.5332 34.3373L23.9853 35.1975C24.5989 35.561 25.3909 35.3583 25.7544 34.7448C26.1179 34.1313 25.9151 33.3393 25.3016 32.9758L26.2697 33.5493C26.8832 33.9128 27.6753 33.71 28.0387 33.0966C28.4022 32.483 28.1995 31.691 27.5859 31.3275L28.7708 32.0294C29.3842 32.3928 30.1762 32.1901 30.5396 31.5767C30.903 30.9632 30.7004 30.1713 30.0869 29.8078"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M27.3753 22.0064L27.2233 22.0949C26.6313 22.4455 25.9113 22.5054 25.2695 22.2573L24.0803 21.7901C23.7083 21.644 23.3 21.6182 22.9126 21.7162L21.0905 22.1774C20.2423 22.392 19.6481 23.1552 19.6481 24.0302V26.4625C19.6481 26.8064 19.9268 27.0861 20.2707 27.0863C21.3078 27.087 22.1487 26.2465 22.1487 25.2096V25.1066L29.9479 29.7252C30.0924 29.5713 30.258 29.4382 30.4402 29.3303L31.5453 28.6847"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12.6186 31.782C12.2029 32.3611 11.3963 32.4936 10.8172 32.0778C10.2382 31.6621 10.1057 30.8555 10.5214 30.2764L11.2526 29.2579C11.6684 28.6789 12.4749 28.5463 13.054 28.9621C13.6332 29.3779 13.7656 30.1844 13.3498 30.7635"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M16.254 31.1451L14.7159 33.2876C14.3001 33.8668 13.4936 33.9992 12.9145 33.5834C12.3353 33.1677 12.2029 32.3611 12.6187 31.7821L14.1568 29.6395C14.5726 29.0604 15.3791 28.928 15.9582 29.3438C16.5374 29.7595 16.6698 30.566 16.254 31.1451Z"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M16.254 31.1452C16.6697 30.566 17.4762 30.4336 18.0553 30.8494C18.6344 31.2651 18.7669 32.0717 18.3512 32.6507L16.813 34.7933C16.3972 35.3724 15.5908 35.5048 15.0115 35.089C14.4324 34.6733 14.3 33.8668 14.7158 33.2877"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M17.6677 33.6025C18.0835 33.0234 18.89 32.891 19.4691 33.3067C20.0482 33.7225 20.1807 34.529 19.7649 35.1081L19.2534 35.8206C18.8376 36.3997 18.0312 36.5321 17.452 36.1164C16.8729 35.7006 16.7405 34.8941 17.1563 34.315"
+                                            stroke="#FF4B23" stroke-miterlimit="10" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+
+
                             </div>
                             <span class="eng-text">Contract to hire when you want to convert a contributor to full time
                                 employment</span>
@@ -2523,7 +2735,7 @@
                 </div>
             </div>
             <div class="center-text mt-5">
-                <a href="<?= base_url('contact-us') ?>" class="btn-custom btn-outline-blue">Explore More Roles</a>
+                <a  class="btn-custom btn-outline-blue">Explore More Roles</a>
             </div>
         </div>
     </section>

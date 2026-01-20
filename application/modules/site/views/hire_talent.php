@@ -3370,11 +3370,14 @@
                                     <label>Select Service <span class="text-danger">*</span></label>
                                     <select class="form-control form-control-custom" name="service">
                                         <option value="">Select a service</option>
-                                        <?php if (!empty($services)) {
-                                            foreach ($services as $service) { ?>
-                                                <option value="<?= $service->name ?>"><?= $service->name ?></option>
-                                            <?php }
-                                        } ?>
+                                        <option value="Full Stack Developer">Full Stack Developer</option>
+                                        <option value="AI/ML Engineers">AI/ML Engineers</option>
+                                        <option value="Data Analysts">Data Analysts</option>
+                                        <option value="End-to-End Software Development">End-to-End Software Development
+                                        </option>
+                                        <option value="Sales & Support Staff">Sales & Support Staff</option>
+                                        <option value="Back Office Management">Back Office Management</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group">
@@ -3408,6 +3411,47 @@
 
 
 </div>
+<script>
+  const UNIQUE_CLASS = 'js-fluid-converted';
+
+  function handleContainerSwitch() {
+    // শুধু যেগুলোতে ইউনিক ক্লাস আছে অথবা container-fluid আছে
+    const elements = document.querySelectorAll(
+      '.container-fluid, .' + UNIQUE_CLASS
+    );
+
+    elements.forEach(el => {
+      // header বাদ
+      if (el.id === 'header') return;
+
+      if (window.innerWidth <= 900) {
+        // শুধু আগের container-fluid গুলো
+        if (
+          el.classList.contains('container-fluid') &&
+          !el.classList.contains(UNIQUE_CLASS)
+        ) {
+          el.classList.remove('container-fluid');
+          el.classList.add('container', UNIQUE_CLASS);
+        }
+      } else {
+        // শুধু যেগুলো JS দিয়ে convert করা হয়েছিল
+        if (el.classList.contains(UNIQUE_CLASS)) {
+          el.classList.remove('container', UNIQUE_CLASS);
+          el.classList.add('container-fluid');
+        }
+      }
+    });
+  }
+
+  // page load
+  handleContainerSwitch();
+
+  // resize
+  window.addEventListener('resize', handleContainerSwitch);
+</script>
+
+
+
 
 <!-- Typewriter JS -->
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>

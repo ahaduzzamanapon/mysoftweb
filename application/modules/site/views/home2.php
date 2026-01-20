@@ -1995,7 +1995,8 @@
             <h2 class="section-title" data-aos="fade-down">Our <span class="text-blue">Products</span></h2>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $product): ?>
+                    <?php foreach ($products as $product): 
+                        ?>
                         <div class="item">
                             <div class="product-card">
                                 <div>
@@ -2883,6 +2884,48 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  const UNIQUE_CLASS = 'js-fluid-converted';
+
+  function handleContainerSwitch() {
+    // শুধু যেগুলোতে ইউনিক ক্লাস আছে অথবা container-fluid আছে
+    const elements = document.querySelectorAll(
+      '.container-fluid, .' + UNIQUE_CLASS
+    );
+
+    elements.forEach(el => {
+      // header বাদ
+      if (el.id === 'header') return;
+
+      if (window.innerWidth <= 900) {
+        // শুধু আগের container-fluid গুলো
+        if (
+          el.classList.contains('container-fluid') &&
+          !el.classList.contains(UNIQUE_CLASS)
+        ) {
+          el.classList.remove('container-fluid');
+          el.classList.add('container', UNIQUE_CLASS);
+        }
+      } else {
+        // শুধু যেগুলো JS দিয়ে convert করা হয়েছিল
+        if (el.classList.contains(UNIQUE_CLASS)) {
+          el.classList.remove('container', UNIQUE_CLASS);
+          el.classList.add('container-fluid');
+        }
+      }
+    });
+  }
+
+  // page load
+  handleContainerSwitch();
+
+  // resize
+  window.addEventListener('resize', handleContainerSwitch);
+</script>
+
+
+
 <script>
     $(document).ready(function () {
         // Initialize AOS

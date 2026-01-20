@@ -125,9 +125,9 @@ foreach ($Specific as $key => $value) {
   }
 
   .membership-icons img {
-    height: 55px;
+    height: 26px;
     object-fit: contain;
-  }
+}
 
   .footer-bottom-bar {
     border-top: 1px solid #d1e6f5;

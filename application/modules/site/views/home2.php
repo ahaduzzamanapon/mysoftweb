@@ -186,14 +186,18 @@
         border: 1px solid #0088cc;
         border-radius: 12px;
         overflow: hidden;
-        padding: 25px 80px;
+        padding: 15px 15px; /* Reduced vertical padding */
         text-align: center;
         background: #fff;
-        height: 100%;
+        height: 447px;
+        width: 385px!important;
+        max-width: 100%;
+        margin: 0 auto;
         transition: 0.3s;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
     }
 
     .product-card:hover {
@@ -202,7 +206,7 @@
     }
 
     .product-logo {
-        height: 40px;
+        height: 50px; /* Slightly reduced */
         object-fit: contain;
         margin-bottom: 5px;
         display: block;
@@ -221,8 +225,9 @@
     .product-tagline {
         font-weight: 700;
         font-size: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 10px; /* Reduced margin */
         color: #000;
+        line-height: 1.2;
     }
 
     .product-frame {
@@ -230,13 +235,15 @@
         border-radius: 8px;
         padding: 5px;
         background: #fdfdfd;
-        margin-bottom: 25px;
+        margin-bottom: 15px; /* Reduced margin */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        display: inline-block;
     }
 
     .product-img {
-        width: 100%;
-        height: auto;
+        width: 260px;
+        height: 198px;
+        object-fit: cover;
         border-radius: 4px;
         display: block;
     }
@@ -245,12 +252,14 @@
         display: flex;
         gap: 10px;
         justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
     }
 
     .btn-product {
         flex: 1;
         padding: 10px 5px;
-        border-radius: 5px;
+        border-radius: 50px; /* Pill shape */
         font-size: 14px;
         font-weight: 600;
         text-decoration: none;
@@ -1959,26 +1968,26 @@
                 $i = 0;
                 ?>
                 <?php if (!empty($services)): ?>
-                    <?php foreach ($services as $service): ?>
-                        <?php
-                        $color_class = $colors[$i % $color_count];
-                        $delay = $i * 100;
-                        $i++;
-                        ?>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
-                                <div class="service-icon-floating <?= $color_class ?>">
-                                    <?php if (!empty($service->fa_icon)): ?>
-                                        <i class="fa <?= $service->fa_icon ?>"></i>
-                                    <?php else: ?>
-                                        <i class="fa fa-cogs"></i>
-                                    <?php endif; ?>
+                        <?php foreach ($services as $service): ?>
+                                <?php
+                                $color_class = $colors[$i % $color_count];
+                                $delay = $i * 100;
+                                $i++;
+                                ?>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                                        <div class="service-icon-floating <?= $color_class ?>">
+                                            <?php if (!empty($service->fa_icon)): ?>
+                                                    <i class="fa <?= $service->fa_icon ?>"></i>
+                                            <?php else: ?>
+                                                    <i class="fa fa-cogs"></i>
+                                            <?php endif; ?>
+                                        </div>
+                                        <h4 class="service-card-title"><?= $service->name ?></h4>
+                                        <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
+                                    </div>
                                 </div>
-                                <h4 class="service-card-title"><?= $service->name ?></h4>
-                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                 <?php endif; ?>
             </div>
 
@@ -1992,38 +2001,43 @@
     <!-- Our Products -->
     <section class="ht-section" style="background-color: #E6F1FE!important;">
         <div class="container-fluid">
-            <h2 class="section-title" data-aos="fade-down">Our <span class="text-blue">Products</span></h2>
+            <h2 class="section-title" data-aos="fade-down" style="margin-bottom: 3px;">Our <span class="text-blue">Products</span></h2>
+            <p class="center-text mb-50" style="max-width: 800px;margin: 0 auto 50px auto;color: #666;text-align: -webkit-center;">
+              We are the best custom software development company for custom software  development outsourcing. And we provide robust, scalable, and efficient  solutions to various clients around the world
+            </p>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $product): 
-                        ?>
-                        <div class="item">
-                            <div class="product-card">
-                                <div>
-                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                    <div class="mb-2">  <?php if($product->hero_image): ?>
-                                    <br><img src="<?php echo base_url('product_img/'.$product->hero_image); ?>" style="width: 90px;place-self: center;">
-                                <?php endif; ?></div>
-                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
-                                    <div class="product-frame">
-                                        <?php
-                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                        if (!empty($product->demo_call_to_action_image)) {
-                                            $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
-                                        }
-                                        ?>
-                                        <img src="<?= $img_src ?>" class="product-img">
+                        <?php foreach ($products as $product):
+                            ?>
+                                <div class="item">
+                                    <div class="product-card">
+                                        <div>
+                                            <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                            <div class="mb-2"> <?php if ($product->hero_image): ?>
+                                                        <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
+                                                            style="width: 90px;place-self: center;">
+                                                <?php endif; ?>
+                                            </div>
+                                            <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                            <div class="product-frame">
+                                                <?php
+                                                $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                                if (!empty($product->demo_call_to_action_image)) {
+                                                    $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
+                                                }
+                                                ?>
+                                                <img src="<?= $img_src ?>" class="product-img">
+                                            </div>
+                                        </div>
+                                        <div class="product-actions">
+                                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                                Now</a>
+                                            <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                                    class="fa fa-mouse-pointer"></i> Try Free Demo</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product-actions">
-                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                        Now</a>
-                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
-                                            class="fa fa-search"></i> Try Free Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -2887,42 +2901,42 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-  const UNIQUE_CLASS = 'js-fluid-converted';
+    const UNIQUE_CLASS = 'js-fluid-converted';
 
-  function handleContainerSwitch() {
-    // শুধু যেগুলোতে ইউনিক ক্লাস আছে অথবা container-fluid আছে
-    const elements = document.querySelectorAll(
-      '.container-fluid, .' + UNIQUE_CLASS
-    );
+    function handleContainerSwitch() {
+        // শুধু যেগুলোতে ইউনিক ক্লাস আছে অথবা container-fluid আছে
+        const elements = document.querySelectorAll(
+            '.container-fluid, .' + UNIQUE_CLASS
+        );
 
-    elements.forEach(el => {
-      // header বাদ
-      if (el.id === 'header') return;
+        elements.forEach(el => {
+            // header বাদ
+            if (el.id === 'header') return;
 
-      if (window.innerWidth <= 900) {
-        // শুধু আগের container-fluid গুলো
-        if (
-          el.classList.contains('container-fluid') &&
-          !el.classList.contains(UNIQUE_CLASS)
-        ) {
-          el.classList.remove('container-fluid');
-          el.classList.add('container', UNIQUE_CLASS);
-        }
-      } else {
-        // শুধু যেগুলো JS দিয়ে convert করা হয়েছিল
-        if (el.classList.contains(UNIQUE_CLASS)) {
-          el.classList.remove('container', UNIQUE_CLASS);
-          el.classList.add('container-fluid');
-        }
-      }
-    });
-  }
+            if (window.innerWidth <= 900) {
+                // শুধু আগের container-fluid গুলো
+                if (
+                    el.classList.contains('container-fluid') &&
+                    !el.classList.contains(UNIQUE_CLASS)
+                ) {
+                    el.classList.remove('container-fluid');
+                    el.classList.add('container', UNIQUE_CLASS);
+                }
+            } else {
+                // শুধু যেগুলো JS দিয়ে convert করা হয়েছিল
+                if (el.classList.contains(UNIQUE_CLASS)) {
+                    el.classList.remove('container', UNIQUE_CLASS);
+                    el.classList.add('container-fluid');
+                }
+            }
+        });
+    }
 
-  // page load
-  handleContainerSwitch();
+    // page load
+    handleContainerSwitch();
 
-  // resize
-  window.addEventListener('resize', handleContainerSwitch);
+    // resize
+    window.addEventListener('resize', handleContainerSwitch);
 </script>
 
 

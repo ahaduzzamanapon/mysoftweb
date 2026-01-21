@@ -55,9 +55,9 @@ class Product_new_model extends CI_Model
 
     public function get_products_for_home()
     {
-        $this->db->select('id, name, slug, hero_heading, hero_image');
+        $this->db->select('*');
         $this->db->from('products_new');
-        $this->db->where('status', 'active'); // Temporarily allow all for debugging
+        $this->db->where('status', 'active');
         $this->db->order_by('id', 'ASC');
         $query = $this->db->get();
         return $query->result();

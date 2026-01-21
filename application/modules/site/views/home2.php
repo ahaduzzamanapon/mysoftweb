@@ -2001,14 +2001,15 @@
                             <div class="product-card">
                                 <div>
                                     <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                    <div class="mb-2"><span class="product-logo-text"><i class="fa fa-cube"></i>
-                                            <?= $product->name ?></span></div>
+                                    <div class="mb-2">  <?php if($product->hero_image): ?>
+                                    <br><img src="<?php echo base_url('product_img/'.$product->hero_image); ?>" style="width: 90px;place-self: center;">
+                                <?php endif; ?></div>
                                     <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
                                     <div class="product-frame">
                                         <?php
                                         $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                        if (!empty($product->hero_image)) {
-                                            $img_src = base_url('product_img/' . $product->hero_image);
+                                        if (!empty($product->demo_call_to_action_image)) {
+                                            $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
                                         }
                                         ?>
                                         <img src="<?= $img_src ?>" class="product-img">

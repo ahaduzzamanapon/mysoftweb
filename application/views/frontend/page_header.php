@@ -13,7 +13,7 @@
 
 
 
-    <meta property="og:image" content="https://mysoftheaven.com/fwedget/img/mysoft-logo.png" />
+    <meta property="og:image" content="<?= isset($og_image) ? $og_image : 'https://mysoftheaven.com/fwedget/img/mysoft-logo.png' ?>" />
 
     <meta property="og:image:width" content="180" />
 

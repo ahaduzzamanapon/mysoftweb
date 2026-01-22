@@ -113,7 +113,7 @@ class Product_new extends Backend_Controller
                     $this->Product_new_model->delete_old_hero_image($id);
                     $config['upload_path'] = $this->img_path;
                     $config['allowed_types'] = 'jpg|jpeg|png|gif|svg|webp';
-                    $config['file_name'] = 'hero_' . $id . '_' . time();
+                    $config['file_name'] = $this->input->post('slug') . '_' . time();
                     $this->load->library('upload', $config);
                     $this->upload->initialize($config);
                     if ($this->upload->do_upload('hero_image')) {
@@ -129,7 +129,7 @@ class Product_new extends Backend_Controller
                 if (!empty($_FILES['demo_call_to_action_image']['name'])) {
                     $config['upload_path'] = $this->img_path;
                     $config['allowed_types'] = 'jpg|jpeg|png|gif|svg|webp';
-                    $config['file_name'] = 'demo_' . $id . '_' . time();
+                    $config['file_name'] = $this->input->post('slug') . '_brochure_' . time();
                     $this->load->library('upload', $config); // Reload might not be needed but safe
                     $this->upload->initialize($config);
                     if ($this->upload->do_upload('demo_call_to_action_image')) {

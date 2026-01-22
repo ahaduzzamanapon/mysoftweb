@@ -86,7 +86,7 @@
                             <div class="col-sm-4"><input type="text" name="hero_button_link" class="form-control" value="<?php echo set_value('hero_button_link', $product->hero_button_link); ?>"></div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Hero Image</label>
+                            <label class="col-sm-2 control-label">Logo Image</label>
                             <div class="col-sm-10">
                                 <input type="file" name="hero_image" class="form-control">
                                 <?php if($product->hero_image): ?>
@@ -149,7 +149,7 @@
                             <div class="col-sm-10"><input type="text" name="demo_call_to_action_heading" class="form-control" value="<?php echo set_value('demo_call_to_action_heading', $product->demo_call_to_action_heading); ?>"></div>
                         </div>
                           <div class="form-group">
-                            <label class="col-sm-2 control-label">Demo CTA Image</label>
+                            <label class="col-sm-2 control-label">Brochure Image</label>
                             <div class="col-sm-10">
                                 <input type="file" name="demo_call_to_action_image" class="form-control">
                                 <?php if($product->demo_call_to_action_image): ?>

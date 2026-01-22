@@ -1991,7 +1991,7 @@
                 <?php endif; ?>
             </div>
 
-            <div class="text-center mt-5">
+            <div class="text-center mt-5 " data-aos="fade-up" data-aos-delay="400">
                 <a href="<?= base_url('services') ?>" class="explore-services-btn">Explore More
                     Services <i class="fa fa-angle-right ms-2"></i></a>
             </div>
@@ -2002,7 +2002,7 @@
     <section class="ht-section" style="background-color: #E6F1FE!important;">
         <div class="container-fluid">
             <h2 class="section-title" data-aos="fade-down" style="margin-bottom: 3px;">Our <span class="text-blue">Products</span></h2>
-            <p class="center-text mb-50" style="max-width: 800px;margin: 0 auto 50px auto;color: #666;text-align: -webkit-center;">
+            <p class="center-text mb-50" data-aos="fade-up" data-aos-delay="200" style="max-width: 800px;margin: 0 auto 50px auto;color: #666;text-align: -webkit-center;">
               We are the best custom software development company for custom software  development outsourcing. And we provide robust, scalable, and efficient  solutions to various clients around the world
             </p>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">

@@ -111,7 +111,6 @@
        1. Hero Section 
        ========================================= */
     .hero-section {
-        padding: 140px 0 100px;
         background: radial-gradient(circle at top right, #e0f2fe 0%, #ffffff 60%);
     }
     .hero-content { padding-right: 40px; }
@@ -377,8 +376,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-wrapper">
-                         <?php if($product->hero_image): ?>
-                            <img src="<?php echo base_url('product_img/' . $product->hero_image); ?>" alt="<?php echo $product->name; ?>">
+                         <?php if($product->demo_call_to_action_image): ?>
+                            <img src="<?php echo base_url('product_img/' . $product->demo_call_to_action_image); ?>" alt="<?php echo $product->hero_heading; ?>">
                         <?php else: ?>
                             <img src="https://via.placeholder.com/800x600?text=App+Preview" alt="Placeholder">
                         <?php endif; ?>

@@ -606,6 +606,7 @@ class Site extends Frontend_Controller
         $this->data['meta_keywords'] = $product_data->meta_description; // Assuming you store keywords in meta_description for now
         $this->data['meta_description'] = $product_data->meta_description;
         $this->data['meta_title'] = $product_data->meta_title;
+        $this->data['og_image'] =  base_url('product_img/' . $product_data->demo_call_to_action_image);
 
         // Set the subview and load the main layout
         $this->data['subview'] = 'product_details';

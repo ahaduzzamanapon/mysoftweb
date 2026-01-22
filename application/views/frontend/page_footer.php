@@ -68,7 +68,7 @@ foreach ($Specific as $key => $value) {
     margin-bottom: 12px;
   }
 
-  #new-footer ul li a {
+#new-footer ul li a {
     color: #555;
     text-decoration: none;
     transition: color 0.3s;
@@ -76,6 +76,11 @@ foreach ($Specific as $key => $value) {
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
+    white-space: nowrap;
+    display: block;
+    width: 157px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
   #new-footer ul li a:hover {

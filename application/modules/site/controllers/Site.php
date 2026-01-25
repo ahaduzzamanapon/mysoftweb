@@ -66,7 +66,7 @@ class Site extends Frontend_Controller
          $this->load->model('admin/Product_new_model');
         $this->data['products'] = $this->Product_new_model->get_products_for_home();
 
-        $this->data['meta_title'] = 'Home';
+        $this->data['meta_title'] = 'Mysoftheaven Best Software Company';
         $this->data['services'] = $this->Site_model->get_all_services(true, 8);
         $this->data['subview'] = 'home2';
         $this->load->view('frontend/_layout_main', $this->data);

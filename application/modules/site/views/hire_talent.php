@@ -63,7 +63,7 @@
         -webkit-background-clip: text !important;
         background-clip: text !important;
         color: transparent !important;
-        font-size: 4rem !important;
+        font-size: 3.5rem !important;
         line-height: 44px;
     }
 
@@ -1596,7 +1596,7 @@
     .hero_bobble_text {
         font-family: 'Nourd-Bold';
         font-weight: 500;
-        font-size: 17px;
+        font-size: 14px;
         line-height: 22px;
         color: #0177BC !important;
     }
@@ -2301,33 +2301,33 @@
                         <div class="bubble-1">
                             <div class="bubble">
                                 <strong class="hero_bobble_number">
-                                    2M+
+                                    500+
                                 </strong>
-                                <span class="hero_bobble_text">Customers</span>
+                                <span class="hero_bobble_text">Offshore Clients Served</span>
                             </div>
                         </div>
                         <div class="bubble-2">
                             <div class="bubble">
                                 <strong class="hero_bobble_number">
-                                    20+
+                                    100+
                                 </strong>
-                                <span class="hero_bobble_text">Countries</span>
+                                <span class="hero_bobble_text">Tech Specializations Covered</span>
                             </div>
                         </div>
                         <div class="bubble-3">
                             <div class="bubble">
                                 <strong class="hero_bobble_number">
-                                    35k+
+                                    2,500+
                                 </strong>
-                                <span class="hero_bobble_text"> Dealer Network</span>
+                                <span class="hero_bobble_text">Projects Delivered Successfully</span>
                             </div>
                         </div>
                         <div class="bubble-4">
                             <div class="bubble">
                                 <strong class="hero_bobble_number">
-                                    15+
+                                    Top 1%
                                 </strong>
-                                <span class="hero_bobble_text">Years of Innovation</span>
+                                <span class="hero_bobble_text">Global IT Talent On-Demand</span>
                             </div>
                         </div>
                     </div>
@@ -2700,8 +2700,9 @@
             <div class="roles-grid">
                 <!-- 1. Software Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/software_engineers.png') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>Software Engineers</h4>
                         <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
@@ -2711,8 +2712,9 @@
 
                 <!-- 2. Web Developers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/web_developers.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>Web Developers</h4>
                         <p>Develop responsive, high-performance web applications. Ensure polished user interfaces and
@@ -2722,7 +2724,8 @@
 
                 <!-- 3. Application Developers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/application_developers.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Application Developers</h4>
@@ -2733,8 +2736,9 @@
 
                 <!-- 4. DevOps Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/devops_engineers.png') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>DevOps Engineers</h4>
                         <p>Automate deployment pipelines and manage infrastructure efficiently. Improve release speed
@@ -2744,7 +2748,7 @@
 
                 <!-- 5. QA Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                    <div class="role-img-wrapper"><img src="<?= base_url('roles_we_provide_image/qa_engineers.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>QA Engineers</h4>
@@ -2755,8 +2759,9 @@
 
                 <!-- 6. UI/UX Designers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/uiux_designers.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>UI/UX Designers</h4>
                         <p>Translate research into intuitive, user-friendly designs. Improve adoption and overall
@@ -2766,7 +2771,8 @@
 
                 <!-- 7. Cloud Support Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/cloud_support_engineers.jpeg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Cloud Support Engineers</h4>
@@ -2777,8 +2783,9 @@
 
                 <!-- 8. Data Scientists -->
                 <div class="role-card hover-lift" data-aos="fade-up">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/data_scientists.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>Data Scientists</h4>
                         <p>Analyze complex datasets to extract actionable insights. Build predictive models that drive
@@ -2790,8 +2797,10 @@
 
                 <!-- 9. AI & ML Developers -->
                 <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/ai_and_ml_developers.jpg') ?>"
+                            class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>AI & ML Developers</h4>
                         <p>Develop machine learning and AI solutions for automation. Deliver intelligent features that
@@ -2801,8 +2810,9 @@
 
                 <!-- 10. Security Engineers -->
                 <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/security_engineers.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>Security Engineers</h4>
                         <p>Protect applications, infrastructure, and data from threats. Implement best practices to
@@ -2812,8 +2822,9 @@
 
                 <!-- 11. System Architects -->
                 <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/system_architects.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>System Architects</h4>
                         <p>Design high-level architectures for scalability and performance. Ensure systems are robust
@@ -2823,7 +2834,8 @@
 
                 <!-- 12. Database Administrators -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/database_administrators.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Database Administrators</h4>
@@ -2834,8 +2846,9 @@
 
                 <!-- 13. Network Engineers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/network_engineers.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>Network Engineers</h4>
                         <p>Design and maintain secure, reliable networks. Support hybrid and multi-cloud connectivity
@@ -2845,8 +2858,9 @@
 
                 <!-- 14. IoT Developers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/iot_developers.jpg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>IoT Developers</h4>
                         <p>Connect devices to cloud services and develop end-to-end solutions. Enable real-time data
@@ -2856,7 +2870,8 @@
 
                 <!-- 15. Blockchain Developers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role1.png') ?>"
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/blockchain_developers.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4>Blockchain Developers</h4>
@@ -2867,8 +2882,9 @@
 
                 <!-- 16. Game Developers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
-                    <div class="role-img-wrapper"><img src="<?= base_url('hire_talent_media/role2.png') ?>"
-                            class="role-img-new"></div>
+                    <div class="role-img-wrapper"><img
+                            src="<?= base_url('roles_we_provide_image/game_developers.jpeg') ?>" class="role-img-new">
+                    </div>
                     <div class="role-content">
                         <h4>Game Developers</h4>
                         <p>Develop optimized, real-time gaming experiences. Deliver engaging gameplay on engines like
@@ -3412,42 +3428,42 @@
 
 </div>
 <script>
-  const UNIQUE_CLASS = 'js-fluid-converted';
+    const UNIQUE_CLASS = 'js-fluid-converted';
 
-  function handleContainerSwitch() {
-    // শুধু যেগুলোতে ইউনিক ক্লাস আছে অথবা container-fluid আছে
-    const elements = document.querySelectorAll(
-      '.container-fluid, .' + UNIQUE_CLASS
-    );
+    function handleContainerSwitch() {
+        // শুধু যেগুলোতে ইউনিক ক্লাস আছে অথবা container-fluid আছে
+        const elements = document.querySelectorAll(
+            '.container-fluid, .' + UNIQUE_CLASS
+        );
 
-    elements.forEach(el => {
-      // header বাদ
-      if (el.id === 'header') return;
+        elements.forEach(el => {
+            // header বাদ
+            if (el.id === 'header') return;
 
-      if (window.innerWidth <= 900) {
-        // শুধু আগের container-fluid গুলো
-        if (
-          el.classList.contains('container-fluid') &&
-          !el.classList.contains(UNIQUE_CLASS)
-        ) {
-          el.classList.remove('container-fluid');
-          el.classList.add('container', UNIQUE_CLASS);
-        }
-      } else {
-        // শুধু যেগুলো JS দিয়ে convert করা হয়েছিল
-        if (el.classList.contains(UNIQUE_CLASS)) {
-          el.classList.remove('container', UNIQUE_CLASS);
-          el.classList.add('container-fluid');
-        }
-      }
-    });
-  }
+            if (window.innerWidth <= 900) {
+                // শুধু আগের container-fluid গুলো
+                if (
+                    el.classList.contains('container-fluid') &&
+                    !el.classList.contains(UNIQUE_CLASS)
+                ) {
+                    el.classList.remove('container-fluid');
+                    el.classList.add('container', UNIQUE_CLASS);
+                }
+            } else {
+                // শুধু যেগুলো JS দিয়ে convert করা হয়েছিল
+                if (el.classList.contains(UNIQUE_CLASS)) {
+                    el.classList.remove('container', UNIQUE_CLASS);
+                    el.classList.add('container-fluid');
+                }
+            }
+        });
+    }
 
-  // page load
-  handleContainerSwitch();
+    // page load
+    handleContainerSwitch();
 
-  // resize
-  window.addEventListener('resize', handleContainerSwitch);
+    // resize
+    window.addEventListener('resize', handleContainerSwitch);
 </script>
 
 

@@ -41,27 +41,34 @@ class Site extends Frontend_Controller
     {
         // echo 'hello'; exit;
         //dump('Frontend Controller');
-        $this->data['slider'] = $this->Site_model->get_slider();
-        $this->data['homepage_services'] = $this->Site_model->get_homepage_show('services');
-        $this->data['homepage_product'] = $this->Site_model->get_homepage_show('product');
-        $this->data['homepage_portfolio'] = $this->Site_model->get_homepage_show('portfolio');
-        $this->data['homepage_client'] = $this->Site_model->get_homepage_show('client');
-        $this->data['testimonial'] = $this->Site_model->get_testimonial();
-        // $this->data['stat'] = $this->Site_model->get_stat();
-        $this->data['years_of_experience'] = $this->Site_model->get_years_of_experience();
-        $this->data['number_of_clients'] = $this->Site_model->get_number_of_clients();
-        $this->data['successful_projects'] = $this->Site_model->get_successful_projects();
-        $this->data['running_services'] = $this->Site_model->get_running_services();
-        $this->data['notable_data'] = $this->Site_model->get_notable_all_data();
-        $this->data['gallery_images'] = $this->Site_model->get_gallery_images();
-        // print_r($this->data['gallery_images']);
-        // exit();
+        // $this->data['slider'] = $this->Site_model->get_slider();
+        // $this->data['homepage_services'] = $this->Site_model->get_homepage_show('services');
+        // $this->data['homepage_product'] = $this->Site_model->get_homepage_show('product');
+        // $this->data['homepage_portfolio'] = $this->Site_model->get_homepage_show('portfolio');
+        // $this->data['homepage_client'] = $this->Site_model->get_homepage_show('client');
+        // $this->data['testimonial'] = $this->Site_model->get_testimonial();
+        // // $this->data['stat'] = $this->Site_model->get_stat();
+        // $this->data['years_of_experience'] = $this->Site_model->get_years_of_experience();
+        // $this->data['number_of_clients'] = $this->Site_model->get_number_of_clients();
+        // $this->data['successful_projects'] = $this->Site_model->get_successful_projects();
+        // $this->data['running_services'] = $this->Site_model->get_running_services();
+        // $this->data['notable_data'] = $this->Site_model->get_notable_all_data();
+        // $this->data['gallery_images'] = $this->Site_model->get_gallery_images();
+        // // print_r($this->data['gallery_images']);
+        // // exit();
 
 
 
-        //view
+        // //view
+        // $this->data['meta_title'] = 'Home';
+        // $this->data['subview'] = 'index';
+        // $this->load->view('frontend/_layout_main', $this->data);
+         $this->load->model('admin/Product_new_model');
+        $this->data['products'] = $this->Product_new_model->get_products_for_home();
+
         $this->data['meta_title'] = 'Home';
-        $this->data['subview'] = 'index';
+        $this->data['services'] = $this->Site_model->get_all_services(true, 8);
+        $this->data['subview'] = 'home2';
         $this->load->view('frontend/_layout_main', $this->data);
     }
 

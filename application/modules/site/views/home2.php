@@ -186,11 +186,12 @@
         border: 1px solid #0088cc;
         border-radius: 12px;
         overflow: hidden;
-        padding: 15px 15px; /* Reduced vertical padding */
+        padding: 15px 15px;
+        /* Reduced vertical padding */
         text-align: center;
         background: #fff;
         height: 447px;
-        width: 385px!important;
+        width: 385px !important;
         max-width: 100%;
         margin: 0 auto;
         transition: 0.3s;
@@ -206,7 +207,8 @@
     }
 
     .product-logo {
-        height: 50px; /* Slightly reduced */
+        height: 50px;
+        /* Slightly reduced */
         object-fit: contain;
         margin-bottom: 5px;
         display: block;
@@ -225,7 +227,8 @@
     .product-tagline {
         font-weight: 700;
         font-size: 15px;
-        margin-bottom: 10px; /* Reduced margin */
+        margin-bottom: 10px;
+        /* Reduced margin */
         color: #000;
         line-height: 1.2;
     }
@@ -235,7 +238,8 @@
         border-radius: 8px;
         padding: 5px;
         background: #fdfdfd;
-        margin-bottom: 15px; /* Reduced margin */
+        margin-bottom: 15px;
+        /* Reduced margin */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         display: inline-block;
     }
@@ -259,7 +263,8 @@
     .btn-product {
         flex: 1;
         padding: 10px 5px;
-        border-radius: 50px; /* Pill shape */
+        border-radius: 50px;
+        /* Pill shape */
         font-size: 14px;
         font-weight: 600;
         text-decoration: none;
@@ -716,9 +721,9 @@
     }
 
     /* Relationships Redesign */
-    .relationship-header {
+    /* .relationship-header {
         margin-bottom: 40px;
-    }
+    } */
 
     .rel-title-block h2 {
         font-family: 'Nourd-Bold';
@@ -1968,26 +1973,26 @@
                 $i = 0;
                 ?>
                 <?php if (!empty($services)): ?>
-                        <?php foreach ($services as $service): ?>
-                                <?php
-                                $color_class = $colors[$i % $color_count];
-                                $delay = $i * 100;
-                                $i++;
-                                ?>
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
-                                        <div class="service-icon-floating <?= $color_class ?>">
-                                            <?php if (!empty($service->fa_icon)): ?>
-                                                    <i class="fa <?= $service->fa_icon ?>"></i>
-                                            <?php else: ?>
-                                                    <i class="fa fa-cogs"></i>
-                                            <?php endif; ?>
-                                        </div>
-                                        <h4 class="service-card-title"><?= $service->name ?></h4>
-                                        <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
-                                    </div>
+                    <?php foreach ($services as $service): ?>
+                        <?php
+                        $color_class = $colors[$i % $color_count];
+                        $delay = $i * 100;
+                        $i++;
+                        ?>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                                <div class="service-icon-floating <?= $color_class ?>">
+                                    <?php if (!empty($service->fa_icon)): ?>
+                                        <i class="fa <?= $service->fa_icon ?>"></i>
+                                    <?php else: ?>
+                                        <i class="fa fa-cogs"></i>
+                                    <?php endif; ?>
                                 </div>
-                        <?php endforeach; ?>
+                                <h4 class="service-card-title"><?= $service->name ?></h4>
+                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
 
@@ -2001,43 +2006,46 @@
     <!-- Our Products -->
     <section class="ht-section" style="background-color: #E6F1FE!important;">
         <div class="container-fluid">
-            <h2 class="section-title" data-aos="fade-down" style="margin-bottom: 3px;">Our <span class="text-blue">Products</span></h2>
-            <p class="center-text mb-50" data-aos="fade-up" data-aos-delay="200" style="max-width: 800px;margin: 0 auto 50px auto;color: #666;text-align: -webkit-center;">
-              We are the best custom software development company for custom software  development outsourcing. And we provide robust, scalable, and efficient  solutions to various clients around the world
+            <h2 class="section-title" data-aos="fade-down" style="margin-bottom: 3px;">Our <span
+                    class="text-blue">Products</span></h2>
+            <p class="center-text mb-50" data-aos="fade-up" data-aos-delay="200"
+                style="max-width: 800px;margin: 0 auto 50px auto;color: #666;text-align: -webkit-center;">
+                We are the best custom software development company for custom software development outsourcing. And we
+                provide robust, scalable, and efficient solutions to various clients around the world
             </p>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                        <?php foreach ($products as $product):
-                            ?>
-                                <div class="item">
-                                    <div class="product-card">
-                                        <div>
-                                            <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                            <div class="mb-2"> <?php if ($product->hero_image): ?>
-                                                        <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
-                                                            style="width: 90px;place-self: center;">
-                                                <?php endif; ?>
-                                            </div>
-                                            <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
-                                            <div class="product-frame">
-                                                <?php
-                                                $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                                if (!empty($product->demo_call_to_action_image)) {
-                                                    $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
-                                                }
-                                                ?>
-                                                <img src="<?= $img_src ?>" class="product-img">
-                                            </div>
-                                        </div>
-                                        <div class="product-actions">
-                                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                                Now</a>
-                                            <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
-                                                    class="fa fa-mouse-pointer"></i> Try Free Demo</a>
-                                        </div>
+                    <?php foreach ($products as $product):
+                        ?>
+                        <div class="item">
+                            <div class="product-card">
+                                <div>
+                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                    <div class="mb-2"> <?php if ($product->hero_image): ?>
+                                            <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
+                                                style="width: 90px;place-self: center;">
+                                        <?php endif; ?>
+                                    </div>
+                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                    <div class="product-frame">
+                                        <?php
+                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                        if (!empty($product->demo_call_to_action_image)) {
+                                            $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
+                                        }
+                                        ?>
+                                        <img src="<?= $img_src ?>" class="product-img">
                                     </div>
                                 </div>
-                        <?php endforeach; ?>
+                                <div class="product-actions">
+                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                        Now</a>
+                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                            class="fa fa-mouse-pointer"></i> Try Free Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -2269,15 +2277,16 @@
                         <small
                             style="color: #666; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 5px;">#WE
                             ARE MYSOFTHEAVEN</small>
-                        <h2>Crafting Long-Term <br><span class="text-blue">Relationships</span></h2>
+                        <h2>Inside Mysoftheaven — <br><span class="text-blue">Our People, Culture & Moments</span></h2>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
                     <div class="rel-desc">
-                        <p>We see you as a partner, where your goals become our mission. Your success is the inspiration
-                            of our works, and your growth is the real measure of our achievements.</p>
+                        <p>Celebrating our journey, our team, and our culture. Every moment captured reflects our
+                            commitment, collaboration, and the vibrant environment that drives innovation and
+                            excellence.</p>
                     </div>
-                </div>
+                </div>+
             </div>
 
             <!-- Image Row - Converted to Marquee -->
@@ -2672,17 +2681,17 @@
                     </div>
                     <div class="col-md-6">
                         <div class="billing-content p-5">
-                            <h2 class="billing-title">Easily Control your Billing and Invoicing.</h2>
+                            <h2 class="billing-title">Step Inside Our World of Innovation.</h2>
                             <p class="billing-text">
-                                Offending belonging promotion provision an be oh consulted ourselves it. Blessing
-                                welcomed ladyship she met humoured sir breeding her.We see you as a partner, where your
-                                goals become our mission.
+                                Mysoftheaven is more than a technology company. We are growing continuously in the
+                                fast-paced IT landscape while delivering seamless, efficient, and tailored solutions for
+                                businesses of all sizes. Our teams combine deep technical expertise with innovative
+                                thinking to solve real-world challenges and drive meaningful results.
                             </p>
                             <p class="billing-text">
-                                Your success is the inspiration of our works, and your growth is the real measure of our
-                                achievements.We see you as a partner, where your goals become our mission. Your success
-                                is the inspiration of our works, and your growth is the real measure of our
-                                achievements.
+                                The strength of Mysoftheaven lies in our ability to merge industry knowledge, advanced
+                                technologies, and collaborative processes. Step inside and discover how we build
+                                solutions, nurture talent, and create an environment where innovation meets impact.
                             </p>
                         </div>
                     </div>
@@ -2715,8 +2724,8 @@
 
             .play-btn-overlay {
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 47.5%;
+                left: 50.5%;
                 transform: translate(-50%, -50%);
                 width: 70px;
                 height: 70px;

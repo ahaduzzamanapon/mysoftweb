@@ -52,7 +52,7 @@
     }
 
     .btn-custom {
-        padding: 10px 30px;
+        padding: 6px 15px 1px 15px !important;
         border-radius: 30px;
         font-weight: 600;
         text-transform: uppercase;
@@ -1222,17 +1222,7 @@
         margin-top: 15px;
     }
 
-    .btn-custom {
-        border-radius: 30px;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: inline-block;
-        transition: 0.3s;
-        font-size: clamp(13px, 2vw, 13px);
-        white-space: nowrap;
-        padding: 6px 20px 1px 20px !important;
-    }
+
 
     .certified {
         border-right: 3px solid #979797;
@@ -1262,7 +1252,7 @@
 
         .btn-custom {
 
-            padding: 6px 20px 1px 20px !important;
+            padding: 6px 10px 1px 10px !important;
         }
     }
 
@@ -1702,7 +1692,7 @@
                                         Roles</a>
                                     <a data-aos="fade-left" href="<?= base_url('contact_us') ?>"
                                         class="btn-custom btn-blue"
-                                        style="padding: 6px 5px 1px 5px !important;border-radius: 30px;font-weight: 600;color: white;">Schedule
+                                        style="padding: 12px 30px;border-radius: 30px;font-weight: 600;color: white;">Schedule
                                         a
                                         Consultation <i class="fa fa-angle-right"></i></a>
                                 </div>
@@ -1763,7 +1753,7 @@
                             <!-- Left Content -->
                             <div class="col-lg-7">
                                 <h1 class="hero-title" style="margin-bottom: 25px;" data-aos="fade-right">
-                                    Delivering Large-Scale, <span class="text-blue">High-Impact</span><br>
+                                    Delivering Large-Scale,<br> <span class="text-blue">High-Impact</span>
                                     <span style="">Solutions</span>
                                 </h1>
                                 <p data-aos="fade-up" class="hero-desc"
@@ -1781,7 +1771,7 @@
                                         Products</a>
                                     <a data-aos="fade-left" href="<?= base_url('client/government-sector') ?>"
                                         class="btn-custom btn-blue"
-                                        style="padding: 6px 5px 1px 5px !important;border-radius: 30px;font-weight: 600;color: white;">See
+                                        style="padding: 6px 10px 1px 10px;border-radius: 30px;font-weight: 600;color: white;">See
                                         Our
                                         Clients <i class="fa fa-angle-right"></i></a>
                                 </div>
@@ -1841,68 +1831,185 @@
             </div>
         </div>
     </section>
-    <section class="hero-section" style="padding-bottom: 0px; position: relative; overflow: visible;">
+
+    <section class="hero-section bottom-hero-section"
+        style="padding-bottom: 0px; position: relative; overflow: visible;">
         <div class="container-fluid">
             <!-- Bottom Info Strip -->
             <div class="row mt-5" style="position: relative; z-index: 10;">
                 <div class="col-12">
                     <div class="bg-white" style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 25px;border-radius: 6px;">
                         <!-- Stats Row -->
-                        <div class="row text-center">
-                            <div class="col-lg-3 col-6">
-                                <div data-aos="fade-right"
-                                    class="counter_box d-flex align-items-center justify-content-center gap-4"
-                                    style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px;">
-                                    <i class="fa fa-users text-primary" style="font-size: 28px;"></i>
-                                    <div class="text-start">
-                                        <h4 class="custom-stat-number"><span class="counter"
-                                                data-count="500">500</span>+
-                                        </h4>
-                                        <small style="display:block; font-size: 12px; color: #666;">Offshore Clients
-                                            Served</small>
+                        <!-- Stats Row Carousel -->
+                        <div class="owl-carousel owl-theme bottom-hero-section-card" id="bottom-hero-slider">
+
+                            <!-- Slide 1 -->
+                            <div class="item">
+                                <div class="row text-center">
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-handshake-o text-primary" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="1100">1,100</span><span style="font-size: 0.7em;">
+                                                        Million+</span></h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Service
+                                                    Interactions</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-user-circle text-danger" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="9">9</span><span style="font-size: 0.7em;">
+                                                        Million+</span></h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Daily Active
+                                                    Users</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-money text-success" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="90000">90,000</span><span style="font-size: 0.6em;">
+                                                        Million+ BDT</span></h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Revenue
+                                                    Processed</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-database text-warning" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="100">100</span><span style="font-size: 0.7em;">
+                                                        Million+</span></h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Records
+                                                    Digitized</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-6">
-                                <div data-aos="fade-up"
-                                    class="counter_box d-flex align-items-center justify-content-center gap-4"
-                                    style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px;">
-                                    <i class="fa fa-line-chart text-danger" style="font-size: 28px;"></i>
-                                    <div class="text-start">
-                                        <h4 class="custom-stat-number"><span class="counter"
-                                                data-count="100">100</span>+
-                                        </h4>
-                                        <small style="display:block; font-size: 12px; color: #666;">Tech Specializations
-                                            Covered</small>
+
+                            <!-- Slide 2 -->
+                            <div class="item">
+                                <div class="row text-center">
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-users text-primary" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="500">500</span>+</h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Offshore
+                                                    Clients Served</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-line-chart text-danger" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="100">100</span>+</h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Tech
+                                                    Specializations Covered</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-check-circle text-success" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="2500">2500</span>+</h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Projects
+                                                    Delivered Successfully</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-globe text-warning" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number">Top 1%</h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Global IT
+                                                    Talent On-Demand</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-6">
-                                <div data-aos="fade-up"
-                                    class="counter_box d-flex align-items-center justify-content-center gap-4"
-                                    style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px;">
-                                    <i class="fa fa-check-circle text-success" style="font-size: 28px;"></i>
-                                    <div class="text-start">
-                                        <h4 class="custom-stat-number"><span class="counter"
-                                                data-count="2500">2500</span>+
-                                        </h4>
-                                        <small style="display:block; font-size: 12px; color: #666;">Projects
-                                            Delivered</small>
+
+                            <!-- Slide 3 -->
+                            <div class="item">
+                                <div class="row text-center">
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-briefcase text-primary" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="15">15</span>+ Years</h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Industry
+                                                    Experience</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-building text-danger" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="80000">80,000</span>+</h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Offices
+                                                    Connected Nationwide</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-credit-card text-success" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="12">12</span><span style="font-size: 0.6em;">
+                                                        Million+ BDT</span></h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Processed
+                                                    Daily Through Platforms</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-6">
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                            style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
+                                            <i class="fa fa-file-text text-warning" style="font-size: 28px;"></i>
+                                            <div class="text-start">
+                                                <h4 class="custom-stat-number"><span class="counter"
+                                                        data-count="1.5">1.5</span><span style="font-size: 0.7em;">
+                                                        Million+</span></h4>
+                                                <small style="display:block; font-size: 12px; color: #666;">Pages
+                                                    Scanned & Digitized</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-6">
-                                <div data-aos="fade-left"
-                                    class="counter_box d-flex align-items-center justify-content-center gap-4"
-                                    style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px;">
-                                    <i class="fa fa-globe text-warning" style="font-size: 28px;"></i>
-                                    <div class="text-start">
-                                        <h4 class="custom-stat-number">Top 1%</h4>
-                                        <small style="display:block; font-size: 12px; color: #666;">Global IT Talent
-                                            On-Demand</small>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
 
                         <!-- Certified & Clients Row -->
@@ -3116,6 +3223,7 @@
         });
 
     });
+
     // Relationship Section Marquee
     $('#relationship-marquee').owlCarousel({
         loop: true,
@@ -3134,6 +3242,22 @@
             1000: { items: 5 },
             1400: { items: 8 }
         }
+    });
+
+    // Bottom Hero Slider - Counters
+    $('#bottom-hero-slider').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000, // Slightly faster than 5s primarily for better user feedback loop
+        smartSpeed: 1000,
+        items: 1,
+        touchDrag: false,
+        mouseDrag: false,
+        animateOut: 'fadeOut', // Optional: simpler transition for numbers
+        animateIn: 'fadeIn'
     });
 
 </script>

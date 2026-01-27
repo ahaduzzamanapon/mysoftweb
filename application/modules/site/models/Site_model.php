@@ -199,7 +199,7 @@ class Site_model extends CI_Model
 
     public function get_portfolios()
     {
-        $this->db->select('p.id, p.name, p.image_file, p.category_id, p.url, c.id as cate_id, c.cat_name');
+        $this->db->select('p.*, c.id as cate_id, c.cat_name');
         $this->db->join('category c', 'c.id = p.category_id');
         $this->db->from('portfolio p');
         $this->db->where('p.status', '1');

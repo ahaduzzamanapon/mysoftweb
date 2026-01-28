@@ -1020,12 +1020,12 @@
         padding: 60px 40px;
     }
 
-   .contact-item {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    margin-bottom: 34px;
-}
+    .contact-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 34px;
+    }
 
     .icon-circle {
         width: 40px;
@@ -1659,7 +1659,7 @@
                                         </div>
                                         <!-- Bottom Image -->
                                         <div class="w-100 position-relative" data-aos="fade-up">
-                                            <img src="<?= base_url('home2media/heroimage.png') ?>" alt="Team Overlay"
+                                            <img src="<?= base_url('hero_image/heroimage.png') ?>" alt="Team Overlay"
                                                 class="hero-overlay-img">
                                         </div>
                                     </div>
@@ -2094,13 +2094,14 @@
                                     <i class="fa fa-cogs"></i>
                                 </div>
                                 <h4 class="service-card-title"><?= $service->main_service_name ?></h4>
-                                        <?php
-                                        $cat_slug = strtolower(str_replace(' ', '-', $service->main_service_name));
-                                        ?>
-                                        <a href="<?= base_url('service-category/' . $cat_slug) ?>" class="btn-service-view">View Services</a>
-                                    </div>
-                                </div>
-                        <?php endforeach; ?>
+                                <?php
+                                $cat_slug = strtolower(str_replace(' ', '-', $service->main_service_name));
+                                ?>
+                                <a href="<?= base_url('service-category/' . $cat_slug) ?>" class="btn-service-view">View
+                                    Services</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
 
@@ -2123,37 +2124,37 @@
             </p>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                        <?php foreach ($products as $product):
-                            ?>
-                                <div class="item">
-                                    <div class="product-card">
-                                        <div>
-                                            <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                            <div class="mb-2"> <?php if ($product->hero_image): ?>
-                                                        <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
-                                                            style="width: 90px;place-self: center;">
-                                                <?php endif; ?>
-                                            </div>
-                                            <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
-                                            <div class="product-frame">
-                                                <?php
-                                                $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                                if (!empty($product->demo_call_to_action_image)) {
-                                                    $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
-                                                }
-                                                ?>
-                                                <img src="<?= $img_src ?>" class="product-img">
-                                            </div>
-                                        </div>
-                                        <div class="product-actions">
-                                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                                Now</a>
-                                            <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
-                                                    class="fa fa-mouse-pointer"></i> Try Free Demo</a>
-                                        </div>
+                    <?php foreach ($products as $product):
+                        ?>
+                        <div class="item">
+                            <div class="product-card">
+                                <div>
+                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                    <div class="mb-2"> <?php if ($product->hero_image): ?>
+                                            <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
+                                                style="width: 90px;place-self: center;">
+                                        <?php endif; ?>
+                                    </div>
+                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                    <div class="product-frame">
+                                        <?php
+                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                        if (!empty($product->demo_call_to_action_image)) {
+                                            $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
+                                        }
+                                        ?>
+                                        <img src="<?= $img_src ?>" class="product-img">
                                     </div>
                                 </div>
-                        <?php endforeach; ?>
+                                <div class="product-actions">
+                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                        Now</a>
+                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                            class="fa fa-mouse-pointer"></i> Try Free Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -2399,36 +2400,49 @@
 
             <!-- Image Row - Converted to Marquee -->
             <div class="owl-carousel owl-theme" id="relationship-marquee" data-aos="fade-up">
-                <div class="item">
-                    <div class="rel-img-item">
-                        <img src="<?= base_url('home2media/Rectangle 24042.png') ?>" class="rel-img">
+                <?php if(!empty($relationship_gallery)): ?>
+                    <?php foreach($relationship_gallery as $gallery_item): ?>
+                        <?php if($gallery_item['display'] == 1): ?>
+                        <div class="item">
+                            <div class="rel-img-item">
+                                <img src="<?= base_url('relationship_gallery_img/'.$gallery_item['image']) ?>" class="rel-img">
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <!-- Default Static Images if no dynamic data -->
+                    <div class="item">
+                        <div class="rel-img-item">
+                            <img src="<?= base_url('home2media/Rectangle 24042.png') ?>" class="rel-img">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="rel-img-item">
-                        <img src="<?= base_url('home2media/Rectangle 24043.png') ?>" class="rel-img">
+                    <div class="item">
+                        <div class="rel-img-item">
+                            <img src="<?= base_url('home2media/Rectangle 24043.png') ?>" class="rel-img">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="rel-img-item">
-                        <img src="<?= base_url('home2media/Rectangle 24045.png') ?>" class="rel-img">
+                    <div class="item">
+                        <div class="rel-img-item">
+                            <img src="<?= base_url('home2media/Rectangle 24045.png') ?>" class="rel-img">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="rel-img-item">
-                        <img src="<?= base_url('home2media/Rectangle 24047.png') ?>" class="rel-img">
+                    <div class="item">
+                        <div class="rel-img-item">
+                            <img src="<?= base_url('home2media/Rectangle 24047.png') ?>" class="rel-img">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="rel-img-item">
-                        <img src="<?= base_url('home2media/Rectangle 24044.png') ?>" class="rel-img">
+                    <div class="item">
+                        <div class="rel-img-item">
+                            <img src="<?= base_url('home2media/Rectangle 24044.png') ?>" class="rel-img">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="rel-img-item">
-                        <img src="<?= base_url('home2media/Rectangle 24046.png') ?>" class="rel-img">
+                    <div class="item">
+                        <div class="rel-img-item">
+                            <img src="<?= base_url('home2media/Rectangle 24046.png') ?>" class="rel-img">
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
             </div>
 
             <style>

@@ -190,7 +190,7 @@
         /* Reduced vertical padding */
         text-align: center;
         background: #fff;
-        height: 447px;
+        height: 485px;
         width: 385px !important;
         max-width: 100%;
         margin: 0 auto;
@@ -1020,11 +1020,12 @@
         padding: 60px 40px;
     }
 
-    .contact-item {
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-    }
+   .contact-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 34px;
+}
 
     .icon-circle {
         width: 40px;
@@ -2764,10 +2765,11 @@
                 }
             </style>
             <div class="certifications-carousel owl-carousel owl-theme" style="margin-bottom: 30px;" data-aos="fade-up">
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-1.png') ?>" class="cert-logo" /></div>
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-2.png') ?>" class="cert-logo" /></div>
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-3.png') ?>" class="cert-logo" /></div>
-                <div class="item"><img src="<?= base_url('home2media/Rectangle-4.png') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/1.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/2.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/3.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/4.gif') ?>" class="cert-logo" /></div>
+                <div class="item"><img src="<?= base_url('membership/5.gif') ?>" class="cert-logo" /></div>
             </div>
         </div>
     </section>
@@ -3239,8 +3241,8 @@
         responsive: {
             0: { items: 1 },
             600: { items: 3 },
-            1000: { items: 5 },
-            1400: { items: 8 }
+            1000: { items: 4 },
+            1400: { items: 5 }
         }
     });
 

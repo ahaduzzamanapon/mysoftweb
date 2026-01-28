@@ -214,10 +214,39 @@ update_sitemap_txt($current_url);
 
 <body>
 
+    <style>
+        .shimmer-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .shimmer-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            animation: shimmer 1.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+    </style>
+
     <!-- Global Loader -->
     <div id="global-loader" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 999999; transition: opacity 0.5s;">
-        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-            <span class="visually-hidden">Loading...</span>
+        <div class="shimmer-wrapper">
+            <img src="<?= base_url('logomysoft.png') ?>" alt="Loading..." style="width: 200px;">
         </div>
     </div>
 

@@ -771,3 +771,8 @@ http://127.0.0.1/mysoftweb/product/crm
 http://127.0.0.1/mysoftweb/product/best-hr-software-in-bangladesh
 http://127.0.0.1/mysoftweb/service-category/digital-marketing
 http://127.0.0.1/mysoftweb/service-category/custom-software-development
+http://127.0.0.1/mysoftweb/service-category/advance-technology
+http://127.0.0.1/mysoftweb/service-category/mobile-games-development
+http://127.0.0.1/mysoftweb/service-category/web-design-development
+http://127.0.0.1/mysoftweb/service/customer-relationship-management
+http://127.0.0.1/mysoftweb/service-category/it-staffing

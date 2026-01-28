@@ -214,6 +214,13 @@ update_sitemap_txt($current_url);
 
 <body>
 
+    <!-- Global Loader -->
+    <div id="global-loader" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 999999; transition: opacity 0.5s;">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5FKLJ3ZH"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -63,11 +63,12 @@ class Site extends Frontend_Controller
         // $this->data['meta_title'] = 'Home';
         // $this->data['subview'] = 'index';
         // $this->load->view('frontend/_layout_main', $this->data);
-         $this->load->model('admin/Product_new_model');
+        $this->load->model('admin/Product_new_model');
         $this->data['products'] = $this->Product_new_model->get_products_for_home();
 
         $this->data['meta_title'] = 'Mysoftheaven Best Software Company';
-        $this->data['services'] = $this->Site_model->get_all_services(true, 8);
+        // $this->data['services'] = $this->Site_model->get_all_services(true, 8);
+        $this->data['services'] = $this->Site_model->get_service_categories(); // Fetch categories instead of services
         $this->data['subview'] = 'home2';
         $this->load->view('frontend/_layout_main', $this->data);
     }
@@ -613,7 +614,7 @@ class Site extends Frontend_Controller
         $this->data['meta_keywords'] = $product_data->meta_description; // Assuming you store keywords in meta_description for now
         $this->data['meta_description'] = $product_data->meta_description;
         $this->data['meta_title'] = $product_data->meta_title;
-        $this->data['og_image'] =  base_url('product_img/' . $product_data->demo_call_to_action_image);
+        $this->data['og_image'] = base_url('product_img/' . $product_data->demo_call_to_action_image);
 
         // Set the subview and load the main layout
         $this->data['subview'] = 'product_details';
@@ -706,6 +707,22 @@ class Site extends Frontend_Controller
         $this->data['subview'] = 'service_details';
 
         //dd($this->data);
+        $this->load->view('frontend/_layout_main', $this->data);
+    }
+
+    public function service_category($slug)
+    {
+        $slug = urldecode($slug);
+        $this->data['category_info'] = $this->Site_model->get_main_service_by_slug($slug);
+
+        if (empty($this->data['category_info'])) {
+            $this->err404();
+            return;
+        }
+
+        $this->data['services'] = $this->Site_model->get_services($this->data['category_info']->id);
+        $this->data['meta_title'] = $this->data['category_info']->main_service_name; // Assuming 'name' exists in main_service
+        $this->data['subview'] = 'service_category'; // New view file we will create
         $this->load->view('frontend/_layout_main', $this->data);
     }
 

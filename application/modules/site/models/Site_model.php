@@ -602,4 +602,24 @@ class Site_model extends CI_Model
     }
 
 
+    public function get_service_categories()
+    {
+        $this->db->select('*');
+        $this->db->from('main_service');
+        $this->db->where('status', 1);
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
+    public function get_main_service_by_slug($slug)
+    {
+        $name = str_replace('-', ' ', $slug);
+        $this->db->select('*');
+        $this->db->from('main_service');
+        $this->db->like('main_service_name', $name); // Using like for safer matching if case differs
+        $this->db->where('status', 1);
+        $query = $this->db->get()->row();
+        return $query;
+    }
+
 }

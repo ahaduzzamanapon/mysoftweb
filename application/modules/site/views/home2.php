@@ -2089,17 +2089,17 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                                 <div class="service-icon-floating <?= $color_class ?>">
-                                    <?php if (!empty($service->fa_icon)): ?>
-                                        <i class="fa <?= $service->fa_icon ?>"></i>
-                                    <?php else: ?>
-                                        <i class="fa fa-cogs"></i>
-                                    <?php endif; ?>
+                                    <!-- Use category icon if available, else default -->
+                                    <i class="fa fa-cogs"></i>
                                 </div>
-                                <h4 class="service-card-title"><?= $service->name ?></h4>
-                                <a href="<?= base_url('service/' . $service->slug) ?>" class="btn-service-view">View Service</a>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                                <h4 class="service-card-title"><?= $service->main_service_name ?></h4>
+                                        <?php
+                                        $cat_slug = strtolower(str_replace(' ', '-', $service->main_service_name));
+                                        ?>
+                                        <a href="<?= base_url('service-category/' . $cat_slug) ?>" class="btn-service-view">View Services</a>
+                                    </div>
+                                </div>
+                        <?php endforeach; ?>
                 <?php endif; ?>
             </div>
 
@@ -2122,37 +2122,37 @@
             </p>
             <div class="owl-carousel owl-theme" id="product-carousel" data-aos="fade-up">
                 <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $product):
-                        ?>
-                        <div class="item">
-                            <div class="product-card">
-                                <div>
-                                    <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
-                                    <div class="mb-2"> <?php if ($product->hero_image): ?>
-                                            <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
-                                                style="width: 90px;place-self: center;">
-                                        <?php endif; ?>
-                                    </div>
-                                    <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
-                                    <div class="product-frame">
-                                        <?php
-                                        $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
-                                        if (!empty($product->demo_call_to_action_image)) {
-                                            $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
-                                        }
-                                        ?>
-                                        <img src="<?= $img_src ?>" class="product-img">
+                        <?php foreach ($products as $product):
+                            ?>
+                                <div class="item">
+                                    <div class="product-card">
+                                        <div>
+                                            <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
+                                            <div class="mb-2"> <?php if ($product->hero_image): ?>
+                                                        <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
+                                                            style="width: 90px;place-self: center;">
+                                                <?php endif; ?>
+                                            </div>
+                                            <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
+                                            <div class="product-frame">
+                                                <?php
+                                                $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // Default fallback
+                                                if (!empty($product->demo_call_to_action_image)) {
+                                                    $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
+                                                }
+                                                ?>
+                                                <img src="<?= $img_src ?>" class="product-img">
+                                            </div>
+                                        </div>
+                                        <div class="product-actions">
+                                            <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
+                                                Now</a>
+                                            <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
+                                                    class="fa fa-mouse-pointer"></i> Try Free Demo</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="product-actions">
-                                    <a href="tel:+8801958633202" class="btn-product btn-call"><i class="fa fa-phone"></i> Call
-                                        Now</a>
-                                    <a href="<?= base_url('product/' . $product->slug) ?>" class="btn-product btn-demo"><i
-                                            class="fa fa-mouse-pointer"></i> Try Free Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                 <?php endif; ?>
             </div>
         </div>
@@ -3260,4 +3260,23 @@
         animateIn: 'fadeIn'
     });
 
+</script>
+
+<script>
+    function hideLoader() {
+        const loader = document.getElementById('global-loader');
+        if (loader) {
+            loader.style.transition = 'opacity 0.5s ease';
+            loader.style.opacity = '0';
+            loader.style.pointerEvents = 'none';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }
+    }
+
+    window.addEventListener('load', hideLoader);
+
+    // Fallback if load event doesn't fire or takes too long
+    setTimeout(hideLoader, 3000); 
 </script>

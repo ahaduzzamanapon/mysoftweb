@@ -769,3 +769,5 @@ http://127.0.0.1/mysoftweb/site/portfolio_details/8
 http://127.0.0.1/mysoftweb/company-profile
 http://127.0.0.1/mysoftweb/product/crm
 http://127.0.0.1/mysoftweb/product/best-hr-software-in-bangladesh
+http://127.0.0.1/mysoftweb/service-category/digital-marketing
+http://127.0.0.1/mysoftweb/service-category/custom-software-development

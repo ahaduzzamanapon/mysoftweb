@@ -139,6 +139,8 @@ $route['service/(:any)'] = 'site/service/$1';
 $route['best-hr-software-in-bangladesh'] = 'site/best_hr_software_in_bangladesh';
 $route['client/(:any)'] = 'site/client/$1';
 
+$route['service-category/(:any)'] = 'site/service_category/$1';
+
 $route['product/(:any)'] = 'site/product_details/$1';
 
 $route['tag/(:any)'] = 'site/tag/$1';

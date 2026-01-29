@@ -18,8 +18,6 @@
 <div class="ht-main-wrapper">
 
     <!-- Hero Section -->
-    <!-- Hero Section -->
-    <!-- Hero Section -->
     <section class="hero-section" style="padding-bottom: 0px; position: relative; overflow: visible;">
         <div class="container-fluid">
             <div id="hero-carousel" class="owl-carousel owl-theme">
@@ -469,51 +467,6 @@
                                                 class="cert-logo2" /></div>
                                         <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
                                                 class="cert-logo2" /></div>
-
-                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
-                                                class="cert-logo2" /></div>
-
-                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
-                                                class="cert-logo2" /></div>
-
-                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
-                                                class="cert-logo2" /></div>
-
-                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
-                                                class="cert-logo2" /></div>
-
                                     </div>
                                 </div>
                             </div>
@@ -1707,6 +1660,7 @@
             autoplayHoverPause: false,
             responsive: {
                 0: { items: 3 },
+                450: { items: 4 },
                 600: { items: 5 },
                 1000: { items: 7 }
             }

@@ -13,1664 +13,7 @@
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<style>
-    /* Fonts */
-    @font-face {
-        font-family: 'Nourd-Bold';
-        src: url('<?= base_url("home2media/nourd_bold.ttf") ?>') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        color: #333;
-        overflow-x: hidden;
-    }
-
-
-    .ht-main-wrapper {
-        width: 100vw;
-        overflow: hidden;
-    }
-
-    .ht-section {
-        padding: 60px 0;
-    }
-
-    .section-title {
-        font-family: 'Nourd-Bold', sans-serif;
-        font-size: 36px;
-        color: #000;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-
-    .text-blue {
-        color: #0088cc;
-    }
-
-    .btn-custom {
-        padding: 6px 15px 1px 15px !important;
-        border-radius: 30px;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-        display: inline-block;
-        transition: 0.3s;
-        font-family: 'Nourd-Medium', sans-serif !important;
-    }
-
-    .counter {
-        padding: 0 !important;
-    }
-
-    .btn-blue {
-        background: #0088cc;
-        color: #fff;
-    }
-
-    .btn-outline {
-        border: 2px solid #0088cc;
-        color: #0088cc;
-    }
-
-    .btn-outline:hover {
-        background: #0088cc;
-        color: #fff;
-    }
-
-    /* Hero Section */
-    .hero-section {
-        padding: 0;
-        background: #fff;
-    }
-
-    .hero-title {
-        font-family: 'Nourd-Bold', sans-serif;
-        font-size: 42px;
-        line-height: 1.2;
-        margin-bottom: 20px;
-    }
-
-    .hero-badge {
-        display: inline-block;
-        background: #FFD1E3;
-        color: #D81B60;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-
-    .hero-img {
-        width: 100%;
-        max-width: 600px;
-    }
-
-    /* Stats Strip */
-    .stats-strip {
-        padding: 30px 0;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-    }
-
-    .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .custom-stat-number {
-        font-family: 'Nourd-Bold', sans-serif;
-        font-weight: 800;
-        margin: 0;
-    }
-
-    .stat-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Services Grid */
-    .service-card {
-        padding: 30px;
-        border-radius: 12px;
-        text-align: left;
-        transition: 0.3s;
-        height: 100%;
-        margin-bottom: 20px;
-    }
-
-    .service-card.light-blue {
-        background: #E1F5FE;
-    }
-
-    .service-card.light-pink {
-        background: #FCE4EC;
-    }
-
-    .service-card.light-green {
-        background: #E8F5E9;
-    }
-
-    .service-card.light-orange {
-        background: #FFF3E0;
-    }
-
-    .service-card.light-purple {
-        background: #F3E5F5;
-    }
-
-    .service-icon {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 20px;
-        background: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-    }
-
-    .service-title {
-        font-weight: 700;
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    /* Products Refactored */
-    .product-card {
-        border: 1px solid #0088cc;
-        border-radius: 12px;
-        overflow: hidden;
-        padding: 15px 15px;
-        /* Reduced vertical padding */
-        text-align: center;
-        background: #fff;
-        height: 485px;
-        width: 385px !important;
-        max-width: 100%;
-        margin: 0 auto;
-        transition: 0.3s;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-logo {
-        height: 50px;
-        /* Slightly reduced */
-        object-fit: contain;
-        margin-bottom: 5px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .product-logo-text {
-        font-family: 'Nourd-Bold', sans-serif;
-        font-size: 28px;
-        color: #0088cc;
-        margin-bottom: 5px;
-        display: inline-block;
-    }
-
-    .product-tagline {
-        font-weight: 700;
-        font-size: 15px;
-        margin-bottom: 10px;
-        /* Reduced margin */
-        color: #000;
-        line-height: 1.2;
-    }
-
-    .product-frame {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 5px;
-        background: #fdfdfd;
-        margin-bottom: 15px;
-        /* Reduced margin */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        display: inline-block;
-    }
-
-    .product-img {
-        width: 260px;
-        height: 198px;
-        object-fit: cover;
-        border-radius: 4px;
-        display: block;
-    }
-
-    .product-actions {
-        display: flex;
-        gap: 10px;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 10px;
-    }
-
-    .btn-product {
-        flex: 1;
-        padding: 10px 5px;
-        border-radius: 50px;
-        /* Pill shape */
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: none;
-        color: #fff !important;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        white-space: nowrap;
-        transition: 0.3s;
-    }
-
-    .btn-call {
-        background: #007bb5;
-    }
-
-    .btn-call:hover {
-        background: #005f8c;
-    }
-
-    .btn-demo {
-        background: #f47920;
-    }
-
-    .btn-demo:hover {
-        background: #d06010;
-    }
-
-    .btn-demo:hover {
-        background: #d06010;
-    }
-
-    /* Equal Height for Owl Carousel Items */
-    #product-carousel .owl-stage {
-        display: flex;
-    }
-
-    #product-carousel .owl-item {
-        display: flex;
-        flex: 1 0 auto;
-    }
-
-    #product-carousel .product-card {
-        width: 100%;
-    }
-
-    /* Carousel Dots Styling */
-    /* Carousel Dots Styling - Forced Visibility */
-    #product-carousel .owl-dots {
-        text-align: center;
-        margin-top: 30px;
-        display: block !important;
-        width: 100%;
-    }
-
-    #product-carousel .owl-dot {
-        display: inline-block !important;
-        background: none;
-        border: none;
-        padding: 0;
-    }
-
-    #product-carousel .owl-dot span {
-        width: 12px;
-        height: 12px;
-        margin: 5px 6px;
-        background: #ccc !important;
-        /* Default visible gray */
-        display: block;
-        transition: all 0.3s ease;
-        border-radius: 50%;
-        opacity: 0.5;
-    }
-
-    #product-carousel .owl-dot.active span,
-    #product-carousel .owl-dot:hover span {
-        background: #0088cc !important;
-        /* Active blue */
-        opacity: 1;
-        transform: scale(1.2);
-    }
-
-    /* Industries */
-    .industry-icon {
-        width: 80px;
-        height: 80px;
-        border: 1px solid #eee;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 10px auto;
-        transition: 0.3s;
-    }
-
-    .industry-icon:hover {
-        background: #0088cc;
-        color: #fff;
-        border-color: #0088cc;
-    }
-
-    .industry-item {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    /* Relationship Images */
-    .rel-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 15px;
-    }
-
-    .rel-img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    /* Clients & Testimonials */
-    .client-logo {
-        max-width: 100px;
-        height: 50px;
-        width: auto;
-        margin: 20px;
-        filter: grayscale(100%);
-        transition: 0.3s;
-        object-fit: contain;
-    }
-
-    .client-logo:hover {
-        filter: grayscale(0%);
-    }
-
-    .testimonial-card {
-        background: #E1F5FE;
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        margin-bottom: 30px;
-        position: relative;
-    }
-
-    .testimonial-img {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        margin: 0 auto 15px auto;
-        object-fit: cover;
-    }
-
-    .award-card {
-        padding: 20px;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        text-align: center;
-        margin-bottom: 30px;
-        transition: 0.3s;
-    }
-
-    .award-card:hover {
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .award-img {
-        height: 80px;
-        margin-bottom: 15px;
-        object-fit: contain;
-    }
-
-    /* Membership */
-    .membership-logo {
-        height: 60px;
-        margin: 15px 30px;
-        filter: grayscale(100%);
-        transition: 0.3s;
-    }
-
-    .membership-logo:hover {
-        filter: grayscale(0%);
-    }
-
-    /* Footer Form */
-    .footer-cta {
-        background: linear-gradient(90deg, #002B49 0%, #004D80 100%);
-        color: #fff;
-        padding: 60px 0;
-        border-radius: 20px;
-        margin-bottom: -50px;
-        position: relative;
-        z-index: 10;
-        overflow: hidden;
-    }
-
-    /* Hero Section Refactored */
-    .hero-stat-card {
-        padding: 7px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .hero-stat-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .hero-card-pink {
-        background: #FFC1DC;
-        border-radius: 60px 4px 4px 4px;
-        min-height: 140px;
-    }
-
-    .hero-card-blue-light {
-        background: #A3CFF9;
-        border-radius: 4px 57px 4px 4px;
-        min-height: 61%;
-    }
-
-    .hero-card-blue-round {
-        background: #A3CFF9;
-        border-radius: 60px 4px 4px 4px;
-        min-height: 140px;
-    }
-
-    .hero-card-green {
-        background: #85F1C3;
-        border-radius: 5px 50px 4px 4px;
-        min-height: 140px;
-    }
-
-    .hero-stat-title {
-        font-family: 'Nourd-Bold', sans-serif;
-        line-height: 1;
-        margin-bottom: 5px;
-        font-size: clamp(14px, 3vw, 24px) !important;
-    }
-
-    .hero-stat-subtitle {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 1.2;
-    }
-
-    .hero-stat-subtitle.bold {
-        font-weight: 700;
-    }
-
-
-
-    /* Tech Stack Redesign */
-    .tech-logos-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-        margin-top: 30px;
-    }
-
-    #tech-marquee-1 .owl-item,
-    #tech-marquee-2 .owl-item,
-    #tech-marquee-3 .owl-item,
-    #certified_marquee .owl-item,
-    #clients_marquee .owl-item {
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 80px;
-    }
-
-    .tech-logos-grid i {
-        font-size: 60px;
-        display: inline-block;
-        transition: transform 0.3s ease;
-    }
-
-    /* Specific sizing adjustments */
-    .devicon-nodejs-plain-wordmark,
-    .devicon-mysql-plain-wordmark,
-    .devicon-microsoftsqlserver-plain-wordmark,
-    .devicon-kubernetes-plain-wordmark,
-    .devicon-docker-plain-wordmark,
-    .devicon-amazonwebservices-plain-wordmark,
-    .devicon-laravel-plain-wordmark,
-    .devicon-mongodb-plain-wordmark,
-    .devicon-apachekafka-original-wordmark {
-        font-size: 70px !important;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .hero-title {
-            font-size: 32px;
-        }
-
-        .hexagon-grid {
-            justify-content: center;
-        }
-
-        .hex-item {
-            margin: 10px;
-        }
-
-        .rel-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    /* Hexagon Grid Styles */
-    .hexagon-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        /* Center the grid */
-        gap: 15px;
-        /* Reduced gap */
-        padding: 20px 0;
-    }
-
-    .hex-item {
-        width: 130px;
-        /* Slightly reduced width to fit 8 */
-        height: 150px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        transition: transform 0.3s;
-        /* Flex basis for 8 items: approx 12% */
-        flex: 0 0 auto;
-        margin-bottom: 18px;
-    }
-
-    /* Force 9 items per row on large screens */
-    @media (min-width: 1200px) {
-        .hex-item {
-            width: auto;
-            flex: 0 0 10%;
-            /* 9 items * 10% = 90% + gaps */
-            height: 120px;
-        }
-
-        .hexagon-grid {
-            gap: 3.1%;
-            /* Distribute remaining space */
-            max-width: 100%;
-            justify-content: center;
-        }
-    }
-
-    .hex-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        border: 2px solid #ddd;
-        z-index: 1;
-        transition: 0.3s;
-    }
-
-    /* Border hack for clip-path */
-    .hex-item::before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        background: #0088cc;
-        z-index: 0;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        display: none;
-        /* simple version first */
-    }
-
-    /* SVG Octagon/Hexagon border look is better simulated with an SVG background or image if border is critical. 
-       For now, let's use a simpler "Honey comb" style or just the shape. 
-       The user image shows a stroke hexagon. 
-       Best way for stroke hexagon is SVG. */
-
-    .hex-svg-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-
-    .hex-svg-border {
-        fill: none;
-        stroke: #ccc;
-        stroke-width: 2;
-        transition: 0.3s;
-    }
-
-    .hex-content {
-        position: relative;
-        z-index: 2;
-        padding: 10px;
-    }
-
-    .hex-content i {
-        font-size: 32px;
-        color: #555;
-        margin-bottom: 10px;
-        display: block;
-    }
-
-    .hex-content span {
-        font-size: 12px;
-        font-weight: 600;
-        color: #333;
-        display: block;
-        line-height: 1.2;
-    }
-
-    .hex-item:hover .hex-svg-border {
-        stroke: #0088cc;
-    }
-
-    .hex-item:hover .hex-content i,
-    .hex-item:hover .hex-content span {
-        color: #0088cc;
-    }
-
-    .ht-left-title-block {
-        text-align: left;
-        margin-bottom: 40px;
-        border-left: 5px solid #0088cc;
-        padding-left: 20px;
-    }
-
-    .ht-left-title-block h2 {
-        font-family: 'Nourd-Bold';
-        font-size: 36px;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .ht-left-title-block p {
-        color: #666;
-        max-width: 700px;
-        margin: 0;
-    }
-
-    /* Relationships Redesign */
-    /* .relationship-header {
-        margin-bottom: 40px;
-    } */
-
-    .rel-title-block h2 {
-        font-family: 'Nourd-Bold';
-        font-size: 36px;
-        color: #000;
-        margin-bottom: 10px;
-    }
-
-    .rel-desc p {
-        color: #555;
-        font-size: 15px;
-        line-height: 1.6;
-        max-width: 600px;
-    }
-
-    .rel-grid-scroll {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        /* Align top initially */
-        gap: 20px;
-        padding-bottom: 50px;
-        /* Space for staggered items */
-        overflow: visible;
-        /* No Scroll */
-    }
-
-    .rel-grid-scroll::-webkit-scrollbar {
-        display: none;
-    }
-
-    .rel-img-item {
-        flex: 1;
-        /* Distribute space evenly */
-        height: 350px;
-        /* Fixed height */
-        border-radius: 20px;
-        overflow: hidden;
-        position: relative;
-        transition: transform 0.3s;
-    }
-
-    /* Staggered Effect: Even items pushed down */
-    .rel-img-item:nth-child(even) {
-        margin-top: 50px;
-    }
-
-    /* Target specifically 6 items for desktop, but wrap on mobile if needed */
-    @media (max-width: 991px) {
-        .rel-grid-scroll {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .rel-img-item {
-            flex: 0 0 calc(50% - 20px);
-            margin-top: 0 !important;
-            /* Reset stagger on mobile */
-            margin-bottom: 20px;
-        }
-
-
-        .hero-overlay-img {
-            right: 3% !important;
-            width: 60% !important;
-
-        }
-    }
-
-    .rel-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s;
-    }
-
-    .rel-img-item:hover .rel-img {
-        transform: scale(1.05);
-    }
-
-    /* Clients Section (from hire_talent.php) */
-    .clients-section {
-        background-color: #bbe8ff;
-        padding: 80px 0;
-    }
-
-    .client-box-marquee {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100px;
-        background: #fff;
-        border: 1px solid #eee;
-        padding: 10px;
-        margin-right: 1px;
-    }
-
-    /* Synced Styles from hire_talent.php */
-
-    /* Testimonials Section */
-    .testimonials-section {
-        background-color: #002b49;
-        padding: 80px 0;
-        text-align: center;
-    }
-
-    .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        margin-top: 40px;
-    }
-
-    .testimonial-card {
-        border-radius: 12px;
-        overflow: hidden;
-        text-align: left;
-    }
-
-    .test-header {
-        background: #bae6fd;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        height: 120px;
-    }
-
-    .test-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-
-    .test-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .test-info h5 {
-        font-size: 16px;
-        font-weight: 700;
-        margin: 0;
-        color: #000;
-    }
-
-    .test-info span {
-        font-size: 12px;
-        color: #555;
-        display: block;
-    }
-
-    .test-body {
-        background: #fff;
-        padding: 30px 20px 20px 20px;
-        position: relative;
-        height: 180px;
-    }
-
-    .project-tag {
-        position: absolute;
-        top: -15px;
-        left: 20px;
-        background: #fff;
-        padding: 5px 15px;
-        border-radius: 4px;
-        font-size: 11px;
-        font-weight: 600;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        color: #333;
-    }
-
-    .test-body p {
-        font-size: 13px;
-        line-height: 1.6;
-        color: #333;
-        margin: 0;
-    }
-
-    /* Awards Section */
-    .awards-section {
-        background: #fff;
-        padding: 60px 0;
-    }
-
-    .awards-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-
-    .award-card {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 12px;
-        padding: 30px 20px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-    }
-
-    .award-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .award-icon-box {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 20px auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 2px solid #eee;
-        padding: 15px;
-    }
-
-    .award-icon-box img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .award-card h4 {
-        font-size: 18px;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    .award-card p {
-        font-size: 13px;
-        color: #666;
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    @media (max-width: 768px) {
-        .awards-grid {
-            grid-template-columns: repeat(1, 1fr);
-        }
-    }
-
-    /* Membership Section */
-    .certifications-section {
-        background: #eef8ff;
-        padding: 60px 0;
-        text-align: center;
-    }
-
-    .certs-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
-
-    .cert-logo {
-        height: 90px;
-        width: auto !important;
-        transition: 0.3s;
-    }
-
-
-
-    /* Contact / Get in Touch Section */
-    .contact-card {
-        background: #fff;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        overflow: hidden;
-        margin-top: -80px;
-        position: relative;
-        z-index: 10;
-        border: none;
-    }
-
-    .contact-info-side {
-        background: #002b49;
-        padding: 60px 40px !important;
-        color: #fff;
-    }
-
-    .contact-form-side {
-        background: #fff;
-        padding: 60px 40px;
-    }
-
-    .contact-item {
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-        margin-bottom: 34px;
-    }
-
-    .icon-circle {
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .icon-circle i {
-        color: #002b49;
-        font-size: 16px;
-    }
-
-    .contact-text strong {
-        display: block;
-        font-size: 15px;
-        margin-bottom: 5px;
-        font-weight: 600;
-    }
-
-    .contact-text span {
-        font-size: 14px;
-        opacity: 0.9;
-        display: block;
-        line-height: 1.5;
-    }
-
-    .social-links {
-        display: flex;
-        gap: 15px;
-        margin-top: 60px;
-    }
-
-    .social-btn {
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #002b49;
-        font-size: 18px;
-        transition: 0.3s;
-    }
-
-    .social-btn:hover {
-        background: #0088cc;
-        color: #fff;
-    }
-
-    .form-control-custom {
-        height: 50px;
-        border-radius: 8px;
-        border: 1px solid #e1e1e1;
-        font-size: 14px;
-        background: #fff;
-        padding: 0 15px;
-        width: 100%;
-        display: block;
-        transition: 0.3s;
-    }
-
-    .form-control-custom:focus {
-        border-color: #002b49;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 43, 73, 0.1);
-    }
-
-    textarea.form-control-custom {
-        height: auto;
-        padding: 15px;
-    }
-
-    .btn-submit {
-        background: #002b49;
-        color: #fff;
-        height: 55px;
-        border-radius: 8px;
-        font-weight: 700;
-        font-size: 16px;
-        margin-top: 10px;
-        width: 100%;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .btn-submit:hover {
-        background: #004d80;
-    }
-
-
-    /* Awards Section Redesign */
-    .awards-section {
-        background-color: #E6F4FF;
-        /* Light Blue Background */
-        padding: 80px 0;
-        text-align: center;
-    }
-
-    .awards-desc {
-        max-width: 800px;
-        margin: 0 auto 50px auto;
-        color: #555;
-        font-size: 15px;
-        line-height: 1.6;
-    }
-
-    .award-card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 30px 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        /* Subtle shadow */
-        height: 100%;
-        transition: transform 0.3s, box-shadow 0.3s;
-        border: 1px solid #eee;
-    }
-
-    .award-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .award-img-wrapper {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 2px solid #E6F4FF;
-        /* Light blue border */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px auto;
-        background: #fff;
-        padding: 10px;
-    }
-
-    .award-img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-    }
-
-    .award-card h5 {
-        font-family: 'Nourd-Bold';
-        font-size: 18px;
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    .award-card p {
-        font-size: 13px;
-        color: #666;
-        line-height: 1.6;
-    }
-
-
-
-    .client-box-marquee img {
-        max-width: 80%;
-        max-height: 60px;
-        object-fit: contain;
-    }
-
-    .stat-item {
-        margin-bottom: 20px;
-        justify-content: center;
-    }
-
-    .footer-cta {
-        text-align: center;
-    }
-
-    .footer-cta img {
-        margin: 0 auto 20px auto;
-        width: 80% !important;
-        margin-left: 0 !important;
-    }
-
-    .footer-cta .text-left {
-        text-align: center !important;
-        padding: 20px !important;
-    }
-
-    .hero-overlay-img {
-        position: relative;
-        right: 3%;
-        width: 110% !important;
-        height: 184px;
-        margin-top: 15px;
-        border-radius: 0px 125px 0px 0px;
-        object-fit: cover;
-        object-position: center;
-    }
-
-
-
-    .certified {
-        border-right: 3px solid #979797;
-
-    }
-
-
-    @media (max-width: 430px) {
-        .hero-card-green {
-            width: 93px;
-        }
-
-        .hero-card-pink {
-            background: #FFC1DC;
-            border-radius: 60px 4px 4px 4px;
-            min-height: 99px;
-        }
-
-        .certified {
-            border-right: none;
-            margin-bottom: 25px !important;
-        }
-
-        .hero-overlay-img {
-            width: 107% !important;
-        }
-
-        .btn-custom {
-
-            padding: 6px 10px 1px 10px !important;
-        }
-    }
-
-    .counter_box {
-        min-height: 122px;
-        margin-bottom: 12px;
-    }
-
-    a {
-        text-decoration: none !important;
-    }
-
-
-    /* Marquee Fade Wrapper */
-    .marquee-fader {
-        position: relative;
-        overflow: hidden;
-        flex: 1;
-        min-width: 0;
-    }
-
-    .marquee-fader::before,
-    .marquee-fader::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 80px;
-        height: 100%;
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    .marquee-fader::before {
-        left: 0;
-    }
-
-    .marquee-fader::after {
-        right: 0;
-    }
-
-    /* White Fade (for white backgrounds) */
-    .marquee-fader-white::before {
-        background: linear-gradient(to right, #ffffff, transparent);
-    }
-
-    .marquee-fader-white::after {
-        background: linear-gradient(to left, #ffffff, transparent);
-    }
-
-    /* Light Fade (for light gray backgrounds e.g. bg-light) */
-    .marquee-fader-light::before {
-        background: linear-gradient(to right, #f8f9fa, transparent);
-    }
-
-    .marquee-fader-light::after {
-        background: linear-gradient(to left, #f8f9fa, transparent);
-    }
-
-    /* Blue Light Fade (for #eef8ff backgrounds) */
-    .marquee-fader-blue-light::before {
-        background: linear-gradient(to right, #eef8ff, transparent);
-    }
-
-    .marquee-fader-blue-light::after {
-        background: linear-gradient(to left, #eef8ff, transparent);
-    }
-
-    /* Dark Blue Fade (for #002b49 backgrounds) */
-    .marquee-fader-dark-blue::before {
-        background: linear-gradient(to right, #bbe8ff, transparent);
-    }
-
-    .marquee-fader-dark-blue::after {
-        background: linear-gradient(to left, #bbe8ff, transparent);
-    }
-
-    /* Services Section Redesign */
-    .services-bg-gradient {
-        background: linear-gradient(180deg, #E8E9EB 0%, #E8E9EB 100%);
-        padding: 80px 0;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .services-bg-gradient::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgb(59 130 246 / 30%) 0%, rgb(59 130 246 / 0%) 60%);
-        z-index: 0;
-        pointer-events: none;
-    }
-
-    .services-bg-gradient .container {
-        position: relative;
-        z-index: 1;
-    }
-
-    /* .service-header-modern {
-        margin-bottom: 50px;
-    } */
-
-    .service-title-block {
-        border-left: 5px solid #0056b3;
-        /* Darker blue */
-        padding-left: 20px;
-        margin-bottom: 15px;
-    }
-
-    .service-title-modern {
-        font-weight: 700;
-        font-size: 32px;
-        color: #000;
-        margin: 0;
-    }
-
-    .service-desc-modern {
-        color: #666;
-        max-width: 700px;
-        line-height: 1.6;
-    }
-
-    .service-card-modern {
-        background: transparent;
-        box-shadow: none;
-        border-radius: 20px;
-        padding: 12px !important;
-        position: relative;
-        margin-bottom: -3px;
-        transition: transform 0.3s ease;
-        min-height: 149px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-top: 45px;
-        border: none;
-        overflow: visible;
-        z-index: 1;
-    }
-
-    /* The White Scoop Shape */
-    .service-card-modern::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, #ffffff 0%, #edf6ff 100%);
-        border-radius: 20px;
-        /* Scoop at top right, aligned with icon center at right: 50px */
-        mask-image: radial-gradient(circle at calc(100% - 50px) 0, transparent 40px, black 41px);
-        -webkit-mask-image: radial-gradient(circle at calc(100% - 50px) 0, transparent 40px, black 41px);
-        z-index: -1;
-        /* Soft shadow to match Figma */
-        filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.05));
-        transition: filter 0.3s ease;
-    }
-
-
-    /* Watermark - Using Mask for Color Control */
-    .service-card-modern::after {
-        content: '';
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-        width: 85px;
-        height: 89px;
-        background-color: #dbeafe;
-        mask-image: url("<?= base_url('home2media/vector.png') ?>");
-        -webkit-mask-image: url("<?= base_url('home2media/vector.png') ?>");
-        mask-size: contain;
-        -webkit-mask-size: contain;
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
-        mask-position: bottom right;
-        -webkit-mask-position: bottom right;
-        opacity: 1;
-        pointer-events: none;
-        z-index: 0;
-        border-radius: 0 0 20px 0;
-    }
-
-    .service-card-modern:hover {
-        transform: translateY(-5px);
-    }
-
-    .service-card-modern:hover::before {
-        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.08));
-    }
-
-
-
-
-
-
-    .ht-hero-section {
-        height: 475px !important;
-    }
-
-    .service-icon-floating {
-        position: absolute;
-        top: -30px;
-        /* Sit on the edge */
-        right: 20px;
-        /* Center at 20px + 30px = 50px from right */
-        width: 60px;
-        height: 60px;
-        background: #fff;
-        border-radius: 50%;
-        /* Double ring effect using border */
-        border: 6px solid #eef6fc;
-        box-shadow: none;
-        /* Removed heavy shadow, border provides the contrast */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 2;
-    }
-
-    /* Gradient Border/Glow for Icon - Optional, disabling to match clean Figma look, relying on border */
-    .service-icon-floating::before {
-        display: none;
-    }
-
-    /* Strict Color Mapping */
-    .icon-blue i {
-        color: #1a73e8;
-        font-size: 24px;
-    }
-
-    .icon-cyan i {
-        color: #00bcd4;
-        font-size: 24px;
-    }
-
-    .icon-orange i {
-        color: #ff9800;
-        font-size: 24px;
-    }
-
-    .icon-purple i {
-        color: #9c27b0;
-        font-size: 24px;
-    }
-
-    .service-card-title {
-        display: flex;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 16px;
-        margin-top: 29px;
-        color: #000;
-        line-height: 1.4;
-        position: relative;
-        z-index: 1;
-        letter-spacing: -0.5px;
-        justify-content: center;
-        align-content: center;
-        text-align: -webkit-center;
-    }
-
-    .btn-service-view {
-        background: #fff;
-        color: #1a73e8;
-        border: 1px solid #eef6fc;
-        border-radius: 50px;
-        padding: 8px 24px;
-        font-size: 14px;
-        font-weight: 600;
-        display: inline-block;
-        transition: all 0.3s;
-        text-align: center;
-        width: auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        align-self: flex-start;
-        position: relative;
-        z-index: 1;
-        text-decoration: none !important;
-        place-self: anchor-center;
-    }
-
-    .btn-service-view:hover {
-        background: #1a73e8;
-        color: #fff;
-        box-shadow: 0 8px 20px rgba(26, 115, 232, 0.2);
-        transform: translateY(-2px);
-        border-color: #1a73e8;
-    }
-
-    .explore-services-btn {
-        background: #4A90E2;
-        color: #fff;
-        padding: 12px 35px;
-        border-radius: 30px;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
-        border: none;
-        transition: all 0.3s;
-    }
-
-    .explore-services-btn:hover {
-        background: #357abd;
-        transform: translateY(-2px);
-        color: #fff;
-    }
-
-    .container-fluid {
-        padding-right: 50px;
-        padding-left: 50px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .cert-logo2 {
-        width: 100%;
-        max-width: 71%;
-        height: 103px;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-    }
-
-    .bottom-hero-section-container {
-        box-shadow: 0px 3px 3px 1px #dbdbdb;
-        padding: 25px;
-        border-radius: 6px;
-    }
-
-    @media (max-width: 430px) {
-        .col-lg-7 {
-            padding: 0;
-        }
-
-        .hero-right-content {
-            display: none;
-        }
-
-        .btn-custom {
-            font-size: 12px;
-        }
-
-        .text-start {
-            text-align: center !important;
-        }
-
-        .hero-bottom-card-slider {
-            flex-direction: column;
-            min-height: 152px !important;
-            overflow: hidden;
-            padding: 5px !important;
-        }
-
-        .btn-group-hero {
-            place-self: anchor-center;
-
-        }
-
-        .hero-title {
-            font-size: 24px;
-        }
-
-        .hero-desc {
-            font-size: 13px !important;
-        }
-
-        .bottom-hero-section-container {
-            box-shadow: none;
-            padding: 10px;
-            border-radius: 0;
-        }
-
-        .certified_section_hero {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .clients_section_hero {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .product-card {
-
-            height: 491px;
-            width: 329px !important;
-        }
-
-        h2 {
-            font-family: 'Nourd-Bold';
-            font-size: 27px !important;
-            color: #000;
-            margin-bottom: 10px;
-        }
-
-        .rel-title-block h2 {
-            font-family: 'Nourd-Bold';
-            font-size: 27px;
-            color: #000;
-            margin-bottom: 10px;
-        }
-
-        .gallery-title {
-            font-family: 'Nourd-Bold';
-            font-size: 27px;
-            color: #000;
-            margin-bottom: 10px;
-        }
-    }
-</style>
+<link rel="stylesheet" href="<?= base_url('assets/css/home2.css') ?>">
 
 <div class="ht-main-wrapper">
 
@@ -1766,11 +109,11 @@
                         <div class="row">
                             <!-- Left Content -->
                             <div class="col-lg-7">
-                                <h1 class="hero-title" style="margin-bottom: 25px;" data-aos="fade-right">
+                                <h1 class="hero-title" style="margin-bottom: 25px;">
                                     Flexible Teams. <span class="text-blue">On-Demand</span><br>
                                     <span style="">Expertise.</span>
                                 </h1>
-                                <p data-aos="fade-up" class="hero-desc"
+                                <p  class="hero-desc"
                                     style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     Scale your technology team instantly with skilled professionals who integrate
                                     seamlessly
@@ -1780,11 +123,11 @@
                                     and maintain full alignment with your architecture and product goals.
                                 </p>
                                 <div class="d-flex gap-3 btn-group-hero">
-                                    <a data-aos="fade-right" href="<?= base_url('hire_talent') ?>"
+                                    <a  href="<?= base_url('hire_talent') ?>"
                                         class="btn-custom btn-outline"
                                         style="padding: 12px 30px; border-radius: 30px; font-weight: 600;">Explore
                                         Roles</a>
-                                    <a data-aos="fade-left" href="<?= base_url('contact_us') ?>"
+                                    <a  href="<?= base_url('contact_us') ?>"
                                         class="btn-custom btn-blue"
                                         style="padding: 12px 30px;border-radius: 30px;font-weight: 600;color: white;">Schedule
                                         a
@@ -1797,13 +140,13 @@
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
                                         <!-- Pink Card -->
-                                        <div data-aos="fade-right" class="hero-stat-card hero-card-pink">
+                                        <div  class="hero-stat-card hero-card-pink">
                                             <h2 class="hero-stat-title"><span class="counter" data-count="500">0</span>+
                                             </h2>
                                             <p class="hero-stat-subtitle">Offshore Clients Served</p>
                                         </div>
                                         <!-- Blue Card -->
-                                        <div data-aos="fade-up" class="hero-stat-card hero-card-blue-light">
+                                        <div  class="hero-stat-card hero-card-blue-light">
                                             <h2 class="hero-stat-title"><span class="counter" data-count="100">0</span>+
                                             </h2>
                                             <p class="hero-stat-subtitle bold">Tech Specializations Covered</p>
@@ -1815,7 +158,7 @@
                                         <!-- Top Stats Row -->
                                         <div class="row g-2 mb-2">
                                             <div class="col-6">
-                                                <div data-aos="fade-down" class="hero-stat-card hero-card-blue-round">
+                                                <div  class="hero-stat-card hero-card-blue-round">
                                                     <h2 class="hero-stat-title"><span class="counter"
                                                             data-count="2500">0</span>+
                                                     </h2>
@@ -1824,15 +167,15 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div data-aos="fade-left" class="hero-stat-card hero-card-green">
+                                                <div  class="hero-stat-card hero-card-green">
                                                     <h2 class="hero-stat-title">Top 1%</h2>
                                                     <p class="hero-stat-subtitle bold">Global IT Talent On-Demand</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Bottom Image -->
-                                        <div class="w-100 position-relative" data-aos="fade-up">
-                                            <img src="<?= base_url('hero_image/flexable_teams.webp') ?>"
+                                        <div class="w-100 position-relative">
+                                            <img  src="<?= base_url('hero_image/flexable_teams.webp') ?>"
                                                 alt="Team Overlay" class="hero-overlay-img">
                                         </div>
                                     </div>
@@ -1846,11 +189,11 @@
                         <div class="row">
                             <!-- Left Content -->
                             <div class="col-lg-7">
-                                <h1 class="hero-title" style="margin-bottom: 25px;" data-aos="fade-right">
+                                <h1 class="hero-title" style="margin-bottom: 25px;">
                                     Delivering Large-Scale,<br> <span class="text-blue">High-Impact</span>
                                     <span style="">Solutions</span>
                                 </h1>
-                                <p data-aos="fade-up" class="hero-desc"
+                                <p  class="hero-desc"
                                     style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     Our systems handle complex, high-volume operations with nationwide coverage and
                                     global
@@ -1859,11 +202,11 @@
                                     reliable, and scalable platforms that organizations depend on every day.
                                 </p>
                                 <div class="d-flex gap-3 btn-group-hero">
-                                    <a data-aos="fade-right" href="<?= base_url('products') ?>"
+                                    <a  href="<?= base_url('products') ?>"
                                         class="btn-custom btn-outline"
                                         style="padding: 12px 30px; border-radius: 30px; font-weight: 600;">Explore
                                         Products</a>
-                                    <a data-aos="fade-left" href="<?= base_url('client/government-sector') ?>"
+                                    <a href="<?= base_url('client/government-sector') ?>"
                                         class="btn-custom btn-blue"
                                         style="padding: 6px 10px 1px 10px;border-radius: 30px;font-weight: 600;color: white;">See
                                         Our
@@ -1876,13 +219,13 @@
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
                                         <!-- Pink Card -->
-                                        <div data-aos="fade-right" class="hero-stat-card hero-card-pink">
+                                        <div  class="hero-stat-card hero-card-pink">
                                             <h2 class="hero-stat-title"><span class="counter" data-count="15">0</span>+
                                             </h2>
                                             <p class="hero-stat-subtitle">Years Industry Experience</p>
                                         </div>
                                         <!-- Blue Card -->
-                                        <div data-aos="fade-up" class="hero-stat-card hero-card-blue-light">
+                                        <div  class="hero-stat-card hero-card-blue-light">
                                             <h2 class="hero-stat-title"><span class="counter"
                                                     data-count="80000">0</span>+</h2>
                                             <p class="hero-stat-subtitle bold">Offices Connected Nationwide</p>
@@ -1894,7 +237,7 @@
                                         <!-- Top Stats Row -->
                                         <div class="row g-2 mb-2">
                                             <div class="col-6">
-                                                <div data-aos="fade-down" class="hero-stat-card hero-card-blue-round">
+                                                <div class="hero-stat-card hero-card-blue-round">
                                                     <h2 class="hero-stat-title"><span class="counter"
                                                             data-count="12">0</span>M+
                                                     </h2>
@@ -1903,7 +246,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div data-aos="fade-left" class="hero-stat-card hero-card-green">
+                                                <div  class="hero-stat-card hero-card-green">
                                                     <h2 class="hero-stat-title"><span class="counter"
                                                             data-count="1.5">0</span>M+
                                                     </h2>
@@ -1912,7 +255,7 @@
                                             </div>
                                         </div>
                                         <!-- Bottom Image -->
-                                        <div class="w-100 position-relative" data-aos="fade-up">
+                                        <div class="w-100 position-relative">
                                             <img src="<?= base_url('hero_image/delivering_large.webp') ?>"
                                                 alt="Team Overlay" class="hero-overlay-img">
                                         </div>
@@ -2108,7 +451,7 @@
 
                         <!-- Certified & Clients Row -->
                         <div class="row align-items-center" style="padding: 26px 0px 0px 0px;">
-                            <div data-aos="fade-right"
+                            <div 
                                 class="certified_section_hero col-lg-6 mb-3 mb-lg-0 d-flex align-items-center gap-3 certified">
                                 <h5 class="custom-stat-number"
                                     style="color: #666; font-size: 18px; white-space: nowrap; margin-bottom: 0;">
@@ -2174,7 +517,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-aos="fade-left"
+                            <div 
                                 class="clients_section_hero col-lg-6 d-flex align-items-center gap-3">
                                 <h5
                                     style="font-weight: 700; color: #555; margin: 0; font-size: 18px; white-space: nowrap;">
@@ -2259,7 +602,7 @@
                         $i++;
                         ?>
                         <div class="col-lg-3 col-md-6">
-                            <div class="service-card-modern" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                            <div class="service-card-modern" data-aos="fade-up">
                                 <div class="service-icon-floating <?= $color_class ?>">
                                     <!-- Use category icon if available, else default -->
                                     <i class="fa fa-cogs"></i>
@@ -3090,7 +1433,7 @@
                         <h3 class="text-white mb-20 " style="font-weight: 700;">Let’s Talk About Your Business</h3>
                         <p class="text-white mb-40" style="opacity: 0.9; font-size: 14px; line-height: 1.6;">
                             Schedule a discovery call to explore how we can support your
-business goals.
+                            business goals.
                         </p>
 
                         <div class="contact-item mb-30">
@@ -3142,7 +1485,7 @@ business goals.
                             received by Bangladesh bank.
                         </p>
 
-                        <form action="#" method="post">
+                        <form action="#" method="post" id="contact-form-home2">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Full Name <span class="text-danger">*</span></label>
@@ -3181,13 +1524,23 @@ business goals.
                                 <div class="col-md-4 col-sm-12 form-group">
                                     <label>Select Service <span class="text-danger"></span></label>
                                     <select class="form-control form-control-custom" name="service">
-                                        <option>Select a service</option>
+                                        <option value="">Select a service</option>
+                                        <?php if (!empty($all_services)): ?>
+                                            <?php foreach ($all_services as $service): ?>
+                                                <option value="<?= $service->id ?>"><?= $service->name ?></option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group">
                                     <label>Select Product <span class="text-danger"></span></label>
                                     <select class="form-control form-control-custom" name="product">
-                                        <option>Select a Product</option>
+                                        <option value="">Select a Product</option>
+                                        <?php if (!empty($all_products)): ?>
+                                            <?php foreach ($all_products as $product): ?>
+                                                <option value="<?= $product->id ?>"><?= $product->name ?></option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </select>
                                 </div>
                             </div>
@@ -3476,4 +1829,73 @@ business goals.
 
     // Fallback if load event doesn't fire or takes too long
     setTimeout(hideLoader, 3000); 
+</script><!-- Contact Form Validation: Service and Product Mutual Optional -->
+<script>
+    $(document).ready(function() {
+        const $form = $('#contact-form-home2');
+        const $serviceSelect = $form.find('select[name="service"]');
+        const $productSelect = $form.find('select[name="product"]');
+        const $serviceLabel = $form.find('label:contains("Select Service")');
+        const $productLabel = $form.find('label:contains("Select Product")');
+        
+        // Add error message container if not exists
+        if (!$form.find('.service-product-error').length) {
+            $productSelect.parent().after('<div class="service-product-error text-danger" style="font-size: 12px; margin-top: 5px; display: none;">Please select either Service or Product</div>');
+        }
+        
+        const $errorMsg = $form.find('.service-product-error');
+        
+        // Update labels based on selection
+        function updateLabels() {
+            const serviceSelected = $serviceSelect.val() !== '';
+            const productSelected = $productSelect.val() !== '';
+            
+            // Update label indicators
+            if (serviceSelected) {
+                $productLabel.find('.text-danger').text(''); // Make product optional
+            } else if (productSelected) {
+                $serviceLabel.find('.text-danger').text(''); // Make service optional
+            } else {
+                // Both empty - show one is required
+                $serviceLabel.find('.text-danger').text('*');
+                $productLabel.find('.text-danger').text('*');
+            }
+        }
+        
+        // Listen to changes
+        $serviceSelect.on('change', function() {
+            updateLabels();
+            $errorMsg.hide();
+        });
+        
+        $productSelect.on('change', function() {
+            updateLabels();
+            $errorMsg.hide();
+        });
+        
+        // Form submission validation
+        $form.on('submit', function(e) {
+            const serviceSelected = $serviceSelect.val() !== '';
+            const productSelected = $productSelect.val() !== '';
+            
+            if (!serviceSelected && !productSelected) {
+                e.preventDefault();
+                $errorMsg.show();
+                $errorMsg.text('Please select at least one: Service or Product');
+                
+                // Scroll to error
+                $('html, body').animate({
+                    scrollTop: $errorMsg.offset().top - 100
+                }, 500);
+                
+                return false;
+            }
+            
+            $errorMsg.hide();
+            return true;
+        });
+        
+        // Initialize
+        updateLabels();
+    });
 </script>

@@ -69,6 +69,10 @@ class Site extends Frontend_Controller
         $this->load->model('admin/Relationship_gallery_model');
         $this->data['relationship_gallery'] = $this->Relationship_gallery_model->get_data();
 
+        // For Get in Touch form dropdowns
+        $this->data['all_services'] = $this->Site_model->get_all_services(false); // Get all active services
+        $this->data['all_products'] = $this->Site_model->get_all_products_new(); // Get all active products
+
         $this->data['meta_title'] = 'Mysoftheaven Best Software Company';
         // $this->data['services'] = $this->Site_model->get_all_services(true, 8);
         $this->data['services'] = $this->Site_model->get_service_categories(); // Fetch categories instead of services

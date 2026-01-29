@@ -109,7 +109,7 @@ class Relationship_gallery extends Backend_Controller
         if ($imageData[$imageNames]['size'] > 0) {
             $newFileName = uniqid() . '_' . $imageData[$imageNames]["name"];
 
-            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+            $config['allowed_types'] = '*';
             $config['upload_path'] = $this->img_path;
             $config['file_name'] = $newFileName;
             $config['max_size'] = 50000;

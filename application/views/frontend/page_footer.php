@@ -207,6 +207,21 @@ foreach ($Specific as $key => $value) {
 
     .footer-col {
       margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .footer-logo-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-info-item {
+      justify-content: center;
+    }
+
+    .membership-icons {
+      justify-content: center;
     }
   }
 </style>

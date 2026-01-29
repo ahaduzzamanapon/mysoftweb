@@ -1502,6 +1502,7 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        border-radius: 24px;
     }
 
     .span-2 {
@@ -1610,7 +1611,7 @@
     color: #0177BC;
 } */
 
-    /* Why Mysoftheaven Section */
+    /* Why Mysoft Heaven  Section */
     .why-mysoftheaven-section {
         background-color: #fff;
         padding: 80px 0;
@@ -1655,19 +1656,29 @@
 
     .why-img-top {
         height: 345px;
+        border-radius: 50px;
+        box-shadow: 0px 0px 11px 3px #5f97e999;
     }
 
     .why-img-bottom_left {
-        height: 294px;
-        top: 43%;
+        height: 202px;
+        top: 60%;
+        right: 5%;
         position: absolute;
+        transform: rotate(14deg) !important;
+        box-shadow: 0px 0px 11px 3px #5f97e999;
+        z-index: 9;
+        border-radius: 48px;
     }
 
     .why-img-bottom_right {
-        height: 294px;
-        top: 53%;
-        right: 10%;
+        height: 190px;
+        top: 52%;
+        right: 53%;
         position: absolute;
+        transform: rotate(-10deg) !important;
+        border-radius: 39px;
+        box-shadow: 0px 0px 11px 3px #5f97e999;
     }
 
     /* Mobile responsive */
@@ -1863,7 +1874,7 @@
             grid-template-columns: repeat(2, 1fr) !important;
         }
 
-        /* Why Mysoftheaven Responsive */
+        /* Why Mysoft Heaven  Responsive */
         .why-mysoftheaven-section .col-md-6 {
             flex: 0 0 100%;
             max-width: 100%;
@@ -2365,14 +2376,14 @@
                     <div class="ft-grid">
                         <!-- Row 1 -->
                         <div class="ft-item hover-lift" data-aos="fade-right" data-aos-delay="100">
-                            <img src="<?= base_url('hire_talent_media/rectangle_6752.png') ?>" class="ft-img">
+                            <img src="<?= base_url('talent/flexible_teams/1.JPG') ?>" class="ft-img">
                         </div>
                         <div class="ft-item pink-box hover-lift" data-aos="fade-down" data-aos-delay="200">
                             <strong>120+</strong>
                             <span>Professionals</span>
                         </div>
-                        <div class="ft-item hover-lift" data-aos="fade-left" data-aos-delay="300">
-                            <img src="<?= base_url('hire_talent_media/rectangle_6754.png') ?>" class="ft-img">
+                        <div class="ft-item hover-lift rounded" data-aos="fade-left" data-aos-delay="300">
+                            <img src="<?= base_url('talent/flexible_teams/2.JPG') ?>" class="ft-img rounded">
                         </div>
 
                         <!-- Row 2 -->
@@ -2380,7 +2391,7 @@
                             <i class="fa fa-users"></i>
                         </div>
                         <div class="ft-item hover-lift" data-aos="zoom-in" data-aos-delay="250">
-                            <img src="<?= base_url('hire_talent_media/rectangle_6729.png') ?>" class="ft-img">
+                            <img src="<?= base_url('talent/flexible_teams/3.JPG') ?>" class="ft-img">
                         </div>
                         <div class="ft-item green-box hover-lift" data-aos="fade-left" data-aos-delay="350">
                             <i class="fa fa-globe"></i>
@@ -2403,25 +2414,26 @@
             </div>
         </div>
     </section>
-    <!-- Why Mysoftheaven -->
+    <!-- Why Mysoft Heaven  -->
     <section class="ht-section why-mysoftheaven-section" style="min-height: 713px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="why-images-wrapper">
-                        <img src="<?= base_url('hire_talent_media/rectangle_6729.png') ?>" alt="Team Meeting"
+                        <img src="<?= base_url('talent/why_mysoftheaven/1.png') ?>" alt="Team Meeting"
                             class="why-img-top" data-aos="fade-down">
-                        <img src="<?= base_url('hire_talent_media/rectangle_6730.png') ?>" alt="Office Space"
+                        <img src="<?= base_url('talent/why_mysoftheaven/2.JPG') ?>" alt="Office Space"
                             class="why-img-bottom_left" data-aos="fade-right" data-aos-delay="100">
-                        <img src="<?= base_url('hire_talent_media/rectangle_6731.png') ?>" alt="Office Space"
+                        <img src="<?= base_url('talent/why_mysoftheaven/3.JPG') ?>" alt="Office Space"
                             class="why-img-bottom_right" data-aos="fade-left" data-aos-delay="200">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" data-aos="fade-left">
-                    <h2 class="why-mysoftheaven-title">Why <span class="text-blue">Mysoft heaven</span></h2>
+                    <h2 class="why-mysoftheaven-title">Why <span class="text-blue">Mysoft Heaven </span></h2>
                     <p class="why-mysoftheaven-subtitle">Trusted. Experienced. Ready to deliver.</p>
                     <p class="why-description">
-                        For 15+ years, MySoftheaven has built mission-critical systems for governments, enterprises, and
+                        For 15+ years, Mysoft Heaven has built mission-critical systems for governments, enterprises,
+                        and
                         fast-growing businesses—handling millions of records and high transaction volumes without
                         missing a beat. With 1,000+ clients and 2,500+ successful projects across finance, retail,
                         manufacturing, NGOs, and e-governance, we know how to deliver complex, always-on software that
@@ -2430,7 +2442,7 @@
                     <p class="why-description">
                         Through our proven IT staff augmentation model, we connect you with top global talent who
                         seamlessly integrate into your team. Whether you need a senior developer, AI specialist, or full
-                        remote squad, your augmented team works under your guidance, backed by MySoftheaven's QA
+                        remote squad, your augmented team works under your guidance, backed by Mysoft Heaven 's QA
                         culture, delivery discipline, and unmatched experience in building secure, scalable, and
                         reliable software.
                     </p>
@@ -2692,7 +2704,7 @@
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Roles <span class="text-blue">We Provide</span></h2>
             <p class="center-text mb-50 roles-subtitle">
-                Mysoftheaven (BD) Ltd. connects you with top IT professionals across software, cloud, data, security,
+                Mysoft Heaven  (BD) Ltd. connects you with top IT professionals across software, cloud, data, security,
                 and niche engineering domains. Each role integrates seamlessly into your team to accelerate delivery and
                 maintain quality.
             </p>
@@ -3138,7 +3150,7 @@
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
             <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
-                Recognized nationally and globally, Mysoftheaven (BD) Ltd. has earned top awards from the Bangladesh
+                Recognized nationally and globally, Mysoft Heaven  (BD) Ltd. has earned top awards from the Bangladesh
                 government, international partners, and NGOs. Our work has been instrumental in advancing Bangladesh's
                 digital transformation in the public sector.
             </p>

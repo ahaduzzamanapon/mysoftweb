@@ -1218,9 +1218,13 @@
 
     .hero-overlay-img {
         position: relative;
-        right: 5%;
-        width: 113%;
+        right: 3%;
+        width: 110% !important;
+        height: 184px;
         margin-top: 15px;
+        border-radius: 0px 125px 0px 0px;
+        object-fit: cover;
+        object-position: center;
     }
 
 
@@ -1577,6 +1581,95 @@
         display: block;
         margin: 0 auto;
     }
+
+    .bottom-hero-section-container {
+        box-shadow: 0px 3px 3px 1px #dbdbdb;
+        padding: 25px;
+        border-radius: 6px;
+    }
+
+    @media (max-width: 430px) {
+        .col-lg-7 {
+            padding: 0;
+        }
+
+        .hero-right-content {
+            display: none;
+        }
+
+        .btn-custom {
+            font-size: 12px;
+        }
+
+        .text-start {
+            text-align: center !important;
+        }
+
+        .hero-bottom-card-slider {
+            flex-direction: column;
+            min-height: 152px !important;
+            overflow: hidden;
+            padding: 5px !important;
+        }
+
+        .btn-group-hero {
+            place-self: anchor-center;
+
+        }
+
+        .hero-title {
+            font-size: 24px;
+        }
+
+        .hero-desc {
+            font-size: 13px !important;
+        }
+
+        .bottom-hero-section-container {
+            box-shadow: none;
+            padding: 10px;
+            border-radius: 0;
+        }
+
+        .certified_section_hero {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .clients_section_hero {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .product-card {
+
+            height: 491px;
+            width: 329px !important;
+        }
+
+        h2 {
+            font-family: 'Nourd-Bold';
+            font-size: 27px !important;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .rel-title-block h2 {
+            font-family: 'Nourd-Bold';
+            font-size: 27px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .gallery-title {
+            font-family: 'Nourd-Bold';
+            font-size: 27px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+    }
 </style>
 
 <div class="ht-main-wrapper">
@@ -1589,7 +1682,7 @@
             <div id="hero-carousel" class="owl-carousel owl-theme">
                 <div class="item">
                     <div class="container-fluid">
-                        <div class="row" style="margin-right: 32px;">
+                        <div class="row">
                             <!-- Left Content -->
                             <div class="col-lg-7">
                                 <h1 class="hero-title" style="margin-bottom: 25px;" data-aos="fade-right">
@@ -1598,7 +1691,7 @@
                                         Solutions.</span>
                                 </h1>
                                 <p data-aos="fade-up" class="hero-desc"
-                                    style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px; text-align: justify;">
+                                    style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     With <strong>15+ years</strong> of experience, MySoftHeaven is a trusted technology
                                     solutions
                                     provider delivering secure, scalable, and mission-critical software. ISO 9001,
@@ -1618,7 +1711,7 @@
                                 </div>
                             </div>
                             <!-- Right Content (Grid Layout) -->
-                            <div class="col-lg-5 mt-5 p-2">
+                            <div class="col-lg-5 mt-5 p-2 hero-right-content">
                                 <div class="row g-3">
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
@@ -1659,8 +1752,8 @@
                                         </div>
                                         <!-- Bottom Image -->
                                         <div class="w-100 position-relative" data-aos="fade-up">
-                                            <img src="<?= base_url('hero_image/heroimage.png') ?>" alt="Team Overlay"
-                                                class="hero-overlay-img">
+                                            <img src="<?= base_url('hero_image/transforming_ideas.webp') ?>"
+                                                alt="Team Overlay" class="hero-overlay-img">
                                         </div>
                                     </div>
                                 </div>
@@ -1670,7 +1763,7 @@
                 </div>
                 <div class="item">
                     <div class="container-fluid">
-                        <div class="row" style="margin-right: 32px;">
+                        <div class="row">
                             <!-- Left Content -->
                             <div class="col-lg-7">
                                 <h1 class="hero-title" style="margin-bottom: 25px;" data-aos="fade-right">
@@ -1678,7 +1771,7 @@
                                     <span style="">Expertise.</span>
                                 </h1>
                                 <p data-aos="fade-up" class="hero-desc"
-                                    style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px; text-align: justify;">
+                                    style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     Scale your technology team instantly with skilled professionals who integrate
                                     seamlessly
                                     into your workflows. Our IT staff augmentation model gives you immediate access to
@@ -1699,7 +1792,7 @@
                                 </div>
                             </div>
                             <!-- Right Content (Grid Layout) -->
-                            <div class="col-lg-5 mt-5 p-2">
+                            <div class="col-lg-5 mt-5 p-2 hero-right-content">
                                 <div class="row g-3">
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
@@ -1739,8 +1832,8 @@
                                         </div>
                                         <!-- Bottom Image -->
                                         <div class="w-100 position-relative" data-aos="fade-up">
-                                            <img src="<?= base_url('home2media/heroimage.png') ?>" alt="Team Overlay"
-                                                class="hero-overlay-img">
+                                            <img src="<?= base_url('hero_image/flexable_teams.webp') ?>"
+                                                alt="Team Overlay" class="hero-overlay-img">
                                         </div>
                                     </div>
                                 </div>
@@ -1750,7 +1843,7 @@
                 </div>
                 <div class="item">
                     <div class="container-fluid">
-                        <div class="row" style="margin-right: 32px;">
+                        <div class="row">
                             <!-- Left Content -->
                             <div class="col-lg-7">
                                 <h1 class="hero-title" style="margin-bottom: 25px;" data-aos="fade-right">
@@ -1758,7 +1851,7 @@
                                     <span style="">Solutions</span>
                                 </h1>
                                 <p data-aos="fade-up" class="hero-desc"
-                                    style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px; text-align: justify;">
+                                    style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     Our systems handle complex, high-volume operations with nationwide coverage and
                                     global
                                     reach. We support millions of users, process critical transactions, and enable
@@ -1778,7 +1871,7 @@
                                 </div>
                             </div>
                             <!-- Right Content (Grid Layout) -->
-                            <div class="col-lg-5 mt-5 p-2">
+                            <div class="col-lg-5 mt-5 p-2 hero-right-content">
                                 <div class="row g-3">
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
@@ -1820,8 +1913,8 @@
                                         </div>
                                         <!-- Bottom Image -->
                                         <div class="w-100 position-relative" data-aos="fade-up">
-                                            <img src="<?= base_url('home2media/heroimage.png') ?>" alt="Team Overlay"
-                                                class="hero-overlay-img">
+                                            <img src="<?= base_url('hero_image/delivering_large.webp') ?>"
+                                                alt="Team Overlay" class="hero-overlay-img">
                                         </div>
                                     </div>
                                 </div>
@@ -1839,7 +1932,7 @@
             <!-- Bottom Info Strip -->
             <div class="row mt-5" style="position: relative; z-index: 10;">
                 <div class="col-12">
-                    <div class="bg-white" style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 25px;border-radius: 6px;">
+                    <div class="bg-white bottom-hero-section-container">
                         <!-- Stats Row -->
                         <!-- Stats Row Carousel -->
                         <div class="owl-carousel owl-theme bottom-hero-section-card" id="bottom-hero-slider">
@@ -1848,7 +1941,7 @@
                             <div class="item">
                                 <div class="row text-center">
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-handshake-o text-primary" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1861,7 +1954,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-user-circle text-danger" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1874,7 +1967,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-money text-success" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1887,7 +1980,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-database text-warning" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1906,7 +1999,7 @@
                             <div class="item">
                                 <div class="row text-center">
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-users text-primary" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1918,7 +2011,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-line-chart text-danger" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1930,7 +2023,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-check-circle text-success" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1942,7 +2035,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-globe text-warning" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1959,7 +2052,7 @@
                             <div class="item">
                                 <div class="row text-center">
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-briefcase text-primary" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1971,7 +2064,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-building text-danger" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1983,7 +2076,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-credit-card text-success" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -1996,7 +2089,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-6">
-                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4"
+                                        <div class="counter_box d-flex align-items-center justify-content-center gap-4 hero-bottom-card-slider"
                                             style="box-shadow: 0px 3px 3px 1px #dbdbdb;padding: 15px;border-radius: 6px; min-height: 100px;">
                                             <i class="fa fa-file-text text-warning" style="font-size: 28px;"></i>
                                             <div class="text-start">
@@ -2016,30 +2109,108 @@
                         <!-- Certified & Clients Row -->
                         <div class="row align-items-center" style="padding: 26px 0px 0px 0px;">
                             <div data-aos="fade-right"
-                                class="col-lg-6 mb-3 mb-lg-0 d-flex align-items-center gap-3 certified">
+                                class="certified_section_hero col-lg-6 mb-3 mb-lg-0 d-flex align-items-center gap-3 certified">
                                 <h5 class="custom-stat-number"
                                     style="color: #666; font-size: 18px; white-space: nowrap; margin-bottom: 0;">
                                     Certified
                                 </h5>
                                 <div class="marquee-fader marquee-fader-white">
                                     <div class="owl-carousel owl-theme" id="certified_marquee" style="width: 100%;">
-                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-1.png') ?>"
+                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
                                                 class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-2.png') ?>"
+                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
                                                 class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-3.png') ?>"
+                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
                                                 class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('home2media/Rectangle-4.png') ?>"
+                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
                                                 class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
+                                                class="cert-logo2" /></div>
+
+                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
+                                                class="cert-logo2" /></div>
+
+                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
+                                                class="cert-logo2" /></div>
+
+                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
+                                                class="cert-logo2" /></div>
+
+                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
+                                                class="cert-logo2" /></div>
+                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
+                                                class="cert-logo2" /></div>
+
                                     </div>
                                 </div>
                             </div>
-                            <div data-aos="fade-left" class="col-lg-6 d-flex align-items-center gap-3">
+                            <div data-aos="fade-left"
+                                class="clients_section_hero col-lg-6 d-flex align-items-center gap-3">
                                 <h5
                                     style="font-weight: 700; color: #555; margin: 0; font-size: 18px; white-space: nowrap;">
                                     Clients</h5>
                                 <div class="marquee-fader marquee-fader-white">
                                     <div class="owl-carousel owl-theme" id="clients_marquee" style="width: 100%;">
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
+                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                style="height: 35px; width: auto;"></div>
                                         <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
                                                 style="height: 35px; width: auto;"></div>
                                         <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
@@ -2319,7 +2490,7 @@
 
     <!-- Tech Stack -->
     <!-- Tech Stack -->
-    <section class="ht-section bg-light" style="padding-bottom: 80px;background-color: #E6F1FE!important;">
+    <section class="ht-section bg-light" style="padding-bottom: 80px;">
         <div class="container-fluid">
             <h2 class="section-title center-text mb-40">Our <span class="text-blue">Tech Stack</span></h2>
         </div>
@@ -2386,7 +2557,8 @@
                         <small
                             style="color: #666; letter-spacing: 1px; font-weight: 500; display: block; margin-bottom: 5px;">#WE
                             ARE MYSOFTHEAVEN</small>
-                        <h2>Inside Mysoftheaven — <br><span class="text-blue">Our People, Culture & Moments</span></h2>
+                        <h2 class="gallery-title">Inside Mysoftheaven — <br><span class="text-blue">Our People, Culture
+                                & Moments</span></h2>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
@@ -2395,19 +2567,20 @@
                             commitment, collaboration, and the vibrant environment that drives innovation and
                             excellence.</p>
                     </div>
-                </div>+
+                </div>
             </div>
 
             <!-- Image Row - Converted to Marquee -->
             <div class="owl-carousel owl-theme" id="relationship-marquee" data-aos="fade-up">
-                <?php if(!empty($relationship_gallery)): ?>
-                    <?php foreach($relationship_gallery as $gallery_item): ?>
-                        <?php if($gallery_item['display'] == 1): ?>
-                        <div class="item">
-                            <div class="rel-img-item">
-                                <img src="<?= base_url('relationship_gallery_img/'.$gallery_item['image']) ?>" class="rel-img">
+                <?php if (!empty($relationship_gallery)): ?>
+                    <?php foreach ($relationship_gallery as $gallery_item): ?>
+                        <?php if ($gallery_item['display'] == 1): ?>
+                            <div class="item">
+                                <div class="rel-img-item">
+                                    <img src="<?= base_url('relationship_gallery_img/' . $gallery_item['image']) ?>"
+                                        class="rel-img">
+                                </div>
                             </div>
-                        </div>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -2471,13 +2644,13 @@
                     border-radius: 20px;
                     overflow: hidden;
                     width: 100%;
-                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
                 }
 
                 .rel-img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    object-position: center;
                 }
             </style>
         </div>
@@ -2914,10 +3087,10 @@
                 <div class="row no-gutters">
                     <!-- Left Info Column -->
                     <div class="col-md-5 col-sm-12 contact-info-side">
-                        <h3 class="text-white mb-20 " style="font-weight: 700;">Ready to Transform Your Team?</h3>
+                        <h3 class="text-white mb-20 " style="font-weight: 700;">Let’s Talk About Your Business</h3>
                         <p class="text-white mb-40" style="opacity: 0.9; font-size: 14px; line-height: 1.6;">
-                            Schedule a discovery call with our experts to explore how we can help you build
-                            high-performing remote teams.
+                            Schedule a discovery call to explore how we can support your
+business goals.
                         </p>
 
                         <div class="contact-item mb-30">
@@ -2939,7 +3112,7 @@
                         <div class="contact-item mb-30">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
-                                <strong>Visit Us Head Office</strong>
+                                <strong>Visit Head Office</strong>
                                 <span>P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara, Mirpur,
                                     Dhaka-1216.</span>
                             </div>
@@ -2948,7 +3121,7 @@
                         <div class="contact-item mb-40">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
-                                <strong>Visit Us Corporate Office</strong>
+                                <strong>Visit Corporate Office</strong>
                                 <span>8813 NW 23 Street, Miami, FL 33172, USA.</span>
                             </div>
                         </div>
@@ -2993,20 +3166,28 @@
                             <div class="row">
                                 <div class="col-md-4 col-sm-12 form-group">
                                     <label>Select Industry <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom">
-                                        <option>Select an Industry</option>
+                                    <select class="form-control form-control-custom" name="industry">
+                                        <option value="">Select an Industry</option>
+                                        <option value="Technology">Technology</option>
+                                        <option value="Healthcare">Healthcare</option>
+                                        <option value="Finance">Finance</option>
+                                        <option value="Retail">Retail</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Real Estate">Real Estate</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group">
-                                    <label>Select Service <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom">
+                                    <label>Select Service <span class="text-danger"></span></label>
+                                    <select class="form-control form-control-custom" name="service">
                                         <option>Select a service</option>
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group">
-                                    <label>Select Budget Range <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom">
-                                        <option>Select a budget range</option>
+                                    <label>Select Product <span class="text-danger"></span></label>
+                                    <select class="form-control form-control-custom" name="product">
+                                        <option>Select a Product</option>
                                     </select>
                                 </div>
                             </div>
@@ -3138,7 +3319,7 @@
             margin: 0,
             nav: false,
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 5000,
             smartSpeed: 1000,
             items: 1,

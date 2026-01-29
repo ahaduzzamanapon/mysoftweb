@@ -246,7 +246,7 @@ update_sitemap_txt($current_url);
     <!-- Global Loader -->
     <div id="global-loader" class="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style="z-index: 999999; transition: opacity 0.5s;">
         <div class="shimmer-wrapper">
-            <img src="<?= base_url('logomysoft.png') ?>" alt="Loading..." style="width: 200px;">
+            <img src="<?= base_url('logomysoft.webp') ?>" alt="Loading..." style="width: 200px;">
         </div>
     </div>
 

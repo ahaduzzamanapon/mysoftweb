@@ -619,7 +619,7 @@
                 <?php endif; ?>
             </div>
 
-            <div class="text-center mt-5 " data-aos="fade-up" data-aos-delay="400">
+            <div class="text-center mt-5 " data-aos="fade-up" data-aos-delay_old_rem="400">
                 <a href="<?= base_url('services') ?>" class="explore-services-btn">Explore More
                     Services <i class="fa fa-angle-right ms-2"></i></a>
             </div>
@@ -631,7 +631,7 @@
         <div class="container-fluid">
             <h2 class="section-title" data-aos="fade-down" style="margin-bottom: 3px;">Our <span
                     class="text-blue">Products</span></h2>
-            <p class="center-text mb-50" data-aos="fade-up" data-aos-delay="200"
+            <p class="center-text mb-50" data-aos="fade-up" data-aos-delay_old_rem="200"
                 style="max-width: 800px;margin: 0 auto 50px auto;color: #666;text-align: -webkit-center;">
                 We are the best custom software development company for custom software development outsourcing. And we
                 provide robust, scalable, and efficient solutions to various clients around the world
@@ -1110,7 +1110,7 @@
 
             <div class="testimonials-carousel owl-carousel owl-theme">
                 <!-- Card 1 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay_old_rem="0">
                     <div class="test-header">
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
                         </div>
@@ -1127,7 +1127,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay_old_rem="100">
                     <div class="test-header">
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-5.png') ?>">
                         </div>
@@ -1144,7 +1144,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay_old_rem="200">
                     <div class="test-header">
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/Group-1.png') ?>">
                         </div>

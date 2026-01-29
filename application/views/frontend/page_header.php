@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="GqReNWHabhsk1Q7MKE3r9T0lUSaljYd6s7Wz2yWvGGc" />
     <title><?= $meta_title ?> | <?= $domain_title ?></title>
     <meta name="keywords" content="<?= $meta_keywords ?>">
     <meta name="description" content="<?= $meta_description ?>">

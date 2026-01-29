@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--<meta name="google-site-verification" content="3HNLYqDFxmekVE_rc5bxRWNUgelTfy5W0t2LskQrXBM" /> -->
   <meta charset="utf-8">
   <title><?=$meta_title?> | <?=$domain_title?></title>   
   <meta name="keywords" content="<?=$meta_keywords?>">    

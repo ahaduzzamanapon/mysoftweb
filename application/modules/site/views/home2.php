@@ -111,7 +111,7 @@
                                     Flexible Teams. <span class="text-blue">On-Demand</span><br>
                                     <span style="">Expertise.</span>
                                 </h1>
-                                <p  class="hero-desc"
+                                <p class="hero-desc"
                                     style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     Scale your technology team instantly with skilled professionals who integrate
                                     seamlessly
@@ -121,12 +121,10 @@
                                     and maintain full alignment with your architecture and product goals.
                                 </p>
                                 <div class="d-flex gap-3 btn-group-hero">
-                                    <a  href="<?= base_url('hire_talent') ?>"
-                                        class="btn-custom btn-outline"
+                                    <a href="<?= base_url('hire_talent') ?>" class="btn-custom btn-outline"
                                         style="padding: 12px 30px; border-radius: 30px; font-weight: 600;">Explore
                                         Roles</a>
-                                    <a  href="<?= base_url('contact_us') ?>"
-                                        class="btn-custom btn-blue"
+                                    <a href="<?= base_url('contact_us') ?>" class="btn-custom btn-blue"
                                         style="padding: 12px 30px;border-radius: 30px;font-weight: 600;color: white;">Schedule
                                         a
                                         Consultation <i class="fa fa-angle-right"></i></a>
@@ -138,13 +136,13 @@
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
                                         <!-- Pink Card -->
-                                        <div  class="hero-stat-card hero-card-pink">
+                                        <div class="hero-stat-card hero-card-pink">
                                             <h2 class="hero-stat-title"><span class="counter" data-count="500">0</span>+
                                             </h2>
                                             <p class="hero-stat-subtitle">Offshore Clients Served</p>
                                         </div>
                                         <!-- Blue Card -->
-                                        <div  class="hero-stat-card hero-card-blue-light">
+                                        <div class="hero-stat-card hero-card-blue-light">
                                             <h2 class="hero-stat-title"><span class="counter" data-count="100">0</span>+
                                             </h2>
                                             <p class="hero-stat-subtitle bold">Tech Specializations Covered</p>
@@ -156,7 +154,7 @@
                                         <!-- Top Stats Row -->
                                         <div class="row g-2 mb-2">
                                             <div class="col-6">
-                                                <div  class="hero-stat-card hero-card-blue-round">
+                                                <div class="hero-stat-card hero-card-blue-round">
                                                     <h2 class="hero-stat-title"><span class="counter"
                                                             data-count="2500">0</span>+
                                                     </h2>
@@ -165,7 +163,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div  class="hero-stat-card hero-card-green">
+                                                <div class="hero-stat-card hero-card-green">
                                                     <h2 class="hero-stat-title">Top 1%</h2>
                                                     <p class="hero-stat-subtitle bold">Global IT Talent On-Demand</p>
                                                 </div>
@@ -173,7 +171,7 @@
                                         </div>
                                         <!-- Bottom Image -->
                                         <div class="w-100 position-relative">
-                                            <img  src="<?= base_url('hero_image/flexable_teams.webp') ?>"
+                                            <img src="<?= base_url('hero_image/flexable_teams.webp') ?>"
                                                 alt="Team Overlay" class="hero-overlay-img">
                                         </div>
                                     </div>
@@ -191,7 +189,7 @@
                                     Delivering Large-Scale,<br> <span class="text-blue">High-Impact</span>
                                     <span style="">Solutions</span>
                                 </h1>
-                                <p  class="hero-desc"
+                                <p class="hero-desc"
                                     style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 35px;">
                                     Our systems handle complex, high-volume operations with nationwide coverage and
                                     global
@@ -200,12 +198,10 @@
                                     reliable, and scalable platforms that organizations depend on every day.
                                 </p>
                                 <div class="d-flex gap-3 btn-group-hero">
-                                    <a  href="<?= base_url('products') ?>"
-                                        class="btn-custom btn-outline"
+                                    <a href="<?= base_url('products') ?>" class="btn-custom btn-outline"
                                         style="padding: 12px 30px; border-radius: 30px; font-weight: 600;">Explore
                                         Products</a>
-                                    <a href="<?= base_url('client/government-sector') ?>"
-                                        class="btn-custom btn-blue"
+                                    <a href="<?= base_url('client/government-sector') ?>" class="btn-custom btn-blue"
                                         style="padding: 6px 10px 1px 10px;border-radius: 30px;font-weight: 600;color: white;">See
                                         Our
                                         Clients <i class="fa fa-angle-right"></i></a>
@@ -217,13 +213,13 @@
                                     <!-- Left Column: Stacked Stats -->
                                     <div class="col-md-4 col-6 d-flex flex-column gap-2" style="padding-top: 40px;">
                                         <!-- Pink Card -->
-                                        <div  class="hero-stat-card hero-card-pink">
+                                        <div class="hero-stat-card hero-card-pink">
                                             <h2 class="hero-stat-title"><span class="counter" data-count="15">0</span>+
                                             </h2>
                                             <p class="hero-stat-subtitle">Years Industry Experience</p>
                                         </div>
                                         <!-- Blue Card -->
-                                        <div  class="hero-stat-card hero-card-blue-light">
+                                        <div class="hero-stat-card hero-card-blue-light">
                                             <h2 class="hero-stat-title"><span class="counter"
                                                     data-count="80000">0</span>+</h2>
                                             <p class="hero-stat-subtitle bold">Offices Connected Nationwide</p>
@@ -244,7 +240,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <div  class="hero-stat-card hero-card-green">
+                                                <div class="hero-stat-card hero-card-green">
                                                     <h2 class="hero-stat-title"><span class="counter"
                                                             data-count="1.5">0</span>M+
                                                     </h2>
@@ -275,8 +271,9 @@
                 <div class="col-12">
                     <div class="bg-white bottom-hero-section-container">
                         <!-- Stats Row -->
-                        <!-- Stats Row Carousel -->
-                        <div class="owl-carousel owl-theme bottom-hero-section-card" id="bottom-hero-slider">
+                        <!-- Stats Row Carousel (Desktop) -->
+                        <div class="owl-carousel owl-theme bottom-hero-section-card d-none d-lg-block"
+                            id="bottom-hero-slider">
 
                             <!-- Slide 1 -->
                             <div class="item">
@@ -448,75 +445,92 @@
                         </div>
 
                         <!-- Certified & Clients Row -->
-                        <div class="row align-items-center" style="padding: 26px 0px 0px 0px;">
-                            <div 
-                                class="certified_section_hero col-lg-6 mb-3 mb-lg-0 d-flex align-items-center gap-3 certified">
-                                <h5 class="custom-stat-number"
-                                    style="color: #666; font-size: 18px; white-space: nowrap; margin-bottom: 0;">
-                                    Certified
-                                </h5>
-                                <div class="marquee-fader marquee-fader-white">
-                                    <div class="owl-carousel owl-theme" id="certified_marquee" style="width: 100%;">
-                                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
-                                                class="cert-logo2" /></div>
-                                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
-                                                class="cert-logo2" /></div>
+                        <div class="d-none d-lg-block"> <!-- Hidden on mobile -->
+                            <div class="row align-items-center" style="padding: 26px 0px 0px 0px;">
+                                <div
+                                    class="certified_section_hero col-lg-6 mb-3 mb-lg-0 d-flex align-items-center gap-3 certified">
+                                    <h5 class="custom-stat-number"
+                                        style="color: #666; font-size: 18px; white-space: nowrap; margin-bottom: 0;">
+                                        Certified
+                                    </h5>
+                                    <div class="marquee-fader marquee-fader-white">
+                                        <div class="owl-carousel owl-theme" id="certified_marquee" style="width: 100%;">
+                                            <div class="item"><img src="<?= base_url('membership/1.gif') ?>"
+                                                    class="cert-logo2" /></div>
+                                            <div class="item"><img src="<?= base_url('membership/2.gif') ?>"
+                                                    class="cert-logo2" /></div>
+                                            <div class="item"><img src="<?= base_url('membership/3.gif') ?>"
+                                                    class="cert-logo2" /></div>
+                                            <div class="item"><img src="<?= base_url('membership/4.gif') ?>"
+                                                    class="cert-logo2" /></div>
+                                            <div class="item"><img src="<?= base_url('membership/5.gif') ?>"
+                                                    class="cert-logo2" /></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div 
-                                class="clients_section_hero col-lg-6 d-flex align-items-center gap-3">
-                                <h5
-                                    style="font-weight: 700; color: #555; margin: 0; font-size: 18px; white-space: nowrap;">
-                                    Clients</h5>
-                                <div class="marquee-fader marquee-fader-white">
-                                    <div class="owl-carousel owl-theme" id="clients_marquee" style="width: 100%;">
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
-                                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
-                                                style="height: 35px; width: auto;"></div>
+                                <div class="clients_section_hero col-lg-6 d-flex align-items-center gap-3">
+                                    <h5
+                                        style="font-weight: 700; color: #555; margin: 0; font-size: 18px; white-space: nowrap;">
+                                        Clients</h5>
+                                    <div class="marquee-fader marquee-fader-white">
+                                        <div class="owl-carousel owl-theme" id="clients_marquee" style="width: 100%;">
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img
+                                                    src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                            <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                                    style="height: 35px; width: auto;"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -524,8 +538,91 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
+
+    <!-- Mobile Hero Slider (Visible only on mobile) -->
+    <div class="d-block d-lg-none mobile-hero-slider-wrapper mt-3 mb-5">
+        <div class="owl-carousel owl-theme" id="mobile-hero-slider">
+            <!-- Slide 1 -->
+            <div class="item">
+                <div class="mobile-stat-grid">
+                    <div class="mobile-stat-col text-center">
+                        <div class="stat-text-box">
+                            <h4 class="m-stat-number">15+</h4>
+                            <span class="m-stat-desc">Years of Experience</span>
+                        </div>
+                        <div class="m-img-wrapper mt-2">
+                            <img src="<?= base_url('hero_image/transforming_ideas.webp') ?>"
+                                class="m-stat-img rounded-3" alt="Experience">
+                        </div>
+                    </div>
+                    <div class="mobile-stat-col text-center">
+                        <div class="m-img-wrapper mb-2">
+                            <img src="<?= base_url('hero_image/flexable_teams.webp') ?>" class="m-stat-img rounded-3"
+                                alt="Team">
+                        </div>
+                        <div class="stat-text-box">
+                            <h4 class="m-stat-number">88%+</h4>
+                            <span class="m-stat-desc">Employee Retention</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="item">
+                <div class="mobile-stat-grid">
+                    <div class="mobile-stat-col text-center">
+                        <div class="stat-text-box">
+                            <h4 class="m-stat-number">500+</h4>
+                            <span class="m-stat-desc">Clients Served</span>
+                        </div>
+                        <div class="m-img-wrapper mt-2">
+                            <img src="<?= base_url('hero_image/delivering_large.webp') ?>" class="m-stat-img rounded-3"
+                                alt="Clients">
+                        </div>
+                    </div>
+                    <div class="mobile-stat-col text-center">
+                        <div class="m-img-wrapper mb-2">
+                            <img src="<?= base_url('hero_image/flexable_teams.webp') ?>" class="m-stat-img rounded-3"
+                                alt="Projects">
+                        </div>
+                        <div class="stat-text-box">
+                            <h4 class="m-stat-number">2500+</h4>
+                            <span class="m-stat-desc">Projects Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="item">
+                <div class="mobile-stat-grid">
+                    <div class="mobile-stat-col text-center">
+                        <div class="stat-text-box">
+                            <h4 class="m-stat-number">12M+</h4>
+                            <span class="m-stat-desc">BDT Daily Processed</span>
+                        </div>
+                        <div class="m-img-wrapper mt-2">
+                            <img src="<?= base_url('hero_image/transforming_ideas.webp') ?>"
+                                class="m-stat-img rounded-3" alt="Revenue">
+                        </div>
+                    </div>
+                    <div class="mobile-stat-col text-center">
+                        <div class="m-img-wrapper mb-2">
+                            <img src="<?= base_url('hero_image/delivering_large.webp') ?>" class="m-stat-img rounded-3"
+                                alt="Security">
+                        </div>
+                        <div class="stat-text-box">
+                            <h4 class="m-stat-number">Top 1%</h4>
+                            <span class="m-stat-desc">IT Talent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Our Services -->
     <section class="ht-section services-bg-gradient" id="services">
@@ -1764,6 +1861,18 @@
         animateIn: 'fadeIn'
     });
 
+// Mobile Hero Slider
+    $('#mobile-hero-slider').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 10,
+        nav: false,
+        dots: true,
+        items: 1,
+        autoplayTimeout: 4000,
+        smartSpeed: 1000
+    });
+
 </script>
 
 <script>
@@ -1785,25 +1894,25 @@
     setTimeout(hideLoader, 3000); 
 </script><!-- Contact Form Validation: Service and Product Mutual Optional -->
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         const $form = $('#contact-form-home2');
         const $serviceSelect = $form.find('select[name="service"]');
         const $productSelect = $form.find('select[name="product"]');
         const $serviceLabel = $form.find('label:contains("Select Service")');
         const $productLabel = $form.find('label:contains("Select Product")');
-        
+
         // Add error message container if not exists
         if (!$form.find('.service-product-error').length) {
             $productSelect.parent().after('<div class="service-product-error text-danger" style="font-size: 12px; margin-top: 5px; display: none;">Please select either Service or Product</div>');
         }
-        
+
         const $errorMsg = $form.find('.service-product-error');
-        
+
         // Update labels based on selection
         function updateLabels() {
             const serviceSelected = $serviceSelect.val() !== '';
             const productSelected = $productSelect.val() !== '';
-            
+
             // Update label indicators
             if (serviceSelected) {
                 $productLabel.find('.text-danger').text(''); // Make product optional
@@ -1815,40 +1924,40 @@
                 $productLabel.find('.text-danger').text('*');
             }
         }
-        
+
         // Listen to changes
-        $serviceSelect.on('change', function() {
+        $serviceSelect.on('change', function () {
             updateLabels();
             $errorMsg.hide();
         });
-        
-        $productSelect.on('change', function() {
+
+        $productSelect.on('change', function () {
             updateLabels();
             $errorMsg.hide();
         });
-        
+
         // Form submission validation
-        $form.on('submit', function(e) {
+        $form.on('submit', function (e) {
             const serviceSelected = $serviceSelect.val() !== '';
             const productSelected = $productSelect.val() !== '';
-            
+
             if (!serviceSelected && !productSelected) {
                 e.preventDefault();
                 $errorMsg.show();
                 $errorMsg.text('Please select at least one: Service or Product');
-                
+
                 // Scroll to error
                 $('html, body').animate({
                     scrollTop: $errorMsg.offset().top - 100
                 }, 500);
-                
+
                 return false;
             }
-            
+
             $errorMsg.hide();
             return true;
         });
-        
+
         // Initialize
         updateLabels();
     });

@@ -1515,9 +1515,10 @@ a {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   align-self: flex-start;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   text-decoration: none !important;
-  place-self: anchor-center;
+  align-self: center;
+  cursor: pointer;
 }
 
 .btn-service-view:hover {

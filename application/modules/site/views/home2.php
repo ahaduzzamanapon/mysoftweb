@@ -1535,25 +1535,29 @@
                             received by Bangladesh bank.
                         </p>
 
-                        <form action="#" method="post" id="contact-form-home2">
+                        <form action="<?= base_url('site/submit_contact') ?>" method="post" id="contact-form-home2">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Full Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-custom" placeholder="">
+                                    <input type="text" name="name" class="form-control form-control-custom"
+                                        placeholder="" required>
                                 </div>
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Email <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control form-control-custom" placeholder="">
+                                    <input type="email" name="email" class="form-control form-control-custom"
+                                        placeholder="" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Phone Number <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-custom" placeholder="">
+                                    <input type="text" name="phone" class="form-control form-control-custom"
+                                        placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Company Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control form-control-custom" placeholder="">
+                                    <input type="text" name="company" class="form-control form-control-custom"
+                                        placeholder="">
                                 </div>
                             </div>
                             <div class="row">
@@ -1596,8 +1600,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Project details <span class="text-danger">*</span></label>
-                                <textarea class="form-control form-control-custom" rows="4"
-                                    placeholder="Tell us about your project or talent needs..."></textarea>
+                                <textarea name="project_details" class="form-control form-control-custom" rows="4"
+                                    placeholder="Tell us about your project or talent needs..." required></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-block btn-submit">Send Inquiry <i
@@ -1861,7 +1865,7 @@
         animateIn: 'fadeIn'
     });
 
-// Mobile Hero Slider
+    // Mobile Hero Slider
     $('#mobile-hero-slider').owlCarousel({
         loop: true,
         autoplay: true,

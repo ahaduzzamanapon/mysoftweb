@@ -204,9 +204,44 @@ foreach ($Specific as $key => $value) {
       gap: 15px;
       text-align: center;
     }
+      #new-footer h4 {
+    margin-bottom: 0;
+    font-family: 'Nourd-Medium';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 17px;
+    padding: 13px;
+    
+  }
+  #new-footer ul li a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    white-space: nowrap;
+    display: block;
+    width: 157px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left!important;
+    margin-left: 13px;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid #a5a5a5;
+}
+.membership-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+  
 
     .footer-col {
-      margin-bottom: 30px;
+      
       text-align: center;
     }
 
@@ -222,6 +257,54 @@ foreach ($Specific as $key => $value) {
 
     .membership-icons {
       justify-content: center;
+    }
+
+    /* Mobile Accordion Styles */
+    .footer-heading {
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      padding: 15px 0;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .toggle-icon {
+      transition: transform 0.3s ease;
+      float: right;
+      font-size: 14px;
+    }
+
+    .toggle-icon.rotate {
+      transform: rotate(180deg);
+    }
+
+    .footer-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding-left: 0;
+    }
+
+    .footer-menu.active {
+      max-height: 500px;
+      padding-top: 15px;
+    }
+  }
+
+  /* Hide toggle icon on desktop */
+  @media (min-width: 768px) {
+    .toggle-icon {
+      display: none !important;
+    }
+
+    .footer-menu {
+      max-height: none !important;
     }
   }
 </style>
@@ -271,8 +354,11 @@ foreach ($Specific as $key => $value) {
 
       <!-- Column 2: Company -->
       <div class="col-md-2 footer-col">
-        <h4>Company</h4>
-        <ul>
+        <h4 class="footer-heading" data-toggle="collapse">
+          Company
+          <i class="fa fa-chevron-down toggle-icon"></i>
+        </h4>
+        <ul class="footer-menu">
           <li><a href="<?= base_url('about-us') ?>">About Us</a></li>
           <li><a href="<?= base_url('portfolio') ?>">Portfolio</a></li>
           <li><a href="<?= base_url('all-services') ?>">Our Services</a></li>
@@ -283,8 +369,11 @@ foreach ($Specific as $key => $value) {
 
       <!-- Column 3: Quick Links -->
       <div class="col-md-2 footer-col">
-        <h4>Quick Links</h4>
-        <ul>
+        <h4 class="footer-heading" data-toggle="collapse">
+          Quick Links
+          <i class="fa fa-chevron-down toggle-icon"></i>
+        </h4>
+        <ul class="footer-menu">
           <li><a href="#">Affiliates</a></li>
           <li><a href="<?= base_url('privacy-policy') ?>">Privacy Policy</a></li>
           <li><a href="<?= base_url('terms') ?>">Terms & Condition</a></li>
@@ -295,8 +384,11 @@ foreach ($Specific as $key => $value) {
 
       <!-- Column 4: Our Products -->
       <div class="col-md-2 footer-col">
-        <h4>Our Products</h4>
-        <ul>
+        <h4 class="footer-heading" data-toggle="collapse">
+          Our Products
+          <i class="fa fa-chevron-down toggle-icon"></i>
+        </h4>
+        <ul class="footer-menu">
           <?php
           $ci =& get_instance();
           $ci->load->model('site/site_model');
@@ -323,8 +415,11 @@ foreach ($Specific as $key => $value) {
 
       <!-- Column 5: Resources -->
       <div class="col-md-2 footer-col">
-        <h4>Resources</h4>
-        <ul>
+        <h4 class="footer-heading" data-toggle="collapse">
+          Resources
+          <i class="fa fa-chevron-down toggle-icon"></i>
+        </h4>
+        <ul class="footer-menu">
           <li><a href="#">Page</a></li>
           <li><a href="#">Documentation</a></li>
           <li><a href="#">FAQ</a></li>
@@ -582,6 +677,41 @@ foreach ($Specific as $key => $value) {
 
   // Fallback if load event doesn't fire or takes too long
   setTimeout(hideLoader, 3000); 
+</script>
+
+<!-- Mobile Footer Accordion Script -->
+<script>
+  $(document).ready(function() {
+    // Only enable accordion on mobile
+    function initFooterAccordion() {
+      if ($(window).width() <= 767) {
+        // Close all menus by default on mobile
+        $('.footer-menu').removeClass('active');
+        
+        // Add click handler
+        $('.footer-heading').off('click').on('click', function() {
+          const $menu = $(this).next('.footer-menu');
+          const $icon = $(this).find('.toggle-icon');
+          
+          // Toggle current menu
+          $menu.toggleClass('active');
+          $icon.toggleClass('rotate');
+        });
+      } else {
+        // On desktop, ensure all menus are visible
+        $('.footer-menu').addClass('active');
+        $('.toggle-icon').removeClass('rotate');
+      }
+    }
+    
+    // Initialize on load
+    initFooterAccordion();
+    
+    // Re-initialize on window resize
+    $(window).on('resize', function() {
+      initFooterAccordion();
+    });
+  });
 </script>
 
 </body>

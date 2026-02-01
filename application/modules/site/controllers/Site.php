@@ -98,6 +98,49 @@ class Site extends Frontend_Controller
         $this->load->view('frontend/_layout_main', $this->data);
     }
 
+    public function submit_contact()
+    {
+        $this->load->model('Contact_model');
+
+        // Form Validation Rules
+        $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
+        $this->form_validation->set_rules('phone', 'Phone Number', 'trim');
+        $this->form_validation->set_rules('company', 'Company Name', 'trim');
+        $this->form_validation->set_rules('industry', 'Industry', 'trim');
+        $this->form_validation->set_rules('service', 'Service', 'trim');
+        $this->form_validation->set_rules('product', 'Product', 'trim'); 
+        $this->form_validation->set_rules('budget', 'Budget Range', 'trim');
+        $this->form_validation->set_rules('project_details', 'Project Details', 'required|trim');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            // Prepare data
+            $data = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email'),
+                'phone' => $this->input->post('phone'),
+                'company' => $this->input->post('company'),
+                'industry' => $this->input->post('industry'),
+                'service' => $this->input->post('service'),
+                'product' => $this->input->post('product'),
+                'budget' => $this->input->post('budget'),
+                'project_details' => $this->input->post('project_details'),
+                'created_at' => date('Y-m-d H:i:s') 
+            );
+
+            // Attempt to save
+            if ($this->Contact_model->save_contact($data)) {
+                $this->session->set_flashdata('success', 'Thank you! Your message has been sent successfully.');
+            } else {
+                $this->session->set_flashdata('error', 'Something went wrong. Please try again.');
+            }
+            redirect($_SERVER['HTTP_REFERER']);
+        }
+    }
+
     public function employee_list()
     {
 

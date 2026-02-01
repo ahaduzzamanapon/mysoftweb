@@ -696,7 +696,7 @@
                                     <!-- Placeholder for Logo - Using Icon for now as no explicit logo field found -->
                                     <div class="mb-2"> <?php if ($product->hero_image): ?>
                                             <br><img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
-                                                style="width: 90px;place-self: center;">
+                                                style="width: 90px;place-self: center;align-self: center;">
                                         <?php endif; ?>
                                     </div>
                                     <h5 class="product-tagline"><?= $product->hero_heading ?></h5>
@@ -1535,7 +1535,7 @@
                             received by Bangladesh bank.
                         </p>
 
-                        <form action="<?= base_url('site/submit_contact') ?>" method="post" id="contact-form-home2">
+                        <form action="<?= base_url('submit-contact') ?>" method="post" id="contact-form-home2">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Full Name <span class="text-danger">*</span></label>

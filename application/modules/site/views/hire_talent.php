@@ -2420,11 +2420,11 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="why-images-wrapper">
-                        <img src="<?= base_url('talent/why_mysoftheaven/1.png') ?>" alt="Team Meeting"
+                        <img src="<?= base_url('talent/why_mysoftheaven/1.webp') ?>" alt="Team Meeting"
                             class="why-img-top" data-aos="fade-down">
-                        <img src="<?= base_url('talent/why_mysoftheaven/2.JPG') ?>" alt="Office Space"
+                        <img src="<?= base_url('talent/why_mysoftheaven/2.webp') ?>" alt="Office Space"
                             class="why-img-bottom_left" data-aos="fade-right" data-aos-delay="100">
-                        <img src="<?= base_url('talent/why_mysoftheaven/3.JPG') ?>" alt="Office Space"
+                        <img src="<?= base_url('talent/why_mysoftheaven/3.webp') ?>" alt="Office Space"
                             class="why-img-bottom_right" data-aos="fade-left" data-aos-delay="200">
                     </div>
                 </div>

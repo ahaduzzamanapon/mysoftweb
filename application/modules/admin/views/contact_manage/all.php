@@ -24,73 +24,78 @@
                     <?php echo $this->session->flashdata('success'); ?>
                 </div>
             <?php endif; ?> -->
-          <table id="example1" class="table table-bordered table-striped table-responsive">
-            <thead>
-              <tr>
-                <th>SL</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Company</th>
-                <th>Industry</th>
-                <th>Service</th>
-                <th>Product</th>
-                <th>Budget</th>
-                <th>Project Details</th>
-                <th>Date</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              $sl = 0;
-              if ($results) {
-                foreach ($results as $row) {
-                  $sl++;
-                  ?>
-                  <tr>
-                    <td><?= $sl; ?></td>
-                    <td><?= $row->name; ?></td>
-                    <td><?= $row->email; ?></td>
-                    <td><?= $row->phone; ?></td>
-                    <td><?= $row->company; ?></td>
-                    <td><?= $row->industry; ?></td>
-                    <td><?= $row->service_name; ?></td>
-                    <td><?= $row->product_name; ?></td>
-                    <td><?= $row->budget; ?></td>
-                    <td>
-                      <?= strlen($row->project_details) > 50 ? substr($row->project_details, 0, 50) . '...' : $row->project_details; ?>
-                    </td>
-                    <td><?= date('d M Y', strtotime($row->created_at)); ?></td>
-
-                    <!-- <td><?= $status; ?></td> -->
-                    <td>
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-success btn-xs">Action</button>
-                        <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown"
-                          aria-expanded="true">
-                          <span class="caret"></span>
-                          <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                          <!-- <li><a href="<?= base_url('admin/contact/details/' . $row->id) ?>">Details</a></li> -->
-                          <li><a href="<?= base_url('admin/manage_contact/details/' . $row->id) ?>">Details</a></li>
-                          <li><a href="<?= base_url('admin/manage_contact/delete/' . $row->id) ?>"
-                              onclick="return confirm('Are you sure you want to delete this Contact?');">Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
+          <div class="table-responsive">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>SL</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Company</th>
+                  <th>Industry</th>
+                  <th>Service</th>
+                  <th>Product</th>
+                  <th>Budget</th>
+                  <th>Project Details</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
                 <?php
+                $sl = 0;
+                if ($results) {
+                  foreach ($results as $row) {
+                    $sl++;
+                    ?>
+                    <tr>
+                      <td><?= $sl; ?></td>
+                      <td><?= $row->name; ?></td>
+                      <td><?= $row->email; ?></td>
+                      <td><?= $row->phone; ?></td>
+                      <td><?= $row->company; ?></td>
+                      <td><?= $row->industry; ?></td>
+                      <td><?= $row->service_name; ?></td>
+                      <td><?= $row->product_name; ?></td>
+                      <td><?= $row->budget; ?></td>
+                      <td>
+                        <?= strlen($row->project_details) > 50 ? substr($row->project_details, 0, 50) . '...' : $row->project_details; ?>
+                      </td>
+                      <td><?= date('d M Y', strtotime($row->created_at)); ?></td>
+
+                      <!-- <td><?= $status; ?></td> -->
+                      <td>
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-success btn-xs">Action</button>
+                          <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown"
+                            aria-expanded="true">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                            <!-- <li><a href="<?= base_url('admin/contact/details/' . $row->id) ?>">Details</a></li> -->
+                            <li><a href="<?= base_url('admin/manage_contact/details/' . $row->id) ?>">Details</a></li>
+                            <li><a href="<?= base_url('admin/manage_contact/delete/' . $row->id) ?>"
+                                onclick="return confirm('Are you sure you want to delete this Contact?');">Delete</a></li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                    <?php
+                  }
                 }
-              }
-              ?>
-            </tbody>
-          </table>
+                ?>
+              </tbody>
+            </table>
+          </div>
         </div>
         <!-- /.box-body -->
 
         <div class="box-footer">
+          <?php if (isset($pagination)) {
+            echo $pagination;
+          } ?>
         </div>
       </div>
       <!-- /.box -->

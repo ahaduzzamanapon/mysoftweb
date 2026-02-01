@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Manage_contact extends Backend_Controller {
+class Manage_contact extends Backend_Controller
+{
 
-	var $img_path;
+    var $img_path;
 
-	public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         if (!$this->ion_auth->logged_in()):
             redirect('login');
@@ -16,30 +18,60 @@ class Manage_contact extends Backend_Controller {
         $this->load->model('Manage_Contact_model');
         $this->img_path = realpath(APPPATH . '../testimonial_img');
 
-       
+
     }
 
-	public function index(){
+    public function index()
+    {
         redirect('admin/contact_manage/all');
-	}
+    }
 
-    public function all(){
+    public function all()
+    {
 
-        $this->db->select('*');
-        $this->db->order_by('id', 'desc');
-        $this->db->from('contact_us');
-        $query =  $this->db->get();
-        
-        $this->data['results'] = $query->result();
-       
-        // print_r($this->data['results']); exit;
+        $this->load->library('pagination');
+
+        // Pagination Config
+        $config['base_url'] = base_url('admin/manage_contact/all');
+        $config['total_rows'] = $this->Manage_Contact_model->count_all();
+        $config['per_page'] = 20; // Adjust as needed
+        $config['uri_segment'] = 4; // admin/manage_contact/all/offset
+
+        // Bootstrap Pagination Styling
+        $config['full_tag_open'] = '<ul class="pagination pagination-sm no-margin pull-right">';
+        $config['full_tag_close'] = '</ul>';
+        $config['first_link'] = 'First';
+        $config['last_link'] = 'Last';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo;';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+        $this->pagination->initialize($config);
+
+        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+        $this->data['results'] = $this->Manage_Contact_model->get_data($config['per_page'], $page);
+        $this->data['pagination'] = $this->pagination->create_links();
+
         //Load page
         $this->data['meta_title'] = 'All Manage Contact';
         $this->data['subview'] = 'contact_manage/all';
         $this->load->view('backend/_layout_main', $this->data);
     }
 
-    public function details($id){
+    public function details($id)
+    {
         $this->data['info'] = $this->Manage_Contact_model->get_info($id);
         // print_r($this->data['info']); exit;
         $this->data['meta_title'] = 'Manage Contact Details';
@@ -85,8 +117,8 @@ class Manage_contact extends Backend_Controller {
     //             }
     //         }
 
-            
-            
+
+
     //         $form_data = array(
     //             'client_name' => $this->input->post('client_name'),
     //             'designation' => $this->input->post('designation'),
@@ -111,7 +143,7 @@ class Manage_contact extends Backend_Controller {
     // }
 
 
-	// public function add(){
+    // public function add(){
     //     $this->form_validation->set_rules('client_name', 'Client Name', 'required|trim');
     //     $this->form_validation->set_rules('details', 'Details', 'required|trim'); 
     //     $this->form_validation->set_rules('designation', 'Dsignation', 'required|trim');      
@@ -142,7 +174,7 @@ class Manage_contact extends Backend_Controller {
     //             }
     //         }
 
-            
+
 
     //         $form_data = array(
     //             'client_name' => $this->input->post('client_name'),
@@ -161,12 +193,12 @@ class Manage_contact extends Backend_Controller {
     //         }
     //     }
 
-	// 	$this->data['meta_title'] = 'Add Testimonial';
-	// 	$this->data['subview'] = 'testimonial/add';
+    // 	$this->data['meta_title'] = 'Add Testimonial';
+    // 	$this->data['subview'] = 'testimonial/add';
     // 	$this->load->view('backend/_layout_main', $this->data);
-	// }
+    // }
 
-	// public function file_check($str){
+    // public function file_check($str){
     // 	$this->load->helper('file');
     //     $allowed_mime_type_arr = array('image/gif','image/jpeg','image/png','image/x-png');
     //     $mime = get_mime_by_extension($_FILES['userfile']['name']);
@@ -181,15 +213,16 @@ class Manage_contact extends Backend_Controller {
     //         	$this->form_validation->set_message('file_check', 'Maximum file size '.$size_kb);
     //             return false;
     //         }else{
-	// 		    return true;
-	// 		}
+    // 		    return true;
+    // 		}
     //     }else{
     //         $this->form_validation->set_message('file_check', 'Please choose a image file to upload.');
     //         return false;
     //     }
     // }
 
-    function delete($id) {
+    function delete($id)
+    {
         $this->data['info'] = $this->Manage_Contact_model->delete($id);
         $this->session->set_flashdata('success', 'Information delete successfully.');
         redirect('admin/manage_contact/all');

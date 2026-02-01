@@ -10,7 +10,7 @@ class Manage_contact_model extends CI_Model
         parent::__construct();
     }
 
-    public function get_data()
+    public function get_data($limit = NULL, $offset = NULL)
     {
         // count query
         $this->db->select('contact_us.*, services.name as service_name, products_new.name as product_name');
@@ -18,9 +18,21 @@ class Manage_contact_model extends CI_Model
         $this->db->join('services', 'contact_us.service = services.id', 'left');
         $this->db->join('products_new', 'contact_us.product = products_new.id', 'left');
         $this->db->order_by('contact_us.id', 'DESC');
+
+        if ($limit !== NULL && $offset !== NULL) {
+            $this->db->limit($limit, $offset);
+        } elseif ($limit !== NULL) {
+            $this->db->limit($limit);
+        }
+
         $query = $this->db->get()->result();
 
         return $query;
+    }
+
+    public function count_all()
+    {
+        return $this->db->count_all('contact_us');
     }
 
     public function get_info($id)

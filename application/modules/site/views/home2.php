@@ -1528,11 +1528,11 @@
 
                     <!-- Right Form Column -->
                     <div class="col-md-7 col-sm-12 contact-form-side">
-                        <h3 class="mb-20" style="font-weight: 700; color: #000;">Get in Touch</h3>
+                        <h3 class="mb-20" style="font-weight: 700; color: #000;">GET IN TOUCH</h3>
                         <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
-                            About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen
-                            paying their LD Tax through the system and every day a good amount of revenue automatically
-                            received by Bangladesh bank.
+                            Have a project in mind or need the right tech
+team? Reach out to us and our experts will get back to you
+shortly.
                         </p>
 
                         <form action="<?= base_url('submit-contact') ?>" method="post" id="contact-form-home2">
@@ -1726,7 +1726,7 @@
             margin: 0,
             nav: false,
             dots: false,
-            autoplay: false,
+            autoplay: true,
             autoplayTimeout: 5000,
             smartSpeed: 1000,
             items: 1,

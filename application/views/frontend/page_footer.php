@@ -202,61 +202,69 @@ foreach ($Specific as $key => $value) {
     .footer-bottom-bar {
       flex-direction: column;
       gap: 15px;
-      text-align: center;
+      text-align: left;
+      align-items: flex-start;
     }
-      #new-footer h4 {
-    margin-bottom: 0;
-    font-family: 'Nourd-Medium';
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 17px;
-    padding: 13px;
     
-  }
-  #new-footer ul li a {
-    color: #555;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-family: Outfit;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-    white-space: nowrap;
-    display: block;
-    width: 157px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left!important;
-    margin-left: 13px;
-    width: -webkit-fill-available;
-    border-bottom: 1px solid #a5a5a5;
-}
-.membership-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 15px;
-}
-  
+    .footer-social-icons {
+      justify-content: flex-start;
+    }
+    
+    .copyright-text {
+      text-align: left;
+    }
+
+    #new-footer h4 {
+      margin-bottom: 0;
+      font-family: 'Nourd-Medium';
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 17px;
+      padding: 13px;
+
+    }
+
+    #new-footer ul li a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-family: Outfit;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      white-space: nowrap;
+      display: block;
+      width: 157px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left !important;
+      margin-left: 13px;
+      width: -webkit-fill-available;
+      border-bottom: 1px solid #a5a5a5;
+    }
+
+    .membership-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-bottom: 15px;
+      justify-content: flex-start;
+    }
+
 
     .footer-col {
-      
-      text-align: center;
+      text-align: left;
     }
 
     .footer-logo-section {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .contact-info-item {
-      justify-content: center;
-    }
-
-    .membership-icons {
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     /* Mobile Accordion Styles */
@@ -681,18 +689,18 @@ foreach ($Specific as $key => $value) {
 
 <!-- Mobile Footer Accordion Script -->
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Only enable accordion on mobile
     function initFooterAccordion() {
       if ($(window).width() <= 767) {
         // Close all menus by default on mobile
         $('.footer-menu').removeClass('active');
-        
+
         // Add click handler
-        $('.footer-heading').off('click').on('click', function() {
+        $('.footer-heading').off('click').on('click', function () {
           const $menu = $(this).next('.footer-menu');
           const $icon = $(this).find('.toggle-icon');
-          
+
           // Toggle current menu
           $menu.toggleClass('active');
           $icon.toggleClass('rotate');
@@ -703,12 +711,12 @@ foreach ($Specific as $key => $value) {
         $('.toggle-icon').removeClass('rotate');
       }
     }
-    
+
     // Initialize on load
     initFooterAccordion();
-    
+
     // Re-initialize on window resize
-    $(window).on('resize', function() {
+    $(window).on('resize', function () {
       initFooterAccordion();
     });
   });

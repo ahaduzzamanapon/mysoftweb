@@ -203,7 +203,6 @@ foreach ($Specific as $key => $value) {
       flex-direction: column;
       gap: 15px;
       text-align: left;
-      align-items: flex-start;
     }
     
     .footer-social-icons {

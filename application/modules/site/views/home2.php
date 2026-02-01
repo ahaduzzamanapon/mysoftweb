@@ -1,17 +1,45 @@
-﻿<link rel="preconnect" href="https://fonts.googleapis.com">
+﻿<!-- DNS Prefetch & Preconnect for External Resources -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//unpkg.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Nabla&display=swap"
     rel="stylesheet">
-<!-- Devicon for logos -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<!-- AOS Animation CSS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<!-- FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Devicon for logos - Deferred Loading -->
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</noscript>
+<!-- Owl Carousel CSS - Deferred Loading -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</noscript>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</noscript>
+<!-- AOS Animation CSS - Deferred Loading -->
+<link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</noscript>
+<!-- FontAwesome - Deferred Loading -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</noscript>
 
 <link rel="stylesheet" href="<?= base_url('assets/css/home2.css') ?>">
 
@@ -91,10 +119,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Bottom Image -->
+                                        <!-- Bottom Image - First slide, eager loading for LCP -->
                                         <div class="w-100 position-relative" data-aos="fade-up">
                                             <img src="<?= base_url('hero_image/transforming_ideas.webp') ?>"
-                                                alt="Team Overlay" class="hero-overlay-img">
+                                                alt="Team Overlay" class="hero-overlay-img" width="600" height="400">
                                         </div>
                                     </div>
                                 </div>
@@ -169,10 +197,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Bottom Image -->
+                                        <!-- Bottom Image - Lazy loaded -->
                                         <div class="w-100 position-relative">
                                             <img src="<?= base_url('hero_image/flexable_teams.webp') ?>"
-                                                alt="Team Overlay" class="hero-overlay-img">
+                                                alt="Team Overlay" class="hero-overlay-img" loading="lazy" width="600"
+                                                height="400">
                                         </div>
                                     </div>
                                 </div>
@@ -248,10 +277,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Bottom Image -->
+                                        <!-- Bottom Image - Lazy loaded -->
                                         <div class="w-100 position-relative">
                                             <img src="<?= base_url('hero_image/delivering_large.webp') ?>"
-                                                alt="Team Overlay" class="hero-overlay-img">
+                                                alt="Team Overlay" class="hero-overlay-img" loading="lazy" width="600"
+                                                height="400">
                                         </div>
                                     </div>
                                 </div>
@@ -553,13 +583,13 @@
                         </div>
                         <div class="m-img-wrapper mt-2">
                             <img src="<?= base_url('hero_image/transforming_ideas.webp') ?>"
-                                class="m-stat-img rounded-3" alt="Experience">
+                                class="m-stat-img rounded-3" alt="Experience" loading="lazy" width="300" height="200">
                         </div>
                     </div>
                     <div class="mobile-stat-col text-center">
                         <div class="m-img-wrapper mb-2">
                             <img src="<?= base_url('hero_image/flexable_teams.webp') ?>" class="m-stat-img rounded-3"
-                                alt="Team">
+                                alt="Team" loading="lazy" width="300" height="200">
                         </div>
                         <div class="stat-text-box">
                             <h4 class="m-stat-number">88%+</h4>
@@ -579,7 +609,7 @@
                         </div>
                         <div class="m-img-wrapper mt-2">
                             <img src="<?= base_url('hero_image/delivering_large.webp') ?>" class="m-stat-img rounded-3"
-                                alt="Clients">
+                                alt="Clients" loading="lazy" width="300" height="200">
                         </div>
                     </div>
                     <div class="mobile-stat-col text-center">
@@ -605,13 +635,13 @@
                         </div>
                         <div class="m-img-wrapper mt-2">
                             <img src="<?= base_url('hero_image/transforming_ideas.webp') ?>"
-                                class="m-stat-img rounded-3" alt="Revenue">
+                                class="m-stat-img rounded-3" alt="Revenue" loading="lazy" width="300" height="200">
                         </div>
                     </div>
                     <div class="mobile-stat-col text-center">
                         <div class="m-img-wrapper mb-2">
                             <img src="<?= base_url('hero_image/delivering_large.webp') ?>" class="m-stat-img rounded-3"
-                                alt="Security">
+                                alt="Security" loading="lazy" width="300" height="200">
                         </div>
                         <div class="stat-text-box">
                             <h4 class="m-stat-number">Top 1%</h4>
@@ -759,7 +789,7 @@
                                             $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
                                         }
                                         ?>
-                                        <img src="<?= $img_src ?>" class="product-img">
+                                        <img src="<?= $img_src ?>" class="product-img" loading="lazy">
                                     </div>
                                 </div>
                                 <div class="product-actions">

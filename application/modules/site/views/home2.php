@@ -624,6 +624,58 @@
         </div>
     </div>
 
+    <!-- Certified & Clients (Mobile Only) -->
+    <div class="d-block d-lg-none mb-4">
+        <div class="container">
+            <!-- Certified Section -->
+            <div class="certified_section_hero mb-3 d-flex align-items-center gap-3">
+                <h5 style="color: #666; font-size: 16px; white-space: nowrap; margin-bottom: 0;">
+                    Certified
+                </h5>
+                <div class="marquee-fader marquee-fader-white" style="flex: 1;">
+                    <div class="owl-carousel owl-theme" id="certified_marquee_mobile" style="width: 100%;">
+                        <div class="item"><img src="<?= base_url('membership/1.gif') ?>" class="cert-logo2" /></div>
+                        <div class="item"><img src="<?= base_url('membership/2.gif') ?>" class="cert-logo2" /></div>
+                        <div class="item"><img src="<?= base_url('membership/3.gif') ?>" class="cert-logo2" /></div>
+                        <div class="item"><img src="<?= base_url('membership/4.gif') ?>" class="cert-logo2" /></div>
+                        <div class="item"><img src="<?= base_url('membership/5.gif') ?>" class="cert-logo2" /></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clients Section -->
+            <div class="clients_section_hero d-flex align-items-center gap-3">
+                <h5 style="font-weight: 700; color: #555; margin: 0; font-size: 16px; white-space: nowrap;">
+                    Clients
+                </h5>
+                <div class="marquee-fader marquee-fader-white" style="flex: 1;">
+                    <div class="owl-carousel owl-theme" id="clients_marquee_mobile" style="width: 100%;">
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-2.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-3.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-4.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/clients/Group-7.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                        <div class="item"><img src="<?= base_url('home2media/XMLID_79_.png') ?>"
+                                style="height: 30px; width: auto;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Our Services -->
     <section class="ht-section services-bg-gradient" id="services">
         <div class="container-fluid">
@@ -1531,8 +1583,8 @@
                         <h3 class="mb-20" style="font-weight: 700; color: #000;">GET IN TOUCH</h3>
                         <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
                             Have a project in mind or need the right tech
-team? Reach out to us and our experts will get back to you
-shortly.
+                            team? Reach out to us and our experts will get back to you
+                            shortly.
                         </p>
 
                         <form action="<?= base_url('submit-contact') ?>" method="post" id="contact-form-home2">
@@ -1777,6 +1829,11 @@ shortly.
 
         // Row 3 (RTL)
         $('#tech-marquee-3').owlCarousel($.extend({}, marqueeOptions, { rtl: true }));
+
+        // Mobile Certified & Clients Marquees
+        $('#certified_marquee_mobile').owlCarousel($.extend({}, marqueeOptions, { rtl: true }));
+        $('#clients_marquee_mobile').owlCarousel($.extend({}, marqueeOptions));
+
 
 
         // Industries Carousel (Removed - now Hexagon Grid)

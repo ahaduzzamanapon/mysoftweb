@@ -18,6 +18,43 @@
 
         <div class="box-body">
           <div id="infoMessage"><?php //echo $message; ?></div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <form action="" method="get" class="form-inline">
+
+                <div class="form-group">
+                  <input type="text" name="search" class="form-control" placeholder="Search by name, email, phone..."
+                    value="<?= isset($search_val) ? $search_val : '' ?>">
+                </div>
+
+                <div class="form-group">
+                  <select name="service" class="form-control">
+                    <option value="">All Services</option>
+                    <?php if (isset($services)):
+                      foreach ($services as $svc): ?>
+                        <option value="<?= $svc->id ?>" <?= (isset($service_val) && $service_val == $svc->id) ? 'selected' : '' ?>><?= $svc->name ?></option>
+                      <?php endforeach; endif; ?>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <select name="product" class="form-control">
+                    <option value="">All Products</option>
+                    <?php if (isset($products)):
+                      foreach ($products as $prod): ?>
+                        <option value="<?= $prod->id ?>" <?= (isset($product_val) && $product_val == $prod->id) ? 'selected' : '' ?>><?= $prod->name ?></option>
+                      <?php endforeach; endif; ?>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Filter</button>
+                <a href="<?= base_url('admin/manage_contact/all') ?>" class="btn btn-default">Reset</a>
+
+              </form>
+              <br>
+            </div>
+          </div>
           <!-- <?php if ($this->session->flashdata('success')): ?>
                 <div class="alert alert-success">
                     <a class="close" data-dismiss="alert">&times;</a>

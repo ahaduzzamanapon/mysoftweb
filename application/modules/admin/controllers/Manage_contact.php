@@ -31,11 +31,26 @@ class Manage_contact extends Backend_Controller
 
         $this->load->library('pagination');
 
+        // Filter Params
+        $search = $this->input->get('search');
+        $service_id = $this->input->get('service');
+        $product_id = $this->input->get('product');
+
+        // Dropdown Data
+        $this->data['services'] = $this->Manage_Contact_model->get_all_services();
+        $this->data['products'] = $this->Manage_Contact_model->get_all_products();
+
+        // Pass filter values to view
+        $this->data['search_val'] = $search;
+        $this->data['service_val'] = $service_id;
+        $this->data['product_val'] = $product_id;
+
         // Pagination Config
         $config['base_url'] = base_url('admin/manage_contact/all');
-        $config['total_rows'] = $this->Manage_Contact_model->count_all();
+        $config['total_rows'] = $this->Manage_Contact_model->count_all($search, $service_id, $product_id);
         $config['per_page'] = 20; // Adjust as needed
         $config['uri_segment'] = 4; // admin/manage_contact/all/offset
+        $config['reuse_query_string'] = TRUE; // Keep filters when paging
 
         // Bootstrap Pagination Styling
         $config['full_tag_open'] = '<ul class="pagination pagination-sm no-margin pull-right">';
@@ -61,7 +76,7 @@ class Manage_contact extends Backend_Controller
 
         $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 
-        $this->data['results'] = $this->Manage_Contact_model->get_data($config['per_page'], $page);
+        $this->data['results'] = $this->Manage_Contact_model->get_data($config['per_page'], $page, $search, $service_id, $product_id);
         $this->data['pagination'] = $this->pagination->create_links();
 
         //Load page

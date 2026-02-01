@@ -10,7 +10,7 @@ class Manage_contact_model extends CI_Model
         parent::__construct();
     }
 
-    public function get_data($limit = NULL, $offset = NULL)
+    public function get_data($limit = NULL, $offset = NULL, $search = NULL, $service_id = NULL, $product_id = NULL)
     {
         // count query
         $this->db->select('contact_us.*, services.name as service_name, products_new.name as product_name');
@@ -18,6 +18,23 @@ class Manage_contact_model extends CI_Model
         $this->db->join('services', 'contact_us.service = services.id', 'left');
         $this->db->join('products_new', 'contact_us.product = products_new.id', 'left');
         $this->db->order_by('contact_us.id', 'DESC');
+
+        if ($search) {
+            $this->db->group_start();
+            $this->db->like('contact_us.name', $search);
+            $this->db->or_like('contact_us.email', $search);
+            $this->db->or_like('contact_us.phone', $search);
+            $this->db->or_like('contact_us.company', $search);
+            $this->db->group_end();
+        }
+
+        if ($service_id) {
+            $this->db->where('contact_us.service', $service_id);
+        }
+
+        if ($product_id) {
+            $this->db->where('contact_us.product', $product_id);
+        }
 
         if ($limit !== NULL && $offset !== NULL) {
             $this->db->limit($limit, $offset);
@@ -30,9 +47,38 @@ class Manage_contact_model extends CI_Model
         return $query;
     }
 
-    public function count_all()
+    public function count_all($search = NULL, $service_id = NULL, $product_id = NULL)
     {
-        return $this->db->count_all('contact_us');
+        $this->db->from('contact_us');
+
+        if ($search) {
+            $this->db->group_start();
+            $this->db->like('name', $search);
+            $this->db->or_like('email', $search);
+            $this->db->or_like('phone', $search);
+            $this->db->or_like('company', $search);
+            $this->db->group_end();
+        }
+
+        if ($service_id) {
+            $this->db->where('service', $service_id);
+        }
+
+        if ($product_id) {
+            $this->db->where('product', $product_id);
+        }
+
+        return $this->db->count_all_results();
+    }
+
+    public function get_all_services()
+    {
+        return $this->db->get('services')->result();
+    }
+
+    public function get_all_products()
+    {
+        return $this->db->get('products_new')->result();
     }
 
     public function get_info($id)

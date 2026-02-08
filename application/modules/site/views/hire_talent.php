@@ -2376,7 +2376,7 @@
 
     <!-- Floating CTA Button -->
     <button class="floating-cta-btn scroll-link" href="#contact-section">
-        <i class="fa fa-phone"></i>
+        <i class="fa fa-paper-plane"></i>
         <span id="floatingBtnText">Hire Devs In 24H</span>
     </button>
 
@@ -3399,7 +3399,7 @@
                 <div class="row no-gutters">
                     <!-- Left Info Column -->
                     <div class="col-md-5 col-sm-12 contact-info-side">
-                        <h3 class="text-white mb-20 " style="font-weight: 700;">Ready to Transform Your Team?</h3>
+                        <h3 class="text-white mb-20 " style="font-weight: 700;">Let’s Talk About Your Business?</h3>
                         <p class="text-white mb-40" style="opacity: 0.9; font-size: 14px; line-height: 1.6;">
                             Schedule a discovery call with our experts to explore how we can help you build
                             high-performing remote teams.
@@ -3449,9 +3449,7 @@
                     <div class="col-md-7 col-sm-12 contact-form-side">
                         <h3 class="mb-20" style="font-weight: 700; color: #000;">Get in Touch</h3>
                         <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
-                            About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen
-                            paying their LD Tax through the system and every day a good amount of revenue automatically
-                            received by Bangladesh bank.
+                            Have a project in mind or need the right tech team? Reach out to us and our experts will get back to you shortly.
                         </p>
 
                         <form id="contactForm" action="#" method="post">

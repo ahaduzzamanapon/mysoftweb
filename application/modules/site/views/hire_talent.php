@@ -1544,7 +1544,7 @@
         font-weight: 600;
         flex-direction: column;
         gap: 10px;
-    padding: 10px;
+        padding: 10px;
         text-align: center;
     }
 
@@ -2279,6 +2279,27 @@
     .marquee-fader-dark-blue::after {
         background: linear-gradient(to left, #002b49, transparent);
     }
+
+    /* Select Dropdown Icon Styles */
+    .select-wrapper {
+        position: relative;
+    }
+
+    .select-icon {
+        position: absolute;
+        right: 25px;
+        top: 45px;
+        pointer-events: none;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .form-control-custom {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 40px;
+    }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -2299,10 +2320,10 @@
                         day one. You run the roadmap. We deliver the talent.
                     </p>
                     <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
-                        <a href="<?= base_url('contact-us') ?>" class="btn-custom btn-none"
+                        <a href="#roles-section" class="btn-custom btn-none scroll-link"
                             style="font-family: 'Nourd-Medium';font-weight: 500;font-size: 19px;line-height: 150%;">Explore
                             Roles</a>
-                        <a href="<?= base_url('request-quotation') ?>" class="btn-custom btn-blue"
+                        <a href="#contact-section" class="btn-custom btn-blue scroll-link"
                             style="font-family: 'Nourd-Medium';font-weight: 500;font-size: 19px;line-height: 150%;">Get
                             in
                             Touch <i class="fa fa-arrow-right"></i> </a>
@@ -2701,7 +2722,7 @@
     </section>
 
     <!-- Roles We Provide -->
-    <section class="ht-section roles-section-bg" style="min-height:1040px;">
+    <section id="roles-section" class="ht-section roles-section-bg" style="min-height:1040px;">
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Roles <span class="text-blue">We Provide</span></h2>
             <p class="center-text mb-50 roles-subtitle">
@@ -3297,7 +3318,7 @@
     </section>
 
     <!-- Get in Touch Section -->
-    <section class="ht-section contact-section-wrapper"
+    <section id="contact-section" class="ht-section contact-section-wrapper"
         style="height: auto; padding: 60px 0 100px 0; background: #fff;">
         <div class="container-fluid">
             <div class="contact-card hover-lift" data-aos="fade-up">
@@ -3359,7 +3380,7 @@
                             received by Bangladesh bank.
                         </p>
 
-                        <form action="#" method="post">
+                        <form id="contactForm" action="#" method="post">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Full Name <span class="text-danger">*</span></label>
@@ -3381,7 +3402,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 col-sm-12 form-group">
+                                <div class="col-md-4 col-sm-12 form-group select-wrapper">
                                     <label>Select Industry <span class="text-danger">*</span></label>
                                     <select class="form-control form-control-custom" name="industry">
                                         <option value="">Select an Industry</option>
@@ -3394,8 +3415,9 @@
                                         <option value="Real Estate">Real Estate</option>
                                         <option value="Other">Other</option>
                                     </select>
+                                    <i class="fa fa-chevron-down select-icon"></i>
                                 </div>
-                                <div class="col-md-4 col-sm-12 form-group">
+                                <div class="col-md-4 col-sm-12 form-group select-wrapper">
                                     <label>Select Service <span class="text-danger">*</span></label>
                                     <select class="form-control form-control-custom" name="service">
                                         <option value="">Select a service</option>
@@ -3408,8 +3430,9 @@
                                         <option value="Back Office Management">Back Office Management</option>
                                         <option value="Other">Other</option>
                                     </select>
+                                    <i class="fa fa-chevron-down select-icon"></i>
                                 </div>
-                                <div class="col-md-4 col-sm-12 form-group">
+                                <div class="col-md-4 col-sm-12 form-group select-wrapper">
                                     <label>Select Budget Range <span class="text-danger">*</span></label>
                                     <select class="form-control form-control-custom" name="budget">
                                         <option value="">Select a budget range</option>
@@ -3420,6 +3443,7 @@
                                         <option value="$50,000 - $100,000">$50,000 - $100,000</option>
                                         <option value="$100,000+">$100,000+</option>
                                     </select>
+                                    <i class="fa fa-chevron-down select-icon"></i>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -3428,8 +3452,12 @@
                                     placeholder="Tell us about your project or talent needs..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-block btn-submit">Send Inquiry <i
-                                    class="fa fa-paper-plane"></i></button>
+                            <button type="submit" class="btn btn-block btn-submit" id="submitBtn">
+                                <span id="btnText">Send Inquiry <i class="fa fa-paper-plane"></i></span>
+                                <span id="btnLoader" style="display: none;">
+                                    <i class="fa fa-spinner fa-spin"></i> Sending...
+                                </span>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -3664,6 +3692,44 @@
                 600: { items: 6 },
                 1000: { items: 8 }
             }
+        });
+
+        // Smooth Scroll for Navigation Links
+        $('.scroll-link').on('click', function (e) {
+            e.preventDefault();
+            var target = $(this).attr('href');
+            if ($(target).length) {
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80
+                }, 800, 'swing');
+            }
+        });
+
+        // Form Submission with Loader
+        $('#contactForm').on('submit', function (e) {
+            e.preventDefault();
+
+            // Show loader
+            $('#btnText').hide();
+            $('#btnLoader').show();
+            $('#submitBtn').prop('disabled', true);
+
+            // Simulate form submission (replace with actual AJAX call)
+            setTimeout(function () {
+                // Here you would normally submit the form via AJAX
+                // For now, we'sll just reset after 2 seconds
+
+                // Hide loader
+                $('#btnLoader').hide();
+                $('#btnText').show();
+                $('#submitBtn').prop('disabled', false);
+
+                // Show success message or handle form submission
+                alert('Form submitted successfully!');
+
+                // Optionally reset the form
+                // $('#contactForm')[0].reset();
+            }, 2000);
         });
     });
 </script>

@@ -1544,6 +1544,8 @@
         font-weight: 600;
         flex-direction: column;
         gap: 10px;
+    padding: 10px;
+        text-align: center;
     }
 
     .purple-box i {
@@ -1584,7 +1586,7 @@
         }
 
         .span-2 {
-            grid-column: span 2;
+            grid-column: span 1;
         }
 
         .floating-badge {
@@ -1931,7 +1933,6 @@
         .process-grid,
         .awards-grid,
         .roles-grid,
-        .ft-grid,
         .testimonials-grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
@@ -2704,7 +2705,7 @@
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Roles <span class="text-blue">We Provide</span></h2>
             <p class="center-text mb-50 roles-subtitle">
-                Mysoft Heaven  (BD) Ltd. connects you with top IT professionals across software, cloud, data, security,
+                Mysoft Heaven (BD) Ltd. connects you with top IT professionals across software, cloud, data, security,
                 and niche engineering domains. Each role integrates seamlessly into your team to accelerate delivery and
                 maintain quality.
             </p>
@@ -3150,7 +3151,7 @@
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
             <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
-                Recognized nationally and globally, Mysoft Heaven  (BD) Ltd. has earned top awards from the Bangladesh
+                Recognized nationally and globally, Mysoft Heaven (BD) Ltd. has earned top awards from the Bangladesh
                 government, international partners, and NGOs. Our work has been instrumental in advancing Bangladesh's
                 digital transformation in the public sector.
             </p>

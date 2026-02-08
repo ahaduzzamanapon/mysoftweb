@@ -2300,14 +2300,88 @@
         -moz-appearance: none;
         padding-right: 40px;
     }
+
+    /* Floating CTA Button */
+    .floating-cta-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #0088cc 0%, #0066aa 100%);
+        color: #fff;
+        padding: 16px 28px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(0, 136, 204, 0.4);
+        z-index: 9999;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(100px);
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .floating-cta-btn.show {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    .floating-cta-btn:hover {
+        background: linear-gradient(135deg, #006699 0%, #004477 100%);
+        box-shadow: 0 12px 30px rgba(0, 136, 204, 0.6);
+        transform: translateY(-3px);
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .floating-cta-btn i {
+        font-size: 18px;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .floating-cta-btn {
+            bottom: 20px;
+            right: 20px;
+            padding: 14px 24px;
+            font-size: 14px;
+        }
+    }
 </style>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 
 <!-- Hire Talent Page Content - Exact Replica -->
 <div class="ht-main-wrapper">
 
+    <!-- Floating CTA Button -->
+    <button class="floating-cta-btn scroll-link" href="#contact-section">
+        <i class="fa fa-phone"></i>
+        <span id="floatingBtnText">Hire Devs In 24H</span>
+    </button>
+
     <!-- Hero Section -->
+
     <section class="ht-section ht-hero-section">
         <div class="container-fluid">
             <div class="row items-center">
@@ -3731,5 +3805,29 @@
                 // $('#contactForm')[0].reset();
             }, 2000);
         });
+    // Floating CTA Button - Text Rotation
+        const btnTexts = ['Hire Devs In 24H', 'Get CV In 24H', 'Book Call', 'Free Call'];
+        let currentTextIndex = 0;
+
+        // Rotate button text every 3 seconds
+        setInterval(function() {
+            currentTextIndex = (currentTextIndex + 1) % btnTexts.length;
+            $('#floatingBtnText').fadeOut(300, function() {
+                $(this).text(btnTexts[currentTextIndex]).fadeIn(300);
+            });
+        }, 3000);
+
+        // Show/Hide Floating Button on Scroll
+        $(window).on('scroll', function() {
+            var scrollTop = $(window).scrollTop();
+            var firstSectionHeight = $('.ht-hero-section').outerHeight();
+            
+            if (scrollTop > firstSectionHeight) {
+                $('.floating-cta-btn').addClass('show');
+            } else {
+                $('.floating-cta-btn').removeClass('show');
+            }
+        });
     });
+
 </script>

@@ -17,15 +17,15 @@
 	}
 
 	.headsidebar {
-		display: flex;
-		flex-direction: column;
-		width: 10px;
-		gap: 15px;
-		position: sticky;
-		top: 20px;
-		align-self: flex-start;
-		margin-left: 20px;
-	}
+    display: flex;
+    flex-direction: column;
+    width: 10px;
+    gap: 15px;
+    position: sticky;
+    top: 138px;
+    align-self: flex-start;
+    margin-left: 20px;
+}
 
 	.headmenu-item {
 		width: 370px;
@@ -133,7 +133,7 @@
 	.headmain-content p {
 		height: auto;
 		width: 467px;
-		font-size: 17px;
+		font-size: 18px;
 		text-align: justify;
 		color: #000000ff;
 		line-height: 1.6;
@@ -361,14 +361,13 @@
 	}
 
 	.mhead2 {
-		margin-left: 380px;
-		margin-top: 60px;
-		font-weight: 600;
-		font-size: 32px;
-		width: 674px;
-		height: 75px;
-		text-align: center;
-	}
+    margin-left: 380px;
+    margin-top: 60px;
+    font-weight: 600;
+    font-size: 32px;
+    width: 674px;
+    height: 70px;
+}
 
 	.mcard {
 		display: flex;
@@ -474,19 +473,19 @@
   } */
 
 	.appcard {
-		background: #0bb55e;
-		width: 175px;
-		height: 214px;
-		border-radius: 4px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-		color: white;
-		text-align: center;
-		font-family: "outfit", sans-serif;
-	}
+    background: #0bb55e;
+    width: 196px;
+    height: 259px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    font-family: "outfit", sans-serif;
+}
 
 	.appcard img {
 		background: white;
@@ -498,7 +497,7 @@
 	}
 
 	.appcard h2 {
-		font-size: 20px;
+		font-size: 17px;
 		font-weight: 600;
 		margin: 0;
 		line-height: 120%;
@@ -532,20 +531,21 @@
 		font-weight: 600;
 		font-size: 32px;
 		margin-left: 380px;
-		text-align: center;
+		/* text-align: center; */
 		margin-top: 30px;
 	}
 
 	.developh {
-		width: 700px;
-		height: auto;
-		margin-left: 410px;
-		margin-right: 60px;
-		font-weight: 600px;
-		font-size: 22px;
-		text-align: justify;
-		color: #000;
-	}
+    width: 700px;
+    height: auto;
+    margin-left: 385px;
+    margin-right: 60px;
+    font-weight: 600px;
+    font-size: 18px;
+    text-align: justify;
+    color: #000;
+    font-family: arial;
+}
 
 	.developimg {
 		width: 750px;
@@ -554,16 +554,16 @@
 	}
 
 	.developheading {
-		width: 731px;
-		height: 559px;
-		margin-left: 395px;
-		font-weight: 400;
-		font-size: 20px;
-		color: #000;
-		white-space: normal;
-		line-height: 150%;
-
-	}
+    width: 731px;
+    height: fit-content;
+    margin-left: 395px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    white-space: normal;
+    line-height: 150%;
+    font-family: arial;
+}
 
 	.developheading2 {
 		width: 731px;
@@ -852,7 +852,7 @@
 	.features {
 		list-style: none;
 		padding: 0;
-		margin-left: 380px;
+		margin-left: 395px;
 	}
 
 	.features li {
@@ -2009,18 +2009,19 @@
 	}
 
 	.lastbtn {
-		margin-left: 600px;
-		text-align: center;
-		width: 164px;
-		height: 58px;
-		background: #037FFF;
-		color: white;
-		border: none;
-		border-radius: 5%;
-		margin-top: -30px;
-		font-weight: 500;
-		font-size: 18px;
-	}
+    margin-left: 600px;
+    text-align: center;
+    width: 164px;
+    height: 58px;
+    background: #037FFF;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    margin-top: -30px;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 12px;
+}
 
 	.cimg {
 		width: 120px;

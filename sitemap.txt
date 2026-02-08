@@ -776,3 +776,7 @@ http://127.0.0.1/mysoftweb/service-category/mobile-games-development
 http://127.0.0.1/mysoftweb/service-category/web-design-development
 http://127.0.0.1/mysoftweb/service/customer-relationship-management
 http://127.0.0.1/mysoftweb/service-category/it-staffing
+http://127.0.0.1/mysoftweb/service/E-commerce-solution
+http://127.0.0.1/mysoftweb/service/website-design-development
+http://127.0.0.1/mysoftweb/service/outsource-project-development
+http://127.0.0.1/mysoftweb/it-staffing-agency

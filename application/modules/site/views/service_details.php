@@ -3,50 +3,73 @@
 	rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 <link rel="stylesheet" type="text/css" href="service_details.css" />
+<style>
+.service_page h1 {
+    font-family: 'Nourd-Bold';
+    line-height: 44px;
+}
 
+.service_page h2 {
+    font-family: 'Nourd-Bold';
+    font-weight: 300;
+}
+
+.service_page h3 {
+    font-family: 'Nourd-Bold';
+}
+
+.service_page p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+.service_page div {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
+
+.service_page a {
+    font-family: 'Nourd-Medium' !important;
+    text-decoration: none !important;
+}
+
+.service_page .mhead {
+    margin-left: 380px;
+    margin-top: 31px;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+</style>
 <div class="main">
 	<!-- Head part -->
 	<div class="head">
 
 		<div class="headsidebar">
-			<div class="headmenu-item active">
-				<div class="headimg">
-					<img src="awedget/demo_service/h1.webp" alt="">
-				</div>
-				<div class="">
+			<?php
 
-					<h4><?= $info->first_section_titel ?></h4>
+			$this->db->where('id !=', $info->id);
+			$this->db->limit(4);
+			$service_list = $this->db->get('services')->result();
+
+
+			foreach ($service_list as $key => $value) { 
+				?>
+				<a href="<?= base_url('service/'.$value->slug) ?>">
+				<div class="headmenu-item">
+					<div class="headimg" style="align-content: center;margin-left: 10px;">
+						<i class="fa <?= $value->fa_icon ?>"></i>
+					</div>
+					<div class="">
+
+						<h4><?= $value->name ?></h4>
+					</div>
 				</div>
-			</div>
-			<div class="headmenu-item">
-				<div class="headimg">
-					<img src="awedget/demo_service/h2.webp" alt="">
-				</div>
-				<div class="headh">
-					<h4>iOS App Development <br> iPhone App Service</h4>
-				</div>
-			</div>
-			<div class="headmenu-item">
-				<div class="headimg">
-					<img src="awedget/demo_service/h3.webp" alt="">
-				</div>
-				<div class="headh">
-					<h4>Windows Apps Development <br> Windows Device Solution </h4>
-				</div>
-			</div>
-			<div class="headmenu-item">
-				<div class="headimg">
-					<img src="awedget/demo_service/h4.webp" alt="">
-				</div>
-				<div class="headh">
-					<h4>Hybrid Mobile Apps<br>Next Generation Apps </h4>
-				</div>
-			</div>
+			</a>
+			<?php } ?>
 			<div class="calldiv">
 
 				<img src="awedget/demo_service/call.webp" alt="" class="callimg">
@@ -54,15 +77,15 @@
 
 			</div>
 		</div>
-		<div>
+		<div class="service_page">
 			<div class="check">
 				<div class="headmain-content">
 					<h2><?= $info->first_section_titel ?></h2>
 					<p>
 						<?= $info->first_section_para ?>
 					</p>
-					<div class="headbuttons">
-						<button class="get-started">Get Started</button>
+						<div class="headbuttons">
+						<a class="get-started" href="<?= base_url('contact-us') ?>">Get Started</a>
 					</div>
 				</div>
 				<div class="screenshot">
@@ -77,13 +100,13 @@
 				<div class="mcard">
 					<div class="maincard">
 						<img src="<?= base_url('service_img/' . $info->second_section_img_one) ?>" alt="icon">
-						<h2><?= $info->second_section_heading_one ?></h2>
+						<h2 style="line-height: 30px;margin: 8px;"><?= $info->second_section_heading_one ?></h2>
 						<p> <?= $info->second_section_para_one ?></p>
 
 					</div>
 					<div class="maincard">
 						<img src="<?= base_url('service_img/' . $info->second_section_img_two) ?>" alt="icon">
-						<h2><?= $info->second_section_heading_two ?></h2>
+						<h2 style="line-height: 30px;margin: 8px;"><?= $info->second_section_heading_two ?></h2>
 						<p> <?= $info->second_section_para_two ?></p>
 
 					</div>
@@ -181,7 +204,7 @@
 					</p>
 				</section>
 				<section>
-					<h1 class="mhead2 newhead marginsize "><?= $info->seven_section_titel ?></h1>
+					<h1 class="mhead2 newhead marginsize " style="height: 109px;"><?= $info->seven_section_titel ?></h1>
 					<p class="developheading5">
 						<?= $info->seven_section_para_one ?>
 					</p>
@@ -592,7 +615,8 @@
 
 							<div class="faq-item">
 								<input type="checkbox" id="q1">
-								<label class="faq-question" for="q1"><?= $info->seventeen_section_question_one ?></label>
+								<label class="faq-question"
+									for="q1"><?= $info->seventeen_section_question_one ?></label>
 								<div class="faq-answer">
 									<p><?= $info->seventeen_section_answer_one ?></p>
 								</div>
@@ -600,7 +624,8 @@
 
 							<div class="faq-item">
 								<input type="checkbox" id="q2">
-								<label class="faq-question" for="q2"><?= $info->seventeen_section_question_two ?></label>
+								<label class="faq-question"
+									for="q2"><?= $info->seventeen_section_question_two ?></label>
 								<div class="faq-answer">
 									<p><?= $info->seventeen_section_answer_two ?></p>
 								</div>
@@ -608,7 +633,8 @@
 
 							<div class="faq-item">
 								<input type="checkbox" id="q3">
-								<label class="faq-question" for="q3"><?= $info->seventeen_section_question_three ?></label>
+								<label class="faq-question"
+									for="q3"><?= $info->seventeen_section_question_three ?></label>
 								<div class="faq-answer">
 									<p><?= $info->seventeen_section_answer_three ?></p>
 								</div>
@@ -616,7 +642,8 @@
 
 							<div class="faq-item">
 								<input type="checkbox" id="q4">
-								<label class="faq-question" for="q4"><?= $info->seventeen_section_question_four ?></label>
+								<label class="faq-question"
+									for="q4"><?= $info->seventeen_section_question_four ?></label>
 								<div class="faq-answer">
 									<p><?= $info->seventeen_section_answer_four ?></p>
 								</div>
@@ -624,7 +651,8 @@
 
 							<div class="faq-item">
 								<input type="checkbox" id="q5">
-								<label class="faq-question" for="q5"><?= $info->seventeen_section_question_five ?></label>
+								<label class="faq-question"
+									for="q5"><?= $info->seventeen_section_question_five ?></label>
 								<div class="faq-answer">
 									<p><?= $info->seventeen_section_answer_five ?></p>
 								</div>
@@ -632,7 +660,8 @@
 
 							<div class="faq-item">
 								<input type="checkbox" id="q6">
-								<label class="faq-question" for="q6"><?= $info->seventeen_section_question_six ?></label>
+								<label class="faq-question"
+									for="q6"><?= $info->seventeen_section_question_six ?></label>
 								<div class="faq-answer">
 									<p><?= $info->seventeen_section_answer_six ?></p>
 								</div>
@@ -645,7 +674,7 @@
 				<section>
 					<h1 class="mhead6"><?= $info->eighteen_section_titel ?></h1>
 					<p class="developheading9"><?= $info->eighteen_section_para ?></p>
-					<button class="lastbtn">Get Started</button>
+					<a class="lastbtn" href="<?= base_url('contact-us') ?>">Get Started</a>
 
 					<h2 class="mhead2"><span class="text-primary"><?= $info->nineteen_section_titel ?></span></h2>
 					<div class="col-lg-7 mt-5 mt-lg-0 last">

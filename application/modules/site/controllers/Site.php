@@ -1004,6 +1004,9 @@ class Site extends Frontend_Controller
 
         $this->data['meta_title'] = 'Contact Us';
         $this->data['subview'] = 'contact_us';
+         $this->data['all_services'] = $this->Site_model->get_all_services(false); // Get all active services
+        $this->data['all_products'] = $this->Site_model->get_all_products_new(); // Get all active products
+
 
 
 

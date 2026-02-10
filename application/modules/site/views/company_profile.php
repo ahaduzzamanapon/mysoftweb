@@ -1,18 +1,4 @@
 <div role="main" class="main">
-	<section class="page-top">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7"><h1><?=$meta_title?></h1></div>
-				<div class="col-md-5 text-right">
-					<ul class="breadcrumb">
-						<li><a href="<?=base_url()?>">Home</a></li>
-						<li class="active"><?=$meta_title?></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<div class="container">
 		<hr class="tall_slim">
 

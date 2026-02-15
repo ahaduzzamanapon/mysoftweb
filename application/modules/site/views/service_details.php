@@ -48,6 +48,11 @@
 		font-size: 32px;
 	}
 
+	.iconhead {
+		color: #000000 !important;
+		font-weight: 700 !important;
+	}
+
 	.head {
 		justify-content: center;
 	}
@@ -92,12 +97,26 @@
 		}
 
 		.mx3 {
-			margin-bottom: 100px !important;
+			margin-bottom: 30px !important;
 		}
 
 		.mx4 {
-			margin-bottom: 150px !important;
+			margin-bottom: 10px !important;
 			margin-top: -30px;
+		}
+
+		.mx11 {
+			margin-bottom: 10px;
+		}
+
+		.mb {
+			margin-bottom: 50px !important;
+
+		}
+
+		.mb2 {
+			margin-bottom: -30px !important;
+
 		}
 
 		.membership {
@@ -118,6 +137,106 @@
 			margin: 0 !important;
 		}
 
+		.sectorpara {
+			text-align: center !important;
+		}
+
+		.developheading7 {
+			height: auto;
+		}
+
+		.mobileapp-slider img {
+			height: 90px;
+			width: 90px;
+		}
+
+		.pro1,
+		.pro2,
+		.pro3,
+		.pro4,
+		.pro5,
+		.pro6,
+		.pro7 {
+			font-size: 15px !important;
+		}
+
+		.pro2,
+		.pro3 {
+			margin-left: 100px !important;
+		}
+
+		.service_page h1 {
+			font-family: 'Nourd-Bold';
+			line-height: 32px;
+			margin-bottom: 30px;
+		}
+
+		.newmargin {
+			margin-top: 20px !important;
+		}
+
+		.cimg {
+			height: 95px;
+			object-fit: cover;
+		}
+
+		.maincard p {
+			text-align: center !important;
+		}
+
+		.technologiescard {
+			height: 127px !important;
+
+		}
+
+		.iconhead {
+			color: #000000 !important;
+			font-weight: 700 !important;
+		}
+
+		.awardpara {
+			text-align: center !important;
+		}
+
+		.head {
+			margin-left: 5px;
+		}
+
+		html,
+		body {
+			overflow-x: hidden;
+			width: 100%;
+		}
+
+		.sectorhead2 {
+			margin-top: -60px !important;
+
+		}
+
+	}
+
+	@media screen and (max-width: 460px) {
+		.ninteen {
+
+			display: flex;
+			place-items: center;
+			flex-wrap: wrap;
+			place-content: center;
+
+		}
+
+		.calldiv .call-btn {
+			font-size: 15px;
+		}
+
+		.coicon img {
+			margin-left: -104px;
+		}
+
+		.features2 {
+			margin-left: -76px !important;
+
+		}
 	}
 </style>
 <div class="main">
@@ -156,7 +275,7 @@
 		<div class="service_page">
 			<div class="check">
 				<div class="headmain-content">
-					<h2><?= $info->first_section_titel ?></h2>
+					<h2 class="mx11"><?= $info->first_section_titel ?></h2>
 					<p>
 						<?= $info->first_section_para ?>
 					</p>
@@ -220,7 +339,7 @@
 				</section>
 				<!-- Process  -->
 
-				<section>
+				<section class="pro">
 					<h1 class="apphead apphead2">Our Working Process</h1>
 					<div class="process">
 						<div class="pro1">Requirement Analysis </div>
@@ -377,8 +496,8 @@
 				</section>
 				<!-- Build Apps -->
 				<section>
-					<h1 class="mhead2 newhead2"><?= $info->nine_section_titel ?></h1>
-					<p class="paraspace developheading7 developheadingnew "> <?= $info->nine_section_main_para ?></p>
+					<h1 class="mhead2 newhead2 mb2"><?= $info->nine_section_titel ?></h1>
+					<p class="paraspace developheading7 developheadingnew newmargin"> <?= $info->nine_section_main_para ?></p>
 					<div class="gapsector">
 						<h1 class="sectorhead1"><?= $info->nine_section_heading_one ?></h1>
 						<h1 class="sectorhead2"><?= $info->nine_section_heading_two ?></h1>
@@ -416,7 +535,7 @@
 				</section>
 				<!-- Industries -->
 				<section>
-					<h1 class="mhead2"><?= $info->Ten_section_titel ?></h1>
+					<h1 class="mhead2 mb"><?= $info->Ten_section_titel ?></h1>
 					<p class="developheading7 mx3"><?= $info->Ten_section_para_one ?></p>
 					<div class="industries">
 						<div class="industriescard">
@@ -503,7 +622,7 @@
 				<p class="developheading7 mx4"><?= $info->eleven_section_para ?></p>
 
 				<section>
-					<h1 class="mhead2"><?= $info->twelve_section_titel ?></h1>
+					<h1 class="mhead2 mb"><?= $info->twelve_section_titel ?></h1>
 					<div class="list">
 						<div class="leftlist">
 							<ul class="listfeatures">
@@ -754,7 +873,7 @@
 
 					<h2 class="mhead2 mx100"><span class="text-primary"><?= $info->nineteen_section_titel ?></span></h2>
 					<div class="col-lg-7 mt-5 mt-lg-0 last">
-						<div>
+						<div class="ninteen">
 							<img src="<?= base_url('service_img/' . $info->ninteen_section_img_one) ?>" alt=""
 								class="cimg">
 							<img src="<?= base_url('service_img/' . $info->ninteen_section_img_two) ?>" alt=""

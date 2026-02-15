@@ -27,12 +27,7 @@
     }
 
     /* Custom Font */
-    @font-face {
-        font-family: 'Nourd-Bold';
-        src: url('<?= base_url("hire_talent_media/nourd_bold.ttf") ?>') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-    }
+  
 
     /* @font-face {
   font-family: 'Nabla';
@@ -255,20 +250,23 @@
     }
 
     .test-avatar {
-    width: 88px;
-    height: 57px;
-    border-radius: 50%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-.owl-carousel .owl-item img {
-    display: block;
-    width: 41px;
-    height: 41px;
-}
+        width: 70px;
+        height: 56px;  
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .test-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
 
 
 
@@ -1079,11 +1077,6 @@
         overflow: hidden;
     } */
 
-    .test-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     .test-info h5 {
         font-size: 16px;
@@ -1093,9 +1086,10 @@
     }
 
     .test-info span {
-        font-size: 12px;
+        font-size: 13px;
         color: #555;
         display: block;
+        line-height: 15px;
     }
 
     .test-body {
@@ -1123,7 +1117,7 @@
         line-height: 1.6;
         color: #333;
         margin: 0;
-        text-align: -webkit-center;
+        text-align: -webkit-left;
     }
 
     /* Slider dots visual only */
@@ -1653,6 +1647,7 @@
     .why-mysoftheaven-section {
         background-color: #fff;
         padding: 80px 0;
+        place-items: center;
     }
 
     .why-mysoftheaven-title {
@@ -1662,6 +1657,7 @@
         color: #000000ff;
         margin: 0 0 15px 0;
         line-height: 1.2;
+         place-items: center;
     }
 
     .why-mysoftheaven-title .text-blue {
@@ -1674,6 +1670,7 @@
         color: #000 !important;
         margin: 0 0 25px 0;
         display: block;
+         place-items: center;
     }
 
     .why-description {
@@ -1681,7 +1678,7 @@
         line-height: 1.8;
         color: #333;
         margin-bottom: 20px;
-        text-align: justify;
+        place-items: center;
     }
 
     /* Why Images Styling */
@@ -1727,15 +1724,19 @@
 
         .why-mysoftheaven-title {
             font-size: 28px;
+                        text-align: center;
+
         }
 
         .why-mysoftheaven-subtitle {
             font-size: 14px;
+                        text-align: center;
+
         }
 
         .why-description {
             font-size: 14px;
-            text-align: left;
+            text-align: center;
         }
 
         .why-images-wrapper {
@@ -2424,12 +2425,12 @@
                 <div class="col-md-8 col-sm-12" data-aos="fade-right">
                     <h1 class="hero-title">Scale faster. <span style="color: #FC6000;">Build smarter.</span><br><span
                             class="text-blue" id="hero-typewriter"></span></h1>
-                    <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
+                    <p class="hero-desc" data-aos="fade-up" data-aos-delay="0">
                         When speed, quality, and control matter you cannot wait for traditional hiring cycles. MySoft
                         Heaven delivers vetted global IT professionals who join your team and begin contributing from
                         day one. You run the roadmap. We deliver the talent.
                     </p>
-                    <div class="hero-btns" data-aos="fade-up" data-aos-delay="400">
+                    <div class="hero-btns" data-aos="fade-up" data-aos-delay="0">
                         <a href="#roles-section" class="btn-custom btn-none scroll-link"
                             style="font-family: 'Nourd-Medium';font-weight: 500;font-size: 19px;line-height: 150%;">Explore
                             Roles</a>
@@ -2507,34 +2508,34 @@
                 <div class="col-md-5 col-sm-12" style="padding-left: 0;margin-top: 44px;">
                     <div class="ft-grid">
                         <!-- Row 1 -->
-                        <div class="ft-item hover-lift" data-aos="fade-right" data-aos-delay="100">
-                            <img src="<?= base_url('talent/flexible_teams/1.JPG') ?>" class="ft-img">
+                        <div class="ft-item hover-lift" data-aos="fade-right" data-aos-delay="0">
+                            <img src="<?= base_url('talent/flexible_teams/1.webp') ?>" class="ft-img">
                         </div>
-                        <div class="ft-item pink-box hover-lift" data-aos="fade-down" data-aos-delay="200">
+                        <div class="ft-item pink-box hover-lift" data-aos="fade-down" data-aos-delay="0">
                             <strong>120+</strong>
                             <span>Professionals</span>
                         </div>
-                        <div class="ft-item hover-lift rounded" data-aos="fade-left" data-aos-delay="300">
-                            <img src="<?= base_url('talent/flexible_teams/2.JPG') ?>" class="ft-img rounded">
+                        <div class="ft-item hover-lift rounded" data-aos="fade-left" data-aos-delay="0">
+                            <img src="<?= base_url('talent/flexible_teams/2.webp') ?>" class="ft-img rounded">
                         </div>
 
                         <!-- Row 2 -->
-                        <div class="ft-item blue-box hover-lift" data-aos="fade-right" data-aos-delay="150">
+                        <div class="ft-item blue-box hover-lift" data-aos="fade-right" data-aos-delay="0">
                             <i class="fa fa-users"></i>
                         </div>
-                        <div class="ft-item hover-lift" data-aos="zoom-in" data-aos-delay="250">
-                            <img src="<?= base_url('talent/flexible_teams/3.JPG') ?>" class="ft-img">
+                        <div class="ft-item hover-lift" data-aos="zoom-in" data-aos-delay="0">
+                            <img src="<?= base_url('talent/flexible_teams/3.webp') ?>" class="ft-img">
                         </div>
-                        <div class="ft-item green-box hover-lift" data-aos="fade-left" data-aos-delay="350">
+                        <div class="ft-item green-box hover-lift" data-aos="fade-left" data-aos-delay="0">
                             <i class="fa fa-globe"></i>
                         </div>
 
                         <!-- Row 3 -->
-                        <div class="ft-item purple-box span-2 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                        <div class="ft-item purple-box span-2 hover-lift" data-aos="fade-up" data-aos-delay="0">
                             <i class="fa fa-check-circle"></i>
                             <span>Pre-Vetted Professionals</span>
                         </div>
-                        <div class="ft-item relative hover-lift" data-aos="fade-up" data-aos-delay="500">
+                        <div class="ft-item relative hover-lift" data-aos="fade-up" data-aos-delay="0">
                             <img src="<?= base_url('hire_talent_media/rectangle_6760.png') ?>" class="ft-img">
                             <div class="floating-badge">
                                 <span class="badg-title">Average Onboarding</span>
@@ -2555,9 +2556,9 @@
                         <img src="<?= base_url('talent/why_mysoftheaven/1.webp') ?>" alt="Team Meeting"
                             class="why-img-top" data-aos="fade-down">
                         <img src="<?= base_url('talent/why_mysoftheaven/2.webp') ?>" alt="Office Space"
-                            class="why-img-bottom_left" data-aos="fade-right" data-aos-delay="100">
+                            class="why-img-bottom_left" data-aos="fade-right" data-aos-delay="0">
                         <img src="<?= base_url('talent/why_mysoftheaven/3.webp') ?>" alt="Office Space"
-                            class="why-img-bottom_right" data-aos="fade-left" data-aos-delay="200">
+                            class="why-img-bottom_right" data-aos="fade-left" data-aos-delay="0">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" data-aos="fade-left">
@@ -2594,19 +2595,19 @@
                     <p>We align on required skills, experience level, budget expectations, delivery timeline, time zone
                         overlap, and target start date to ensure complete clarity from day one.</p>
                 </div>
-                <div class="process-card card-purple-light hover-lift" data-aos="zoom-in" data-aos-delay="100">
+                <div class="process-card card-purple-light hover-lift" data-aos="zoom-in" data-aos-delay="0">
                     <div class="p-icon bg-purple">2</div>
                     <h4>Candidate Matching</h4>
                     <p>We present a curated shortlist of pre-vetted engineers, including technical summaries, relevant
                         experience, and real work samples aligned to your needs.</p>
                 </div>
-                <div class="process-card card-green-light hover-lift" data-aos="zoom-in" data-aos-delay="200">
+                <div class="process-card card-green-light hover-lift" data-aos="zoom-in" data-aos-delay="0">
                     <div class="p-icon bg-green">3</div>
                     <h4>Client Interviews And Selection</h4>
                     <p>You interview the candidates directly and choose the engineer who best fits your team, culture,
                         and technical expectations.</p>
                 </div>
-                <div class="process-card card-orange-light hover-lift" data-aos="zoom-in" data-aos-delay="300">
+                <div class="process-card card-orange-light hover-lift" data-aos="zoom-in" data-aos-delay="0">
                     <div class="p-icon bg-orange">4</div>
                     <h4>Onboarding And Continuous Support</h4>
                     <p>The selected professional integrates into your tools and workflows immediately. We handle
@@ -2628,7 +2629,7 @@
             <div class="row items-center">
                 <div class="col-md-6 col-sm-12" data-aos="fade-right">
                     <div class="blob-container">
-                        <img src="<?= base_url('hire_talent_media/engegment.png') ?>" class="eng-img">
+                        <img src="<?= base_url('hire_talent_media/engegment.webp') ?>" class="eng-img">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12" data-aos="fade-left">
@@ -2835,7 +2836,7 @@
     <section class="ht-section" style="background-color: #193e6bff; min-height: 300px; display: flex; align-items: center; justify-content: center;">
         <div class="" data-aos="fade-right">
             <div class="row"> 
-                <h1  class="display-3" style="font-family: Nourd-Bold;background-color: white;color: #193e6bff;filter: drop-shadow(0 0 10px rgba(15, 16, 16, 0.5)); text-align: center;border:5px solid white;padding: 50px;border-radius:0px 50px;"><b data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"data-aos-offset="0">Not a fit? Don't pay. Our 7-day trial ensures the right match</b>
+                <h1  class="display-3" style="font-family: Nourd-Bold;background-color: white;color: #193e6bff;filter: drop-shadow(0 0 10px rgba(15, 16, 16, 0.5)); text-align: center;border:5px solid white;padding: 50px;border-radius:0px 50px;"><b data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="0"data-aos-offset="0">Not a fit? Don't pay. Our 7-day trial ensures the right match.</b>
                 </h1>   
             </div> 
         </div>
@@ -2869,7 +2870,7 @@
                 <!-- 2. Web Developers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/web_developers.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/web_developers.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Web Developers</h4>
@@ -2881,7 +2882,7 @@
                 <!-- 3. Application Developers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/application_developers.jpg') ?>"
+                            src="<?= base_url('roles_we_provide_image/application_developers.webp') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Application Developers</h4>
@@ -2916,7 +2917,7 @@
                 <!-- 6. UI/UX Designers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/uiux_designers.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/uiux_designers.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">UI/UX Designers</h4>
@@ -2928,7 +2929,7 @@
                 <!-- 7. Cloud Support Engineers -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/cloud_support_engineers.jpeg') ?>"
+                            src="<?= base_url('roles_we_provide_image/cloud_support_engineers.webp') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Cloud Support Engineers</h4>
@@ -2940,7 +2941,7 @@
                 <!-- 8. Data Scientists -->
                 <div class="role-card hover-lift" data-aos="fade-up">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/data_scientists.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/data_scientists.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Data Scientists</h4>
@@ -2954,7 +2955,7 @@
                 <!-- 9. AI & ML Developers -->
                 <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/ai_and_ml_developers.jpg') ?>"
+                            src="<?= base_url('roles_we_provide_image/ai_and_ml_developers.webp') ?>"
                             class="role-img-new">
                     </div>
                     <div class="role-content">
@@ -2967,7 +2968,7 @@
                 <!-- 10. Security Engineers -->
                 <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/security_engineers.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/security_engineers.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Security Engineers</h4>
@@ -2979,7 +2980,7 @@
                 <!-- 11. System Architects -->
                 <div class="role-card hover-lift hidden-role" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/system_architects.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/system_architects.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">System Architects</h4>
@@ -2991,7 +2992,7 @@
                 <!-- 12. Database Administrators -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/database_administrators.jpg') ?>"
+                            src="<?= base_url('roles_we_provide_image/database_administrators.webp') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Database Administrators</h4>
@@ -3003,7 +3004,7 @@
                 <!-- 13. Network Engineers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/network_engineers.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/network_engineers.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Network Engineers</h4>
@@ -3015,7 +3016,7 @@
                 <!-- 14. IoT Developers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/iot_developers.jpg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/iot_developers.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">IoT Developers</h4>
@@ -3027,7 +3028,7 @@
                 <!-- 15. Blockchain Developers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/blockchain_developers.jpg') ?>"
+                            src="<?= base_url('roles_we_provide_image/blockchain_developers.webp') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Blockchain Developers</h4>
@@ -3039,7 +3040,7 @@
                 <!-- 16. Game Developers -->
                 <div class="role-card hidden-role hover-lift" data-aos="fade-up" style="display: none;">
                     <div class="role-img-wrapper"><img
-                            src="<?= base_url('roles_we_provide_image/game_developers.jpeg') ?>" class="role-img-new">
+                            src="<?= base_url('roles_we_provide_image/game_developers.webp') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
                         <h4 style="font-family:Nourd-Bold">Game Developers</h4>
@@ -3293,7 +3294,7 @@
     <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;">
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
-            <p class="center-text mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
+            <p class="text-left mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
                 Recognized nationally and globally, Mysoft Heaven (BD) Ltd. has earned top awards from the Bangladesh
                 government, international partners, and NGOs. Our work has been instrumental in advancing Bangladesh's
                 digital transformation in the public sector.
@@ -3306,7 +3307,7 @@
                         <!-- Placeholder -->
                     </div>
                     <h4 style="font-family:Nourd-Bold">Land Development Tax (LDTAX)</h4>
-                    <p class="text-justify" style="font-family:arial;font-size:14px;">About 5.7 crore Holding data, All holding owner data stored in the system. Citizen paying their LD Tax through the system and every day a good amount of revenue automatically received by Bangladesh bank.</p>
+                    <p class="" style="font-family:arial;font-size:13px !important;">The Land Development Tax System, a winner of the World Summit on the Information Society (WSIS) Prize, manages around 5.7 crore land holding records nationwide, securely storing owner data and enabling citizens to pay Land Development Tax with automated daily revenue collection directly to Bangladesh Bank.</p>
                 </div>
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
@@ -3314,16 +3315,16 @@
                         <!-- Placeholder -->
                     </div>
                     <h4 style="font-family:Nourd-Bold">Bhumi Sheba Mobile App</h4>
-                    <p class="text-justify" style="font-family:arial;font-size:14px;">Bhumi Sheba” Mobile App has been recognized nationally, receiving the prestigious Digital Bangladesh Award 2022 for its significant contribution to citizen-centric digital land services. The app provides comprehensive access to all land-related information in a structured, user-friendly manner. Citizens can easily obtain essential land service details, perform necessary calculations, and access accurate guidelines directly from their mobile devices
+                    <p class="" style="font-family:arial;font-size:13px !important;">The Bhumi Sheba (Vumi Seba) Mobile App, winner of the Digital Bangladesh Award 2022, delivers citizen-centric digital land services by providing easy mobile access to land information, tax calculations, and clear service guidelines for improved public convenience.
                     </p>
                 </div>
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
                         <img src="<?= base_url('hire_talent_media/Land_Development_Tax(LDTAX).png') ?>" alt="Award Logo">
-                        <!-- Placeholder -->
+                        <!-- Placeholder --> 
                     </div>
                     <h4 style="font-family:Nourd-Bold">Land Development Tax (LDTAX)</h4>
-                    <p class="text-justify" style="font-family:arial;font-size:14px;">LDTAX system is a large-scale e-governance solution in Bangladesh. The system currently manages more than 5.7 crore holding records, securely storing all holding owner information in a centralized digital repository. Citizens across the country are able to pay their Land Development (LD) Tax through the system, ensuring transparency, accessibility, and accountability.
+                    <p class="" style="font-family:arial;font-size:13px !important;">The Land Development Tax System, awarded the Digital Bangladesh Award 2022, is a nationwide e-governance platform managing 5.7 crore+ holding records, ensuring secure owner data storage and enabling transparent, accessible, and accountable Land Development Tax payments.
                     </p>
                 </div>
             </div>
@@ -3343,26 +3344,26 @@
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture1.png') ?>">
                         </div>
                         <div class="test-info"> 
-                            <h5>LIMS</h5>
-                            <span>LRB Ministry of Land</span>
-                            <span>By: Md. Rashed Kamal, ALRC-2</span>
+                            <span style="font-family: Nourd-Bold">LIMS</span>
+                            <span>Md. Rashed Kamal | ALRC-2</span>
+                            <span>Ministry of Land</span>
                         </div>
                     </div>
                     <div class="test-body">
                         <div class="project-tag"> Land Information Management System</div>
-                        <p style="font-size:12px !important ">“Mysoft Heaven delivered a complex e-governance system with strong expertise, professionalism, reliable delivery, and responsive support”</p>
+                        <p style="font-size:12px !important;float:left">“Mysoft Heaven delivered a complex e-governance system with strong expertise, professionalism, reliable delivery, and responsive support”</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="test-header">
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture2.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5> LA </h5>
-                            <span> Bangladesh Parliament Secretariat  </span>
-                            <span>By: Mostak Ahmed, Director</span>
+                            <span style="font-family: Nourd-Bold">LA</span>
+                            <span> Mostak Ahmed |  Mostak Ahmed</span>
+                            <span>Ministry of Land</span>
                         </div>
                     </div>
                     <div class="test-body">
@@ -3372,14 +3373,14 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="test-header">
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture3.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5>ERP</h5>
-                            <span>National Institute of Local Government(NILG)</span>
-                            <span>By: Sheikh Mofizul Islam, Director</span>
+                            <span style="font-family: Nourd-Bold">ERP</span>
+                            <span> Sheikh Mofizul Islam | Director</span>
+                            <span>National Institute of Local Government</span>
                         </div>
                     </div>
                     <div class="test-body">
@@ -3394,9 +3395,9 @@
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture4.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5>AD</h5>
+                            <span style="font-family: Nourd-Bold">AD</span>
+                            <span>Phil Yone | Managing Partner</span>
                             <span>Intelli Systems</span>
-                            <span>By: Phil Yone, Managing Partner</span>
                         </div>
                     </div>
                     <div class="test-body">
@@ -3411,9 +3412,9 @@
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture5.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5>HRM</h5>
-                            <span>Impress Group</span>
-                            <span>By: Md. Mahabubur Rahman, General Manager</span>
+                            <span style="font-family: Nourd-Bold">HR Sheba System</span>
+                            <span> Md. Mahabubur Rahman|  General Manager </span>
+                            <span>Ministry of Land</span>
                         </div>
                     </div>
                     <div class="test-body">
@@ -3428,9 +3429,9 @@
                         <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture6.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5>HRM</h5>
+                            <span style="font-family: Nourd-Bold">Sheba ERP System</span>
+                            <span> Tanveer Kadir | General Manage</span>
                             <span>Rishal Group</span>
-                            <span>By: Tanveer Kadir, General Manager</span>
                         </div>
                     </div>
                     <div class="test-body">
@@ -3545,7 +3546,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Phone Number <span class="text-danger">*</span></label>
-                                    <input type="text" name="phone" id="phone" class="form-control form-control-custom" placeholder="">
+                                    <input type="text" name="phone" id="phone" class="form-control form-control-custom" placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                     <span class="text-danger error-msg" id="error-phone"></span>
                                 </div>
                                 <div class="col-md-6 col-sm-12 form-group">
@@ -3783,7 +3784,7 @@
             margin: 50,
             nav: false,
             dots: true,
-            autoplay: false,
+            autoplay: true,
             autoplayTimeout: 2500,
             autoWidth: true, // Allow logos to have natural width
             center: true, // Center active item

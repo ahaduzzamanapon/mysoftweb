@@ -15,13 +15,7 @@
 
 <style>
     /* Fonts */
-    @font-face {
-        font-family: 'Nourd-Bold';
-        src: url('<?= base_url("home2media/nourd_bold.ttf") ?>') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-        font-display: swap;
-    }
+
 
     body {
         font-family: 'Poppins', sans-serif;

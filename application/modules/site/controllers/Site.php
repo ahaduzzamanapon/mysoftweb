@@ -109,11 +109,15 @@ class Site extends Frontend_Controller
         $this->form_validation->set_rules('company', 'Company Name', 'trim');
         $this->form_validation->set_rules('industry', 'Industry', 'trim');
         $this->form_validation->set_rules('service', 'Service', 'trim');
-        $this->form_validation->set_rules('product', 'Product', 'trim'); 
+        $this->form_validation->set_rules('product', 'Product', 'trim');
         $this->form_validation->set_rules('budget', 'Budget Range', 'trim');
         $this->form_validation->set_rules('project_details', 'Project Details', 'required|trim');
 
         if ($this->form_validation->run() == FALSE) {
+            if ($this->input->is_ajax_request()) {
+                echo json_encode(['status' => 'error', 'message' => validation_errors()]);
+                return;
+            }
             $this->session->set_flashdata('error', validation_errors());
             redirect($_SERVER['HTTP_REFERER']);
         } else {
@@ -128,13 +132,21 @@ class Site extends Frontend_Controller
                 'product' => $this->input->post('product'),
                 'budget' => $this->input->post('budget'),
                 'project_details' => $this->input->post('project_details'),
-                'created_at' => date('Y-m-d H:i:s') 
+                'created_at' => date('Y-m-d H:i:s')
             );
 
             // Attempt to save
             if ($this->Contact_model->save_contact($data)) {
+                if ($this->input->is_ajax_request()) {
+                    echo json_encode(['status' => 'success', 'message' => 'Thank you! Your message has been sent successfully.']);
+                    return;
+                }
                 $this->session->set_flashdata('success', 'Thank you! Your message has been sent successfully.');
             } else {
+                if ($this->input->is_ajax_request()) {
+                    echo json_encode(['status' => 'error', 'message' => 'Something went wrong. Please try again.']);
+                    return;
+                }
                 $this->session->set_flashdata('error', 'Something went wrong. Please try again.');
             }
             redirect($_SERVER['HTTP_REFERER']);
@@ -904,7 +916,7 @@ class Site extends Frontend_Controller
         $this->data['subview'] = 'hire_talent';
         $this->load->view('frontend/_layout_main', $this->data);
     }
-     public function hire_talent_get_touch()
+    public function hire_talent_get_touch()
     {
         $this->form_validation->set_rules('name', 'Full Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email Address', 'required|trim');
@@ -918,14 +930,14 @@ class Site extends Frontend_Controller
         if ($this->form_validation->run() == true) {
 
             $form_data = array(
-                'name'       => ucwords($this->input->post('name')),
-                'email'      => $this->input->post('email'),
-                'phone'      => $this->input->post('phone'),
-                'company'    => $this->input->post('company'),
-                'industry'   => $this->input->post('industry'),
-                'service'    => $this->input->post('service'),
-                'budget'     => $this->input->post('budget'),
-                'details'    => $this->input->post('details'),
+                'name' => ucwords($this->input->post('name')),
+                'email' => $this->input->post('email'),
+                'phone' => $this->input->post('phone'),
+                'company' => $this->input->post('company'),
+                'industry' => $this->input->post('industry'),
+                'service' => $this->input->post('service'),
+                'budget' => $this->input->post('budget'),
+                'details' => $this->input->post('details'),
                 'created_at' => date('Y-m-d H:i:s')
             );
 
@@ -1134,7 +1146,7 @@ class Site extends Frontend_Controller
     public function contact_us()
     {
         $this->data['contact'] = $this->Site_model->get_contact();
-         $this->data['all_services'] = $this->Site_model->get_all_services(false); // Get all active services
+        $this->data['all_services'] = $this->Site_model->get_all_services(false); // Get all active services
         $this->data['all_products'] = $this->Site_model->get_all_products_new(); // Get all active products
 
 

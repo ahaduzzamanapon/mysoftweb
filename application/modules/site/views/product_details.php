@@ -39,7 +39,6 @@
     body {
         font-family: var(--font-main);
         color: #334155;
-        background-color: #f8fafc;
         line-height: 1.7;
         font-size: 18px;
     }
@@ -70,8 +69,8 @@
 
     .section-padding {
         padding: 62px 0px 0px 0px;
-    position: relative;
-    overflow: hidden;
+        position: relative;
+        overflow: hidden;
     }
 
     .bg-white {
@@ -130,16 +129,16 @@
     }
 
     .btn-premium-outline {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    padding: 6px 15px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none !important;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
+        background: transparent;
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+        padding: 6px 15px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
 
     .btn-premium-outline:hover {
         background: var(--primary-light);
@@ -157,11 +156,12 @@
     .hero-content {
         padding-right: 40px;
     }
+
     .hero-section {
-    padding: 0;
-    background: #fff;
-    margin-bottom: 36px;
-}
+        padding: 0;
+        background: #fff;
+        margin-bottom: 36px;
+    }
 
     .hero-badge {
         display: inline-block;
@@ -205,8 +205,9 @@
 
     .hero-image-wrapper img {
         border-radius: var(--radius-lg);
-        width: 100%;
+        width: 95%;
         display: block;
+        margin-top: 16px;
     }
 
     /* =========================================
@@ -511,7 +512,7 @@
         margin-bottom: 25px;
     }
 
-   
+
 
     .faq-item {
         background: white;
@@ -582,6 +583,53 @@
             transform: scale(1);
         }
     }
+/* AJAX Loader Styles */
+    .ajax-loader {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--radius-lg);
+    }
+
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid var(--primary-light);
+        border-top: 5px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .submit-message {
+        display: none;
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .submit-message.success {
+        background-color: #d1fae5;
+        color: #065f46;
+        border: 1px solid #34d399;
+    }
+    .submit-message.error {
+        background-color: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #f87171;
+    }
 </style>
 <link rel="stylesheet" href="<?= base_url('assets/css/home2.css') ?>">
 <style>
@@ -600,387 +648,392 @@
 
 
 <div role="main" class="main">
-    <?php if (isset($product) && !empty($product)): 
+    <?php if (isset($product) && !empty($product)):
         ?>
 
-        <!-- 1. Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 hero-content">
-                        <span class="hero-badge"><i class="fa fa-star"></i> Featured Product</span>
-                        <h1><?php echo $product->hero_heading; ?></h1>
-                        <p><?php echo $product->hero_subheading; ?></p>
-                        <div style="margin-bottom: 30px;  opacity: 0.8;">
-                            <?php echo $product->hero_description; ?>
+            <!-- 1. Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 hero-content">
+                            <span class="hero-badge"><i class="fa fa-star"></i> Featured Product</span>
+                            <h1><?php echo $product->hero_heading; ?></h1>
+                            <p><?php echo $product->hero_subheading; ?></p>
+                            <div style="margin-bottom: 30px;  opacity: 0.8;">
+                                <?php echo $product->hero_description; ?>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="#support_contact" class="scroll-link btn-premium"><?php echo $product->hero_button_text; ?></a>
+                            </div>
                         </div>
-                        <div class="d-flex gap-3">
-                            <a href="#support_contact" class="scroll-link btn-premium"><?php echo $product->hero_button_text; ?></a>
+                        <div class="col-lg-6">
+                            <div class="hero-image-wrapper">
+                                <?php if ($product->demo_call_to_action_image): ?>
+                                        <img src="<?php echo base_url('product_img/' . $product->demo_call_to_action_image); ?>"
+                                            alt="<?php echo $product->hero_heading; ?>">
+                                <?php else: ?>
+                                        <img src="https://via.placeholder.com/800x600?text=App+Preview" alt="Placeholder">
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="hero-image-wrapper">
-                            <?php if ($product->demo_call_to_action_image): ?>
-                                <img src="<?php echo base_url('product_img/' . $product->demo_call_to_action_image); ?>"
-                                    alt="<?php echo $product->hero_heading; ?>">
-                            <?php else: ?>
-                                <img src="https://via.placeholder.com/800x600?text=App+Preview" alt="Placeholder">
+                </div>
+            </section>
+
+            <!-- 2. Why Us - Floating Bubbles Layout -->
+            <section class="why-us-section section-padding pb-5" style="background-color: #E6F1FE!important;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="bubbles-wrapper">
+                                <?php if (!empty($product->metrics)):
+                                    $i = 0;
+                                    foreach ($product->metrics as $metric): ?>
+                                                <div class="metric-bubble">
+                                                    <h3><?php echo $metric->value; ?></h3>
+                                                    <span><?php echo $metric->label; ?></span>
+                                                </div>
+                                                <?php $i++; endforeach; endif; ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div style="padding-left: 20px;">
+                                <h2 class="section-title">Why Choose <span
+                                        class="text-gradient"><?php echo $product->name; ?>?</span></h2>
+                                <h4
+                                    style="margin-bottom: 3px;font-weight: 400;color: var(--secondary);font-size: 26px;font-family: 'Nourd-Bold', sans-serif;margin-top: 19px;">
+                                    <?php echo $product->why_heading; ?>
+                                </h4>
+                                <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 10px;">
+                                    <?php echo $product->why_description; ?>
+                                </p>
+
+                                <ul class="fa-ul" style="margin-left: 25px; margin-bottom: 35px; color: #475569;">
+                                    <li style="margin-bottom: 10px;"><i class="fa-li fa fa-check-circle"
+                                            style="color: var(--accent-green);"></i> Top-notch performance tailored for your
+                                        business.</li>
+                                    <li style="margin-bottom: 10px;"><i class="fa-li fa fa-check-circle"
+                                            style="color: var(--accent-green);"></i> 24/7 dedicated support team.</li>
+                                    <li><i class="fa-li fa fa-check-circle" style="color: var(--accent-green);"></i> Scalable
+                                        architecture that grows with you.</li>
+                                </ul>
+
+                                <a href="<?php echo base_url('contact-us'); ?>" class="btn-premium-outline">Detailed Analysis <i
+                                        class="fa fa-arrow-right" style="margin-left: 5px;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Summary Stats (Vibrant Cards) -->
+            <?php if (!empty($product->app_links)): ?>
+                    <section class="section-padding bg-white mb-5">
+                        <div class="container">
+                            <div class="text-center">
+                                <h2 class="section-title mb-0"><?php echo $product->summary_heading; ?></h2>
+                                <div style="height: 50px;"></div>
+                            </div>
+                            <div class="row">
+                                <?php
+                                $bg_classes = ['bg-green', 'bg-blue', 'bg-red', 'bg-orange'];
+                                $i = 0;
+                                foreach ($product->app_links as $link): ?>
+                                        <div class="col-md-3 col-sm-6 col-xs-12 mb-4">
+                                            <div class="summary-card <?php echo $bg_classes[$i % 4]; ?>">
+                                                <div class="icon"><i class="fa <?php echo $link->icon; ?>"></i></div>
+                                                <h4><?php echo $link->count_text; ?></h4>
+                                                <p><?php echo $link->description; ?></p>
+                                            </div>
+                                        </div>
+                                        <?php $i++; endforeach; ?>
+                            </div>
+                        </div>
+                    </section>
+            <?php endif; ?>
+
+            <!-- 4. Modules (Glass Grid) -->
+            <?php if (!empty($product->modules)): ?>
+                    <section class="section-padding bg-light" style="background-color: #E6F1FE!important;">
+                        <div class="container">
+                            <div class="text-center">
+                                <h2 class="section-title"><?php echo $product->modules_heading; ?></h2>
+                                <p class="section-subtitle">Comprehensive modules designed to cover every aspect of your operation.</p>
+                            </div>
+                            <div class="row">
+                                <?php $colors = ['icon-blue', 'icon-green', 'icon-purple'];
+                                $c = 0;
+                                foreach ($product->modules as $module): ?>
+                                        <div class="col-lg-4 col-md-6 mb-4" style="margin-bottom: 30px;">
+                                            <div class="glass-card">
+                                                <div class="icon-box <?php echo $colors[$c % 3]; ?>">
+                                                    <i class="fa <?php echo $module->icon; ?>"></i>
+                                                </div>
+                                                <h4 style="font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
+                                                    <?php echo $module->title; ?>
+                                                </h4>
+                                                <p style="color: var(--secondary); font-size: 18px; margin-bottom: 0;">
+                                                    <?php echo $module->description; ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <?php $c++; endforeach; ?>
+                            </div>
+                        </div>
+                    </section>
+            <?php endif; ?>
+
+            <!-- 5. Features (Alternating Layout or Grid) -->
+            <?php if (!empty($product->features)): ?>
+                    <section class="section-padding bg-white mb-5">
+                        <div class="container">
+                            <div class="text-center">
+                                <h2 class="section-title"><?php echo $product->features_heading; ?></h2>
+                                <p class="section-subtitle"><?php echo $product->features_subheading; ?></p>
+                            </div>
+                            <div class="row" style="justify-content: center;">
+                                <?php foreach ($product->features as $feature): ?>
+                                        <div class="col-md-4 col-sm-6 mb-4" style="margin-bottom: 30px;  border-radius: 12px; height: 100%;">
+                                            <div class="text-center p-4 card features_card" style="min-height: 287px;">
+                                                <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary-color);">
+                                                    <i class="fa <?php echo $feature->icon == null ? 'fa-star' : $feature->icon; ?>"></i>
+                                                </div>
+                                                <h4 style="font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
+                                                    <?php echo $feature->title; ?>
+                                                </h4>
+                                                <p style="color: var(--secondary);"><?php echo $feature->description; ?></p>
+                                            </div>
+                                        </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </section>
+            <?php endif; ?>
+
+            <!-- 6. Audiences / Segments -->
+            <?php if (!empty($product->audiences)): ?>
+                    <section class="section-padding pb-5" style="background-color: #E6F1FE!important;">
+                        <div class="container">
+                            <div class="text-center mb-5">
+                                <h2 class="section-title"><?php echo $product->audiences_heading; ?></h2>
+                            </div>
+                            <div class="row justify-content-center">
+                                <?php foreach ($product->audiences as $audience): ?>
+                                        <div class="col-md-6 mb-4" style="margin-bottom: 30px;">
+                                            <div class="audiences_card"
+                                                style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; align-items: start;">
+                                                <div
+                                                    style="background: var(--primary-light);color: var(--primary-color);border-radius: 26%;font-size: 24px;height: 61px;width: 61px;display: flex;align-items: center;justify-content: center;padding: 18px;margin-right: 13px;">
+                                                    <i class="fa <?php echo $audience->icon; ?>"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 style="margin-top: 5px; font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
+                                                        <?php echo $audience->title; ?>
+                                                    </h4>
+                                                    <p style="margin-bottom: 0; color: var(--secondary);"><?php echo $audience->description; ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </section>
+            <?php endif; ?>
+
+            <!-- 7. Technologies -->
+            <?php if (!empty($product->technologies)): ?>
+                    <section class="section-padding bg-white mb-5">
+                        <div class="container">
+                            <div class="text-center mb-5">
+                                <h2>
+                                    <?php echo $product->technology_heading; ?>
+                                </h2>
+                            </div>
+                            <div class="row justify-content-center">
+                                <?php foreach ($product->technologies as $tech): ?>
+                                        <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
+                                            <img src="<?php echo base_url('assets/img/tech/' . $tech->icon); ?>"
+                                                alt="<?php echo $tech->title; ?>"
+                                                style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
+                                            <h6 style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8;"><?php echo $tech->title; ?></h6>
+                                        </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <script>
+                                document.querySelectorAll('.col-6 img').forEach(img => {
+                                    img.addEventListener('mouseenter', () => { img.style.filter = 'none'; img.style.opacity = '1'; img.style.transform = 'scale(1.1)'; });
+                                    img.addEventListener('mouseleave', () => { img.style.filter = 'grayscale(100%)'; img.style.opacity = '0.6'; img.style.transform = 'scale(1)'; });
+                                });
+                            </script>
+                        </div>
+                    </section>
+            <?php endif; ?>
+
+            <!-- 8. Pricing Tables -->
+            <?php if (!empty($product->pricing_plans)): ?>
+                    <section class="section-padding bg-lightb pb-5" style="background-color: #E6F1FE!important;">
+                        <div class="container">
+                            <div class="text-center">
+                                <h2 class="section-title"><?php echo $product->pricing_heading; ?></h2>
+                                <p class="section-subtitle"><?php echo $product->pricing_subheading; ?></p>
+                            </div>
+                            <div class="row pricing-wrapper justify-content-center">
+                                <?php foreach ($product->pricing_plans as $plan):
+                                    $is_pop = ($plan->plan_name == 'Premium' || $plan->plan_name == 'Standard' || $plan->plan_name == 'Pro');
+                                    ?>
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="pricing-card <?php echo $is_pop ? 'popular' : ''; ?>">
+                                                <h3><?php echo $plan->plan_name; ?></h3>
+                                                <div class="price"><?php echo $plan->price; ?></div>
+                                                <div class="unit"><?php echo $plan->price_unit; ?></div>
+
+                                                <ul class="pricing-features">
+                                                    <?php if (!empty($plan->features)):
+                                                        foreach ($plan->features as $feature): ?>
+                                                                    <li><i class="fa fa-circle-o-notch"></i> <?php echo $feature->feature_text; ?></li>
+                                                            <?php endforeach; endif; ?>
+                                                </ul>
+
+                                                <a href="#support_contact"
+                                                    class="scroll-link <?php echo $is_pop ? 'btn-premium' : 'btn-premium-outline'; ?>"
+                                                    style="width: 100%;"><?php echo $plan->button_text; ?></a>
+                                            </div>
+                                        </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </section>
+            <?php endif; ?>
+
+            <!-- 9. Support & Contact (Split Layout) -->
+            <section id="support_contact" class="support-section section-padding mt-5 pb-5">
+                <div class="container">
+                    <div class="row">
+                        <!-- FAQ Column -->
+                        <div class="col-lg-6 mb-5">
+                            <h2 class="section-title" style="margin-bottom: 30px;">Frequently Asked Questions</h2>
+
+                            <?php if (!empty($product->faqs)): ?>
+                                    <div class="faq-list">
+                                        <?php $f = 0;
+                                        foreach ($product->faqs as $faq): ?>
+                                                <div class="faq-item <?php echo $f == 0 ? 'active' : ''; ?>">
+                                                    <div class="faq-question">
+                                                        <span><?php echo $faq->question; ?></span>
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </div>
+                                                    <div class="faq-answer" <?php echo $f == 0 ? 'style="display:block;"' : ''; ?>>
+                                                        <p><?php echo $faq->answer; ?></p>
+                                                    </div>
+                                                </div>
+                                                <?php $f++; endforeach; ?>
+                                    </div>
                             <?php endif; ?>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 2. Why Us - Floating Bubbles Layout -->
-        <section class="why-us-section section-padding" style="background-color: #E6F1FE!important;">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="bubbles-wrapper">
-                            <?php if (!empty($product->metrics)):
-                                $i = 0;
-                                foreach ($product->metrics as $metric): ?>
-                                    <div class="metric-bubble">
-                                        <h3><?php echo $metric->value; ?></h3>
-                                        <span><?php echo $metric->label; ?></span>
-                                    </div>
-                                    <?php $i++; endforeach; endif; ?>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div style="padding-left: 20px;">
-                            <h2 class="section-title">Why Choose <span
-                                    class="text-gradient"><?php echo $product->name; ?>?</span></h2>
-                            <h4
-                                style="margin-bottom: 3px;font-weight: 400;color: var(--secondary);font-size: 26px;font-family: 'Nourd-Bold', sans-serif;margin-top: 19px;">
-                                <?php echo $product->why_heading; ?>
-                            </h4>
-                            <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 10px;">
-                                <?php echo $product->why_description; ?>
-                            </p>
-
-                            <ul class="fa-ul" style="margin-left: 25px; margin-bottom: 35px; color: #475569;">
-                                <li style="margin-bottom: 10px;"><i class="fa-li fa fa-check-circle"
-                                        style="color: var(--accent-green);"></i> Top-notch performance tailored for your
-                                    business.</li>
-                                <li style="margin-bottom: 10px;"><i class="fa-li fa fa-check-circle"
-                                        style="color: var(--accent-green);"></i> 24/7 dedicated support team.</li>
-                                <li><i class="fa-li fa fa-check-circle" style="color: var(--accent-green);"></i> Scalable
-                                    architecture that grows with you.</li>
-                            </ul>
-
-                            <a href="<?php echo base_url('contact-us'); ?>" class="btn-premium-outline">Detailed Analysis <i
-                                    class="fa fa-arrow-right" style="margin-left: 5px;"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Summary Stats (Vibrant Cards) -->
-        <?php if (!empty($product->app_links)): ?>
-            <section class="section-padding bg-white mb-5">
-                <div class="container">
-                    <div class="text-center">
-                        <h2 class="section-title mb-0"><?php echo $product->summary_heading; ?></h2>
-                        <div style="height: 50px;"></div>
-                    </div>
-                    <div class="row">
-                        <?php
-                        $bg_classes = ['bg-green', 'bg-blue', 'bg-red', 'bg-orange'];
-                        $i = 0;
-                        foreach ($product->app_links as $link): ?>
-                            <div class="col-md-3 col-sm-6 col-xs-12 mb-4">
-                                <div class="summary-card <?php echo $bg_classes[$i % 4]; ?>">
-                                    <div class="icon"><i class="fa <?php echo $link->icon; ?>"></i></div>
-                                    <h4><?php echo $link->count_text; ?></h4>
-                                    <p><?php echo $link->description; ?></p>
-                                </div>
-                            </div>
-                            <?php $i++; endforeach; ?>
-                    </div>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- 4. Modules (Glass Grid) -->
-        <?php if (!empty($product->modules)): ?>
-            <section class="section-padding bg-light" style="background-color: #E6F1FE!important;">
-                <div class="container">
-                    <div class="text-center">
-                        <h2 class="section-title"><?php echo $product->modules_heading; ?></h2>
-                        <p class="section-subtitle">Comprehensive modules designed to cover every aspect of your operation.</p>
-                    </div>
-                    <div class="row">
-                        <?php $colors = ['icon-blue', 'icon-green', 'icon-purple'];
-                        $c = 0;
-                        foreach ($product->modules as $module): ?>
-                            <div class="col-lg-4 col-md-6 mb-4" style="margin-bottom: 30px;">
-                                <div class="glass-card">
-                                    <div class="icon-box <?php echo $colors[$c % 3]; ?>">
-                                        <i class="fa <?php echo $module->icon; ?>"></i>
-                                    </div>
-                                    <h4 style="font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
-                                        <?php echo $module->title; ?>
-                                    </h4>
-                                    <p style="color: var(--secondary); font-size: 18px; margin-bottom: 0;">
-                                        <?php echo $module->description; ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <?php $c++; endforeach; ?>
-                    </div>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- 5. Features (Alternating Layout or Grid) -->
-        <?php if (!empty($product->features)): ?>
-            <section class="section-padding bg-white mb-5">
-                <div class="container">
-                    <div class="text-center">
-                        <h2 class="section-title"><?php echo $product->features_heading; ?></h2>
-                        <p class="section-subtitle"><?php echo $product->features_subheading; ?></p>
-                    </div>
-                    <div class="row" style="justify-content: center;">
-                        <?php foreach ($product->features as $feature): ?>
-                            <div class="col-md-4 col-sm-6 mb-4" style="margin-bottom: 30px;  border-radius: 12px; height: 100%;">
-                                <div class="text-center p-4 card features_card" style="min-height: 287px;">
-                                    <div style="font-size: 3rem; margin-bottom: 20px; color: var(--primary-color);">
-                                        <i class="fa <?php echo $feature->icon == null ? 'fa-star' : $feature->icon; ?>"></i>
-                                    </div>
-                                    <h4 style="font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
-                                        <?php echo $feature->title; ?>
-                                    </h4>
-                                    <p style="color: var(--secondary);"><?php echo $feature->description; ?></p>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- 6. Audiences / Segments -->
-        <?php if (!empty($product->audiences)): ?>
-            <section class="section-padding pb-5" style="background-color: #E6F1FE!important;">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="section-title"><?php echo $product->audiences_heading; ?></h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <?php foreach ($product->audiences as $audience): ?>
-                            <div class="col-md-6 mb-4" style="margin-bottom: 30px;">
-                                <div class="audiences_card"
-                                    style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; align-items: start;">
-                                    <div
-                                        style="background: var(--primary-light);color: var(--primary-color);border-radius: 26%;font-size: 24px;height: 61px;width: 61px;display: flex;align-items: center;justify-content: center;padding: 18px;margin-right: 13px;">
-                                        <i class="fa <?php echo $audience->icon; ?>"></i>
-                                    </div>
-                                    <div>
-                                        <h4 style="margin-top: 5px; font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
-                                            <?php echo $audience->title; ?>
-                                        </h4>
-                                        <p style="margin-bottom: 0; color: var(--secondary);"><?php echo $audience->description; ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- 7. Technologies -->
-        <?php if (!empty($product->technologies)): ?>
-            <section class="section-padding bg-white mb-5">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2>
-                            <?php echo $product->technology_heading; ?>
-                        </h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <?php foreach ($product->technologies as $tech): ?>
-                            <div class="col-6 col-sm-4 col-md-2 text-center mb-4">
-                                <img src="<?php echo base_url('assets/img/tech/' . $tech->icon); ?>"
-                                    alt="<?php echo $tech->title; ?>"
-                                    style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s;">
-                                <h6 style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8;"><?php echo $tech->title; ?></h6>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <script>
-                        document.querySelectorAll('.col-6 img').forEach(img => {
-                            img.addEventListener('mouseenter', () => { img.style.filter = 'none'; img.style.opacity = '1'; img.style.transform = 'scale(1.1)'; });
-                            img.addEventListener('mouseleave', () => { img.style.filter = 'grayscale(100%)'; img.style.opacity = '0.6'; img.style.transform = 'scale(1)'; });
-                        });
-                    </script>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- 8. Pricing Tables -->
-        <?php if (!empty($product->pricing_plans)): ?>
-            <section class="section-padding bg-lightb pb-5" style="background-color: #E6F1FE!important;">
-                <div class="container">
-                    <div class="text-center">
-                        <h2 class="section-title"><?php echo $product->pricing_heading; ?></h2>
-                        <p class="section-subtitle"><?php echo $product->pricing_subheading; ?></p>
-                    </div>
-                    <div class="row pricing-wrapper justify-content-center">
-                        <?php foreach ($product->pricing_plans as $plan):
-                            $is_pop = ($plan->plan_name == 'Premium' || $plan->plan_name == 'Standard' || $plan->plan_name == 'Pro');
-                            ?>
-                            <div class="col-lg-4 col-md-6 mb-4">
-                                <div class="pricing-card <?php echo $is_pop ? 'popular' : ''; ?>">
-                                    <h3><?php echo $plan->plan_name; ?></h3>
-                                    <div class="price"><?php echo $plan->price; ?></div>
-                                    <div class="unit"><?php echo $plan->price_unit; ?></div>
-
-                                    <ul class="pricing-features">
-                                        <?php if (!empty($plan->features)):
-                                            foreach ($plan->features as $feature): ?>
-                                                <li><i class="fa fa-circle-o-notch"></i> <?php echo $feature->feature_text; ?></li>
-                                            <?php endforeach; endif; ?>
-                                    </ul>
-
-                                    <a href="#support_contact"
-                                        class="scroll-link <?php echo $is_pop ? 'btn-premium' : 'btn-premium-outline'; ?>"
-                                        style="width: 100%;"><?php echo $plan->button_text; ?></a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- 9. Support & Contact (Split Layout) -->
-        <section id="support_contact" class="support-section section-padding mt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <!-- FAQ Column -->
-                    <div class="col-lg-6 mb-5">
-                        <h2 class="section-title" style="margin-bottom: 30px;">Frequently Asked Questions</h2>
-
-                        <?php if (!empty($product->faqs)): ?>
-                            <div class="faq-list">
-                                <?php $f = 0;
-                                foreach ($product->faqs as $faq): ?>
-                                    <div class="faq-item <?php echo $f == 0 ? 'active' : ''; ?>">
-                                        <div class="faq-question">
-                                            <span><?php echo $faq->question; ?></span>
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                        <div class="faq-answer" <?php echo $f == 0 ? 'style="display:block;"' : ''; ?>>
-                                            <p><?php echo $faq->answer; ?></p>
-                                        </div>
-                                    </div>
-                                    <?php $f++; endforeach; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-
-                    <!-- Form Column -->
-                     <div class="col-lg-6">
-                         <div class="card p-4">
-                                 <h3 class="mb-20" style="font-weight: 700; color: #000;">GET IN TOUCH</h3>
-                                 <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
-                                     Have a project in mind or need the right tech
-                                     team? Reach out to us and our experts will get back to you
-                                     shortly.
-                                 </p>
+                        <!-- Form Column -->
+                         <div class="col-lg-6">
+                             <div class="card p-4">
+                                     <h3 class="mb-20" style="font-weight: 700; color: #000;">GET IN TOUCH</h3>
+                                     <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
+                                         Have a project in mind or need the right tech
+                                         team? Reach out to us and our experts will get back to you
+                                         shortly.
+                                     </p>
      
-                                 <form action="<?= base_url('submit-contact') ?>" method="post" id="contact-form-home2">
-                                     <div class="row">
-                                         <div class="col-md-6 col-sm-12 form-group">
-                                             <label>Full Name <span class="text-danger">*</span></label>
-                                             <input type="text" name="name" class="form-control form-control-custom"
-                                                 placeholder="" required>
+                                     <form action="<?= base_url('submit-contact') ?>" method="post" id="contact-form-home2">
+                                         <div class="row">
+                                             <div class="col-md-6 col-sm-12 form-group">
+                                                 <label>Full Name <span class="text-danger">*</span></label>
+                                                 <input type="text" name="name" class="form-control form-control-custom"
+                                                     placeholder="" required>
+                                             </div>
+                                             <div class="col-md-6 col-sm-12 form-group">
+                                                 <label>Email <span class="text-danger">*</span></label>
+                                                 <input type="email" name="email" class="form-control form-control-custom"
+                                                     placeholder="" required>
+                                             </div>
                                          </div>
-                                         <div class="col-md-6 col-sm-12 form-group">
-                                             <label>Email <span class="text-danger">*</span></label>
-                                             <input type="email" name="email" class="form-control form-control-custom"
-                                                 placeholder="" required>
+                                         <div class="row">
+                                             <div class="col-md-6 col-sm-12 form-group">
+                                                 <label>Phone Number <span class="text-danger">*</span></label>
+                                                 <input type="text" name="phone" class="form-control form-control-custom"
+                                                     placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                             </div>
+                                             <div class="col-md-6 col-sm-12 form-group">
+                                                 <label>Company Name <span class="text-danger">*</span></label>
+                                                 <input type="text" name="company" class="form-control form-control-custom"
+                                                     placeholder="">
+                                             </div>
                                          </div>
-                                     </div>
-                                     <div class="row">
-                                         <div class="col-md-6 col-sm-12 form-group">
-                                             <label>Phone Number <span class="text-danger">*</span></label>
-                                             <input type="text" name="phone" class="form-control form-control-custom"
-                                                 placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                         <div class="row">
+                                             <div class="col-md-6 col-sm-12 form-group">
+                                                 <label>Select Industry <span class="text-danger">*</span></label>
+                                                 <select class="form-control form-control-custom" name="industry">
+                                                     <option value="">Select an Industry</option>
+                                                     <option value="Technology">Technology</option>
+                                                     <option value="Healthcare">Healthcare</option>
+                                                     <option value="Finance">Finance</option>
+                                                     <option value="Retail">Retail</option>
+                                                     <option value="Manufacturing">Manufacturing</option>
+                                                     <option value="Education">Education</option>
+                                                     <option value="Real Estate">Real Estate</option>
+                                                     <option value="Other">Other</option>
+                                                 </select>
+                                             </div>
+                                             <div class="col-md-6 col-sm-12 form-group d-none">
+                                                 <label>Select Service <span class="text-danger"></span></label>
+                                                 <select class="form-control form-control-custom" name="service">
+                                                     <option value="">Select a service</option>
+                                                     <?php if (!empty($all_services)): ?>
+                                                             <?php foreach ($all_services as $service): ?>
+                                                                     <option value="<?= $service->id ?>">
+                                                                         <?= ucwords(str_replace('-', ' ', $service->slug)) ?>
+                                                                     </option> <?php endforeach; ?>
+                                                     <?php endif; ?>
+                                                 </select>
+                                             </div>
+                                             <div class="col-md-6 col-sm-12 form-group">
+                                                 <label>Select Product <span class="text-danger"></span></label>
+                                                 <select class="form-control form-control-custom" name="product">
+                                                     <option value="">Select a Product</option>
+                                                     <?php
+                                                     $this->load->model('Site_model');
+                                                     $all_products = $this->Site_model->get_all_products_new(); // Get all active products
+                                                 
+
+                                                     if (!empty($all_products)): ?>
+                                                             <?php foreach ($all_products as $pro): ?>
+                                                                     <option value="<?= $pro->id ?>"  <?= $pro->id == $product->id ? 'selected' : '' ?>><?= $pro->name ?></option>
+                                                             <?php endforeach; ?>
+                                                     <?php endif; ?>
+                                                 </select>
+                                             </div>
                                          </div>
-                                         <div class="col-md-6 col-sm-12 form-group">
-                                             <label>Company Name <span class="text-danger">*</span></label>
-                                             <input type="text" name="company" class="form-control form-control-custom"
-                                                 placeholder="">
+                                         <div class="form-group">
+                                             <label>Project details <span class="text-danger">*</span></label>
+                                             <textarea name="project_details" class="form-control form-control-custom" rows="4"
+                                                 placeholder="Tell us about your project or talent needs..." required></textarea>
                                          </div>
-                                     </div>
-                                     <div class="row">
-                                         <div class="col-md-6 col-sm-12 form-group">
-                                             <label>Select Industry <span class="text-danger">*</span></label>
-                                             <select class="form-control form-control-custom" name="industry">
-                                                 <option value="">Select an Industry</option>
-                                                 <option value="Technology">Technology</option>
-                                                 <option value="Healthcare">Healthcare</option>
-                                                 <option value="Finance">Finance</option>
-                                                 <option value="Retail">Retail</option>
-                                                 <option value="Manufacturing">Manufacturing</option>
-                                                 <option value="Education">Education</option>
-                                                 <option value="Real Estate">Real Estate</option>
-                                                 <option value="Other">Other</option>
-                                             </select>
-                                         </div>
-                                         <div class="col-md-6 col-sm-12 form-group d-none">
-                                             <label>Select Service <span class="text-danger"></span></label>
-                                             <select class="form-control form-control-custom" name="service">
-                                                 <option value="">Select a service</option>
-                                                 <?php if (!empty($all_services)): ?>
-                                                     <?php foreach ($all_services as $service): ?>
-                                                         <option value="<?= $service->id ?>">
-                                                             <?= ucwords(str_replace('-', ' ', $service->slug)) ?>
-                                                         </option> <?php endforeach; ?>
-                                                 <?php endif; ?>
-                                             </select>
-                                         </div>
-                                         <div class="col-md-6 col-sm-12 form-group">
-                                             <label>Select Product <span class="text-danger"></span></label>
-                                             <select class="form-control form-control-custom" name="product">
-                                                 <option value="">Select a Product</option>
-                                                 <?php
-                                                         $this->load->model('Site_model');
-                                                                 $all_products= $this->Site_model->get_all_products_new(); // Get all active products
      
-     
-                                                 if (!empty($all_products)): ?>
-                                                     <?php foreach ($all_products as $pro): ?>
-                                                         <option value="<?= $pro->id ?>"  <?= $pro->id ==$product->id?'selected':'' ?>><?= $pro->name ?></option>
-                                                     <?php endforeach; ?>
-                                                 <?php endif; ?>
-                                             </select>
-                                         </div>
-                                     </div>
-                                     <div class="form-group">
-                                         <label>Project details <span class="text-danger">*</span></label>
-                                         <textarea name="project_details" class="form-control form-control-custom" rows="4"
-                                             placeholder="Tell us about your project or talent needs..." required></textarea>
-                                     </div>
-     
-                                     <button style="background: #0373ba;color: white;font-size: 17px;font-family: 'Nourd-Medium';" type="submit" class="btn btn-block btn-submit">Send Inquiry <i
-                                             class="fa fa-paper-plane"></i></button>
-                                 </form>
+                                         <button style="background: #0373ba;color: white;font-size: 17px;font-family: 'Nourd-Medium';" type="submit" class="btn btn-block btn-submit">Send Inquiry <i
+                                                 class="fa fa-paper-plane"></i></button>
+                                     </form>
                              
+                                 <div id="contact-loader" class="ajax-loader">
+                                     <div class="spinner"></div>
+                                 </div>
+                                 <div id="form-message" class="submit-message"></div>
+                             
+                             </div>
                          </div>
-                     </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Bottom CTA -->
-        <!-- <section class="section-padding text-center" style="background: #0f172a; color: white;">
+            <!-- Bottom CTA -->
+            <!-- <section class="section-padding text-center" style="background: #0f172a; color: white;">
             <div class="container">
                 <h2 style="color: white; margin-bottom: 20px;">
                     <?php echo $product->demo_call_to_action_heading ?: 'Ready to Transform Your Business?'; ?>
@@ -993,12 +1046,12 @@
         </section> -->
 
     <?php else: ?>
-        <div class="container section-padding text-center"
-            style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
-            <h2>Product Not Found</h2>
-            <p>The product you are looking for does not exist.</p>
-            <a href="<?php echo base_url('site/products'); ?>" class="btn-premium">Back to Products</a>
-        </div>
+            <div class="container section-padding text-center"
+                style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
+                <h2>Product Not Found</h2>
+                <p>The product you are looking for does not exist.</p>
+                <a href="<?php echo base_url('site/products'); ?>" class="btn-premium">Back to Products</a>
+            </div>
     <?php endif; ?>
 
 </div>
@@ -1034,6 +1087,54 @@
             } else {
                 parent.classList.add('active');
                 answer.style.display = 'block';
+            }
+        });
+    });
+    // AJAX Contact Form Submission
+    $('#contact-form-home2').on('submit', function(e) {
+        e.preventDefault();
+        
+        var form = $(this);
+        var loader = $('#contact-loader');
+        var messageBox = $('#form-message');
+        var submitBtn = form.find('button[type="submit"]');
+
+        // Reset message
+        messageBox.hide().removeClass('success error').html('');
+        
+        // Show loader
+        loader.css('display', 'flex');
+        submitBtn.prop('disabled', true);
+
+        $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: form.serialize(),
+            dataType: 'json',
+            success: function(response) {
+                loader.hide();
+                submitBtn.prop('disabled', false);
+                
+                if (response.status === 'success') {
+                    messageBox.addClass('success').html(response.message).fadeIn();
+                    form[0].reset();
+                    // Optional: Scroll to message
+                    $('html, body').animate({
+                        scrollTop: messageBox.offset().top - 100
+                    }, 500);
+                } else {
+                    messageBox.addClass('error').html(response.message).fadeIn();
+                }
+                
+                // Auto hide message after 5 seconds
+                setTimeout(function() {
+                    messageBox.fadeOut();
+                }, 5000);
+            },
+            error: function(xhr, status, error) {
+                loader.hide();
+                submitBtn.prop('disabled', false);
+                messageBox.addClass('error').html('An error occurred. Please try again later.').fadeIn();
             }
         });
     });

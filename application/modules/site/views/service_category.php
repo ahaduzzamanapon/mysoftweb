@@ -5,13 +5,7 @@
 
 <style>
     /* Fonts */
-    @font-face {
-        font-family: 'Nourd-Bold';
-        src: url('<?= base_url("home2media/nourd_bold.ttf") ?>') format('truetype');
-        font-weight: bold;
-        font-style: normal;
-        font-display: swap;
-    }
+
     .ht-main-wrapper {
         width: 100vw;
         overflow: hidden;

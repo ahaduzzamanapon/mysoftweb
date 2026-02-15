@@ -1,8 +1,11 @@
+<link rel="stylesheet" href="<?= base_url('assets/css/home2.css') ?>">
 <style>
     /* General Styles */
     .section-padding {
-        padding: 60px 0;
-    }
+    padding: 0 !important;
+    overflow: hidden;
+    max-width: 100vw;
+}
 
     .text-center {
         text-align: center;
@@ -11,7 +14,7 @@
     .btn-custom {
         background-color: #007bff;
         color: #fff;
-        padding: 12px 30px;
+        padding: 12px 30px !important;
         border-radius: 5px;
         font-weight: 600;
         text-transform: uppercase;
@@ -26,9 +29,9 @@
 
     /* New Hero Section */
     .product-list-hero-new {
-        background: linear-gradient(to right, #eef5ff, #fdfcff);
-        padding: 80px 0;
-    }
+    background: linear-gradient(to right, #eef5ff, #fdfcff);
+    padding: 37px 0px 0!important;
+}
 
     .product-list-hero-new .hero-text-container {
         padding-right: 30px;
@@ -173,16 +176,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 hero-text-container">
-                    <h1>We create exceptional products with end-to-end <strong>support</strong> and <strong>expert
+                    <h1 style="font-family:Nourd-Bold">We create exceptional products with end-to-end <strong>support</strong> and <strong>expert
                             guidance</strong></h1>
-                    <p>Supporting your project at each stage; from initial discovery, design and development to
+                    <p style="font-family:Arial; font-size:18px">Supporting your project at each stage; from initial discovery, design and development to
                         post-production support and maintenance.</p>
-                    <a href="#" class="btn btn-custom">Get Started</a>
+                    <a href="<?php echo base_url('/contact-us')?>" class="btn btn-custom">Get Started</a>
                 </div>
                 <div class="col-md-6 hero-image-container">
-                    <svg width="677" height="433" viewBox="0 0 677 433" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    <svg class="img-responsive" width="597" height="410" viewBox="0 0 677 433" fill="none" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <rect width="677" height="433" fill="url(#pattern0_486_7373)" />
+                        <rect width="597" height="410" fill="url(#pattern0_486_7373)" />
                         <defs>
                             <pattern id="pattern0_486_7373" patternContentUnits="objectBoundingBox" width="1"
                                 height="1">
@@ -198,61 +201,66 @@
             </div>
         </div>
     </section>
-
+    <br>
+    <br>
     <div class="container section-padding">
         <div class="row">
             <div class="col-md-12 text-center">
-                <div class="products-section-title">PRODUCTS</div>
+                <div class="products-section-title">OUR PRODUCTS</div>
             </div>
         </div>
 
         <div class="row">
             <?php if (!empty($products)): ?>
                 <?php foreach ($products as $product): ?>
-                    <div class="col-md-6">
-                        <div class="product-card-new">
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <?php if (!empty($product->hero_image)): ?>
-                                        <img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
-                                            alt="<?php echo $product->name; ?> Logo" class="product-logo">
-                                    <?php else: ?>
-                                        <img src="<?php echo base_url('assets/img/salesman_logo.png'); ?>"
-                                            alt="<?php echo $product->name; ?> Logo" class="product-logo">
-                                    <?php endif; ?>
-                                    <h3><?php echo $product->name; ?></h3>
-                                    <p class="product-description"><?php echo $product->hero_description; ?></p>
-                                    <div class="product-features-list">
-                                        <ul>
-                                            <li><i class="fa fa-arrow-circle-right"></i> Product Carousel</li>
-                                            <li><i class="fa fa-arrow-circle-right"></i> Advanced Product Filter</li>
-                                            <li><i class="fa fa-arrow-circle-right"></i> Advanced Query Builder</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="product-card-image-right">
-                                        <?php if (!empty($product->hero_image)): ?>
-                                            <img src="<?php echo base_url('product_img/' . $product->hero_image); ?>"
-                                                alt="<?php echo $product->name; ?>">
-                                        <?php else: ?>
-                                            <img src="<?php echo base_url('assets/img/placeholder_product.png'); ?>"
-                                                alt="Placeholder Product Image">
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
+                <div class="col-md-4 mb-4">
+                <div class="item">
+                    <div class="product-card">
+                        <div>
+
+                            <!-- Logo -->
+                            <div class="mb-2 text-center">
+                                <?php if (!empty($product->hero_image)): ?>
+                                    <br>
+                                    <img src="<?= base_url('product_img/' . $product->hero_image); ?>"
+                                        style="width:90px;">
+                                <?php endif; ?>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="product-card-buttons">
-                                        <a href="#" class="btn btn-primary"><i class="fa fa-phone"></i> Call Now</a>
-                                        <a href="<?php echo base_url('product/' . $product->slug); ?>"
-                                            class="btn btn-outline-secondary"><i class="fa fa-search"></i> Try Free Demo</a>
-                                    </div>
-                                </div>
+
+                            <!-- Tagline -->
+                            <h5 class="product-tagline">
+                                <?= !empty($product->hero_heading) ? $product->hero_heading : $product->name ?>
+                            </h5>
+
+                            <!-- Frame Image -->
+                            <div class="product-frame">
+                                <?php
+                                $img_src = base_url('home2media/HR Sheba_page-0001 1.png'); // fallback
+                                if (!empty($product->demo_call_to_action_image)) {
+                                    $img_src = base_url('product_img/' . $product->demo_call_to_action_image);
+                                }
+                                ?>
+                                <img src="<?= $img_src ?>" class="product-img" loading="lazy">
                             </div>
+
                         </div>
+
+                        <!-- Actions -->
+                        <div class="product-actions">
+                            <a href="tel:+8801958633202" class="btn-product btn-call">
+                                <i class="fa fa-phone"></i> Call Now
+                            </a>
+
+                            <a href="<?= base_url('product/' . $product->slug) ?>"
+                            class="btn-product btn-demo">
+                                <i class="fa fa-mouse-pointer"></i> Try Free Demo
+                            </a>
+                        </div>
+
                     </div>
+                </div>
+            </div>
+
                 <?php endforeach; ?>
             <?php else: ?>
                 <div class="col-md-12 text-center">

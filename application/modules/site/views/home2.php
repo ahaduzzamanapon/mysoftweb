@@ -1663,8 +1663,9 @@
                                         <option value="">Select a service</option>
                                         <?php if (!empty($all_services)): ?>
                                             <?php foreach ($all_services as $service): ?>
-                                                <option value="<?= $service->id ?>"><?= $service->name ?></option>
-                                            <?php endforeach; ?>
+<option value="<?= $service->id ?>">
+    <?= ucwords(str_replace('-', ' ', $service->slug)) ?>
+</option>                                               <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>
                                 </div>

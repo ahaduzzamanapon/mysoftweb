@@ -52,13 +52,6 @@
             5 #007aff,
             6 #007aff;
     }
-    .text-body p{
-        font-size: 13px !important;
-        line-height: 1.6 !important;
-        color: #333 !important;
-        margin: 0;
-        text-align: justify;`
-    }
 
     .hero_bobble_number {
         font-family: 'Nabla';
@@ -253,22 +246,6 @@
         color: #ffffff !important;
 
     }
-
-    .test-avatar {
-    width: 88px;
-    height: 57px;
-    border-radius: 50%;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-.owl-carousel .owl-item img {
-    display: block;
-    width: 41px;
-    height: 41px;
-}
 
 
 
@@ -1068,7 +1045,7 @@
         height: 120px;
     }
 
-    /* .test-avatar {
+    .test-avatar {
         width: 70px;
         height: 70px;
         border-radius: 50%;
@@ -1077,7 +1054,7 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-    } */
+    }
 
     .test-avatar img {
         width: 100%;
@@ -1166,10 +1143,6 @@
         height: 60px;
     }
 
-
-    .swal-large-font {
-        font-size: 16px !important;
-    }
 
     @media (max-width: 992px) {
         .testimonials-grid {
@@ -1371,15 +1344,6 @@
     .btn-submit:hover {
         background: #004d80;
     }
-
-    .error-msg {
-        font-size: 13px;
-        margin-top: 5px;
-        display: block;
-        font-weight: 400;
-        color: #ff0000 !important;
-    }
-
 
 
 
@@ -2412,7 +2376,7 @@
 
     <!-- Floating CTA Button -->
     <button class="floating-cta-btn scroll-link" href="#contact-section">
-        <i class="fa fa-paper-plane"></i>
+        <i class="fa fa-phone"></i>
         <span id="floatingBtnText">Hire Devs In 24H</span>
     </button>
 
@@ -2831,18 +2795,6 @@
         </div>
     </section>
 
-
-    <section class="ht-section" style="background-color: #193e6bff; min-height: 300px; display: flex; align-items: center; justify-content: center;">
-        <div class="" data-aos="fade-right">
-            <div class="row"> 
-                <h1  class="display-3" style="font-family: Nourd-Bold;background-color: white;color: #193e6bff;filter: drop-shadow(0 0 10px rgba(15, 16, 16, 0.5)); text-align: center;border:5px solid white;padding: 50px;border-radius:0px 50px;"><b data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300"data-aos-offset="0">Not a fit? Don't pay. Our 7-day trial ensures the right match</b>
-                </h1>   
-            </div> 
-        </div>
-    </section>
-
-
-
     <!-- Roles We Provide -->
     <section id="roles-section" class="ht-section roles-section-bg" style="min-height:1040px;">
         <div class="container-fluid">
@@ -2860,7 +2812,7 @@
                             src="<?= base_url('roles_we_provide_image/software_engineers.png') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Software Engineers</h4>
+                        <h4>Software Engineers</h4>
                         <p>Build scalable systems and APIs that meet your technical standards. Deliver production-ready
                             solutions that integrate smoothly into your workflows and drive business results.</p>
                     </div>
@@ -2872,7 +2824,7 @@
                             src="<?= base_url('roles_we_provide_image/web_developers.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Web Developers</h4>
+                        <h4>Web Developers</h4>
                         <p>Develop responsive, high-performance web applications. Ensure polished user interfaces and
                             seamless front-end to back-end integration.</p>
                     </div>
@@ -2884,7 +2836,7 @@
                             src="<?= base_url('roles_we_provide_image/application_developers.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Application Developers</h4>
+                        <h4>Application Developers</h4>
                         <p>Create cross-platform mobile and desktop applications. Deliver apps with smooth performance
                             and robust functionality.</p>
                     </div>
@@ -2896,7 +2848,7 @@
                             src="<?= base_url('roles_we_provide_image/devops_engineers.png') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">DevOps Engineers</h4>
+                        <h4>DevOps Engineers</h4>
                         <p>Automate deployment pipelines and manage infrastructure efficiently. Improve release speed
                             and reliability across projects.</p>
                     </div>
@@ -2907,7 +2859,7 @@
                     <div class="role-img-wrapper"><img src="<?= base_url('roles_we_provide_image/qa_engineers.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">QA Engineers</h4>
+                        <h4>QA Engineers</h4>
                         <p>Design and implement testing strategies to catch issues early. Ensure your software meets
                             high-quality standards before release.</p>
                     </div>
@@ -2919,7 +2871,7 @@
                             src="<?= base_url('roles_we_provide_image/uiux_designers.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">UI/UX Designers</h4>
+                        <h4>UI/UX Designers</h4>
                         <p>Translate research into intuitive, user-friendly designs. Improve adoption and overall
                             experience for your end users.</p>
                     </div>
@@ -2931,7 +2883,7 @@
                             src="<?= base_url('roles_we_provide_image/cloud_support_engineers.jpeg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Cloud Support Engineers</h4>
+                        <h4>Cloud Support Engineers</h4>
                         <p>Manage cloud deployments and optimize costs across platforms. Ensure resilience and
                             scalability for critical systems.</p>
                     </div>
@@ -2943,7 +2895,7 @@
                             src="<?= base_url('roles_we_provide_image/data_scientists.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Data Scientists</h4>
+                        <h4>Data Scientists</h4>
                         <p>Analyze complex datasets to extract actionable insights. Build predictive models that drive
                             smarter business decisions.</p>
                     </div>
@@ -2958,7 +2910,7 @@
                             class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">AI & ML Developers</h4>
+                        <h4>AI & ML Developers</h4>
                         <p>Develop machine learning and AI solutions for automation. Deliver intelligent features that
                             enhance your products.</p>
                     </div>
@@ -2970,7 +2922,7 @@
                             src="<?= base_url('roles_we_provide_image/security_engineers.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Security Engineers</h4>
+                        <h4>Security Engineers</h4>
                         <p>Protect applications, infrastructure, and data from threats. Implement best practices to
                             maintain a secure environment.</p>
                     </div>
@@ -2982,7 +2934,7 @@
                             src="<?= base_url('roles_we_provide_image/system_architects.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">System Architects</h4>
+                        <h4>System Architects</h4>
                         <p>Design high-level architectures for scalability and performance. Ensure systems are robust
                             and ready for future growth.</p>
                     </div>
@@ -2994,7 +2946,7 @@
                             src="<?= base_url('roles_we_provide_image/database_administrators.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Database Administrators</h4>
+                        <h4>Database Administrators</h4>
                         <p>Manage, optimize, and secure databases for peak performance. Maintain data integrity and high
                             availability.</p>
                     </div>
@@ -3006,7 +2958,7 @@
                             src="<?= base_url('roles_we_provide_image/network_engineers.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Network Engineers</h4>
+                        <h4>Network Engineers</h4>
                         <p>Design and maintain secure, reliable networks. Support hybrid and multi-cloud connectivity
                             seamlessly.</p>
                     </div>
@@ -3018,7 +2970,7 @@
                             src="<?= base_url('roles_we_provide_image/iot_developers.jpg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">IoT Developers</h4>
+                        <h4>IoT Developers</h4>
                         <p>Connect devices to cloud services and develop end-to-end solutions. Enable real-time data
                             collection and smart automation.</p>
                     </div>
@@ -3030,7 +2982,7 @@
                             src="<?= base_url('roles_we_provide_image/blockchain_developers.jpg') ?>"
                             class="role-img-new"></div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Blockchain Developers</h4>
+                        <h4>Blockchain Developers</h4>
                         <p>Build secure smart contracts and decentralized applications. Ensure correctness,
                             transparency, and auditability.</p>
                     </div>
@@ -3042,7 +2994,7 @@
                             src="<?= base_url('roles_we_provide_image/game_developers.jpeg') ?>" class="role-img-new">
                     </div>
                     <div class="role-content">
-                        <h4 style="font-family:Nourd-Bold">Game Developers</h4>
+                        <h4>Game Developers</h4>
                         <p>Develop optimized, real-time gaming experiences. Deliver engaging gameplay on engines like
                             Unity or Unreal.</p>
                     </div>
@@ -3302,29 +3254,33 @@
             <div class="awards-grid">
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
-                        <img src="<?= base_url('hire_talent_media/Land_Development_Tax(LDTAX).png') ?>" alt="Award Logo">
+                        <img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>" alt="Award Logo">
                         <!-- Placeholder -->
                     </div>
-                    <h4 style="font-family:Nourd-Bold">Land Development Tax (LDTAX)</h4>
-                    <p class="text-justify" style="font-family:arial;font-size:14px;">About 5.7 crore Holding data, All holding owner data stored in the system. Citizen paying their LD Tax through the system and every day a good amount of revenue automatically received by Bangladesh bank.</p>
+                    <h4>World Summit Information Society (WSIS) Prize</h4>
+                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying
+                        their LD Tax through the system and every day a good amount of revenue automatically received by
+                        Bangladesh bank.</p>
                 </div>
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
-                        <img src="<?= base_url('hire_talent_media/Bhumi_Sheba_Mobile_App.png') ?>" alt="Award Logo">
+                        <img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>" alt="Award Logo">
                         <!-- Placeholder -->
                     </div>
-                    <h4 style="font-family:Nourd-Bold">Bhumi Sheba Mobile App</h4>
-                    <p class="text-justify" style="font-family:arial;font-size:14px;">Bhumi Sheba” Mobile App has been recognized nationally, receiving the prestigious Digital Bangladesh Award 2022 for its significant contribution to citizen-centric digital land services. The app provides comprehensive access to all land-related information in a structured, user-friendly manner. Citizens can easily obtain essential land service details, perform necessary calculations, and access accurate guidelines directly from their mobile devices
-                    </p>
+                    <h4>Digital Bangladesh Award 2022 For LD Tax</h4>
+                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying
+                        their LD Tax through the system and every day a good amount of revenue automatically received by
+                        Bangladesh bank.</p>
                 </div>
                 <div class="award-card hover-lift" data-aos="fade-up">
                     <div class="award-icon-box">
-                        <img src="<?= base_url('hire_talent_media/Land_Development_Tax(LDTAX).png') ?>" alt="Award Logo">
+                        <img src="<?= base_url('hire_talent_media/clients/Group-2.png') ?>" alt="Award Logo">
                         <!-- Placeholder -->
                     </div>
-                    <h4 style="font-family:Nourd-Bold">Land Development Tax (LDTAX)</h4>
-                    <p class="text-justify" style="font-family:arial;font-size:14px;">LDTAX system is a large-scale e-governance solution in Bangladesh. The system currently manages more than 5.7 crore holding records, securely storing all holding owner information in a centralized digital repository. Citizens across the country are able to pay their Land Development (LD) Tax through the system, ensuring transparency, accessibility, and accountability.
-                    </p>
+                    <h4>Digital Bangladesh Award 2022 For Vumi Seba</h4>
+                    <p>About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen paying
+                        their LD Tax through the system and every day a good amount of revenue automatically received by
+                        Bangladesh bank.</p>
                 </div>
             </div>
         </div>
@@ -3340,102 +3296,68 @@
                 <!-- Card 1 -->
                 <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture1.png') ?>">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>">
                         </div>
-                        <div class="test-info"> 
-                            <h5>LIMS</h5>
-                            <span>LRB Ministry of Land</span>
-                            <span>By: Md. Rashed Kamal, ALRC-2</span>
+                        <div class="test-info">
+                            <h5>A2i</h5>
+                            <span>CEO<br>TheWebagency</span>
                         </div>
                     </div>
                     <div class="test-body">
-                        <div class="project-tag"> Land Information Management System</div>
-                        <p style="font-size:12px !important ">“Mysoft Heaven delivered a complex e-governance system with strong expertise, professionalism, reliable delivery, and responsive support”</p>
+                        <div class="project-tag">E-court Project</div>
+                        <p>Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel
+                            against.</p>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="100">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture2.png') ?>">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-5.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5> LA </h5>
-                            <span> Bangladesh Parliament Secretariat  </span>
-                            <span>By: Mostak Ahmed, Director</span>
+                            <h5>BD Scouts</h5>
+                            <span>Manager<br>TheWebtech</span>
                         </div>
                     </div>
                     <div class="test-body">
-                        <div class="project-tag">Library Automation </div>
-                        <p style="font-size:12px !important ">“Mysoft Heaven showed professionalism and technical clarity, resolving challenges quickly while maintaining quality and strong collaboration.”</p>
+                        <div class="project-tag">ERP Project</div>
+                        <p>Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me
+                            mr what.</p>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="testimonial-card hover-lift" data-aos="fade-up" data-aos-delay="200">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture3.png') ?>">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5>ERP</h5>
-                            <span>National Institute of Local Government(NILG)</span>
-                            <span>By: Sheikh Mofizul Islam, Director</span>
+                            <h5>A2i</h5>
+                            <span>Developer<br>12c Company</span>
                         </div>
                     </div>
                     <div class="test-body">
-                        <div class="project-tag">Enterprise Resource Planning System</div>
-                        <p style="font-size:12px !important ">“The team delivered a reliable ERP with technical excellence, timely support, and dedicated coordination throughout the project”</p>
+                        <div class="project-tag">DBID Project</div>
+                        <p>park next busy ever. Elinor her his secure far twenty eat object. Any for saw size want man.
+                            Which way you wrong.</p>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="testimonial-card">
                     <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture4.png') ?>">
+                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/clients/Group-1.png') ?>">
                         </div>
                         <div class="test-info">
-                            <h5>AD</h5>
-                            <span>Intelli Systems</span>
-                            <span>By: Phil Yone, Managing Partner</span>
+                            <h5>A2i</h5>
+                            <span>Accountant<br>TheContruction</span>
                         </div>
                     </div>
                     <div class="test-body">
-                        <div class="project-tag">Application Development</div>
-                        <p style="font-size:13px !important ">"Great experience with Mysoft Heaven for strong communication, high technical quality, and timely delivery across time zones.”</p>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture5.png') ?>">
-                        </div>
-                        <div class="test-info">
-                            <h5>HRM</h5>
-                            <span>Impress Group</span>
-                            <span>By: Md. Mahabubur Rahman, General Manager</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <div class="project-tag">Implementation of HR Sheba System.</div>
-                        <p style="font-size:13px !important ">"HR Sheba improved efficiency with user-friendly design, accurate payroll, and highly responsive support from the team.”</p>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="test-header">
-                        <div class="test-avatar"><img src="<?= base_url('hire_talent_media/picture6.png') ?>">
-                        </div>
-                        <div class="test-info">
-                            <h5>HRM</h5>
-                            <span>Rishal Group</span>
-                            <span>By: Tanveer Kadir, General Manager</span>
-                        </div>
-                    </div>
-                    <div class="test-body">
-                        <div class="project-tag"> Implementation of Sheba ERP System</div>
-                        <p style="font-size:13px !important ">"Sheba ERP is robust and well-tailored, backed by strong domain knowledge, clear communication, and effective training support.”</p>
+                        <div class="project-tag">ERP Project</div>
+                        <p>Concerns greatest margaret him absolute entrance nay. Door neat week do find past he. Be no
+                            surprise he honoured.</p>
                     </div>
                 </div>
             </div>
@@ -3472,13 +3394,13 @@
     <!-- Get in Touch Section -->
     <section id="contact-section" class="ht-section contact-section-wrapper"
         style="height: auto; padding: 60px 0 100px 0; background: #fff;">
-        <div class="container">
+        <div class="container-fluid">
             <div class="contact-card hover-lift" data-aos="fade-up">
                 <div class="row no-gutters">
                     <!-- Left Info Column -->
                     <div class="col-md-5 col-sm-12 contact-info-side">
-                        <h3 class="text-white mb-20 " style="font-weight: 700;font-family:Nourd-Bold">Let’s Talk About Your Business?</h3>
-                        <p class="text-white mb-40" style="font-family:Arial;opacity: 0.9 !important; font-size: 14px !important; line-height: 1.6 !important;">
+                        <h3 class="text-white mb-20 " style="font-weight: 700;">Ready to Transform Your Team?</h3>
+                        <p class="text-white mb-40" style="opacity: 0.9; font-size: 14px; line-height: 1.6;">
                             Schedule a discovery call with our experts to explore how we can help you build
                             high-performing remote teams.
                         </p>
@@ -3486,32 +3408,33 @@
                         <div class="contact-item mb-30">
                             <div class="icon-circle"><i class="fa fa-phone"></i></div>
                             <div class="contact-text">
-                                <strong style="font-family:Arial">Call Us</strong>
-                                <span style="font-family:Arial">+880 1958-633202</span>
+                                <strong>Call Us</strong>
+                                <span>+880 1958-633202</span>
                             </div>
                         </div>
 
                         <div class="contact-item mb-30">
                             <div class="icon-circle"><i class="fa fa-envelope"></i></div>
                             <div class="contact-text">
-                                <strong  style="font-family:Arial">Email Us</strong>
-                                <span style="font-family:Arial" >info@mysoftheaven.com</span>
+                                <strong>Email Us</strong>
+                                <span>info@mysoftheaven.com</span>
                             </div>
                         </div>
 
                         <div class="contact-item mb-30">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
-                                <strong style="font-family:Arial">Visit Head Office</strong>
-                                <span style="font-family:Arial">P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara, Mirpur,Dhaka-1216.</span>
+                                <strong>Visit Head Office</strong>
+                                <span>P.R.Tower, 924/1, Level 8, Begum Rokeya Sarani, Shewrapara, Mirpur,
+                                    Dhaka-1216.</span>
                             </div>
                         </div>
- 
+
                         <div class="contact-item mb-40">
                             <div class="icon-circle"><i class="fa fa-map-marker"></i></div>
                             <div class="contact-text">
-                                <strong style="font-family:Arial">Visit Corporate Office</strong>
-                                <span style="font-family:Arial">8813 NW 23 Street, Miami, FL 33172, USA.</span>
+                                <strong>Visit Corporate Office</strong>
+                                <span>8813 NW 23 Street, Miami, FL 33172, USA.</span>
                             </div>
                         </div>
 
@@ -3524,40 +3447,38 @@
 
                     <!-- Right Form Column -->
                     <div class="col-md-7 col-sm-12 contact-form-side">
-                        <h3 class="mb-20" style="font-weight: 700; color: #000;font-family:Nourd-Bold">Get in Touch</h3>
-                        <p class="mb-30" style="font-size: 13px !important; color: #666 !imporatnt; line-height: 1.6 !important;">
-                            Have a project in mind or need the right tech team? Reach out to us and our experts will get back to you shortly.
+                        <h3 class="mb-20" style="font-weight: 700; color: #000;">Get in Touch</h3>
+                        <p class="mb-30" style="font-size: 13px; color: #666; line-height: 1.6;">
+                            About 4.2 crore Holding data, 11+ crore holdingowner data stored in the system. Citizen
+                            paying their LD Tax through the system and every day a good amount of revenue automatically
+                            received by Bangladesh bank.
                         </p>
 
                         <form id="contactForm" action="#" method="post">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Full Name <span class="text-danger">*</span></label>
-                                    <input type="text" name="name" id="name" class="form-control form-control-custom" placeholder="">
-                                    <span class="text-danger error-msg" id="error-name"></span>
+                                    <input type="text" class="form-control form-control-custom" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Email <span class="text-danger">*</span></label>
-                                    <input type="email" name="email" id="email" class="form-control form-control-custom" placeholder="">
-                                    <span class="text-danger error-msg" id="error-email"></span>
+                                    <input type="email" class="form-control form-control-custom" placeholder="">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Phone Number <span class="text-danger">*</span></label>
-                                    <input type="text" name="phone" id="phone" class="form-control form-control-custom" placeholder="">
-                                    <span class="text-danger error-msg" id="error-phone"></span>
+                                    <input type="text" class="form-control form-control-custom" placeholder="">
                                 </div>
                                 <div class="col-md-6 col-sm-12 form-group">
                                     <label>Company Name <span class="text-danger">*</span></label>
-                                    <input type="text" name="company" id="company" class="form-control form-control-custom" placeholder="">
-                                    <span class="text-danger error-msg" id="error-company"></span>
+                                    <input type="text" class="form-control form-control-custom" placeholder="">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12 form-group select-wrapper">
                                     <label>Select Industry <span class="text-danger">*</span></label>
-                                    <select  class="form-control form-control-custom" name="industry" id="industry">
+                                    <select class="form-control form-control-custom" name="industry">
                                         <option value="">Select an Industry</option>
                                         <option value="Technology">Technology</option>
                                         <option value="Healthcare">Healthcare</option>
@@ -3569,11 +3490,10 @@
                                         <option value="Other">Other</option>
                                     </select>
                                     <i class="fa fa-chevron-down select-icon"></i>
-                                    <span class="text-danger error-msg" id="error-industry"></span>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group select-wrapper">
                                     <label>Select Service <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom" name="service" id="service">
+                                    <select class="form-control form-control-custom" name="service">
                                         <option value="">Select a service</option>
                                         <option value="Full Stack Developer">Full Stack Developer</option>
                                         <option value="AI/ML Engineers">AI/ML Engineers</option>
@@ -3585,11 +3505,10 @@
                                         <option value="Other">Other</option>
                                     </select>
                                     <i class="fa fa-chevron-down select-icon"></i>
-                                    <span class="text-danger error-msg" id="error-service"></span>
                                 </div>
                                 <div class="col-md-4 col-sm-12 form-group select-wrapper">
                                     <label>Select Budget Range <span class="text-danger">*</span></label>
-                                    <select class="form-control form-control-custom" name="budget" id="budget">
+                                    <select class="form-control form-control-custom" name="budget">
                                         <option value="">Select a budget range</option>
                                         <option value="$1,000 - $5,000">$1,000 - $5,000</option>
                                         <option value="$5,000 - $10,000">$5,000 - $10,000</option>
@@ -3599,14 +3518,12 @@
                                         <option value="$100,000+">$100,000+</option>
                                     </select>
                                     <i class="fa fa-chevron-down select-icon"></i>
-                                    <span class="text-danger error-msg" id="error-budget"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Project details <span class="text-danger">*</span></label>
-                                <textarea name="details" id="details" class="form-control form-control-custom" rows="4"
+                                <textarea class="form-control form-control-custom" rows="4"
                                     placeholder="Tell us about your project or talent needs..."></textarea>
-                                <span class="text-danger error-msg" id="error-details"></span>
                             </div>
 
                             <button type="submit" class="btn btn-block btn-submit" id="submitBtn">
@@ -3675,8 +3592,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- AOS Animation JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Initialize AOS
@@ -3768,7 +3683,7 @@
             margin: 20,
             nav: false,
             dots: true,
-            autoplay: false,
+            autoplay: true,
             autoplayTimeout: 5000,
             responsive: {
                 0: { items: 1 },
@@ -3783,7 +3698,7 @@
             margin: 50,
             nav: false,
             dots: true,
-            autoplay: false,
+            autoplay: true,
             autoplayTimeout: 2500,
             autoWidth: true, // Allow logos to have natural width
             center: true, // Center active item
@@ -3868,88 +3783,30 @@
         $('#contactForm').on('submit', function (e) {
             e.preventDefault();
 
-            var form = $(this);
-            var submitBtn = $('#submitBtn');
-            var btnText = $('#btnText');
-            var btnLoader = $('#btnLoader');
-
             // Show loader
-            btnText.hide();
-            btnLoader.show();
-            submitBtn.prop('disabled', true);
+            $('#btnText').hide();
+            $('#btnLoader').show();
+            $('#submitBtn').prop('disabled', true);
 
-            $.ajax({
-                url: '<?= base_url("site/hire_talent_get_touch") ?>',
-                type: 'POST',
-                data: form.serialize(),
-                dataType: 'json',
-                success: function (response) {
-                    // Clear previous errors
-                    $('.error-msg').text('');
-                    
-                    if (response.status === 'success') {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Success!',
-                            text: response.message,
-                            draggable: true,
-                            width: '800px',
-                            customClass: {
-                                popup: 'swal-large-font'
-                            }
-                        });
-                        pushLeadData();
-                        form[0].reset();
-                    } else {
-                        if (response.errors) {
-                            $.each(response.errors, function (key, value) {
-                                $('#error-' + key).text(value);
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error!',
-                                text: response.message,
-                                confirmButtonColor: '#002b49',
-                                width: '800px',
-                                customClass: {
-                                    popup: 'swal-large-font'
-                                }
-                            });
-                        }
-                    }
-                },
-                error: function () {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'An error occurred while submitting the form. Please try again.',
-                        confirmButtonColor: '#002b49',
-                        width: '800px',
-                        customClass: {
-                            popup: 'swal-large-font'
-                        }
-                    });
-                },
-                complete: function () {
-                    // Hide loader
-                    btnLoader.hide();
-                    btnText.show();
-                    submitBtn.prop('disabled', false);
-                }
-            });
+            // Simulate form submission (replace with actual AJAX call)
+            setTimeout(function () {
+                // Here you would normally submit the form via AJAX
+                // For now, we'sll just reset after 2 seconds
+
+                // Hide loader
+                $('#btnLoader').hide();
+                $('#btnText').show();
+                $('#submitBtn').prop('disabled', false);
+
+                // Show success message or handle form submission
+                alert('Form submitted successfully!');
+
+                // Optionally reset the form
+                // $('#contactForm')[0].reset();
+            }, 2000);
         });
-
-        // Clear error on input/change
-        $('#contactForm input, #contactForm select, #contactForm textarea').on('input change', function () {
-            var name = $(this).attr('name');
-            if ($(this).val().trim() !== '') {
-                $('#error-' + name).text('');
-            }
-        });
-
-        // Floating CTA Button - Text Rotation
-        const btnTexts = ['Hire Devs In 7 Days', 'Get CV In 24H', 'Book Call', 'Free Call'];
+    // Floating CTA Button - Text Rotation
+        const btnTexts = ['Hire Devs In 24H', 'Get CV In 24H', 'Book Call', 'Free Call'];
         let currentTextIndex = 0;
 
         // Rotate button text every 3 seconds
@@ -3973,54 +3830,4 @@
         });
     });
 
-</script>
-
-<script>
-    function pushLeadData() {
-
-    dataLayer = window.dataLayer || [];
-
-    dataLayer.push({
-        event: 'lead',
-
-        // page info
-        page_url: window.location.href,
-        page_path: window.location.pathname,
-        page_title: document.title,
-        referrer: document.referrer,
-
-        // visitor type
-        visitor_type: 'customer',
-
-        // form fields
-        name: document.getElementById('name')?.value || '',
-        phone_number: document.getElementById('phone')?.value || '',
-        email: document.getElementById('email')?.value || '',
-        company_name: document.getElementById('company')?.value || '',
-
-        select_industry: document.getElementById('industry')?.value || '',
-        select_service: document.getElementById('service')?.value || '',
-        select_budget_range: document.getElementById('budget')?.value || '',
-        project_details: document.getElementById('details')?.value || '',
-
-        // browser/device info
-        user_agent: navigator.userAgent,
-        browser_language: navigator.language,
-        platform: navigator.platform,
-        cookie_enabled: navigator.cookieEnabled,
-
-        // screen/device info
-        screen_width: screen.width,
-        screen_height: screen.height,
-        viewport_width: window.innerWidth,
-        viewport_height: window.innerHeight,
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-
-        // traffic info
-        utm_source: new URLSearchParams(location.search).get('utm_source'),
-        utm_medium: new URLSearchParams(location.search).get('utm_medium'),
-        utm_campaign: new URLSearchParams(location.search).get('utm_campaign')
-    });
-
-    }
 </script>

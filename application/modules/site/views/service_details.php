@@ -7,42 +7,118 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 <link rel="stylesheet" type="text/css" href="service_details.css" />
 <style>
-.service_page h1 {
-    font-family: 'Nourd-Bold';
-    line-height: 44px;
-}
+	.service_page h1 {
+		font-family: 'Nourd-Bold';
+		line-height: 44px;
+	}
 
-.service_page h2 {
-    font-family: 'Nourd-Bold';
-    font-weight: 300;
-}
+	.service_page h2 {
+		font-family: 'Nourd-Bold';
+		font-weight: 400;
+		color: #000000;
+	}
 
-.service_page h3 {
-    font-family: 'Nourd-Bold';
-}
+	.service_page h3 {
+		font-family: 'Nourd-Bold';
+	}
 
-.service_page p {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-}
+	.service_page p {
+		font-family: 'Arial', sans-serif;
+		font-size: 18px;
+		color: #555;
+		text-align: left;
+	}
 
-.service_page div {
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-}
+	.service_page div {
+		font-family: 'Arial', sans-serif;
+		font-size: 18px;
+		color: #555;
+		text-align: left;
+	}
 
-.service_page a {
-    font-family: 'Nourd-Medium' !important;
-    text-decoration: none !important;
-}
+	.service_page a {
+		font-family: 'Nourd-Medium' !important;
+		text-decoration: none !important;
+	}
 
-.service_page .mhead {
-    margin-left: 380px;
-    margin-top: 31px;
-    font-weight: 600;
-    font-size: 32px;
-}
+	.service_page .mhead {
+		margin-left: 380px;
+		margin-top: 31px;
+		font-weight: 600;
+		font-size: 32px;
+	}
 
+	.head {
+		justify-content: center;
+	}
+
+	@media screen and (min-width: 2000px) {
+		.question {
+			margin-left: -300px;
+		}
+	}
+
+	@media screen and (min-width: 2000px) {
+		.screenshot img {
+			margin-left: -900px;
+		}
+	}
+
+	@media screen and (min-width: 1600px) and (max-width: 1999px) {
+		.screenshot img {
+			margin-left: -680px;
+		}
+	}
+
+	.awardhead {
+		margin-bottom: 60px;
+	}
+
+	.mx100 {
+		margin-left: 550px;
+	}
+
+	.pro3 {
+		margin-left: 70px;
+	}
+
+	@media (max-width: 768px) {
+		.mx100 {
+			margin-left: -30px;
+		}
+
+		.mx2 {
+			margin-left: 0px !important;
+		}
+
+		.mx3 {
+			margin-bottom: 100px !important;
+		}
+
+		.mx4 {
+			margin-bottom: 150px !important;
+			margin-top: -30px;
+		}
+
+		.membership {
+			margin-left: 0 !important;
+			margin-top: -10px;
+			margin-bottom: 20px;
+
+			display: grid !important;
+			grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+			gap: 15px;
+			width: 100%;
+		}
+
+		.membership img.memberimg1 {
+			width: 100% !important;
+			height: 110px;
+			object-fit: cover;
+			margin: 0 !important;
+		}
+
+	}
 </style>
 <div class="main">
 	<!-- Head part -->
@@ -56,19 +132,19 @@
 			$service_list = $this->db->get('services')->result();
 
 
-			foreach ($service_list as $key => $value) { 
-				?>
-				<a href="<?= base_url('service/'.$value->slug) ?>">
-				<div class="headmenu-item">
-					<div class="headimg" style="align-content: center;margin-left: 10px;">
-						<i class="fa <?= $value->fa_icon ?>"></i>
-					</div>
-					<div class="">
+			foreach ($service_list as $key => $value) {
+			?>
+				<a href="<?= base_url('service/' . $value->slug) ?>">
+					<div class="headmenu-item">
+						<div class="headimg" style="align-content: center;margin-left: 10px;">
+							<i class="fa <?= $value->fa_icon ?>"></i>
+						</div>
+						<div class="">
 
-						<h4><?= $value->name ?></h4>
+							<h4><?= $value->name ?></h4>
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
 			<?php } ?>
 			<div class="calldiv">
 
@@ -84,7 +160,7 @@
 					<p>
 						<?= $info->first_section_para ?>
 					</p>
-						<div class="headbuttons">
+					<div class="headbuttons">
 						<a class="get-started" href="<?= base_url('contact-us') ?>">Get Started</a>
 					</div>
 				</div>
@@ -95,7 +171,7 @@
 			<!-- Middel Part -->
 			<div class="middle">
 				<div>
-					<h1 class="mhead newhead2"><?= $info->second_section_titel ?></h1>
+					<h1 class="mhead newhead2 mx2"><?= $info->second_section_titel ?></h1>
 				</div>
 				<div class="mcard">
 					<div class="maincard">
@@ -118,22 +194,22 @@
 					<div class="app">
 						<div class="appcard">
 							<img src="<?= base_url('service_img/' . $info->third_section_img_one) ?>" alt="Playstore">
-							<h2><?= $info->third_section_para_one ?></h2>
+							<h2 style="color: white;padding:10px;text-align:center;line-height: 21px;"><?= $info->third_section_para_one ?></h2>
 						</div>
 
 						<div class="appcard" style="background-color: #307dcfff;">
 							<img src="<?= base_url('service_img/' . $info->third_section_img_two) ?>" alt="Playstore">
-							<h2><?= $info->third_section_para_two ?></h2>
+							<h2 style="color: white;padding:10px;text-align:center;line-height: 21px;"><?= $info->third_section_para_two ?></h2>
 						</div>
 
 						<div class="appcard" style="background-color: #b30054ff;">
 							<img src="<?= base_url('service_img/' . $info->third_section_img_three) ?>" alt="Playstore">
-							<h2><?= $info->third_section_para_three ?></h2>
+							<h2 style="color: white;padding:10px;text-align:center;line-height: 21px;"><?= $info->third_section_para_three ?></h2>
 						</div>
 
 						<div class="appcard" style="background-color: #b38300ff;">
 							<img src="<?= base_url('service_img/' . $info->third_section_img_four) ?>" alt="Playstore">
-							<h2><?= $info->third_section_para_four ?></h2>
+							<h2 style="color: white;padding:10px;text-align:center;line-height: 21px;"><?= $info->third_section_para_four ?></h2>
 						</div>
 
 					</div>
@@ -341,7 +417,7 @@
 				<!-- Industries -->
 				<section>
 					<h1 class="mhead2"><?= $info->Ten_section_titel ?></h1>
-					<p class="developheading7"><?= $info->Ten_section_para_one ?></p>
+					<p class="developheading7 mx3"><?= $info->Ten_section_para_one ?></p>
 					<div class="industries">
 						<div class="industriescard">
 							<img src="<?= base_url('service_img/' . $info->Ten_section_img_one) ?>" alt=""
@@ -424,7 +500,7 @@
 				</section>
 				<!-- Service List -->
 				<h1 class="mhead2 newhead2"><?= $info->eleven_section_titel ?></h1>
-				<p class="developheading7"><?= $info->eleven_section_para ?></p>
+				<p class="developheading7 mx4"><?= $info->eleven_section_para ?></p>
 
 				<section>
 					<h1 class="mhead2"><?= $info->twelve_section_titel ?></h1>
@@ -676,7 +752,7 @@
 					<p class="developheading9"><?= $info->eighteen_section_para ?></p>
 					<a class="lastbtn" href="<?= base_url('contact-us') ?>">Get Started</a>
 
-					<h2 class="mhead2"><span class="text-primary"><?= $info->nineteen_section_titel ?></span></h2>
+					<h2 class="mhead2 mx100"><span class="text-primary"><?= $info->nineteen_section_titel ?></span></h2>
 					<div class="col-lg-7 mt-5 mt-lg-0 last">
 						<div>
 							<img src="<?= base_url('service_img/' . $info->ninteen_section_img_one) ?>" alt=""
@@ -727,16 +803,19 @@
 			infinite: true,
 			autoplay: true,
 			autoplaySpeed: 2000,
-			slidesToShow: 2,      // ✅ Show only 3 cards in desktop
+			slidesToShow: 2, // ✅ Show only 3 cards in desktop
 			slidesToScroll: 1,
-			responsive: [
-				{
+			responsive: [{
 					breakpoint: 1024,
-					settings: { slidesToShow: 2 }
+					settings: {
+						slidesToShow: 2
+					}
 				},
 				{
 					breakpoint: 600,
-					settings: { slidesToShow: 1 }
+					settings: {
+						slidesToShow: 1
+					}
 				}
 			]
 		});
@@ -747,23 +826,26 @@
 			infinite: true,
 			autoplay: true,
 			autoplaySpeed: 2000,
-			slidesToShow: 4,   // ✅ 4 logos per row on desktop
+			slidesToShow: 4, // ✅ 4 logos per row on desktop
 			slidesToScroll: 1,
-			responsive: [
-				{
-					breakpoint: 1024,  // tablet
-					settings: { slidesToShow: 3 }
+			responsive: [{
+					breakpoint: 1024, // tablet
+					settings: {
+						slidesToShow: 3
+					}
 				},
 				{
-					breakpoint: 768,   // mobile
-					settings: { slidesToShow: 3 }
+					breakpoint: 768, // mobile
+					settings: {
+						slidesToShow: 3
+					}
 				},
 				{
-					breakpoint: 480,   // small mobile
-					settings: { slidesToShow: 3 }
+					breakpoint: 480, // small mobile
+					settings: {
+						slidesToShow: 3
+					}
 				}
 			]
 		});
-
-
 	</script>

@@ -1,13 +1,24 @@
 <div role="main" class="main">
-	
+	<section class="page-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7"><h1><?=$meta_title?></h1></div>
+				<div class="col-md-5 text-right">
+					<ul class="breadcrumb">
+						<li><a href="<?=base_url()?>">Home</a></li>
+						<li class="active"><?=$meta_title?></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<div class="container">
-		        <h1 style="margin: 21px 4px 8px 21px;font-family: 'Nourd-Bold', 'Poppins', sans-serif;"><?= $meta_title ?></h1>
-
 		<hr class="tall_slim">
 
 		<div class="row">
 			<div class="col-md-12">
+				<h2>Our Notable <strong>Projects</strong></h2>
 				<div class="row featured-boxes notable">
 				<?php
 					foreach($notable_data as $item){ ?>

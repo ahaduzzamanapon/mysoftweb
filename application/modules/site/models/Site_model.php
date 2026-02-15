@@ -582,7 +582,7 @@ class Site_model extends CI_Model
 
     public function get_all_products_new()
     {
-        $this->db->select('id, slug, name, hero_heading, hero_description, hero_image');
+        $this->db->select('*');
         $this->db->from('products_new');
         $this->db->where('status', 'active'); // Assuming a 'status' field exists
         $this->db->order_by('id', 'ASC'); // Or another relevant order

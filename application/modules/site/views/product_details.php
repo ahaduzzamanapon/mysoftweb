@@ -2,6 +2,8 @@
 // Product Details View - Premium Design Upgrade
 ?>
 
+
+
 <style>
     /* =========================================
        Premium Theme Variables
@@ -51,15 +53,7 @@
         font-weight: 700;
         letter-spacing: -0.025em;
         font-family: 'Nourd-Bold', sans-serif;
-        font-size: 34px!important;
-    }
-   
-    h4 {
-        color: #0f172a;
-        font-weight: 700;
-        letter-spacing: -0.025em;
-        font-family: 'Nourd-Bold', sans-serif;
-        font-size: 25px!important;
+        font-size: 36px;
     }
 
     h3 {
@@ -75,9 +69,9 @@
     }
 
     .section-padding {
-        padding: 10px 0;
-        position: relative;
-        overflow: hidden;
+        padding: 62px 0px 0px 0px;
+    position: relative;
+    overflow: hidden;
     }
 
     .bg-white {
@@ -136,16 +130,16 @@
     }
 
     .btn-premium-outline {
-        background: transparent;
-        color: var(--primary-color);
-        border: 2px solid var(--primary-color);
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none !important;
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
 
     .btn-premium-outline:hover {
         background: var(--primary-light);
@@ -163,6 +157,11 @@
     .hero-content {
         padding-right: 40px;
     }
+    .hero-section {
+    padding: 0;
+    background: #fff;
+    margin-bottom: 36px;
+}
 
     .hero-badge {
         display: inline-block;
@@ -177,7 +176,7 @@
     }
 
     .hero-content h1 {
-        font-size: 48px;
+        font-size: 36px;
         font-family: 'Nourd-Bold', sans-serif;
         line-height: 1.1;
         margin-bottom: 1.5rem;
@@ -584,9 +583,25 @@
         }
     }
 </style>
+<link rel="stylesheet" href="<?= base_url('assets/css/home2.css') ?>">
+<style>
+    .section-title {
+    font-family: "Nourd-Bold", sans-serif;
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.audiences_card {
+    min-height: 212px;
+    overflow: hidden;
+}
+</style>
+
 
 <div role="main" class="main">
-    <?php if (isset($product) && !empty($product)): ?>
+    <?php if (isset($product) && !empty($product)): 
+        ?>
 
         <!-- 1. Hero Section -->
         <section class="hero-section">
@@ -600,8 +615,7 @@
                             <?php echo $product->hero_description; ?>
                         </div>
                         <div class="d-flex gap-3">
-                            <a href="<?php echo $product->hero_button_link; ?>"
-                                class="btn-premium"><?php echo $product->hero_button_text; ?></a>
+                            <a href="#support_contact" class="scroll-link btn-premium"><?php echo $product->hero_button_text; ?></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -619,7 +633,7 @@
         </section>
 
         <!-- 2. Why Us - Floating Bubbles Layout -->
-        <section class="why-us-section section-padding">
+        <section class="why-us-section section-padding" style="background-color: #E6F1FE!important;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -639,10 +653,10 @@
                             <h2 class="section-title">Why Choose <span
                                     class="text-gradient"><?php echo $product->name; ?>?</span></h2>
                             <h4
-                                style="margin-bottom: 20px; font-weight: 400; color: var(--secondary); font-size: 26px; font-family: 'Nourd-Bold', sans-serif;">
+                                style="margin-bottom: 3px;font-weight: 400;color: var(--secondary);font-size: 26px;font-family: 'Nourd-Bold', sans-serif;margin-top: 19px;">
                                 <?php echo $product->why_heading; ?>
                             </h4>
-                            <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 35px;">
+                            <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 10px;">
                                 <?php echo $product->why_description; ?>
                             </p>
 
@@ -666,10 +680,10 @@
 
         <!-- 3. Summary Stats (Vibrant Cards) -->
         <?php if (!empty($product->app_links)): ?>
-            <section class="section-padding bg-white pt-0">
+            <section class="section-padding bg-white mb-5">
                 <div class="container">
                     <div class="text-center">
-                        <h2 class="section-title"><?php echo $product->summary_heading; ?></h2>
+                        <h2 class="section-title mb-0"><?php echo $product->summary_heading; ?></h2>
                         <div style="height: 50px;"></div>
                     </div>
                     <div class="row">
@@ -692,7 +706,7 @@
 
         <!-- 4. Modules (Glass Grid) -->
         <?php if (!empty($product->modules)): ?>
-            <section class="section-padding bg-light">
+            <section class="section-padding bg-light" style="background-color: #E6F1FE!important;">
                 <div class="container">
                     <div class="text-center">
                         <h2 class="section-title"><?php echo $product->modules_heading; ?></h2>
@@ -723,7 +737,7 @@
 
         <!-- 5. Features (Alternating Layout or Grid) -->
         <?php if (!empty($product->features)): ?>
-            <section class="section-padding bg-white">
+            <section class="section-padding bg-white mb-5">
                 <div class="container">
                     <div class="text-center">
                         <h2 class="section-title"><?php echo $product->features_heading; ?></h2>
@@ -750,7 +764,7 @@
 
         <!-- 6. Audiences / Segments -->
         <?php if (!empty($product->audiences)): ?>
-            <section class="section-padding" style="background: linear-gradient(to bottom, #f8fafc, #ffffff);">
+            <section class="section-padding pb-5" style="background-color: #E6F1FE!important;">
                 <div class="container">
                     <div class="text-center mb-5">
                         <h2 class="section-title"><?php echo $product->audiences_heading; ?></h2>
@@ -758,10 +772,10 @@
                     <div class="row justify-content-center">
                         <?php foreach ($product->audiences as $audience): ?>
                             <div class="col-md-6 mb-4" style="margin-bottom: 30px;">
-                                <div
+                                <div class="audiences_card"
                                     style="background: white; padding: 30px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); display: flex; align-items: start;">
                                     <div
-                                        style="background: var(--primary-light); color: var(--primary-color); padding: 15px; border-radius: 50%; font-size: 24px; margin-right: 20px;">
+                                        style="background: var(--primary-light);color: var(--primary-color);border-radius: 26%;font-size: 24px;height: 61px;width: 61px;display: flex;align-items: center;justify-content: center;padding: 18px;margin-right: 13px;">
                                         <i class="fa <?php echo $audience->icon; ?>"></i>
                                     </div>
                                     <div>
@@ -781,13 +795,12 @@
 
         <!-- 7. Technologies -->
         <?php if (!empty($product->technologies)): ?>
-            <section class="section-padding bg-white">
+            <section class="section-padding bg-white mb-5">
                 <div class="container">
                     <div class="text-center mb-5">
-                        <h3 class="section-subtitle"
-                            style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 700;">
+                        <h2>
                             <?php echo $product->technology_heading; ?>
-                        </h3>
+                        </h2>
                     </div>
                     <div class="row justify-content-center">
                         <?php foreach ($product->technologies as $tech): ?>
@@ -811,7 +824,7 @@
 
         <!-- 8. Pricing Tables -->
         <?php if (!empty($product->pricing_plans)): ?>
-            <section class="section-padding bg-light">
+            <section class="section-padding bg-lightb pb-5" style="background-color: #E6F1FE!important;">
                 <div class="container">
                     <div class="text-center">
                         <h2 class="section-title"><?php echo $product->pricing_heading; ?></h2>
@@ -846,7 +859,7 @@
         <?php endif; ?>
 
         <!-- 9. Support & Contact (Split Layout) -->
-        <section id="support_contact" class="support-section section-padding mt-5">
+        <section id="support_contact" class="support-section section-padding mt-5 pb-5">
             <div class="container">
                 <div class="row">
                     <!-- FAQ Column -->
@@ -898,7 +911,7 @@
                                          <div class="col-md-6 col-sm-12 form-group">
                                              <label>Phone Number <span class="text-danger">*</span></label>
                                              <input type="text" name="phone" class="form-control form-control-custom"
-                                                 placeholder="">
+                                                 placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                                          </div>
                                          <div class="col-md-6 col-sm-12 form-group">
                                              <label>Company Name <span class="text-danger">*</span></label>
@@ -943,8 +956,8 @@
      
      
                                                  if (!empty($all_products)): ?>
-                                                     <?php foreach ($all_products as $product): ?>
-                                                         <option value="<?= $product->id ?>"><?= $product->name ?></option>
+                                                     <?php foreach ($all_products as $pro): ?>
+                                                         <option value="<?= $pro->id ?>"  <?= $pro->id ==$product->id?'selected':'' ?>><?= $pro->name ?></option>
                                                      <?php endforeach; ?>
                                                  <?php endif; ?>
                                              </select>

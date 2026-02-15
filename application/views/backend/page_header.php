@@ -150,7 +150,8 @@
         <ul class="sidebar-menu">
           <li class="header">MAIN NAVIGATION</li>
           <li class="treeview <?= backend_activate_menu_class('dashboard'); ?>"> <a
-              href="<?= base_url('admin/dashboard'); ?>"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a> </li>
+              href="<?= base_url('admin/dashboard'); ?>"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+          </li>
 
 
           <?php if (ifcan('event')): ?>
@@ -176,9 +177,11 @@
                     class="fa fa-angle-left pull-right"></i> </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?= base_url('admin/blog_article/add'); ?>"><i class="fa fa-circle-o"></i> Add Blog Article</a>
+                <li><a href="<?= base_url('admin/blog_article/add'); ?>"><i class="fa fa-circle-o"></i> Add Blog
+                    Article</a>
                 </li>
-                <li><a href="<?= base_url('admin/blog_article/all'); ?>"><i class="fa fa-circle-o"></i> All Blog Article</a>
+                <li><a href="<?= base_url('admin/blog_article/all'); ?>"><i class="fa fa-circle-o"></i> All Blog
+                    Article</a>
                 </li>
               </ul>
             </li>
@@ -206,8 +209,10 @@
                     class="fa fa-angle-left pull-right"></i> </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?= base_url('admin/portfolio/add'); ?>"><i class="fa fa-circle-o"></i> Add Portfolio</a></li>
-                <li><a href="<?= base_url('admin/portfolio/all'); ?>"><i class="fa fa-circle-o"></i> All Portfolio</a></li>
+                <li><a href="<?= base_url('admin/portfolio/add'); ?>"><i class="fa fa-circle-o"></i> Add Portfolio</a>
+                </li>
+                <li><a href="<?= base_url('admin/portfolio/all'); ?>"><i class="fa fa-circle-o"></i> All Portfolio</a>
+                </li>
               </ul>
             </li>
           <?php endif; ?>
@@ -247,7 +252,8 @@
               <ul class="treeview-menu">
                 <li><a href="<?= base_url('admin/product_new/add'); ?>"><i class="fa fa-circle-o"></i> Add New Product</a>
                 </li>
-                <li><a href="<?= base_url('admin/product_new/all'); ?>"><i class="fa fa-circle-o"></i> All New Products</a>
+                <li><a href="<?= base_url('admin/product_new/all'); ?>"><i class="fa fa-circle-o"></i> All New
+                    Products</a>
                 </li>
               </ul>
             </li>
@@ -286,8 +292,10 @@
                     class="fa fa-angle-left pull-right"></i> </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?= base_url('admin/image_gallery/add'); ?>"><i class="fa fa-circle-o"></i> Add Image</a></li>
-                <li><a href="<?= base_url('admin/image_gallery/all'); ?>"><i class="fa fa-circle-o"></i> All Image</a></li>
+                <li><a href="<?= base_url('admin/image_gallery/add'); ?>"><i class="fa fa-circle-o"></i> Add Image</a>
+                </li>
+                <li><a href="<?= base_url('admin/image_gallery/all'); ?>"><i class="fa fa-circle-o"></i> All Image</a>
+                </li>
               </ul>
             </li>
           <?php endif; ?>
@@ -396,7 +404,8 @@
               </a>
               <ul class="treeview-menu">
 
-                <li><a href="<?= base_url('admin/manage_permission/all'); ?>"><i class="fa fa-circle-o"></i> All Permission
+                <li><a href="<?= base_url('admin/manage_permission/all'); ?>"><i class="fa fa-circle-o"></i> All
+                    Permission
                     list</a></li>
               </ul>
             </li>
@@ -440,6 +449,12 @@
             <li class="<?= backend_activate_menu_class('request'); ?>"><a
                 href="<?php echo base_url('admin/request/all'); ?>"><i class="fa fa-book"></i> <span>Request
                   Quotation</span></a></li>
+          <?php endif; ?>
+
+          <?php if (ifcan('request-quotation')): ?>
+            <li class="<?= backend_activate_menu_class('hire_talent'); ?>"><a
+                href="<?php echo base_url('admin/hire_talent'); ?>"><i class="fa fa-users"></i> <span>Hire
+                  Talent</span></a></li>
           <?php endif; ?>
 
           <?php if (ifcan('change-password')): ?>

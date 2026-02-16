@@ -27,7 +27,12 @@
     }
 
     /* Custom Font */
-
+    @font-face {
+        font-family: 'Nourd-Bold';
+        src: url('<?= base_url("hire_talent_media/nourd_bold.ttf") ?>') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+    }
 
     /* @font-face {
   font-family: 'Nabla';

@@ -48,6 +48,11 @@
 		font-size: 32px;
 	}
 
+	.cimg {
+		width: 115px;
+		height: 110px;
+	}
+
 	.iconhead {
 		color: #000000 !important;
 		font-weight: 700 !important;
@@ -185,7 +190,7 @@
 		}
 
 		.technologiescard {
-			height: 127px !important;
+			height: 122px !important;
 
 		}
 

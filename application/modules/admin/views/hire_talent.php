@@ -27,7 +27,7 @@
                                     <select name="service" class="form-control">
                                         <option value="">All Services</option>
                                         <?php foreach ($services as $s): ?>
-                                            <option value="<?= $s->name ?>" <?= $this->input->get('service') == $s->name ? 'selected' : '' ?>><?= $s->name ?></option>
+                                            <option value="<?= $s ?>" <?= $this->input->get('service') == $s ? 'selected' : '' ?>><?= $s ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -66,6 +66,8 @@
                                         value="<?= $this->input->get('search') ?>">
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary">Filter</button>
                                 <a href="<?= base_url('admin/hire_talent') ?>" class="btn btn-default">Reset</a>
@@ -142,7 +144,7 @@
                                                     class="fa fa-trash"></i> Delete</a>
                                         </td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                             } else {
                                 echo '<tr><td colspan="10" class="text-center">No results found</td></tr>';

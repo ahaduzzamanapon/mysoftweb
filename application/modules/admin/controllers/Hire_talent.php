@@ -12,6 +12,7 @@ class Hire_talent extends Backend_Controller
         endif;
 
         $this->load->model('Common_model');
+        $this->load->helper('text');
     }
 
     public function index()
@@ -49,8 +50,17 @@ class Hire_talent extends Backend_Controller
         $this->data['results'] = $query->result();
 
         // Get services for filter dropdown
-        $this->load->model('site/Site_model');
-        $this->data['services'] = $this->Site_model->get_all_services(false);
+        // $this->load->model('site/Site_model');
+        // $this->data['services'] = $this->Site_model->get_all_services(false);
+        $this->data['services'] = [
+            'Full Stack Developer',
+            'AI/ML Engineers',
+            'Data Analysts',
+            'End-to-End Software Development',
+            'Sales & Support Staff',
+            'Back Office Management',
+            'Other'
+        ];
 
         // Filter options (Hardcoded based on frontend or could be dynamic)
         $this->data['industries'] = [

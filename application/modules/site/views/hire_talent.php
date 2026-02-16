@@ -2402,6 +2402,21 @@
             padding: 14px 24px;
             font-size: 14px;
         }
+        .btn-custom {
+            margin: 0;
+            width: 55%;
+            font-size: 16px !important;
+        }
+        .hero-btns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-card {
+            border-radius: 20px;
+        }
+        
     }
 </style>
 
@@ -3294,7 +3309,7 @@
     <section class="ht-section awards-section" style="height: auto; padding-top: 80px; padding-bottom: 80px;">
         <div class="container-fluid">
             <h2 class="section-title center-text mb-20">Awards <span class="text-blue">& Recognitions</span></h2>
-            <p class="text-left mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;">
+            <p class="text-left mb-50" style="max-width: 800px; margin: 0 auto 50px auto; color: #666;     text-align: center;">
                 Recognized nationally and globally, Mysoft Heaven (BD) Ltd. has earned top awards from the Bangladesh
                 government, international partners, and NGOs. Our work has been instrumental in advancing Bangladesh's
                 digital transformation in the public sector.

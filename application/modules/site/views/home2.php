@@ -194,10 +194,10 @@
                                     and maintain full alignment with your architecture and product goals.
                                 </p>
                                 <div class="d-flex gap-3 btn-group-hero">
-                                    <a href="<?= base_url('hire_talent') ?>" class="btn-custom btn-outline"
+                                    <a href="<?= base_url('it-staffing-agency') ?>" class="btn-custom btn-outline"
                                         style="padding: 12px 30px; border-radius: 30px; font-weight: 600;">Explore
                                         Roles</a>
-                                    <a href="<?= base_url('contact_us') ?>" class="btn-custom btn-blue"
+                                    <a href="<?= base_url('contact-us') ?>" class="btn-custom btn-blue"
                                         style="padding: 12px 30px;border-radius: 30px;font-weight: 600;color: white;">Schedule
                                         a
                                         Consultation <i class="fa fa-angle-right"></i></a>

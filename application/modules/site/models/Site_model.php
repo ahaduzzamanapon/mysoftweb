@@ -26,7 +26,7 @@ class Site_model extends CI_Model
 
     public function get_all_services($display_home_only = false, $limit = NULL)
     {
-        $this->db->select('id, fa_icon, name, slug, short_desc');
+        $this->db->select('id, fa_icon, name, slug, short_desc, main_service_id, is_published,main_name');
         $this->db->from('services');
         $this->db->where('status', 1);
         if ($display_home_only) {

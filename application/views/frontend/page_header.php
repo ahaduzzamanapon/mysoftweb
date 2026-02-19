@@ -366,141 +366,33 @@ update_sitemap_txt($current_url);
                                     <li>
                                         <div class="mega-menu-content">
                                             <div class="row">
+                                                <?php 
+                                                if(!empty($header_service_categories)){
+                                                    foreach($header_service_categories as $hsc){
+                                                        if(isset($header_services_grouped[$hsc->id]) && !empty($header_services_grouped[$hsc->id])){
+                                                ?>
                                                 <div class="col-md-3">
                                                     <ul class="sub-menu">
                                                         <li>
-                                                            <span class="mega-menu-sub-title">WEB DESIGN &
-                                                                DEVELOPMENT</span>
+                                                            <span class="mega-menu-sub-title"><?=strtoupper($hsc->main_service_name);?></span>
                                                             <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/website-design-development') ?>">Web
-                                                                        Design & Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/web-application-development') ?>">Web
-                                                                        Application Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/e-commerce-solution') ?>">E-Commerce
-                                                                        Solution</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/content-management-system-development') ?>">Content
-                                                                        Management System (CMS) Development</a></li>
-                                                            </ul>
-
-                                                            <span class="mega-menu-sub-title">CUSTOM SOFTWARE
-                                                                DEVELOPMENT</span>
-                                                            <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/enterprise-resource-planning-erp') ?>">Enterprise
-                                                                        Resource Planning (ERP)</a></li>
-                                                                <li><a href="<?= base_url('#') ?>">Integrated Office
-                                                                        Management System (IOMS)</a></li>
-                                                                <li><a href="<?= base_url('#') ?>">Customer Relationship
-                                                                        Management (CRM)</a></li>
+                                                                <?php 
+                                                                    foreach($header_services_grouped[$hsc->id] as $hs){
+                                                                        $href = ($hs->is_published == 1) ? base_url('service/'.$hs->slug) : 'javascript:void(0);';
+                                                                ?>
+                                                                <li><a href="<?=$href?>"><?=$hs->main_name;?></a></li>
+                                                                <?php 
+                                                                    }
+                                                                ?>
                                                             </ul>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <ul class="sub-menu">
-                                                        <li>
-                                                            <span class="mega-menu-sub-title">MOBILE APPS
-                                                                DEVELOPMENT</span>
-                                                            <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/android-apps-development') ?>">Android
-                                                                        Apps Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/ios-apps-development') ?>">IOS
-                                                                        Apps Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/windows-apps-development') ?>">Windows
-                                                                        Apps Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/hybrid-mobile-apps') ?>">Hybrid
-                                                                        Mobile Apps</a></li>
-                                                            </ul>
-
-                                                            <span class="mega-menu-sub-title">MOBILE GAMES
-                                                                DEVELOPMENT</span>
-                                                            <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/android-games-development') ?>">Android
-                                                                        Games Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/ios-games-development') ?>">IOS
-                                                                        Games Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/windows-games-development') ?>">Windows
-                                                                        Games Development</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/hybrid-mobile-games-development') ?>">Hybrid
-                                                                        Mobile Games Development</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <ul class="sub-menu">
-                                                        <li>
-                                                            <span class="mega-menu-sub-title">DIGITAL MARKETING</span>
-                                                            <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/social-media-marketing-smm') ?>">Social
-                                                                        Media Marketing (SMM)</a></li>
-                                                                <li><a href="<?= base_url('service/email-marketing') ?>">Email
-                                                                        Marketing</a></li>
-                                                                <li><a href="<?= base_url('service/sms-marketing') ?>">SMS
-                                                                        Marketing</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/search-engine-optimization-seo') ?>">Search
-                                                                        Engine Optimization (SEO)</a></li>
-                                                            </ul>
-
-                                                            <span class="mega-menu-sub-title">ADVANCE TECHNOLOGY</span>
-                                                            <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/natural-language-processing-nlp') ?>">Natural
-                                                                        Language Processing (NLP)</a></li>
-                                                                <li><a href="<?= base_url('service/machine-learning') ?>">Machine
-                                                                        Learning</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/blockchain-technology') ?>">Blockchain
-                                                                        Technology </a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <ul class="sub-menu">
-                                                        <li>
-                                                            <span class="mega-menu-sub-title">OTHERS SERVICES</span>
-                                                            <ul class="sub-menu">
-                                                                <li><a
-                                                                        href="<?= base_url('service/outsource-project-development') ?>">Outsource
-                                                                        Project Development </a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/business-process-outsourcing-bpo') ?>">Business
-                                                                        Process Outsourcing (BPO)</a></li>
-                                                                <li><a href="<?= base_url('service/ict-training') ?>">ICT
-                                                                        Training </a></li>
-                                                                <li><a href="<?= base_url('service/ict-consultancy') ?>">ICT
-                                                                        Consultancy</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/support-maintenance-service') ?>">Support
-                                                                        & Maintenance Service</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/manpower-outsource') ?>">Manpower
-                                                                        Outsource</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/graphics-design-multimedia') ?>">Graphics
-                                                                        Design & Multimedia</a></li>
-                                                                <li><a
-                                                                        href="<?= base_url('service/domain-hosting-services') ?>">Domain
-                                                                        & Hosting Services</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <?php 
+                                                        }
+                                                    }
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </li>

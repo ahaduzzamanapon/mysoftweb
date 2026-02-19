@@ -38,6 +38,13 @@
               </div>
 
               <div class="form-group">
+                <label>Main Name</label>
+                <div><?php echo form_error('main_name'); ?></div>
+                <input type="text" class="form-control" name="main_name"
+                  value="<?= set_value('main_name', $info->main_name) ?>">
+              </div>
+
+              <div class="form-group">
                 <label>Slug URL</label>
                 <div><?php echo form_error('slug'); ?></div>
                 <input type="text" class="form-control" name="slug" value="<?= set_value('slug', $info->slug) ?>">
@@ -96,6 +103,14 @@
               </div>
 
               <div class="form-group">
+                <label class="form-label required">Published</label> <br>
+                <input type="radio" name="is_published" value="1" <?= set_value('is_published', $info->is_published) == '1' ? 'checked' : ''; ?>>
+                Yes
+                <input type="radio" name="is_published" value="0" <?= set_value('is_published', $info->is_published) == '0' ? 'checked' : ''; ?>>
+                No
+              </div>
+
+              <div class="form-group">
                 <label>Image Upload</label>
                 <div><?php echo form_error('userfile'); ?></div>
                 <input type="file" name="userfile">
@@ -121,7 +136,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-align-left"></i> First Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -157,7 +173,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-list-alt"></i> Second Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -226,7 +243,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-image"></i> Third Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -236,7 +254,7 @@
                     <input type="text" class="form-control" name="third_section_titel"
                       value="<?= set_value('third_section_titel', $info->third_section_titel) ?>">
                   </div>
-                    <div class="form-group">
+                  <div class="form-group">
                     <label>Third Section Para_1</label>
                     <div><?php echo form_error('third_section_para_one'); ?></div>
                     <input type="text" class="form-control" name="third_section_para_one"
@@ -256,7 +274,7 @@
                     ?>
                   </div>
 
-                  
+
 
 
 
@@ -299,7 +317,7 @@
                     }
                     ?>
                   </div>
-                
+
                   <div class="form-group">
                     <label>Third Section Para_2</label>
                     <div><?php echo form_error('third_section_para_two'); ?></div>
@@ -327,7 +345,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-file-text-o"></i> Fourth Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -372,7 +391,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-picture-o"></i> Five Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -450,7 +470,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-list-ul"></i> Six Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -469,7 +490,8 @@
                   <div class="form-group">
                     <label>Six Section List</label>
                     <br><span>Add List</span>
-                    <button onclick="addListItem(event, 'six_section_list_container', 'six_section_list')" class="btn btn-success btn-xs">
+                    <button onclick="addListItem(event, 'six_section_list_container', 'six_section_list')"
+                      class="btn btn-success btn-xs">
                       <i class="fa fa-plus"></i>
                     </button>
                     <div id="six_section_list_container">
@@ -509,7 +531,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-list-ol"></i> Seven Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -528,7 +551,8 @@
                   <div class="form-group">
                     <label>Seven Section List</label>
                     <br><span>Add List</span>
-                    <button onclick="addListItem(event, 'seven_section_list_container', 'seven_section_list')" class="btn btn-success btn-xs">
+                    <button onclick="addListItem(event, 'seven_section_list_container', 'seven_section_list')"
+                      class="btn btn-success btn-xs">
                       <i class="fa fa-plus"></i>
                     </button>
                     <div id="seven_section_list_container">
@@ -568,7 +592,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-cogs"></i> Eight Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -700,7 +725,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-th-large"></i> Nine Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -820,7 +846,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-tags"></i> Ten Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1060,7 +1087,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-commenting-o"></i> Eleven Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1084,7 +1112,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-check-square-o"></i> Twelve section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1097,7 +1126,8 @@
                   <div class="form-group">
                     <label>Twelve Section List_1</label>
                     <br><span>Add List</span>
-                    <button onclick="addListItem(event, 'twelve_section_list_container_1', 'twelve_section_list_one')" class="btn btn-success btn-xs">
+                    <button onclick="addListItem(event, 'twelve_section_list_container_1', 'twelve_section_list_one')"
+                      class="btn btn-success btn-xs">
                       <i class="fa fa-plus"></i>
                     </button>
                     <div id="twelve_section_list_container_1">
@@ -1114,7 +1144,8 @@
                   <div class="form-group">
                     <label>Twelve Section List_2</label>
                     <br><span>Add List</span>
-                    <button onclick="addListItem(event, 'twelve_section_list_container_2', 'twelve_section_list_two')" class="btn btn-success btn-xs">
+                    <button onclick="addListItem(event, 'twelve_section_list_container_2', 'twelve_section_list_two')"
+                      class="btn btn-success btn-xs">
                       <i class="fa fa-plus"></i>
                     </button>
                     <div id="twelve_section_list_container_2">
@@ -1136,7 +1167,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-camera-retro"></i> Thirteen Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1370,7 +1402,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-window-maximize"></i> Fourteen section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1484,7 +1517,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-photo"></i> Fifteen Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1538,7 +1572,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-users"></i> Sixteen Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1646,7 +1681,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-question-circle"></i> Seventeen Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1736,7 +1772,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-info-circle"></i> Eighteen Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">
@@ -1760,7 +1797,8 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-cubes"></i> Nineteen Section</h3>
                   <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-plus"></i></button>
                   </div>
                 </div>
                 <div class="box-body">

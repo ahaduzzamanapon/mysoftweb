@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Services extends Backend_Controller {
+class Services extends Backend_Controller
+{
 
-	var $img_path;
+    var $img_path;
     private $image_fields = [
         'userfile',
         'first_section_img',
@@ -78,9 +79,10 @@ class Services extends Backend_Controller {
         'twelve_section_list_two'
     ];
 
-	public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
-        if (!$this->ion_auth->logged_in()): 
+        if (!$this->ion_auth->logged_in()):
             redirect('login');
         endif;
 
@@ -98,18 +100,21 @@ class Services extends Backend_Controller {
         $this->load->library('slug', $config);
     }
 
-	public function index(){
+    public function index()
+    {
         redirect('admin/services/all');
-	}
+    }
 
-    public function all(){
-        $this->data['results'] = $this->Services_model->get_data('services'); 
+    public function all()
+    {
+        $this->data['results'] = $this->Services_model->get_data('services');
         $this->data['meta_title'] = 'All Service';
         $this->data['subview'] = 'services/all';
         $this->load->view('backend/_layout_main', $this->data);
     }
 
-    public function details($id){
+    public function details($id)
+    {
         $this->data['info'] = $this->Services_model->get_info($id);
 
         // Decode JSON fields for display
@@ -124,7 +129,8 @@ class Services extends Backend_Controller {
         $this->load->view('backend/_layout_main', $this->data);
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $this->form_validation->set_rules('name', 'service name', 'required|trim');
         $this->form_validation->set_rules('slug', 'slug url', 'required|trim');
         $this->form_validation->set_rules('short_desc', 'services short description', 'max_length[1000]|trim');
@@ -139,7 +145,7 @@ class Services extends Backend_Controller {
 
         $this->data['info'] = $this->Services_model->get_info($id);
 
-        if ($this->form_validation->run() == true){
+        if ($this->form_validation->run() == true) {
             $form_data = $this->input->post();
 
             // Handle image uploads
@@ -148,8 +154,8 @@ class Services extends Backend_Controller {
                 $uploaded_file_name = $this->_handle_image_upload($field, $old_image);
                 if ($uploaded_file_name) {
                     $form_data[$field] = $uploaded_file_name;
-                } else if (isset($form_data[$field])) { 
-                    unset($form_data[$field]); 
+                } else if (isset($form_data[$field])) {
+                    unset($form_data[$field]);
                 }
             }
 
@@ -167,7 +173,7 @@ class Services extends Backend_Controller {
             // Slug generation
             $form_data['slug'] = $form_data['slug'];
 
-            if($this->Common_model->edit('services', $id, 'id', $form_data)){
+            if ($this->Common_model->edit('services', $id, 'id', $form_data)) {
                 $this->session->set_flashdata('success', 'Information update successfully.');
                 redirect('admin/services/all');
             }
@@ -187,12 +193,13 @@ class Services extends Backend_Controller {
     }
 
 
-	public function add(){
-		$this->form_validation->set_rules('name', 'service name', 'required|trim');
+    public function add()
+    {
+        $this->form_validation->set_rules('name', 'service name', 'required|trim');
         $this->form_validation->set_rules('slug', 'slug url', 'required|trim');
         $this->form_validation->set_rules('short_desc', 'services short description', 'max_length[1000]|trim');
         $this->form_validation->set_rules('description', 'service description', 'trim');
-        $this->form_validation->set_rules('meta_keys', 'meta keywords', 'max_length[255]|trim'); 
+        $this->form_validation->set_rules('meta_keys', 'meta keywords', 'max_length[255]|trim');
 
         foreach ($this->image_fields as $field) {
             if (@$_FILES[$field]['size'] > 0) {
@@ -200,7 +207,7 @@ class Services extends Backend_Controller {
             }
         }
 
-        if ($this->form_validation->run() == true){
+        if ($this->form_validation->run() == true) {
             $form_data = $this->input->post();
 
             // Handle image uploads
@@ -222,24 +229,25 @@ class Services extends Backend_Controller {
 
             // Standardize naming conventions for saving
             $form_data = $this->_standardize_field_names($form_data);
-unset($form_data['submit']);
+            unset($form_data['submit']);
             // Slug generation
             $form_data['slug'] = $this->slug->create_uri(['name' => $form_data['name']]);
 
-            if($this->Common_model->save('services', $form_data)){
+            if ($this->Common_model->save('services', $form_data)) {
                 $this->session->set_flashdata('success', 'New service insert successfully.');
-               redirect("admin/services/all");
+                redirect("admin/services/all");
             }
         }
 
         $this->data['category'] = $this->Common_model->get_main_service_dd();
 
-		$this->data['meta_title'] = 'Add Service';
-		$this->data['subview'] = 'services/add';
-    	$this->load->view('backend/_layout_main', $this->data);
-	}
+        $this->data['meta_title'] = 'Add Service';
+        $this->data['subview'] = 'services/add';
+        $this->load->view('backend/_layout_main', $this->data);
+    }
 
-    private function _handle_image_upload($field_name, $old_image = NULL) {
+    private function _handle_image_upload($field_name, $old_image = NULL)
+    {
         if (@$_FILES[$field_name]['size'] > 0) {
             $config['allowed_types'] = '*';
             $config['upload_path'] = $this->img_path;
@@ -247,78 +255,87 @@ unset($form_data['submit']);
             $config['max_size'] = 50000; // 500 KB
 
             $this->load->library('upload', $config);
-            $this->upload->initialize($config); // Re-initialize for each upload
+            $this->upload->initialize($config);
 
             if ($this->upload->do_upload($field_name)) {
                 $uploadData = $this->upload->data();
-                
+                $file_path = $this->img_path . '/' . $uploadData['file_name'];
+
+                // Set permission to 0555
+                @chmod($file_path, 0555);
+
                 // Delete old image if a new one is uploaded successfully
                 if ($old_image && file_exists($this->img_path . '/' . $old_image)) {
                     @unlink($this->img_path . '/' . $old_image);
                 }
+
                 return $uploadData['file_name'];
             } else {
                 $this->data['message'] = $this->upload->display_errors();
                 return FALSE;
             }
         }
-        return FALSE; // No new file uploaded
+        return FALSE;
     }
 
-	public function file_check($str){
+
+    public function file_check($str)
+    {
         $field_name = $this->upload->file_form_name; // Get the name of the file input field being validated
-    	$this->load->helper('file');
-        $allowed_mime_type_arr = array('image/gif','image/jpeg','image/png','image/x-png');
+        $this->load->helper('file');
+        $allowed_mime_type_arr = array('image/gif', 'image/jpeg', 'image/png', 'image/x-png');
         $mime = get_mime_by_extension($_FILES[$field_name]['name']);
-        $file_size = 1050000; 
+        $file_size = 1050000;
         $size_kb = '1 MB';
 
-        if(isset($_FILES[$field_name]['name']) && $_FILES[$field_name]['name']!=""){
-            if(!in_array($mime, $allowed_mime_type_arr)){
+        if (isset($_FILES[$field_name]['name']) && $_FILES[$field_name]['name'] != "") {
+            if (!in_array($mime, $allowed_mime_type_arr)) {
                 $this->form_validation->set_message('file_check', 'Please select only jpg, jpeg, png, gif file.');
                 return false;
-            }elseif($_FILES[$field_name]["size"] > $file_size){
-            	$this->form_validation->set_message('file_check', 'Maximum file size '.$size_kb);
+            } elseif ($_FILES[$field_name]["size"] > $file_size) {
+                $this->form_validation->set_message('file_check', 'Maximum file size ' . $size_kb);
                 return false;
-            }else{
-			    return true;
-			}
-        }else{
+            } else {
+                return true;
+            }
+        } else {
             return true;
         }
     }
 
-   private function _standardize_field_names($data) {
-    $standardized_data = [];
-    foreach ($data as $key => $value) {
-        $db_key = $key;
+    private function _standardize_field_names($data)
+    {
+        $standardized_data = [];
+        foreach ($data as $key => $value) {
+            $db_key = $key;
 
-        // Specific mappings
-        if ($key === 'userfile') {
-            $db_key = 'image_file';
-        }
-
-        // Preserve capitalization for DB consistency
-        $capitalized_sections = ['Eight_section', 'Nine_section', 'Ten_section', 'nineteen_section'];
-        foreach ($capitalized_sections as $section) {
-            if (stripos($key, $section) === 0) {
-                $db_key = $section . substr($key, strlen($section));
-                break;
+            // Specific mappings
+            if ($key === 'userfile') {
+                $db_key = 'image_file';
             }
-        }
 
-        // Convert _title → _titel
-        if (strpos($db_key, '_title') !== false) {
-            $db_key = str_replace('_title', '_titel', $db_key);
-        }
+            // Preserve capitalization for DB consistency
+            $capitalized_sections = ['Eight_section', 'Nine_section', 'Ten_section', 'nineteen_section'];
+            foreach ($capitalized_sections as $section) {
+                if (stripos($key, $section) === 0) {
+                    $db_key = $section . substr($key, strlen($section));
+                    break;
+                }
+            }
 
-        $standardized_data[$db_key] = $value;
+            // Convert _title → _titel
+            if (strpos($db_key, '_title') !== false) {
+                $db_key = str_replace('_title', '_titel', $db_key);
+            }
+
+            $standardized_data[$db_key] = $value;
+        }
+        return $standardized_data;
     }
-    return $standardized_data;
-}
 
 
-    function delete($id) {
+    function delete($id)
+    {
         $info = $this->Services_model->get_info($id);
 
         // Delete all associated image files before deleting the record
